@@ -1,0 +1,151 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top-bar {
+    background-color: #005a2c;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* ← importante: evita que outros elementos sobreponham */
+    z-index: 10;         /* ← garante que fique na frente */
+}
+
+.header-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-layout {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+}
+
+.menu-esquerdo,
+.menu-direito {
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  background-color: #004d26;
+  padding: 10px;
+  color: white;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.conteudo-central {
+  flex-grow: 1;
+  padding: 15px;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+  min-width: 400px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.rodape {
+  background-color: #003c1c;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  z-index: 1000;
+}
+
+.botao-menu {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #007733;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.botao-menu:hover {
+  background-color: #00aa55;
+}
+
+.botao-menu.emergencia {
+  background-color: #8B0000;
+  color: #fff200;
+}
+
+.botao-menu.emergencia:hover {
+  background-color: #aa0000;
+}
+
+.botao-menu.ativo {
+  background-color: #00aa55;
+  border-left: 5px solid #ffffff;
+  color: #ffffff;
+}
+
+.busca-pessoal {
+    margin-bottom: 20px;
+}
+
+.grupo-coluna {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grupo-coluna > div {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    background-color: #eef;
+    border-radius: 6px;
+}
+
+.grupo-linha {
+    margin: 10px 0;
+}
+
+.nome-clicavel {
+    cursor: pointer;
+    color: #006699;
+}
+
+.nome-clicavel:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    background: white;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 9999;
+}

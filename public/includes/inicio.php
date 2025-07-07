@@ -1,0 +1,2 @@
+<h3>Bem-vindo ao Portal PL-I</h3>
+<p>Selecione uma das opções ao lado para navegar entre os módulos do sistema.</p>
