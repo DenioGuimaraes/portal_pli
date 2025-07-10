@@ -12,8 +12,7 @@ class DadosPessoalController
         require_once __DIR__ . '/../views/dadospessoal/index.php';
     }
 
-    public function buscar()
-    {
+    public function buscar(){
         if (isset($_GET['termo'])) {
             $termo = $_GET['termo'];
 

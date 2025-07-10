@@ -88,6 +88,11 @@
         });
     </script>
 
+    <script>
+        const BASE_URL = '<?= BASE_URL ?>';
+    </script>
+    <script src="<?= BASE_URL ?>/public/js/modais.js"></script>
+    <script src="js/busca.js"></script>
 
 
 </body>
