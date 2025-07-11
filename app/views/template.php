@@ -40,6 +40,9 @@
     <script>
         function mostrarMenu(menu) {
             const direita = document.querySelector('.menu-direito');
+            const conteudoCentral = document.querySelector('.conteudo-central');
+
+            // Mensagem de carregamento para o menu direito
             direita.innerHTML = "<p>Carregando...</p>";
 
             // Remove destaque de todos os botões
@@ -53,15 +56,26 @@
                 botaoClicado.classList.add('ativo');
             }
 
-            // Carrega o conteúdo do menu correspondente
+            // Carrega o menu direito correspondente
             fetch('<?= BASE_URL ?>/public/includes/menu-loader.php?menu=' + menu)
                 .then(res => res.text())
                 .then(html => {
-                direita.innerHTML = html;
+                    direita.innerHTML = html;
                 })
                 .catch(err => {
-                direita.innerHTML = "<p>Erro ao carregar o menu.</p>";
-                console.error(err);
+                    direita.innerHTML = "<p>Erro ao carregar o menu.</p>";
+                    console.error(err);
+                });
+
+            // Carrega o conteúdo central correspondente
+            fetch('<?= BASE_URL ?>/app/views/' + menu + '.php')
+                .then(res => res.text())
+                .then(html => {
+                    conteudoCentral.innerHTML = html;
+                })
+                .catch(err => {
+                    conteudoCentral.innerHTML = "<p>Erro ao carregar o conteúdo central.</p>";
+                    console.error(err);
                 });
         }
 
@@ -94,6 +108,12 @@
     <script src="<?= BASE_URL ?>/public/js/modais.js"></script>
     <script src="js/busca.js"></script>
 
+    <script>
+        // Quando a página carregar, executa automaticamente o menu "inicio"
+        document.addEventListener('DOMContentLoaded', function () {
+            mostrarMenu('inicio');
+        });
+    </script>
 
 </body>
 

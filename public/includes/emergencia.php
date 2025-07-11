@@ -1,6 +1,6 @@
-<h3 style="color: #fff200;">Menu de Emergência</h3>
-<ul>
-  <li><a href="#">Geral (LB / Pipeway)</a></li>
-  <li><a href="#">U-1620</a></li>
-  <li><a href="#">U-1640</a></li>
-</ul>
+<h4>Menu Emergência</h4>
+
+<button class="botao-direito" onclick="carregarConteudo('emergeral')">Geral (LB)</button>
+<button class="botao-direito" onclick="carregarConteudo('emeru1620')">U-1620</button>
+<button class="botao-direito" onclick="carregarConteudo('emeru1640')">U-1640</button>
+
