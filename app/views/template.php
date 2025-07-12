@@ -48,7 +48,9 @@
             // Remove destaque de todos os botões
             document.querySelectorAll('.botao-menu').forEach(btn => {
                 btn.classList.remove('ativo');
+                btn.classList.remove('emergencia-ativa');
             });
+
 
             // Adiciona destaque ao botão clicado
             const botaoClicado = document.querySelector(`.botao-menu[onclick*="${menu}"]`);

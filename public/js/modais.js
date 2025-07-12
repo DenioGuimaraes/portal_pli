@@ -29,7 +29,6 @@ function mostrarModal(pessoa) {
         <p><strong>Transporte:</strong> ${pessoa.transporte}</p>
         <p><strong>Grupo:</strong> ${pessoa.grupo}</p>
         <p><strong>Cargo:</strong> ${pessoa.cargo}</p>
-        <p><strong>Lotação:</strong> ${pessoa.lotacao}</p>
     `;
     document.getElementById('conteudoModal').innerHTML = conteudo;
     document.getElementById('modalDetalhes').style.display = 'block';

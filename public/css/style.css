@@ -54,6 +54,7 @@ body, html {
   min-width: 400px;
   max-width: 100%;
   box-sizing: border-box;
+  border: yellow solid 1px;
 }
 
 .rodape {
@@ -94,13 +95,16 @@ body, html {
 }
 
 .botao-menu.emergencia {
-  background-color: #8B0000;
-  color: #fff200;
+  background-color: #cc0000; /* Vermelho forte */
+  color: white;
+  font-weight: bold;
 }
 
-.botao-menu.emergencia:hover {
-  background-color: #aa0000;
+.botao-menu.emergencia.ativo {
+  background-color: #a00000; /* Vermelho mais escuro quando clicado */
+  border-left: 5px solid #ffffff;
 }
+
 
 .botao-menu.ativo,
 .botao-direito.ativo {
@@ -223,4 +227,177 @@ body, html {
 
 .nome:hover {
   color: #551A8B;
+}
+
+/*cabeçalhos geral dos painéis*/
+.cabecalho-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00aa55; /* tom suave esverdeado, contraste sutil com menus */
+    border-bottom: 3px solid #004d26; /* verde Petrobras */
+    padding: 12px 20px;
+    position: sticky; /* fixa no topo da área central */
+    top: 0;
+    z-index: 10;
+    height: 60px;
+}
+
+.cabecalho-painel h2 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.botao-cabecalho {
+    background-color: #00733e; /* Verde forte Petrobras */
+    color: white;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 180px; /* espaço visual proporcional a ~20 caracteres */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.botao-cabecalho:hover {
+    background-color: #00994d; /* Tom mais claro ao passar o mouse */
+}
+
+/* Container de todos os grupos */
+.grupo-coluna {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+
+/* Bloco de cada grupo (A, B, C...) */
+.grupo {
+    background-color: #eef7f2; /* tom claro esverdeado */
+    border: 1px solid #cde3d9;
+    border-radius: 8px;
+    padding: 12px;
+    width: 180px;
+    min-height: 60px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
+}
+
+/* Nome do grupo */
+.grupo strong {
+    color: #004d26;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Nome clicável */
+.nome {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 3px 0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    color: #003366;
+}
+
+.nome:hover {
+    background-color: #cce0f0;
+    color: #002244;
+}
+
+#conteudo-central {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Cabeçalho fixo */
+.painel-cabecalho {
+    background-color: #00aa55;
+    border-bottom: 3px solid #004d26;
+    padding: 8px 16px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    color: white;
+}
+
+.painel-cabecalho button {
+  margin-left: 10px;
+}
+
+/* Área rolável */
+.painel-conteudo {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #cc9900;
+}
+
+.tabela-pessoal {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.95em;
+}
+
+.tabela-pessoal th,
+.tabela-pessoal td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.tabela-pessoal th {
+  background-color: #006400;
+  color: white;
+}
+
+.botao-acao {
+  background-color: transparent;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.painel-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00a859;
+  padding: 10px 20px;
+  color: white;
+}
+
+.cabecalho-esquerda h2 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.cabecalho-direita {
+  display: flex;
+  gap: 10px;
+}
+
+.botao-cabecalho {
+  background-color: #006400;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.botao-cabecalho:hover {
+  background-color: #004d00;
 }
