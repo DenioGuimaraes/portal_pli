@@ -95,9 +95,6 @@ function abrirModalCadastro(pessoa = null) {
   document.getElementById('campo-cargo').value = pessoa?.cargo || '';
 }
 
-
-
-
 function fecharModalCadastro() {
   document.getElementById('modalCadastro').style.display = 'none';
 }
@@ -130,8 +127,10 @@ function salvarRegistro() {
   .then(res => {
     alert(res.mensagem);
     if (res.sucesso) {
-      location.reload();
+      fecharModalCadastro();
+      carregarConteudo('alterarpessoal'); // mantém o usuário na tela
     }
+
   })
   .catch(err => {
     console.error('Erro ao salvar:', err);
@@ -139,4 +138,44 @@ function salvarRegistro() {
   });
 }
 
+function abrirModalInserir() {
+  // Primeiro, limpa o modal e define como 'Novo Registro'
+  abrirModalCadastro(null);
+
+  // Depois, busca o próximo ID disponível no banco
+  fetch('includes/proximo_id.php')
+    .then(res => res.json())
+    .then(json => {
+      document.getElementById('campo-id').value = json.proximo_id;
+    })
+    .catch(err => {
+      console.error('Erro ao buscar próximo ID:', err);
+      document.getElementById('campo-id').value = ''; // Fallback em caso de erro
+    });
+}
+
+function excluirRegistro(id) {
+  if (!confirm("Deseja realmente excluir este registro?")) {
+    return;
+  }
+
+  fetch('includes/excluir.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ id: id })
+  })
+  .then(res => res.json())
+  .then(res => {
+    alert(res.mensagem);
+    if (res.sucesso) {
+      carregarConteudo('alterarpessoal'); 
+    }
+  })
+  .catch(err => {
+    console.error('Erro ao excluir:', err);
+    alert('Erro ao excluir o registro.');
+  });
+}
 

@@ -16,7 +16,7 @@
       foreach ($grupos as $grupo) {
           echo "<div class='grupo'><strong>Grupo $grupo</strong><hr>";
           foreach ($dados as $pessoa) {
-              if ($pessoa['cargo'] === 'Técnico em Operações' && strtoupper($pessoa['grupo']) === $grupo) {
+              if ($pessoa['cargo'] === 'Operador' && strtoupper($pessoa['grupo']) === $grupo) {
                   echo "<div class='nome' onclick=\"mostrarModal(" . htmlspecialchars(json_encode($pessoa), ENT_QUOTES) . ")\">{$pessoa['nome']}</div>";
               }
           }

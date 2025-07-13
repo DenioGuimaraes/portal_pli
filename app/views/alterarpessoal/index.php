@@ -54,8 +54,6 @@
 
 </div> <!-- Fim de #conteudo-central -->
 
-<button onclick="abrirModalCadastro()">Abrir Modal</button>
-
 <div id="modalCadastro" class="modal" style="display:none;">
     <div class="modal-conteudo">
         <h3 id="modalTitulo">Novo Registro</h3>
@@ -134,11 +132,6 @@
 
     </div>
 </div>
-
-
-
-
-<button onclick="abrirModalCadastro()">Abrir Modal</button>
 
 <div id="modalCadastro" class="modal" style="display:none;">
     <div class="modal-conteudo">
