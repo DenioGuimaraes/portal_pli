@@ -79,3 +79,64 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function abrirModalCadastro(pessoa = null) {
+  document.getElementById('modalCadastro').style.display = 'flex';
+  document.getElementById('modalTitulo').innerText = pessoa ? 'Editar Registro' : 'Novo Registro';
+
+  document.getElementById('campo-id').value = pessoa?.id || '';
+  document.getElementById('campo-nome').value = pessoa?.nome || '';
+  document.getElementById('campo-chave').value = pessoa?.chave || '';
+  document.getElementById('campo-matricula').value = pessoa?.matricula || '';
+  document.getElementById('campo-telefone').value = pessoa?.telefone || '';
+  document.getElementById('campo-transporte').value = pessoa?.transporte || '';
+  document.getElementById('campo-sangue').value = pessoa?.sangue || '';
+  document.getElementById('campo-grupo').value = pessoa?.grupo || '';
+  document.getElementById('campo-cargo').value = pessoa?.cargo || '';
+}
+
+
+
+
+function fecharModalCadastro() {
+  document.getElementById('modalCadastro').style.display = 'none';
+}
+
+function salvarRegistro() {
+  if (!confirm("Deseja realmente salvar as alterações?")) {
+    return; // Se o usuário cancelar, não faz nada
+  }
+
+  const dados = {
+    id: document.getElementById('campo-id').value,
+    nome: document.getElementById('campo-nome').value,
+    chave: document.getElementById('campo-chave').value,
+    matricula: document.getElementById('campo-matricula').value,
+    telefone: document.getElementById('campo-telefone').value,
+    transporte: document.getElementById('campo-transporte').value,
+    sangue: document.getElementById('campo-sangue').value,
+    grupo: document.getElementById('campo-grupo').value,
+    cargo: document.getElementById('campo-cargo').value
+  };
+
+  fetch('includes/salvar.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dados)
+  })
+  .then(res => res.json())
+  .then(res => {
+    alert(res.mensagem);
+    if (res.sucesso) {
+      location.reload();
+    }
+  })
+  .catch(err => {
+    console.error('Erro ao salvar:', err);
+    alert('Erro ao salvar os dados.');
+  });
+}
+
+
