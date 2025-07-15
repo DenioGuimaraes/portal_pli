@@ -1,8 +1,9 @@
 <?php
 class HomeController extends Controller {
     public function index() {
-        $conteudo = 'home/index.php';
+        $conteudo = 'inicio/index.php';
         require_once __DIR__ . '/../views/template.php';
+        echo "<script>carregarConteudo('inicio');</script>";
     }
 }
 

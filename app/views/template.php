@@ -25,7 +25,7 @@
         </aside>
 
         <main class="conteudo-central">
-            <?php require_once __DIR__ . '/' . $conteudo; ?>
+            <!-- Conteúdo central será carregado dinamicamente -->
         </main>
 
         <aside class="menu-direito">
@@ -42,24 +42,23 @@
             const direita = document.querySelector('.menu-direito');
             const conteudoCentral = document.querySelector('.conteudo-central');
 
-            // Mensagem de carregamento para o menu direito
-            direita.innerHTML = "<p>Carregando...</p>";
+            // Mostra mensagem de carregamento no menu da direita
+            direita.innerHTML = "<p>Carregando menu...</p>";
 
-            // Remove destaque de todos os botões
+            // Remove destaques anteriores
             document.querySelectorAll('.botao-menu').forEach(btn => {
                 btn.classList.remove('ativo');
                 btn.classList.remove('emergencia-ativa');
             });
 
-
-            // Adiciona destaque ao botão clicado
+            // Destaca o botão clicado
             const botaoClicado = document.querySelector(`.botao-menu[onclick*="${menu}"]`);
             if (botaoClicado) {
                 botaoClicado.classList.add('ativo');
             }
 
-            // Carrega o menu direito correspondente
-            fetch('<?= BASE_URL ?>/public/includes/menu-loader.php?menu=' + menu)
+            // Carrega o menu lateral direito via include
+            fetch(BASE_URL + '/public/includes/menu-loader.php?menu=' + menu)
                 .then(res => res.text())
                 .then(html => {
                     direita.innerHTML = html;
@@ -69,8 +68,8 @@
                     console.error(err);
                 });
 
-            // Carrega o conteúdo central correspondente
-            fetch('<?= BASE_URL ?>/app/views/' + menu + '.php')
+            // Carrega o conteúdo central via Controller (MVC)
+            fetch('index.php?url=' + menu + 'Controller')
                 .then(res => res.text())
                 .then(html => {
                     conteudoCentral.innerHTML = html;
@@ -81,21 +80,17 @@
                 });
         }
 
-        function carregarConteudo(pagina) {
-            const conteudo = document.querySelector('.conteudo-central');
-            conteudo.innerHTML = "<p>Carregando...</p>";
-
-            fetch('<?= BASE_URL ?>/public/includes/conteudo-loader.php?pagina=' + pagina)
-                .then(res => res.text())
-                .then(html => {
-                    conteudo.innerHTML = html;
-                })
-                .catch(err => {
-                    conteudo.innerHTML = "<p>Erro ao carregar conteúdo.</p>";
-                    console.error(err);
-                });
-        }
     </script>
+
+    <script>
+        const BASE_URL = '<?= BASE_URL ?>';
+    </script>
+
+    <script src="<?= BASE_URL ?>/public/js/modais.js"></script>
+
+    <script src="<?= BASE_URL ?>/public/js/busca.js"></script>
+
+    <script src="<?= BASE_URL ?>/public/js/scripts.js"></script>
 
     <script>
         // Executa ao carregar a página
@@ -104,18 +99,6 @@
         });
     </script>
 
-    <script>
-        const BASE_URL = '<?= BASE_URL ?>';
-    </script>
-    <script src="<?= BASE_URL ?>/public/js/modais.js"></script>
-    <script src="js/busca.js"></script>
-
-    <script>
-        // Quando a página carregar, executa automaticamente o menu "inicio"
-        document.addEventListener('DOMContentLoaded', function () {
-            mostrarMenu('inicio');
-        });
-    </script>
 
 </body>
 
