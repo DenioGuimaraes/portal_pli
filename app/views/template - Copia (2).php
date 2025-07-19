@@ -75,17 +75,20 @@
                         }, 100);
                     }
 
-                    // 2. Carrega imediatamente o menu lateral
-                    fetch(BASE_URL + '/public/includes/menu-loader.php?menu=' + menu)
-                        .then(res => res.text())
-                        .then(html => {
-                            direita.innerHTML = html;
-                        })
-                        .catch(err => {
-                            direita.innerHTML = "<p>Erro ao carregar o menu.</p>";
-                            console.error(err);
-                        });
-                }).catch(err => {
+                    // 2. Aguarda 5 segundos antes de carregar o menu lateral
+                    setTimeout(() => {
+                        fetch(BASE_URL + '/public/includes/menu-loader.php?menu=' + menu)
+                            .then(res => res.text())
+                            .then(html => {
+                                direita.innerHTML = html;
+                            })
+                            .catch(err => {
+                                direita.innerHTML = "<p>Erro ao carregar o menu.</p>";
+                                console.error(err);
+                            });
+                    }, 5000); // ← 5 segundos
+                })
+                .catch(err => {
                     conteudoCentral.innerHTML = "<p>Erro ao carregar o conteúdo central.</p>";
                     console.error(err);
                 });

@@ -19,20 +19,22 @@ function buscarNome() {
 
 function mostrarModal(pessoa) {
     const conteudo = `
-        <p><strong>Nome:</strong> ${pessoa.nome}</p>
-        <p><strong>Chave:</strong> ${pessoa.chave}</p>
-        <p><strong>Matrícula:</strong> ${pessoa.matricula}</p>
-        <p><strong>Telefone:</strong> ${pessoa.telefone}</p>
-        <p><strong>Email:</strong> ${pessoa.email}</p>
-        <p><strong>Ramal:</strong> ${pessoa.ramal}</p>
-        <p><strong>Sangue:</strong> ${pessoa.sangue}</p>
-        <p><strong>Transporte:</strong> ${pessoa.transporte}</p>
-        <p><strong>Grupo:</strong> ${pessoa.grupo}</p>
-        <p><strong>Cargo:</strong> ${pessoa.cargo}</p>
+        <p><strong>Nome (Apelido):</strong> ${pessoa.nome ?? ''}</p>
+        <p><strong>Nome Completo:</strong> ${pessoa.nometodo ?? ''}</p>
+        <p><strong>Chave:</strong> ${pessoa.chave ?? ''}</p>
+        <p><strong>Matrícula:</strong> ${pessoa.matricula ?? ''}</p>
+        <p><strong>Telefone:</strong> ${pessoa.telefone ?? ''}</p>
+        <p><strong>Email:</strong> ${pessoa.email ?? ''}</p>
+        <p><strong>Ramal:</strong> ${pessoa.ramal ?? ''}</p>
+        <p><strong>Sangue:</strong> ${pessoa.sangue ?? ''}</p>
+        <p><strong>Transporte:</strong> ${pessoa.transporte ?? ''}</p>
+        <p><strong>Grupo:</strong> ${pessoa.grupo ?? ''}</p>
+        <p><strong>Cargo:</strong> ${pessoa.cargo ?? ''}</p>
     `;
     document.getElementById('conteudoModal').innerHTML = conteudo;
     document.getElementById('modalDetalhes').style.display = 'block';
 }
+
 
 function fecharModal() {
     document.getElementById('modalDetalhes').style.display = 'none';
@@ -83,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function abrirModalCadastro(pessoa = null) {
   document.getElementById('modalCadastro').style.display = 'flex';
   document.getElementById('modalTitulo').innerText = pessoa ? 'Editar Registro' : 'Novo Registro';
-
   document.getElementById('campo-id').value = pessoa?.id || '';
   document.getElementById('campo-nome').value = pessoa?.nome || '';
+  document.getElementById('campo-nometodo').value = pessoa?.nometodo || '';
   document.getElementById('campo-chave').value = pessoa?.chave || '';
   document.getElementById('campo-matricula').value = pessoa?.matricula || '';
   document.getElementById('campo-telefone').value = pessoa?.telefone || '';
@@ -107,6 +109,7 @@ function salvarRegistro() {
   const dados = {
     id: document.getElementById('campo-id').value,
     nome: document.getElementById('campo-nome').value,
+    nometodo: document.getElementById('campo-nometodo').value,
     chave: document.getElementById('campo-chave').value,
     matricula: document.getElementById('campo-matricula').value,
     telefone: document.getElementById('campo-telefone').value,

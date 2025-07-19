@@ -113,10 +113,6 @@ body, html {
   color: #ffffff;
 }
 
-.busca-pessoal {
-    margin-bottom: 20px;
-}
-
 .grupo-coluna {
     display: flex;
     justify-content: space-between;
@@ -370,7 +366,7 @@ body, html {
   margin-right: 5px;
 }
 
-.painel-cabecalho {
+.painel-cabecalho2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -529,12 +525,14 @@ body, html {
 }
 
 .campo-form label {
+  display: inline;
   width: 90px;
   font-weight: bold;
 }
 
 .campo-form input {
   flex: 1;
+  width: 80px;
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -542,6 +540,7 @@ body, html {
 
 .campo-form select {
   flex: 1;
+  width: 80px;
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -582,7 +581,3 @@ body, html {
 .botoes-modal button:last-child:hover {
   background-color: #999;
 }
-
-
-
-

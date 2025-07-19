@@ -1,8 +1,8 @@
-
 function carregarConteudo(painel) {
     const conteudo = document.querySelector('.conteudo-central');
     conteudo.innerHTML = "<p>Carregando...</p>";
 
+    // Carrega o conteúdo HTML do painel
     fetch('index.php?url=' + painel + 'Controller')
         .then(res => res.text())
         .then(html => {

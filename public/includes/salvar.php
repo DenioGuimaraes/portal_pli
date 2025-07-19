@@ -43,12 +43,15 @@ if ($id) {
     $check->close();
 }
 
+$nometodo = $dados['nometodo'] ?? '';
+
 if ($existe) {
     // Atualizar
-    $stmt = $conn->prepare("UPDATE dadospessoal SET nome=?, chave=?, matricula=?, telefone=?, transporte=?, sangue=?, grupo=?, cargo=? WHERE id=?");
+    $stmt = $conn->prepare("UPDATE dadospessoal SET nome=?, nometodo=?, chave=?, matricula=?, telefone=?, transporte=?, sangue=?, grupo=?, cargo=? WHERE id=?");
     $stmt->bind_param(
-        "ssssssssi",
+        "sssssssssi",
         $dados['nome'],
+        $dados['nometodo'],
         $dados['chave'],
         $dados['matricula'],
         $dados['telefone'],
@@ -60,10 +63,11 @@ if ($existe) {
     );
 } else {
     // Inserir
-    $stmt = $conn->prepare("INSERT INTO dadospessoal (nome, chave, matricula, telefone, transporte, sangue, grupo, cargo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO dadospessoal (nome, nometodo, chave, matricula, telefone, transporte, sangue, grupo, cargo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param(
-        "ssssssss",
+        "sssssssss",
         $dados['nome'],
+        $dados['nometodo'],
         $dados['chave'],
         $dados['matricula'],
         $dados['telefone'],

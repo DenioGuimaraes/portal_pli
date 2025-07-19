@@ -16,12 +16,12 @@
         <table class="tabela-pessoal">
             <thead>
                 <tr>
-                    <th>Nome</th>
+                    <th>Apelido</th>
+                    <th>Nome Completo</th>
                     <th>Chave</th>
                     <th>Matrícula</th>
                     <th>Telefone</th>
                     <th>Transporte</th>
-                    <th>Sangue</th>
                     <th>Grupo</th>
                     <th>Cargo</th>
                     <th>Ações</th>
@@ -31,11 +31,11 @@
                 <?php foreach ($dados as $pessoa): ?>
                     <tr>
                         <td><?= htmlspecialchars($pessoa['nome']) ?></td>
+                        <td><?= htmlspecialchars($pessoa['nometodo']) ?></td>
                         <td><?= htmlspecialchars($pessoa['chave']) ?></td>
                         <td><?= htmlspecialchars($pessoa['matricula']) ?></td>
                         <td><?= htmlspecialchars($pessoa['telefone']) ?></td>
                         <td><?= htmlspecialchars($pessoa['transporte']) ?></td>
-                        <td><?= htmlspecialchars($pessoa['sangue']) ?></td>
                         <td><?= htmlspecialchars($pessoa['grupo']) ?></td>
                         <td><?= htmlspecialchars($pessoa['cargo']) ?></td>
                         <td>
@@ -63,8 +63,13 @@
         <div class="modal-corpo">
             <div class="coluna-form">
                 <div class="campo-form">
-                    <label for="campo-nome">Nome:</label>
+                    <label for="campo-nome">Nome (Apelido):</label>
                     <input type="text" id="campo-nome">
+                </div>
+
+                <div class="campo-form">
+                    <label for="campo-nometodo">Nome completo:</label>
+                    <input type="text" id="campo-nometodo">
                 </div>
 
                 <div class="campo-form">
@@ -103,7 +108,8 @@
                         <option value="D">D</option>
                         <option value="E">E</option>
                         <option value="HA">HA</option>
-                        <option value="OUTROS">OUTROS</option>
+                        <option value="Férias">Férias</option>
+                        <option value="Outros">Outros</option>
                     </select>
                 </div>
 
@@ -130,17 +136,5 @@
         </div>
 
 
-    </div>
-</div>
-
-<div id="modalCadastro" class="modal" style="display:none;">
-    <div class="modal-conteudo">
-        <h3 id="modalTitulo">Novo Registro</h3>
-
-        <!-- Conteúdo vazio por enquanto -->
-        <br><br>
-
-        <button onclick="salvarRegistro()">Salvar</button>
-        <button onclick="fecharModalCadastro()">Cancelar</button>
     </div>
 </div>

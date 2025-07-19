@@ -5,8 +5,79 @@ class InicioModel extends Model
 {
     public function __construct()
     {
+        // Chama o construtor da classe Model (que cria a conexão com o banco)
         parent::__construct();
     }
 
-    // Métodos futuros aqui
+    // === 1. Método para buscar o registro do resumo operacional
+    public function buscarResumoPorId($id)
+    {
+        // Prepara a query com um parâmetro (o id)
+        $stmt = $this->db->prepare("SELECT * FROM resumo_operacional WHERE id = ?");
+        $stmt->bind_param("i", $id); // "i" = integer
+
+        // Executa a consulta
+        $stmt->execute();
+
+        // Pega o resultado e transforma em array associativo
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_assoc(); // retorna array com os dados
+    }
+
+    public function salvarResumoNoBanco($dados)
+    {
+        $conn = $this->db; // ← $this->db já é o objeto mysqli
+        $query = "UPDATE resumo_operacional SET 
+                    carga_gn = ?,
+                    producao_h2 = ?,
+                    producao_co2 = ?,
+                    bfw = ?,
+                    tb = ?,
+                    mea = ?,
+                    u1620para = ?,
+                    carga1640 = ?,
+                    tq_carga = ?,
+                    tq_produto = ?,
+                    producao = ?,
+                    ti69 = ?,
+                    delta_p = ?
+                    datacarga = ?
+                    horacarga = ?
+                    dataproduto = ?
+                    horaproduto = ?
+                WHERE id = 1";
+
+        $stmt = $conn->prepare($query);
+
+        if (!$stmt) {
+            die("Erro na preparação: " . $conn->error);  // ← debug bonito!
+        }
+
+        $stmt->bind_param(
+            "ddddiissiiiddssss",  // ← tipos dos parâmetros (double, int, string)
+            $dados['carga_gn'],
+            $dados['producao_h2'],
+            $dados['producao_co2'],
+            $dados['bfw'],
+            $dados['tb'],
+            $dados['mea'],
+            $dados['u1620para'],
+            $dados['carga1640'],
+            $dados['tq_carga'],
+            $dados['tq_produto'],
+            $dados['producao'],
+            $dados['ti69'],
+            $dados['delta_p'],
+            $dados['datacarga'],
+            $dados['horacarga'],
+            $dados['dataproduto'],
+            $dados['horaproduto']
+        );
+
+        $sucesso = $stmt->execute();
+        $stmt->close();
+        return $sucesso;
+    }
+
 }
+
