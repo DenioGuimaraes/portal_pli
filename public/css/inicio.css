@@ -74,19 +74,6 @@
   border-right: 5px solid #ffcc00;
 }
 
-/* Painel lateral de pessoal */
-.inicio-painel-pessoal {
-  width: 20%;
-  padding: 15px;
-  background-color: #2d3e3f;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  background-color: #333;
-  border: 5px solid #2a80b9;
-}
-
 /* Títulos das Unidades */
 .inicio-painel-u1620 h3,
 .inicio-painel-u1640 h3 {
@@ -395,4 +382,118 @@ hr {
 
 .resumo-botoes-modal button:last-child:hover {
   background-color: #999;
+}
+
+.resumo-subcampos {
+  display: flex;
+  gap: 15px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.resumo-subcampos label {
+  display: block;
+  font-size: 0.9em;
+  margin-bottom: 2px;
+}
+
+.resumo-subcampos input {
+  width: 130px;
+}
+
+
+/* Painel lateral de pessoal */
+.inicio-pessoal {
+  width: 20%;
+  padding: 15px;
+  background-color: #2d3e3f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background-color: #333;
+  border: 5px solid #2a80b9;
+}
+
+.inicio-pessoal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 20px;
+  overflow-y: auto;
+}
+
+.inicio-pessoal-grupo {
+  display: flex;
+  background-color: #f0f0f0;
+  border-left: 6px solid #2e7d32;
+  margin-bottom: 0;
+  padding: 8px;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+.inicio-pessoal-grupo h4 {
+  margin-bottom: 5px;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.inicio-pessoal-grupo ul {
+  margin: 0;
+  padding-left: 15px;
+  color: #000;
+}
+
+.inicio-pessoal-grupo li {
+  list-style-type: disc;
+  margin: 3px 0;
+}
+
+.coluna-grupo {
+  font-size: 28px;
+  font-weight: bold;
+  width: 40px;
+  color: #000;
+  margin-right: 10px;
+}
+
+.coluna-nomes {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #000;
+}
+
+/* Envolve os dois grupos finais */
+.inicio-pessoal-duplo {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Cada grupo lado a lado */
+.inicio-pessoal-grupo-duplo {
+  flex: 1;
+  background-color: #f0f0f0;
+  border-left: 6px solid #2e7d32;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+/* Título pequeno e elegante */
+.coluna-grupo-duplo {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Reaproveita a mesma lógica dos nomes */
+.inicio-pessoal-grupo-duplo .coluna-nomes {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 14px;
 }

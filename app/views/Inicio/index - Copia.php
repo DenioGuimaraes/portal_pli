@@ -96,36 +96,36 @@
   </div>
   <!-- Painel lateral de pessoal -->
   <div class="inicio-pessoal">
+    <h4 style="margin-top: 0; margin-bottom: 0; text-align:center">Operadores</h4>
     <div class="inicio-pessoal-grupo" id="grupo-A">
-      <div class="coluna-grupo">A</div>
-      <div class="coluna-nomes"></div>
+      <h1 style="color: black; margin: 0">A</h1>
+      <ul></ul>
     </div>
     <div class="inicio-pessoal-grupo" id="grupo-B">
-      <div class="coluna-grupo">B</div>
-      <div class="coluna-nomes"></div>
+      <h4>B</h4>
+      <ul></ul>
     </div>
     <div class="inicio-pessoal-grupo" id="grupo-C">
-      <div class="coluna-grupo">C</div>
-      <div class="coluna-nomes"></div>
+      <h4>C</h4>
+      <ul></ul>
     </div>
     <div class="inicio-pessoal-grupo" id="grupo-D">
-      <div class="coluna-grupo">D</div>
-      <div class="coluna-nomes"></div>
+      <h4>D</h4>
+      <ul></ul>
     </div>
     <div class="inicio-pessoal-grupo" id="grupo-E">
-      <div class="coluna-grupo">E</div>
-      <div class="coluna-nomes"></div>
+      <h4>E</h4>
+      <ul></ul>
     </div>
-    <div class="inicio-pessoal-duplo">
-      <div class="inicio-pessoal-grupo-duplo" id="grupo-ferias">
-        <div class="coluna-grupo-duplo">Férias</div>
-        <div class="coluna-nomes"></div>
-      </div>
-      <div class="inicio-pessoal-grupo-duplo" id="grupo-outros">
-        <div class="coluna-grupo-duplo">Outros</div>
-        <div class="coluna-nomes"></div>
-      </div>
-    </div>    
+    <div class="inicio-pessoal-grupo" id="grupo-Ferias">
+      <h4>Férias</h4>
+      <ul></ul>
+    </div>
+    <div class="inicio-pessoal-grupo" id="grupo-Outros">
+      <h4>Outros</h4>
+      <ul></ul>
+    </div>
+    <!-- Repete para C, D, E, Férias e Outros -->
   </div>
 
 </div>

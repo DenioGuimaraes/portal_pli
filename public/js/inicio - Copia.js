@@ -144,37 +144,30 @@ function carregarOperadores() {
   fetch('index.php?url=InicioController/buscarOperadores')
     .then(response => response.json())
     .then(dados => {
-      // Limpa os nomes existentes em cada grupo
+      // Limpa listas
       ['A','B','C','D','E','Férias','Outros'].forEach(grupo => {
-        const container = document.querySelector(`#grupo-${grupo.replace(" ", "-")} .coluna-nomes`);
-        if (container) container.innerHTML = '';
+        const ul = document.querySelector(`#grupo-${grupo.replace(" ", "-")} ul`);
+        if (ul) ul.innerHTML = '';
       });
 
       dados.forEach(pessoa => {
-        const grupo = (pessoa.grupo || '').toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-        let idGrupo;
-        if (["A", "B", "C", "D", "E"].includes(grupo)) {
-            idGrupo = grupo;
-        } else if (grupo === "FERIAS") {
-            idGrupo = "ferias";
-        } else {
-            idGrupo = "outros";
+        const grupo = pessoa.grupo || 'Outros';
+        const idGrupo = grupo.match(/[ABCDE]/) ? grupo : (grupo === 'Férias' ? 'Férias' : 'Outros');
+        const ul = document.querySelector(`#grupo-${idGrupo.replace(" ", "-")} ul`);
+        if (ul) {
+          const li = document.createElement('li');
+          li.textContent = pessoa.nome;
+          ul.appendChild(li);
         }
-
-        const container = document.querySelector(`#grupo-${idGrupo} .coluna-nomes`);
-        if (container) {
-            const nomeDiv = document.createElement('div');
-            nomeDiv.textContent = pessoa.nome;
-            container.appendChild(nomeDiv);
-        }
-        });
-
-    })
-    .catch(err => {
-      console.error("Erro ao carregar operadores:", err);
+      });
     });
 }
 
-
 // Aguarda a área de pessoal estar presente no DOM antes de preencher os operadores
+const tentativaOperadores = setInterval(() => {
+  const container = document.querySelector('.inicio-pessoal'); // classe da área onde os nomes serão exibidos
+  if (container && typeof carregarOperadores === 'function') {
+    carregarOperadores();
+    clearInterval(tentativaOperadores);
+  }
+}, 200);

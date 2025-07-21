@@ -72,7 +72,14 @@
                             } else {
                                 console.warn("⚠️ resumoAtualizarPainel() ainda não disponível.");
                             }
+
+                            if (typeof carregarOperadores === 'function') {
+                                carregarOperadores();
+                            } else {
+                                console.warn("⚠️ carregarOperadores() ainda não disponível.");
+                            }
                         }, 100);
+
                     }
 
                     // 2. Carrega imediatamente o menu lateral

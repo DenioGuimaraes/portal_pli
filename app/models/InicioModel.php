@@ -40,17 +40,18 @@ class InicioModel extends Model
                     tq_produto = ?,
                     producao = ?,
                     ti69 = ?,
-                    delta_p = ?
-                    datacarga = ?
-                    horacarga = ?
-                    dataproduto = ?
+                    delta_p = ?,
+                    datacarga = ?,
+                    horacarga = ?,
+                    dataproduto = ?,
                     horaproduto = ?
                 WHERE id = 1";
 
         $stmt = $conn->prepare($query);
 
         if (!$stmt) {
-            die("Erro na preparação: " . $conn->error);  // ← debug bonito!
+            error_log("Erro na preparação: " . $conn->error);
+            return false;
         }
 
         $stmt->bind_param(
@@ -76,8 +77,17 @@ class InicioModel extends Model
 
         $sucesso = $stmt->execute();
         $stmt->close();
+        if (!$sucesso) {
+            error_log("Erro ao executar UPDATE: " . $stmt->error);
+        }
         return $sucesso;
     }
 
+    public function buscarPorCargo($cargo) {
+        $stmt = $this->db->prepare("SELECT nome, grupo FROM dadospessoal WHERE cargo = ?");
+        $stmt->bind_param("s", $cargo);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 }
 

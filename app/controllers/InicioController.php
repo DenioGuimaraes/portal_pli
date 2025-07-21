@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../models/InicioModel.php';
+require_once __DIR__ . '/../models/DadosPessoalModel.php';
+
 
 class InicioController extends Controller
 {
@@ -36,4 +38,14 @@ class InicioController extends Controller
 
         echo json_encode(['sucesso' => $resultado]);
     }
+
+    public function buscarOperadores() {
+        $model = new DadosPessoalModel();
+        $dados = $model->buscarPorCargo('Operador');
+        header('Content-Type: application/json');
+        echo json_encode($dados);
+    }
+
+
+
 }
