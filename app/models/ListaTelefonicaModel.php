@@ -1,33 +1,48 @@
 <?php
 
-require_once __DIR__ . '/../../core/Model.php';
-
-class ListaTelefonicaModel extends Model
+class ListaTelefonicaModel
 {
+    private $arquivo;
+
     public function __construct()
     {
-        parent::__construct(); // Herda a conexão
+        $this->arquivo = dirname(__DIR__) . '/views/listatelefonica/telefones.json';
+
     }
 
-    public function buscarTodos()
+    public function telefoneBuscarPorTermo($termo)
     {
-        $sql = "SELECT * FROM listatelefonica ORDER BY grupo, descricao";
-        $result = $this->db->query($sql);
+        $dados = $this->lerJSON();
+        $resultado = [];
 
-        $dados = [];
-        while ($row = $result->fetch_assoc()) {
-            $dados[] = $row;
+        foreach ($dados as $grupo) {
+            $itensFiltrados = [];
+
+            foreach ($grupo['itens'] as $item) {
+                if (stripos($item['descricao'], $termo) !== false || stripos($item['ramal'], $termo) !== false) {
+                    $itensFiltrados[] = $item;
+                }
+            }
+
+            if (!empty($itensFiltrados)) {
+                $resultado[] = [
+                    "grupo" => $grupo['grupo'],
+                    "itens" => $itensFiltrados
+                ];
+            }
         }
 
-        return $dados;
+        return $resultado;
     }
 
-    public function buscarPorTermo($termo)
+    public function telefoneListarTodos()
     {
-        $termo = $this->db->real_escape_string($termo);
-        $sql = "SELECT * FROM listatelefonica WHERE descricao LIKE '%$termo%' OR grupo LIKE '%$termo%' OR ramal LIKE '%$termo%'";
-        $resultado = $this->db->query($sql);
+        return $this->lerJSON();
+    }
 
-        return $resultado->fetch_all(MYSQLI_ASSOC);
+    private function lerJSON()
+    {
+        $conteudo = file_get_contents($this->arquivo);
+        return json_decode($conteudo, true);
     }
 }

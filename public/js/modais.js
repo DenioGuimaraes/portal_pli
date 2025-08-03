@@ -102,10 +102,6 @@ function fecharModalCadastro() {
 }
 
 function salvarRegistro() {
-  if (!confirm("Deseja realmente salvar as alterações?")) {
-    return; // Se o usuário cancelar, não faz nada
-  }
-
   const dados = {
     id: document.getElementById('campo-id').value,
     nome: document.getElementById('campo-nome').value,

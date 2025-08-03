@@ -4,5 +4,4 @@
 <button class="botao-direito" onclick="carregarConteudo('listatelefonica')">Lista Telefônica</button>
 <button class="botao-direito" onclick="carregarConteudo('radio')">Canais de Rádio</button>
 <button class="botao-direito" onclick="carregarConteudo('eletrica')">Alimentação Elétrica</button>
-<button class="botao-direito" onclick="carregarConteudo('amostragem')">Amostragens</button>
 <button class="botao-direito" onclick="carregarConteudo('onibus')">Itinerários dos Ônibus</button>

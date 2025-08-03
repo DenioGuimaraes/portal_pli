@@ -79,11 +79,41 @@
                                 console.warn("⚠️ carregarOperadores() ainda não disponível.");
                             }
                         }, 100);
+                    }
 
+                    // === Novo trecho: carregamento do JS correspondente ===
+                    const script = document.createElement('script');
+
+                    // Caminho com BASE_URL
+                    const base = "<?= BASE_URL ?>";
+                    switch (menu) {
+                        case 'inicio':
+                            script.src = base + '/public/js/inicio.js';
+                            break;
+                        case 'administrativo':
+                            var s1 = document.createElement('script');
+                            s1.src = base + '/public/js/listatelefonica.js';
+                            document.body.appendChild(s1);
+
+                            var s2 = document.createElement('script');
+                            s2.src = base + '/public/js/radio.js';
+                            document.body.appendChild(s2);
+
+                            var s3 = document.createElement('script');
+                            s3.src = base + '/public/js/onibus.js';
+                            document.body.appendChild(s3);
+
+                            break;
+                        default:
+                            script.src = ''; // Nenhum JS adicional
+                    }
+
+                    if (script.src !== '') {
+                        document.body.appendChild(script);
                     }
 
                     // 2. Carrega imediatamente o menu lateral
-                    fetch(BASE_URL + '/public/includes/menu-loader.php?menu=' + menu)
+                    fetch(base + '/public/includes/menu-loader.php?menu=' + menu)
                         .then(res => res.text())
                         .then(html => {
                             direita.innerHTML = html;
@@ -92,14 +122,14 @@
                             direita.innerHTML = "<p>Erro ao carregar o menu.</p>";
                             console.error(err);
                         });
-                }).catch(err => {
+                })
+                .catch(err => {
                     conteudoCentral.innerHTML = "<p>Erro ao carregar o conteúdo central.</p>";
                     console.error(err);
                 });
         }
-
-
     </script>
+
 
     <script>
         const BASE_URL = '<?= BASE_URL ?>';
@@ -117,8 +147,9 @@
             // Aguarda DOM da view estar presente antes de chamar a função
             const tentativa = setInterval(() => {
                 const el = document.getElementById("painelCargaGn");
-                if (typeof resumoAtualizarPainel === 'function' && el) {
+                if (typeof resumoAtualizarPainel === 'function' && el && document.getElementById("anotacoesTexto")) {
                     resumoAtualizarPainel();
+                    carregarAnotacao();
                     clearInterval(tentativa);
                 }
             }, 200); // tenta a cada 200ms

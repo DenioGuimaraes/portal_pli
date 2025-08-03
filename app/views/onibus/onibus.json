@@ -1,0 +1,47 @@
+{
+  "turno": [
+    {
+      "linha": "T-01",
+      "grupos": {
+        "A": ["Terminal Central", "Rua das Flores", "Av. Brasil"],
+        "B": ["Terminal Central", "Av. Brasil", "Bairro Industrial"],
+        "C": ["Terminal Central", "Av. Atlântica", "Bairro Novo"],
+        "D": ["Terminal Central", "Rua das Palmeiras", "Estação Leste"],
+        "E": ["Terminal Central", "Rua das Laranjeiras", "Estação Oeste"]
+      }
+    },
+    {
+      "linha": "T-03",
+      "grupos": {
+        "A": ["Terminal Central", "Praça da Matriz", "Bairro Verde"],
+        "B": ["Terminal Central", "Av. Rio Branco", "Estação Norte"],
+        "C": ["Terminal Central", "Rua do Comércio", "Estação Sul"],
+        "D": ["Terminal Central", "Av. Sete de Setembro", "Vila Velha"],
+        "E": ["Terminal Central", "Rua das Hortênsias", "Estação Oeste"]
+      }
+    }
+  ],
+  "administrativo": [
+    {
+      "linha": "A-50",
+      "grupos": {
+        "ida": ["Garagem Central", "Av. Petrobras", "Refinaria REDUC", "Refinaria REDUC", "Refinaria REDUC"],
+        "volta": ["Refinaria REDUC", "Av. Petrobras", "Garagem Central"]
+      }
+    },
+    {
+      "linha": "A-51",
+      "grupos": {
+        "ida": ["Garagem Central", "Av. das Indústrias", "Unidade U-1620"],
+        "volta": ["Unidade U-1620", "Av. das Indústrias", "Garagem Central"]
+      }
+    },
+    {
+      "linha": "A-52",
+      "grupos": {
+        "ida": ["Garagem Central", "Av. Automática", "Unidade U-1640"],
+        "volta": ["Unidade U-1640", "Av. Automática", "Garagem Central"]
+      }
+    }
+  ]
+}

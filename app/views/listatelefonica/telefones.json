@@ -1,0 +1,52 @@
+[
+  {
+    "grupo": "Operação",
+    "itens": [
+      { "descricao": "SEGURANÇA / SMS", "ramal": "2232 / 2344" },
+      { "descricao": "ÁREA EXTERNA", "ramal": "2253 / 2255" },
+      { "descricao": "VIGILÂNCIA", "ramal": "4076 / 2142" },
+      { "descricao": "CENTRAL DE PONTO", "ramal": "3485" },
+      { "descricao": "CARBORIO / WHITE MARTINS", "ramal": "2677-5405 / 5400" },
+      { "descricao": "ARCO", "ramal": "2246" },
+      { "descricao": "AR CONDICIONADO", "ramal": "2459 / 2361" },
+      { "descricao": "COTUR", "ramal": "4028" },
+      { "descricao": "ELÉTRICA", "ramal": "2459 / 2574 / 2917" },
+      { "descricao": "ELEVAÇÃO DE CARGA", "ramal": "2272" },
+      { "descricao": "LABORATÓRIO", "ramal": "2295 / 2543 / 2241 (Cromat.)" },
+      { "descricao": "MECÂNICA DE VÁLVULAS", "ramal": "2309" },
+      { "descricao": "INSPEÇÃO DE EQUIPAMENTOS", "ramal": "2189 / 2651 / 2657" },
+      { "descricao": "LIMPEZA DE QUEIMADORES", "ramal": "2785 / 2605" },
+      { "descricao": "LUBRIFICADOR", "ramal": "4344" },
+      { "descricao": "MANUTENÇÃO PREDIAL", "ramal": "2888 / 2684 / 2316 / 2625" },
+      { "descricao": "EMPREENDIMENTOS", "ramal": "4048 / 2989 / 4473 / 4056" },
+      { "descricao": "MECÂNICA", "ramal": "2549" },
+      { "descricao": "IMPRESSORA (CARTUCHO)", "ramal": "7205" },
+      { "descricao": "OTIMIZAÇÃO", "ramal": "2546" },
+      { "descricao": "PORTÃO 05", "ramal": "2527 / 2506" },
+      { "descricao": "RÁDIO(MANUTENÇÃO)", "ramal": "2364 / 2501" },
+      { "descricao": "DRESSER", "ramal": "4101 / 2348 / 4148" },
+      { "descricao": "ECOLUB", "ramal": "4104" }
+    ]
+  },
+  {
+    "grupo": "Unidades",
+    "itens": [
+      { "descricao": "DRESSER", "ramal": "4101 / 2348 / 4148" },
+      { "descricao": "ECOLUB", "ramal": "4104" }
+    ]
+  },
+  {
+    "grupo": "Administrativos",
+    "itens": [
+      { "descricao": "DRESSER", "ramal": "4101 / 2348 / 4148" },
+      { "descricao": "ECOLUB", "ramal": "4104" }
+    ]
+  },
+  {
+    "grupo": "Outros",
+    "itens": [
+      { "descricao": "DRESSER", "ramal": "4101 / 2348 / 4148" },
+      { "descricao": "ECOLUB", "ramal": "4104" }
+    ]
+  }
+]

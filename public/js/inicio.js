@@ -176,5 +176,39 @@ function carregarOperadores() {
     });
 }
 
+function salvarAnotacao() {
+  const texto = document.getElementById("anotacoesTexto").value;
 
-// Aguarda a área de pessoal estar presente no DOM antes de preencher os operadores
+  fetch('index.php?url=InicioController/salvarAnotacao', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ texto: texto })
+  })
+  .then(response => response.json())
+  .then(res => {
+    if (res.sucesso) {
+      alert("Anotação salva com sucesso!");
+    } else {
+      alert("Erro ao salvar anotação: " + (res.erro || ""));
+    }
+  })
+  .catch(error => {
+    console.error("Erro ao salvar anotação:", error);
+    alert("Erro de comunicação com o servidor.");
+  });
+}
+
+function carregarAnotacao () {
+  fetch('index.php?url=InicioController/buscarAnotacao')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("anotacoesTexto").value = data.texto || "";
+    })
+    .catch(error => {
+      console.error("Erro ao carregar anotação:", error);
+    });
+}
+
+

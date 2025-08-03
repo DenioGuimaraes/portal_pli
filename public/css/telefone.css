@@ -1,0 +1,74 @@
+#telefoneCampoBusca {
+    width: 250px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.telefone-grupo-coluna {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* duas colunas */
+    gap: 20px;
+    padding: 20px;
+}
+
+.telefone-grupo {
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+.telefone-grupo {
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.telefone-grupo strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #005c4b;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 4px;
+}
+
+.telefone-lista {
+    padding: 5px 0;
+}
+
+.telefone-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.telefone-item:last-child {
+    border-bottom: none;
+}
+
+.telefone-item .descricao,
+.telefone-item .ramal {
+    color: #005c4b;
+}
+
+.telefone-item .descricao {
+    text-align: left;
+    flex: 1;
+    font-size: 14px;
+
+}
+
+.telefone-item .ramal {
+    text-align: right;
+    min-width: 100px;
+    font-size: 14px;
+}
+
+.telefone-item:hover {
+    background-color: #f2f2f2;
+}

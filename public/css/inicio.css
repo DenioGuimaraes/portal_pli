@@ -35,13 +35,13 @@
 .inicio-cabecalho-operacional .inicio-titulo {
   font-size: 28px;
   font-weight: bold;
-  text-align: center;
+  margin-left: 15px;
 }
 
 .inicio-cabecalho-operacional .inicio-info-auxiliar {
   font-size: 16px;
   font-weight: bold;
-  text-align: center;
+  margin-left: 15px;
   margin-top: 4px;
 }
 
@@ -496,4 +496,35 @@ hr {
   flex-direction: column;
   gap: 3px;
   font-size: 14px;
+}
+
+.anotacoes-titulo {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.anotacoes-container {
+  flex: 1;
+  display: flex;
+  padding: 1px;
+}
+
+.anotacoes-textarea {
+  width: 100%;
+  height: calc(100vh - 200px); /* Ajusta a altura conforme necessário */
+  padding: 10px;
+  font-size: 16px;
+  resize: vertical;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+
+.anotacoes-botao-container {
+  text-align: right;
+  padding: 10px;
 }

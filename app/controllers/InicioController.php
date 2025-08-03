@@ -46,6 +46,21 @@ class InicioController extends Controller
         echo json_encode($dados);
     }
 
+    public function buscarAnotacao()
+    {
+        $texto = $this->model->buscarAnotacao();
+        echo json_encode(['texto' => $texto]);
+    }
 
+    public function salvarAnotacao()
+    {
+        $dados = json_decode(file_get_contents('php://input'), true);
 
+        if (isset($dados['texto'])) {
+            $sucesso = $this->model->salvarAnotacao($dados['texto']);
+            echo json_encode(['sucesso' => $sucesso]);
+        } else {
+            echo json_encode(['sucesso' => false, 'erro' => 'Texto não enviado']);
+        }
+    }
 }

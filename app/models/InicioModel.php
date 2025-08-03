@@ -89,5 +89,27 @@ class InicioModel extends Model
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function buscarAnotacao()
+    {
+        $sql = "SELECT texto FROM anotacoes WHERE id = 1";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+        if ($resultado->num_rows > 0) {
+            return $resultado->fetch_assoc()['texto'];
+        } else {
+            return ""; // Nenhuma anotação encontrada
+        }
+    }
+
+    public function salvarAnotacao($texto)
+    {
+        $sql = "UPDATE anotacoes SET texto = ? WHERE id = 1";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("s", $texto);
+        return $stmt->execute();
+    }
 }
 
