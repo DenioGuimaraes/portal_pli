@@ -1,4 +1,4 @@
-#radioCampoBusca {
+#u1620InstrCampoBusca {
     width: 250px;
     height: 10px;
     padding: 10px;
@@ -7,27 +7,27 @@
     font-size: 16px;
 }
 
-.radio-grupo-coluna {
+.u1620instr-grupo-coluna {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* duas colunas */
     gap: 20px;
     padding: 20px;
 }
 
-.radio-grupo {
+.u1620instr-grupo {
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     background: #fff;
 }
 
-.radio-grupo {
+.u1620instr-grupo {
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.radio-grupo strong {
+.u1620instr-grupo strong {
     display: block;
     font-size: 18px;
     margin-bottom: 8px;
@@ -36,37 +36,39 @@
     padding-bottom: 4px;
 }
 
-.radio-lista {
+.u1620instr-lista {
     padding: 5px 0;
 }
 
-.radio-item {
+.u1620instr-item {
     display: flex;
     justify-content: space-between;
     padding: 4px 0;
     border-bottom: 1px dotted #ccc;
 }
 
-.radio-item:last-child {
+.u1620instr-item:last-child {
     border-bottom: none;
 }
 
-.radio-item .faixa,
-.radio-item .descricao {
+.u1620instr-item .tag,
+.u1620instr-item .descricao {
     color: #005c4b;
-    font-size: 14px;
-    flex: 1;
 }
 
-/* Faixa alinhada à esquerda */
-.radio-item .faixa {
+.u1620instr-item .tag {
     text-align: left;
-    min-width: 80px; /* largura mínima para não colar */
+    flex: 1;
+    font-size: 14px;
+
 }
 
-/* Descrição alinhada à direita */
-.radio-item .descricao {
+.u1620instr-item .descricao {
     text-align: right;
-    min-width: 200px; /* largura mínima para não colar */
+    min-width: 100px;
+    font-size: 14px;
 }
 
+.u1620instr-item:hover {
+    background-color: #f2f2f2;
+}

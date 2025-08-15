@@ -1,26 +1,26 @@
-function radioInit() {
-  const campo = document.getElementById("radioCampoBusca");
+function u1620ValvInit() {
+  const campo = document.getElementById("u1620ValvCampoBusca");
   let timeout;
 
   if (campo) {
     campo.addEventListener("input", () => {
       clearTimeout(timeout);
       timeout = setTimeout(() => {
-        radioBuscar(campo.value);
+        u1620ValvBuscar(campo.value);
       }, 300);
     });
   }
 
-  radioBuscar("");
+  u1620ValvBuscar("");
 }
 
-function radioBuscar(termo) {
-  fetch(`index.php?url=RadioController/buscar&termo=${encodeURIComponent(termo)}`)
+function u1620ValvBuscar(termo) {
+  fetch(`index.php?url=U1620ValvController/buscar&termo=${encodeURIComponent(termo)}`)
     .then(response => response.json())
     .then(dados => {
-      document.querySelectorAll(".radio-lista").forEach(div => div.innerHTML = "");
+      document.querySelectorAll(".u1620valv-lista").forEach(div => div.innerHTML = "");
       if (!dados || dados.length === 0) {
-        document.querySelectorAll(".radio-lista").forEach(div => {
+        document.querySelectorAll(".u1620valv-lista").forEach(div => {
           div.innerHTML = `<div style="color:#777;font-style:italic;">Nenhum resultado</div>`;
         });
         return;
@@ -28,12 +28,12 @@ function radioBuscar(termo) {
 
       dados.forEach(grupo => {
         if (grupo.grupo && grupo.itens) {
-          const destino = document.querySelector(`.radio-lista[data-grupo="${grupo.grupo}"]`);
+          const destino = document.querySelector(`.u1620valv-lista[data-grupo="${grupo.grupo}"]`);
           if (destino) {
             grupo.itens.forEach(item => {
               destino.innerHTML += `
-                <div class="radio-item">
-                  <span class="faixa">${item.faixa}</span>
+                <div class="u1620valv-item">
+                  <span class="tag">${item.tag}</span>
                   <span class="descricao">${item.descricao}</span>
                 </div>
               `;

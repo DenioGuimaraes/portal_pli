@@ -102,11 +102,24 @@
                             var s3 = document.createElement('script');
                             s3.src = base + '/public/js/onibus.js';
                             document.body.appendChild(s3);
+                            break;
+                        case 'u1620':
+                            var s4 = document.createElement('script');
+                            s4.src = base + '/public/js/u1620instr.js';
+                            document.body.appendChild(s4);
 
+                            var s5 = document.createElement('script');
+                            s5.src = base + '/public/js/u1620valv.js';
+                            document.body.appendChild(s5);
+
+                            var s6 = document.createElement('script');
+                            s6.src = base + '/public/js/h6201.js';
+                            document.body.appendChild(s6);
                             break;
                         default:
-                            script.src = ''; // Nenhum JS adicional
+                            script.src = '';
                     }
+
 
                     if (script.src !== '') {
                         document.body.appendChild(script);
@@ -155,9 +168,6 @@
             }, 200); // tenta a cada 200ms
         });
     </script>
-
-
-
 </body>
 
 </html>

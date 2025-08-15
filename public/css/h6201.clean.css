@@ -1,0 +1,227 @@
+
+/* =========================================================
+   H6201 — Painel do Reator (CSS limpo e consolidado)
+   Objetivos:
+   • Eliminar duplicatas
+   • Organizar por seções
+   • Evitar rolagem vertical (ajuste fino via --vh-offset e --q-size)
+   • Manter nomes já usados no HTML para não quebrar nada
+   ========================================================= */
+
+/* --------------------------
+   Variáveis e resets locais
+   -------------------------- */
+:root {
+  /* Diâmetro do queimador (círculo). Ajuste este valor se sobrar/faltar espaço. */
+  --q-size: clamp(22px, 3.9vh, 34px);
+  /* Diâmetro do piloto (pontinho) relativo ao queimador */
+  --p-size: calc(var(--q-size) * 0.30);
+  /* Espaços padrão */
+  --gap-s: 6px;
+  --gap-m: 10px;
+  /* Offset vertical reservado para cabeçalho/rodapé/barras (ajuste fino para sumir a rolagem) */
+  --vh-offset: 210px;
+}
+
+/* ==============================
+   LAYOUT GERAL (colunas/miolo)
+   ============================== */
+
+/* Grade “macro” da página, se usada para 3 colunas (ex.: dados | miolo | dados) */
+.h6201-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  gap: 12px;
+}
+
+/* Miolo com os dois lados (Oeste | Leste) */
+.h6201-miolo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Cada lado (coluna) — usamos FLEX em coluna */
+.h6201-lado,
+#ladoOesteWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: calc(100vh - var(--vh-offset)); /* evita rolagem */
+  overflow: hidden;
+}
+
+.h6201-lado h4 {
+  text-align: center;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+/* ==============================
+   CARDS / CONTAINERS
+   ============================== */
+
+.h6201-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  padding: 8px 10px;
+}
+
+.h6201-card-titulo {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* Grade interna de itens DENTRO de cards (escopada para não conflitar com .h6201-grid macro) */
+.h6201-card .h6201-grid {
+  display: grid;
+  gap: var(--gap-s);
+  justify-content: center;
+}
+
+.h6201-card .h6201-grid.is-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* 2 x 2 */
+.h6201-card .h6201-grid.is-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); } /* 3 x 2 */
+
+/* ==============================
+   FILEIRAS / DUPLAS (2 a 2)
+   ============================== */
+
+.h6201-linhas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-s);
+}
+
+/* Cada linha contém UMA dupla (dois queimadores lado a lado) */
+.h6201-linha { display: flex; }
+
+.h6201-dupla {
+  display: flex;
+  gap: calc(var(--q-size) * .28);
+}
+
+/* Alinhamentos por linha para reproduzir o croqui */
+.h6201-linha.shift-l { justify-content: flex-start; padding-left: 8px; }
+.h6201-linha.shift-c { justify-content: center; }
+.h6201-linha.shift-r { justify-content: flex-end; padding-right: 8px; }
+
+/* ==============================
+   QUEIMADOR (círculo) + PILOTO (pontinho)
+   ============================== */
+
+.h6201-bico {
+  position: relative;
+  width: var(--q-size);
+  height: var(--q-size);
+  border-radius: 50%;
+  border: 2px solid #2f6fde;
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 12px/1 Arial, sans-serif; /* número dentro */
+  user-select: none;
+}
+
+/* Piloto no canto inferior esquerdo */
+.h6201-bico::after {
+  content: "";
+  position: absolute;
+  width: var(--p-size);
+  height: var(--p-size);
+  border-radius: 50%;
+  border: 2px solid #2f6fde;
+  background: #eaf2ff;
+  left: -4px;
+  bottom: -4px;
+}
+
+/* Estados (poderão ser aplicados via JS) */
+.is-aceso      { background: #e8f9ef !important; border-color: #2ac46d !important; }
+.is-apagado    { background: #f1f5f9 !important; border-color: #cbd5e1 !important; }
+.is-manutencao { background: #fff7e0 !important; border-color: #f59e0b !important; }
+
+/* ==============================
+   COLUNAS LATERAIS DE DADOS
+   ============================== */
+
+.h6201-coluna-data {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.h6201-coluna-data .data-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+/* Itens mais compactos: número + input */
+.h6201-data-item {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.h6201-data-id {
+  text-align: right;
+  font-weight: 600;
+}
+
+.h6201-data-input {
+  font-size: 0.85rem;
+  height: 28px;
+  max-width: 110px;
+}
+
+.h6201-coluna-data input[type="date"] { min-height: unset; }
+
+.limpo {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* ==============================
+   MINI MODAL
+   ============================== */
+
+.mini-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-modal-card {
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  min-width: 280px;
+}
+
+.mini-modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* =========================================================
+   REGRAS LEGADAS / REMOVIDAS
+   ---------------------------------------------------------
+   Foram removidas regras que causavam conflito ou estavam
+   relacionadas ao desenho em SVG (ex.: .h6201-svg text,
+   .h6201-queimador/.h6201-piloto com stroke/fill), bem como
+   duplicatas de .h6201-card, .h6201-grid, :root etc.
+   Se algo “sumir”, me avise que reintroduzimos com escopo.
+   ========================================================= */

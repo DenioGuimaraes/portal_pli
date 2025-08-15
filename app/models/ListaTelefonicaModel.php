@@ -1,6 +1,6 @@
 <?php
 
-class ListaTelefonicaModel
+class ListaTelefonicaModel extends Model
 {
     private $arquivo;
 

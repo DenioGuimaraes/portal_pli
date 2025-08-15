@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/radio.css?v=2">
+<link rel="stylesheet" href="css/radio.css">
 
 <div class="painel-cabecalho">
     <h2>Canais de Rádio</h2>
@@ -42,8 +42,6 @@
         <strong>Canal H</strong>
         <div class="radio-lista" data-grupo="H"></div>
     </div>
-
-
 </div>
 
 <script src="js/radio.js"></script>

@@ -1,0 +1,351 @@
+/* ===============================
+   H-6201 – CSS limpo (somente tela)
+   =============================== */
+
+:root {
+  --vh-offset: 260px;
+  /* ajuste fino p/ header/rodapé */
+  --q-size: clamp(22px, calc((100vh - var(--vh-offset)) / 12), 36px);
+  --p-size: calc(var(--q-size) * .32);
+  --gap-s: 8px;
+  --gap-m: 12px;
+  --c-azul: #2f6fde;
+  --c-card: #ffffff;
+  --c-shadow: rgba(0, 0, 0, .08);
+  --label-w: 47px; /* ajuste aqui até ficar simétrico */
+}
+
+/* Contêiner geral */
+#h6201Painel.h6201-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: calc(100vh - var(--vh-offset));
+}
+
+/* Miolo com dois lados */
+.h6201-miolo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Oeste | Leste */
+  gap: var(--gap-m);
+  align-items: start;
+}
+
+/* Título de cada lado */
+.h6201-lado-titulo {
+  margin: 0 0 6px;
+  text-align: center;
+  font-weight: 700;
+  font-size: .95rem;
+  background: #eef2f7;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+/* Coluna de um lado (4 plataformas com alturas iguais) */
+.h6201-lado {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: var(--gap-m);
+  min-height: 0;
+}
+
+/* Card/plataforma */
+.h6201-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-card);
+  border: 0.5px solid black;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--c-shadow);
+  padding: 10px 12px;
+  min-height: 0;
+  width: 180px;
+}
+
+/* Conjunto de linhas; defina 2 ou 3 no HTML */
+.h6201-linhas {
+  display: grid;
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+}
+
+.h6201-linhas--2 {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.h6201-linhas--3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* Linha e dupla */
+.h6201-linha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h6201-dupla {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--q-size) * .35);
+}
+
+.shift-l {
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+
+.shift-r {
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+/* Bico (círculo) e “piloto” decorativo */
+.h6201-bico {
+  position: relative;
+  width: var(--q-size);
+  height: var(--q-size);
+  border-radius: 50%;
+  border: 2px solid var(--c-azul);
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 12px/1 Arial, sans-serif;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Queimador: cor do círculo maior */
+.h6201-bico.is-burner-aceso      { background: #2ecc71; } /* verde */
+.h6201-bico.is-burner-apagado    { background: #e74c3c; } /* vermelho */
+.h6201-bico.is-burner-manutencao { background: #f1c40f; } /* amarelo */
+
+.h6201-bico::after {
+  content: "";
+  position: absolute;
+  width: var(--p-size);
+  height: var(--p-size);
+  border-radius: 50%;
+  border: 2px solid var(--c-azul);
+  background: #eaf2ff;
+  left: -4px;
+  bottom: -4px;
+}
+
+.h6201-bico.is-pilot-aceso::after      { background: #2ecc71; } /* verde */
+.h6201-bico.is-pilot-apagado::after    { background: #e74c3c; } /* vermelho */
+.h6201-bico.is-pilot-manutencao::after { background: #f1c40f; } /* amarelo */
+
+
+/* Legado útil */
+.h6201-rotulo {
+  font-weight: 800;
+  font-family: Arial, sans-serif;
+}
+
+.h6201-svg text {
+  font: 14px Arial;
+  fill: #00f;
+}
+
+/* ==== FIX: duas colunas lado a lado ==== */
+#h6201Painel>.h6201-miolo {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  /* Oeste | Leste */
+  column-gap: 12px;
+  align-items: start;
+  width: 40%;
+}
+
+/* garante que cada lado ocupe apenas 1 coluna e não “estoure” */
+#h6201Painel #ladoOesteWrap,
+#h6201Painel #ladoLesteWrap {
+  grid-column: auto !important;
+  min-width: 0;
+  /* evita quebra por largura interna */
+}
+
+/* cada lado continua com 4 cards em altura igual */
+#h6201Painel .h6201-lado {
+  display: grid !important;
+  grid-template-rows: auto repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* o título fica no tamanho do conteúdo, centralizado */
+#h6201Painel .h6201-lado-titulo {
+  align-self: start;
+  /* não estica para a altura da linha */
+  justify-self: center;
+  padding: 4px 10px;
+  /* compacto */
+  max-width: max-content;
+  /* pill só ao redor do texto */
+}
+
+/* ===== FIX DEFINITIVO: 4 colunas (label | oeste | leste | label) ===== */
+#h6201Painel>.h6201-miolo {
+  display: grid !important;
+  grid-template-columns: var(--label-w) 1fr 1fr var(--label-w) !important;
+  grid-template-areas: "labelL oeste leste labelR";
+  column-gap: 12px;
+  align-items: stretch;
+  width: 50% !important;
+  /* cancela qualquer width:40% antigo */
+}
+
+/* posiciona explicitamente cada bloco na área certa */
+.h6201-label-vertical--left {
+  grid-area: labelL;
+}
+
+#ladoOesteWrap {
+  grid-area: oeste;
+}
+
+#ladoLesteWrap {
+  grid-area: leste;
+}
+
+.h6201-label-vertical--right {
+  grid-area: labelR;
+}
+
+/* deixa as labels verticais de verdade */
+.h6201-label-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #334155;
+  background: #ccc;
+  border-radius: 10px;
+  padding: 6px 0;
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+}
+
+.h6201-label-vertical--left {
+  transform: rotate(180deg);
+}
+
+.h6201-label-vertical--right {
+  transform: rotate(180deg);
+}
+
+/* esconde os títulos horizontais internos (se ainda existirem) */
+#ladoOesteWrap>h4,
+#ladoLesteWrap>h4 {
+  display: none !important;
+}
+
+/* garante que cada lado não quebre a coluna */
+#h6201Painel #ladoOesteWrap,
+#h6201Painel #ladoLesteWrap {
+  min-width: 0;
+}
+
+/* Mantém a altura da label igual à coluna de cards */
+.h6201-label-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* remove qualquer min-height herdado */
+  background: #ccc;
+  border: 1px solid black;
+  border-radius: 10px ;
+  padding: 60px 2px;
+}
+
+/* faz cada coluna lado (oeste/leste) ter altura fixa das 4 linhas */
+#h6201Painel .h6201-lado {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+/* garante que a grid alinhe no topo */
+#h6201Painel>.h6201-miolo {
+  align-items: start;
+}
+
+.h6201-label-vertical--left,
+.h6201-label-vertical--right {
+  align-self: stretch;
+}
+
+/* === COMPACTAÇÃO FINAL: sem esticar, sem rolagem === */
+
+/* 1) Itens do miolo não esticam a altura do contêiner */
+#h6201Painel>.h6201-miolo {
+  align-items: start !important;
+  /* antes estava 'stretch' */
+}
+
+/* 2) Cada lado (coluna de cards) usa altura do conteúdo */
+#h6201Painel .h6201-lado {
+  grid-template-rows: repeat(4, auto) !important;
+  /* em vez de 1fr */
+}
+
+/* 3) As labels não mandam na altura do grid */
+.h6201-label-vertical {
+  align-self: start !important;
+  /* não esticar */
+  height: auto !important;
+  /* nada de 100% */
+  /* opcional: deixar mais “slim” */
+  padding: 4px 0;
+}
+
+/* (opcional) se quiser as labels coladinhas no topo */
+.h6201-label-vertical--left,
+.h6201-label-vertical--right {
+  margin-top: 0 !important;
+}
+
+/* centraliza o bloco inteiro verticalmente dentro da área */
+#h6201Painel.h6201-grid {
+  display: flex !important;
+  align-items: center !important;
+}
+
+#h6201Painel>.h6201-miolo {
+  width: 100%;
+}
+
+/* preserva o grid interno */
+
+.h6201-label-vertical{ align-self: stretch !important; height: auto !important; }
+.h6201-bico.is-on { outline: 2px solid #4caf50; /* ou o estilo que você quiser */ }
+
+/* ==== Ajuste fino do modal H-6201 ==== */
+#h6201Modal .modal-conteudo { 
+  max-width: 540px;          /* opcional: largura confortável */
+  overflow-x: hidden;        /* some com a barra horizontal */
+}
+
+#h6201Modal .modal-corpo {
+  display: block;            /* evita “aperto” de flex em 1 coluna */
+}
+
+#h6201Modal .coluna-form {
+  min-width: 0;              /* IMPORTANTÍSSIMO p/ evitar overflow em flex/grid */
+}
+
+#h6201Modal .campo-form {
+  display: grid;             /* layout certinho: label + campo */
+  grid-template-columns: 120px 1fr;
+  column-gap: 10px;
+}
+
+#h6201Modal .campo-form select,
+#h6201Modal .campo-form input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;     /* 100% já inclui padding/borda */
+}
+
