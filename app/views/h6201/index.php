@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/h6201.css?v=10">
+<link rel="stylesheet" href="css/h6201.css?v=2">
 
 <div id="h6201Stage" class="h6201-stage">
 <div id="h6201Wrap" class="h6201-wrap">
@@ -337,16 +337,19 @@
 
   <!-- Faixa de botões abaixo do card -->
   <div class="h6201-actions">
-    <button class="botao-h6201" id="btnManutencaoToggle" aria-pressed="false" onclick="h6201ToggleManutencao()">Manutenção</button>
+    <button class="botao-h6201" id="btnManutencaoToggle" aria-pressed="false" onclick="h6201ToggleManutencao()">Data Manut.</button>
     <button class="botao-h6201" id="btnMassQueimadores" type="button">Queimadores</button>
     <button class="botao-h6201" id="btnMassPilotos" type="button">Pilotos</button>
   </div>
-
-  <!-- Espaço para a imagem do esquema GC -->
-  <figure class="gc-esquema">
-    <img id="gcEsquemaImg" src="img/esquema-gc.png" alt="Esquema de Gás Combustível" />
-  </figure>
-
+  <section class="h6201-card gc-card">
+    <header class="gc-card__header">
+      <h3>Diagramas e Fluxogramas</h3>
+    </header>
+    </br>
+    <button class="botao-cabecalho" type="button" onclick="PLI.viewer.exibir('vototi.png')">Queimadores</button>
+    </br>
+    <button class="botao-cabecalho" type="button" onclick="PLI.viewer.exibir('vototi.png')">Pilotos</button>
+  </section>
 </aside>
 <!-- FECHA O WRAP que abrimos lá em cima -->
 </div>

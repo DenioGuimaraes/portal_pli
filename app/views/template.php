@@ -8,6 +8,7 @@
     <title>Portal PL-I</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/inicio.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/viewer.css">
 </head>
 
 <body>
@@ -143,6 +144,17 @@
         }
     </script>
 
+    <!-- Viewer fora do main, para não ser apagado -->
+    <section id="pli-viewer" class="pli-viewer" hidden aria-hidden="true" role="dialog" aria-modal="true">
+        <header class="pli-viewer-toolbar">
+        <button type="button" data-pli-action="fit">Fit</button>
+        <button type="button" data-pli-action="close">Fechar</button>
+        </header>
+        <div class="pli-viewer-stage">
+        <img id="pliViewerImg" alt="" draggable="false" />
+        </div>
+        <div class="pli-viewer-zoom" aria-live="polite"></div>
+    </section>
 
     <script>
         const BASE_URL = '<?= BASE_URL ?>';
@@ -152,6 +164,7 @@
     <script src="<?= BASE_URL ?>/public/js/busca.js"></script>
     <script src="<?= BASE_URL ?>/public/js/scripts.js"></script>
     <script src="<?= BASE_URL ?>/public/js/inicio.js"></script>
+    <script src="<?= BASE_URL ?>/public/js/viewer.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {

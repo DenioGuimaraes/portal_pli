@@ -54,7 +54,6 @@ body, html {
   min-width: 400px;
   max-width: 100%;
   box-sizing: border-box;
-  border: yellow solid 1px;
 }
 
 .rodape {
@@ -304,11 +303,6 @@ body, html {
   color: #551A8B;
 }
 
-#conteudo-central {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
 
 /* Cabeçalho fixo */
 .painel-cabecalho {

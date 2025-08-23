@@ -1,0 +1,74 @@
+/* ===================================
+   Viewer Global de Imagem (PL-I)
+   =================================== */
+
+/* SAFE MODE da viewer: não participa do fluxo e só aparece quando não estiver [hidden] */
+.pli-viewer {
+  position: fixed;          /* sempre por cima, fora do fluxo */
+  inset: 0;                 /* cobre a tela toda */
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  background: #111;         /* troque se quiser */
+}
+
+.pli-viewer[hidden] {
+  display: none !important; /* ocultação absoluta */
+}
+
+
+/* Barra de ferramentas no topo */
+.pli-viewer-toolbar {
+  flex: 0 0 auto;
+  background: #1b4d3e;         /* verde escuro Petrobras */
+  color: #fff;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.pli-viewer-toolbar button {
+  background: #fff;
+  color: #1b4d3e;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pli-viewer-toolbar button:hover {
+  background: #eee;
+}
+
+/* Área do palco (onde a imagem é exibida) */
+.pli-viewer-stage {
+  flex: 1 1 auto;
+  overflow: hidden;            /* esconde o que sair da área visível */
+  position: relative;
+}
+
+.pli-viewer-stage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;             /* vamos controlar via JS */
+  max-height: none;
+  transform: translate(-50%, -50%) scale(1);
+  cursor: grab;                /* indica que dá pra arrastar */
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Indicador de zoom */
+.pli-viewer-zoom {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
