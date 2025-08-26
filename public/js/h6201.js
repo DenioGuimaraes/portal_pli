@@ -11,17 +11,17 @@
   // ====== HELPERS VISUAIS =================================================
   function aplicarEstado(el, queimador, piloto) {
     el.classList.remove(
-      'is-burner-aceso','is-burner-apagado','is-burner-manutencao',
-      'is-pilot-aceso','is-pilot-apagado','is-pilot-manutencao'
+      'is-burner-aceso', 'is-burner-apagado', 'is-burner-manutencao',
+      'is-pilot-aceso', 'is-pilot-apagado', 'is-pilot-manutencao'
     );
     el.classList.add('is-burner-' + (queimador || 'apagado'));
-    el.classList.add('is-pilot-'  + (piloto    || 'apagado'));
+    el.classList.add('is-pilot-' + (piloto || 'apagado'));
   }
 
   function lerEstadoDoElemento(el) {
     const get = (prefix) => (
-      el.classList.contains(prefix + 'aceso')       ? 'aceso' :
-      el.classList.contains(prefix + 'manutencao')  ? 'manutencao' : 'apagado'
+      el.classList.contains(prefix + 'aceso') ? 'aceso' :
+        el.classList.contains(prefix + 'manutencao') ? 'manutencao' : 'apagado'
     );
     return { queimador: get('is-burner-'), piloto: get('is-pilot-') };
   }
@@ -32,7 +32,7 @@
     return `${d}/${m}/${String(y).slice(2)}`;
   }
 
-  function setSelectValueSafe(selectEl, value, fallback='apagado') {
+  function setSelectValueSafe(selectEl, value, fallback = 'apagado') {
     if (!selectEl) return;
     const ok = Array.from(selectEl.options).some(o => o.value === value);
     selectEl.value = ok ? value : fallback;
@@ -43,7 +43,7 @@
   function normalizarItens(json) {
     if (Array.isArray(json)) return json;
     if (json && Array.isArray(json.itens)) return json.itens;
-    if (json && Array.isArray(json.data))  return json.data;
+    if (json && Array.isArray(json.data)) return json.data;
     return [];
   }
 
@@ -93,13 +93,13 @@
 
   // ====== MODAL ===========================================================
   function pegarRefsModal() {
-    modalEl         = document.getElementById('h6201Modal');
-    modalIdEl       = document.getElementById('h6201ModalId');
+    modalEl = document.getElementById('h6201Modal');
+    modalIdEl = document.getElementById('h6201ModalId');
     selectQueimador = document.getElementById('h6201Queimador');
-    selectPiloto    = document.getElementById('h6201Piloto');
-    btnSalvar       = document.getElementById('h6201Salvar');
-    btnCancelar     = document.getElementById('h6201Cancelar');
-    inputData       = document.getElementById('manutencaoData');
+    selectPiloto = document.getElementById('h6201Piloto');
+    btnSalvar = document.getElementById('h6201Salvar');
+    btnCancelar = document.getElementById('h6201Cancelar');
+    inputData = document.getElementById('manutencaoData');
   }
 
   function abrirModal(id, estadoDOM) {
@@ -109,17 +109,17 @@
     // 1) BD (cache) primeiro; se faltar, DOM como fallback
     const it = manutCacheMap.get(Number(id));
     const queimador = it?.queimador ?? estadoDOM?.queimador ?? 'apagado';
-    const piloto    = it?.piloto    ?? estadoDOM?.piloto    ?? 'apagado';
+    const piloto = it?.piloto ?? estadoDOM?.piloto ?? 'apagado';
 
     setSelectValueSafe(selectQueimador, queimador, 'apagado');
-    setSelectValueSafe(selectPiloto,    piloto,    'apagado');
+    setSelectValueSafe(selectPiloto, piloto, 'apagado');
 
     // 2) Data SEMPRE setada para não herdar valor anterior
     if (inputData) inputData.value = it?.manutencao_data ?? '';
 
     // 3) Exibe modal
     if (modalEl) {
-      modalEl.style.display = 'block';
+      modalEl.style.display = 'flex';
       if (selectQueimador) selectQueimador.focus();
     }
   }
@@ -135,7 +135,7 @@
     const payload = {
       id: idSelecionado,
       queimador: selectQueimador?.value ?? 'apagado',
-      piloto:    selectPiloto?.value ?? 'apagado',
+      piloto: selectPiloto?.value ?? 'apagado',
     };
 
     // Data opcional
@@ -191,18 +191,18 @@
   // ===== Auto-scale do miolo (forno + painel) =====
   function h6201Autoscale() {
     const stage = document.getElementById('h6201Stage');
-    const wrap  = document.getElementById('h6201Wrap');
+    const wrap = document.getElementById('h6201Wrap');
     if (!stage || !wrap) return;
 
     // zera para medir tamanho "natural"
     wrap.style.setProperty('--ui-scale', '1');
 
     // medidas base (sem escala)
-    const baseW = wrap.offsetWidth  || 1;
+    const baseW = wrap.offsetWidth || 1;
     const baseH = wrap.offsetHeight || 1;
 
     // área disponível
-    const rect   = stage.getBoundingClientRect();
+    const rect = stage.getBoundingClientRect();
     const availW = stage.clientWidth || rect.width;
     const availH = stage.clientHeight || (window.innerHeight - rect.top - 20);
 
@@ -217,16 +217,16 @@
   window.addEventListener('resize', h6201Autoscale);
   document.addEventListener('DOMContentLoaded', h6201Autoscale);
 
-// se seu h6201Init já roda no DOMContentLoaded, chame depois do init também:
-/*const _origInit = window.h6201Init;
-window.h6201Init = function() {
-  const ok = _origInit ? _origInit() : true;
-  h6201Autoscale();
-  return ok;
-};*/
+  // se seu h6201Init já roda no DOMContentLoaded, chame depois do init também:
+  /*const _origInit = window.h6201Init;
+  window.h6201Init = function() {
+    const ok = _origInit ? _origInit() : true;
+    h6201Autoscale();
+    return ok;
+  };*/
 
-  
-    // ====== GC: Helpers de formatação e localização de inputs ===============
+
+  // ====== GC: Helpers de formatação e localização de inputs ===============
   const gcSaveTimers = new Map(); // Map<HTMLInputElement, number>
 
   function gcFmtVisor(v) {
@@ -265,8 +265,8 @@ window.h6201Init = function() {
 
   function gcSetSavingState(input, state /* 'idle'|'saving'|'saved'|'error' */) {
     input.classList.toggle('gc-saving', state === 'saving');
-    input.classList.toggle('gc-saved',  state === 'saved');
-    input.classList.toggle('gc-error',  state === 'error');
+    input.classList.toggle('gc-saved', state === 'saved');
+    input.classList.toggle('gc-error', state === 'error');
   }
 
   async function carregarGC() {
@@ -328,41 +328,41 @@ window.h6201Init = function() {
       console.error('H-6201: erro ao carregar GC:', e);
     }
   }
-    async function gcSalvarValor(el) {
-      const p = Number(el.dataset.plataforma || el.getAttribute('data-plataforma') || el.dataset.p || el.getAttribute('data-p') || el.id?.match(/\d+/)?.[0] || 0);
-      const lado = (el.dataset.lado || el.getAttribute('data-lado') || (el.id?.includes('leste') ? 'leste' : (el.id?.includes('oeste') ? 'oeste' : (el.name?.includes('leste') ? 'leste' : 'oeste')))).toLowerCase();
-      if (![1,2,3,4].includes(p) || !['oeste','leste'].includes(lado)) return;
+  async function gcSalvarValor(el) {
+    const p = Number(el.dataset.plataforma || el.getAttribute('data-plataforma') || el.dataset.p || el.getAttribute('data-p') || el.id?.match(/\d+/)?.[0] || 0);
+    const lado = (el.dataset.lado || el.getAttribute('data-lado') || (el.id?.includes('leste') ? 'leste' : (el.id?.includes('oeste') ? 'oeste' : (el.name?.includes('leste') ? 'leste' : 'oeste')))).toLowerCase();
+    if (![1, 2, 3, 4].includes(p) || !['oeste', 'leste'].includes(lado)) return;
 
-      const valor = gcParseValor(el.value);
-      gcSetSavingState(el, 'saving');
+    const valor = gcParseValor(el.value);
+    gcSetSavingState(el, 'saving');
 
-      try {
-        const resp = await fetch('index.php?url=H6201Controller/salvar_gc', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ plataforma: p, lado, valor: (valor === null ? '' : String(valor)) })
-        });
-        const data = await resp.json();
+    try {
+      const resp = await fetch('index.php?url=H6201Controller/salvar_gc', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plataforma: p, lado, valor: (valor === null ? '' : String(valor)) })
+      });
+      const data = await resp.json();
 
-        if (!resp.ok || data?.ok === false) {
-          console.error('H-6201: falha ao salvar GC', data);
-          gcSetSavingState(el, 'error');
-          return;
-        }
-
-        // normaliza exibição
-        el.value = gcFmtVisor(data?.valor ?? valor);
-        gcSetSavingState(el, 'saved');
-        setTimeout(() => gcSetSavingState(el, 'idle'), 800);
-
-      } catch (e) {
-        console.error('H-6201: erro salvar_gc:', e);
+      if (!resp.ok || data?.ok === false) {
+        console.error('H-6201: falha ao salvar GC', data);
         gcSetSavingState(el, 'error');
+        return;
       }
-    }
 
-    function gcBindInputs() {
-    const lados = ['oeste','leste'];
+      // normaliza exibição
+      el.value = gcFmtVisor(data?.valor ?? valor);
+      gcSetSavingState(el, 'saved');
+      setTimeout(() => gcSetSavingState(el, 'idle'), 800);
+
+    } catch (e) {
+      console.error('H-6201: erro salvar_gc:', e);
+      gcSetSavingState(el, 'error');
+    }
+  }
+
+  function gcBindInputs() {
+    const lados = ['oeste', 'leste'];
     for (let p = 1; p <= 4; p++) {
       for (const l of lados) {
         const el = gcFindInput(p, l);
@@ -402,7 +402,7 @@ window.h6201Init = function() {
   // --- Bind do botão "Queimadores" (acima do h6201Init) ---
   function hqBindQueimadores() {
     const trigger = document.getElementById('btnMassQueimadores');
-    const modal   = document.getElementById('h6201ModalQueimadores');
+    const modal = document.getElementById('h6201ModalQueimadores');
     if (!trigger || !modal) return;           // se ainda não estiver no DOM, sai
     if (trigger.dataset.bound === '1') return; // evita duplicar listeners
 
@@ -414,7 +414,7 @@ window.h6201Init = function() {
     trigger.dataset.bound = '1';
   }
 
-  function abrirModalById(id)  { const el = document.getElementById(id); if (el) el.style.display = 'block'; }
+  function abrirModalById(id) { const el = document.getElementById(id); if (el) el.style.display = 'block'; }
   function fecharModalById(id) { const el = document.getElementById(id); if (el) el.style.display = 'none'; }
 
   // Liga o Cancelar e clique no fundo do modal de Ação em Massa — Queimadores
@@ -434,11 +434,11 @@ window.h6201Init = function() {
   async function h6201MassUpdate(alvo /* 'queimador' | 'piloto' */, valor /* 'aceso'|'apagado'|'manutencao' */) {
     // 1) Confirmação
     const msg = `Isso vai aplicar "${valor.toUpperCase()}" para TODOS os ${alvo}s.\n` +
-                `O status atual será perdido. Deseja continuar?`;
+      `O status atual será perdido. Deseja continuar?`;
     if (!window.confirm(msg)) return;
 
     const modal = document.getElementById('h6201ModalQueimadores');
-    const btnOn  = document.getElementById('hq-acender');
+    const btnOn = document.getElementById('hq-acender');
     const btnOff = document.getElementById('hq-apagar');
     [btnOn, btnOff].forEach(b => b && (b.disabled = true));
 
@@ -484,12 +484,12 @@ window.h6201Init = function() {
 
     // 1) Confirmação
     const msg = `Isso vai aplicar "${valor.toUpperCase()}" para TODOS os pilotos.\n` +
-                `O status atual será perdido. Deseja continuar?`;
+      `O status atual será perdido. Deseja continuar?`;
     if (!window.confirm(msg)) return;
 
     // referencias do modal/botões DOS PILOTOS
     const modal = document.getElementById('h6201ModalPilotos');
-    const btnOn  = document.getElementById('hp-acender');
+    const btnOn = document.getElementById('hp-acender');
     const btnOff = document.getElementById('hp-apagar');
     [btnOn, btnOff].forEach(b => b && (b.disabled = true));
 
@@ -531,7 +531,7 @@ window.h6201Init = function() {
 
   // === PILOTOS: abrir modal pelo botão do painel
   function hpBindPilotos() {
-    const btn   = document.getElementById('btnMassPilotos');
+    const btn = document.getElementById('btnMassPilotos');
     const modal = document.getElementById('h6201ModalPilotos');
     if (!btn || !modal || modal.dataset.boundOpen === '1') return;
 
@@ -597,7 +597,7 @@ window.h6201Init = function() {
 
   // ====== INIT ============================================================
   function h6201Init() {
-     const root = document.getElementById('h6201Painel');
+    const root = document.getElementById('h6201Painel');
     if (!root) return false;
     if (root.dataset.jsBound === '1') return true;  // já iniciado
     root.dataset.jsBound = '1';
@@ -623,7 +623,7 @@ window.h6201Init = function() {
       btnCancelar.addEventListener('click', fecharModal);
       modalEl.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') fecharModal();
-        if (e.key === 'Enter')  salvarEstado();
+        if (e.key === 'Enter') salvarEstado();
       });
     } else {
       // Mesmo que o modal não exista, mantém a tela pintada
@@ -631,11 +631,11 @@ window.h6201Init = function() {
     }
 
     // === binds do modal "Ação em Massa — Queimadores"
-    const btnMassOn  = document.getElementById('hq-acender');
+    const btnMassOn = document.getElementById('hq-acender');
     const btnMassOff = document.getElementById('hq-apagar');
 
-    btnMassOn ?.addEventListener('click',  () => h6201MassUpdate('queimador', 'aceso'));
-    btnMassOff?.addEventListener('click',  () => h6201MassUpdate('queimador', 'apagado'));
+    btnMassOn?.addEventListener('click', () => h6201MassUpdate('queimador', 'aceso'));
+    btnMassOff?.addEventListener('click', () => h6201MassUpdate('queimador', 'apagado'));
 
 
     // Primeira pintura (estados + datas)
@@ -646,8 +646,7 @@ window.h6201Init = function() {
     gcBindCopyButtons();
     carregarGC();
     h6201Autoscale();
-    hqBindQueimadores();
-  
+
     hqBindQueimadores(); // já abre o modal de massa
     hqBindMassModal();   // garante que o "Cancelar" dele fecha
 
@@ -655,10 +654,10 @@ window.h6201Init = function() {
     hpBindPilotos();   // abre o modal de pilotos
     hpBindMassModal(); // fecha pelo Cancelar e pelo fundo
 
-    const btnPilOn  = document.getElementById('hp-acender');
+    const btnPilOn = document.getElementById('hp-acender');
     const btnPilOff = document.getElementById('hp-apagar');
 
-    btnPilOn ?.addEventListener('click', () => h6201UpdatePilotos('aceso'));
+    btnPilOn?.addEventListener('click', () => h6201UpdatePilotos('aceso'));
     btnPilOff?.addEventListener('click', () => h6201UpdatePilotos('apagado'));
 
     return true;
@@ -671,4 +670,110 @@ window.h6201Init = function() {
   // Opcional: auto-init
   document.addEventListener('DOMContentLoaded', h6201Init);
   window.debugGC = { carregarGC, gcBindInputs };
+
+  /* Auto-init robusto: funciona mesmo se o script for carregado depois do DOM pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', h6201Init);
+  } else {
+    // DOM já está pronto; inicia imediatamente
+    setTimeout(h6201Init, 0);
+  }*/
+
 })();
+
+// ===== Abertura/fechamento — escopo global =====
+window.h6201AbrirModal = function(id) {
+  const el = document.getElementById(id);
+  if (!el) { alert('[DEBUG] modal não encontrado: ' + id); return; }
+  el.style.display = 'flex';
+  el.style.zIndex = '99999';
+  el.removeAttribute('hidden');
+  el.setAttribute('aria-hidden', 'false');
+  const f = el.querySelector('input, select, button');
+  if (f) f.focus();
+};
+
+window.h6201FecharModal = function(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = 'none';
+  el.setAttribute('aria-hidden', 'true');
+};
+
+// ===== Ação em Massa — QUEIMADORES (global) =====
+window.h6201AbrirQueimadores = function () {
+  h6201AbrirModalFix('h6201ModalQueimadores');
+};
+
+// ===== Utilitários globais de modal =====
+window.h6201AbrirModalFix = function (id) {
+  const el = document.getElementById(id);
+  if (!el) { alert('[DEBUG] modal não encontrado: ' + id); return; }
+
+  // 1) Reanexar no <body> para escapar de stacking/overflow/transform do pai
+  if (!el.__attachedToBody) {
+    document.body.appendChild(el);
+    el.__attachedToBody = true;
+  }
+
+  // 2) Forçar estilo inline completo (ignora CSS problemático do contexto atual)
+  Object.assign(el.style, {
+    position: 'fixed',
+    inset: '0',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'rgba(0,0,0,.35)',
+    zIndex: String(2147483647) // "topo do topo"
+  });
+
+  el.removeAttribute('hidden');
+  el.setAttribute('aria-hidden', 'false');
+
+  // 3) Garantir que a caixa interna apareça com um visual mínimo
+  const box = el.querySelector('.h6201-modal-box');
+  if (box) {
+    Object.assign(box.style, {
+      background: '#fff',
+      borderRadius: '10px',
+      padding: '16px 18px',
+      maxWidth: '680px',
+      width: 'min(680px, 92vw)',
+      boxShadow: '0 8px 30px rgba(0,0,0,.25)'
+    });
+  }
+
+  // 4) Foco
+  const focusable = el.querySelector('input, select, button');
+  if (focusable) focusable.focus();
+};
+
+window.h6201FecharModal = function (id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = 'none';
+  el.setAttribute('aria-hidden', 'true');
+};
+
+// ===== Ação em Massa — PILOTOS (global) =====
+
+
+
+/*Função que reinicializa o h6201.js
+window.reloadH6201 = function(){
+  const nodes=[...document.querySelectorAll('script[src*="h6201.js"]')];
+  nodes.forEach(n=>n.remove());
+  const s=document.createElement('script');
+  s.src=(nodes[0]? nodes[0].src.split('?')[0] : 'js/h6201.js')+'?v='+Date.now();
+  s.onload=()=>{ if (window.h6201Init) h6201Init(); }; // opcional
+  document.head.appendChild(s);
+};
+*/
+
+// ===== Ação em Massa — PILOTOS (global) =====
+window.h6201AbrirPilotos = function () {
+  // alert('[DEBUG] h6201AbrirPilotos() chamado'); // opcional
+  h6201AbrirModalFix('h6201ModalPilotos');
+};
+
+

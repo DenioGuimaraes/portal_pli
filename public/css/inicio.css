@@ -2,27 +2,28 @@
 .inicio-pagina-inicio {
   display: flex;
   flex-direction: row;
+  align-items: stretch;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  background-color: #ccc;
   font-family: Arial, sans-serif;
   color: #f0f0f0;
 }
 
 /* Área de informações operacionais */
 .inicio-painel-operacional {
-  width: 80%;
   display: flex;
   flex-direction: column;
+  height: 100%;              /* ocupa tudo que a área central permite */
   box-sizing: border-box;
-  border-right: 1px solid #444;
-  background-color: #ccc;
-  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;          /* nada de rolagem */
+  margin-top: 5px;
 }
 
 /* Topo */
 .inicio-cabecalho-operacional {
+  flex: 0 0 auto;
   padding: 12px;
   background-color: #007a3d;
   color: white;
@@ -33,13 +34,13 @@
 }
 
 .inicio-cabecalho-operacional .inicio-titulo {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   margin-left: 15px;
 }
 
 .inicio-cabecalho-operacional .inicio-info-auxiliar {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin-left: 15px;
   margin-top: 4px;
@@ -47,11 +48,14 @@
 
 /* Corpo */
 .inicio-corpo-operacional {
-  flex: 1;
+  flex: 1 1 auto;            /* ocupa o restante */
   display: flex;
-  padding: 15px;
-  gap: 15px;
-  box-sizing: border-box;
+  margin-top: 15px;   /* espaço entre cabeçalho e corpo */
+  flex-wrap: nowrap;         /* evita quebra inesperada */
+  justify-content: space-between;
+  align-items: stretch;      /* força os painéis internos a caber */
+  overflow: hidden;          /* sem scroll interno */
+  min-height: 0;             /* TRUQUE: evita que o flex estoure */
 }
 
 /* Painéis das Unidades */
@@ -62,6 +66,8 @@
   border-radius: 25px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   background-color: #333;
+  transform: scale(0.95);    /* reduz 5% */
+  transform-origin: top center; /* escala a partir do topo */
 }
 
 .inicio-painel-u1620 {
@@ -78,7 +84,7 @@
 .inicio-painel-u1620 h3,
 .inicio-painel-u1640 h3 {
   text-align: center;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
   color: #00ffff;
   margin-top: 5px;
@@ -89,14 +95,14 @@
 .inicio-bloco-linha {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .inicio-rotulo {
   width: 180px;
   color: #66ccff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .inicio-dado {
@@ -105,14 +111,14 @@
   color: #ffff66;
   font-weight: bold;
   background: transparent;
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   pointer-events: none; 
 }
 
 .inicio-unidade {
   margin-left: 6px;
-  font-size: 20px;
+  font-size: 18px;
   color: #66ccff;
 }
 
@@ -194,7 +200,7 @@ hr {
 
 .inicio-tq-bloco {
   border: 2px solid #0066ff;
-  padding: 8px 12px; /* mais compacto */
+  padding: 6px 10px;
   border-radius: 10px;
   text-align: center;
   min-width: 70px;  /* reduzido */
@@ -210,7 +216,7 @@ hr {
 }
 
 .inicio-tq-valor {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
   color: #ffff66;
   margin: 10px 0;
@@ -251,7 +257,7 @@ hr {
 
 
 .resumo-modal-cadastro .resumo-modal-conteudo h3 {
-  margin-top: 0;
+  margin-top: -5px;
   background-color: #006400;
   color: white;
   padding: 10px;
@@ -263,6 +269,7 @@ hr {
   display: block;
   margin-top: 10px;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .resumo-modal-cadastro .resumo-modal-conteudo input {
@@ -318,6 +325,18 @@ hr {
   display: flex;
   flex-direction: column;
   flex: 1;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.resumo-coluna-form h4{
+  color: darkblue;
+  margin-top: -10px;
+  text-align: center;
 }
 
 .resumo-campo-form {
@@ -402,31 +421,21 @@ hr {
 }
 
 
-/* Painel lateral de pessoal */
-.inicio-pessoal {
-  width: 20%;
-  padding: 15px;
-  background-color: #2d3e3f;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  background-color: #333;
-  border: 5px solid #2a80b9;
-}
-
 .inicio-pessoal {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 10px;
-  border-radius: 20px;
-  overflow-y: auto;
+  width: 20%;
+  max-height: 100%;     /* ocupa só a altura do wrap central */
+  padding: 15px;
+  gap: 5px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .inicio-pessoal-grupo {
   display: flex;
   background-color: #f0f0f0;
+  border: 1px solid black;
   border-left: 6px solid #2e7d32;
   margin-bottom: 0;
   padding: 8px;
@@ -452,9 +461,9 @@ hr {
 }
 
 .coluna-grupo {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
-  width: 40px;
+  width: 20px;
   color: #000;
   margin-right: 10px;
 }
@@ -462,7 +471,6 @@ hr {
 .coluna-nomes {
   display: flex;
   flex-direction: column;
-  gap: 3px;
   color: #000;
 }
 
@@ -477,6 +485,7 @@ hr {
 .inicio-pessoal-grupo-duplo {
   flex: 1;
   background-color: #f0f0f0;
+  border: 1px solid black;
   border-left: 6px solid #2e7d32;
   padding: 6px;
   border-radius: 10px;
@@ -494,8 +503,7 @@ hr {
 .inicio-pessoal-grupo-duplo .coluna-nomes {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .anotacoes-titulo {
@@ -527,4 +535,13 @@ hr {
 .anotacoes-botao-container {
   text-align: right;
   padding: 10px;
+}
+
+.pessoal-nome {
+  font-size: 13px;
+  line-height: 1.2;
+  padding: 1px 0;
+  white-space: nowrap;        /* evita quebrar em duas linhas */
+  overflow: hidden;
+  text-overflow: ellipsis;    /* se estourar largura, coloca ... */
 }

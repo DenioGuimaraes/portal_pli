@@ -49,7 +49,7 @@ function carregarConteudo(painel) {
                 }
                 else {
                     const s = document.createElement('script');
-                    s.src = BASE_URL + '/public/js/h6201.js?v=3'; // quebra cache
+                    s.src = BASE_URL + '/public/js/h6201.js?v=10'; // quebra cache
                     s.onload = () => h6201Init();
                     document.body.appendChild(s);
                 }

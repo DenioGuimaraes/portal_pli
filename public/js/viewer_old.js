@@ -82,9 +82,9 @@
       };
 
       img.onload = () => {
-        PLI.viewer.fit();
+        const fit = computeFitScale();
+        applyScale(fit);
       };
-
 
       img.style.transform = "translate(-50%, -50%) scale(1)";
       img.src = src;
@@ -101,7 +101,7 @@
     },
 
     fit() {
-      const s = computeFitScale(); applyScale(s); return s;
+      applyScale(computeFitScale());
     },
   };
 
@@ -123,16 +123,6 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") PLI.viewer.fechar();
   });
-  // sincroniza estado ao fechar
-  const oldClose = PLI.viewer.fechar;
-  PLI.viewer.fechar = () => {
-    oldClose();
-    scale = 1;
-    offsetX = 0;
-    offsetY = 0;
-    if (img) img.style.cursor = "grab";
-  };
-
 })();
 
 // --- Interação de zoom e pan ------------------------------------
@@ -195,6 +185,5 @@
     offsetX = 0;
     offsetY = 0;
     updateTransform();
-  
   };
 })();

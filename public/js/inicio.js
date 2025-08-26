@@ -165,6 +165,7 @@ function carregarOperadores() {
         const container = document.querySelector(`#grupo-${idGrupo} .coluna-nomes`);
         if (container) {
             const nomeDiv = document.createElement('div');
+            nomeDiv.classList.add('pessoal-nome'); // <<< nova classe
             nomeDiv.textContent = pessoa.nome;
             container.appendChild(nomeDiv);
         }

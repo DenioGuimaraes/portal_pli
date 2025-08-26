@@ -122,14 +122,27 @@ function salvarRegistro() {
     },
     body: JSON.stringify(dados)
   })
-  .then(res => res.json())
+  fetch('includes/salvar.php', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(dados)
+  })
+  .then(async (res) => {
+    const text = await res.text();        // leia como texto primeiro
+    try {
+      const json = JSON.parse(text);      // tente fazer parse
+      return json;                        // ok, é JSON
+    } catch (e) {
+      console.error('Resposta não-JSON do salvar.php:', text);
+      throw new Error('Resposta não-JSON do backend');
+    }
+  })
   .then(res => {
     alert(res.mensagem);
     if (res.sucesso) {
       fecharModalCadastro();
-      carregarConteudo('alterarpessoal'); // mantém o usuário na tela
+      carregarConteudo('alterarpessoal');
     }
-
   })
   .catch(err => {
     console.error('Erro ao salvar:', err);

@@ -16,7 +16,7 @@
   /* ajuste aqui até ficar simétrico */
   --forno-w: 550px;
   /* largura fixa do #h6201Painel */
-  --painel-dir-w: 500px;
+  --painel-dir-w: 400px;
   /* largura fixa do lado direito */
 }
 
@@ -188,12 +188,11 @@
 
 /* Lateral direita fixa */
 .h6201-right {
-  flex: 1 1 auto;
-  /* deixa crescer conforme o espaço */
-  width: auto;
-  /* libera a largura */
-  max-width: none;
-  /* remove o teto */
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-height: 0;            /* importante p/ evitar overflow */
+  gap: 10px;
 }
 
 /* Evita que inputs/imagens do painel direito estourem */
@@ -383,7 +382,7 @@
 
 /* ==== Ajuste fino do modal H-6201 ==== */
 #h6201Modal .modal-conteudo {
-  max-width: 540px;
+  max-width: 510px;
   /* opcional: largura confortável */
   overflow-x: hidden;
   /* some com a barra horizontal */
@@ -459,7 +458,7 @@
   padding: 2px 6px;
   font-size: 12px;
   line-height: 1.2;
-  color: #333;
+  color: darkblue;
   z-index: 2;
   pointer-events: none;
   /* não bloqueia clique no bico */
@@ -680,17 +679,13 @@
 /* === GC: card de Pressões em largura total === */
 #gcCard {
   width: 100% !important;
-  /* ocupa toda a coluna disponível */
   max-width: none !important;
   box-sizing: border-box;
-  display: block;
-  /* cobre os casos de layout pai */
+  display: flex;
   flex: 1 1 auto;
-  /* se o pai for flex */
+  flex-direction: column;
   align-self: stretch;
-  /* se o pai for flex */
   justify-self: stretch;
-  /* se o pai for grid */
 }
 
 /* garante que o conteúdo interno não limite a largura */
@@ -733,40 +728,28 @@
 
 /* Botões menores e uniformes */
 .h6201-right .h6201-actions button {
-  height: 32px;
+  height: 28px;
   padding: 6px 10px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1;
   border-radius: 8px;
   width: 100%;
 }
 
-/* === Largura da faixa de botões alinhada ao card (500px) === */
 #h6201Right .h6201-actions {
   width: var(--painel-dir-w);
-  /* 500px */
-  box-sizing: border-box;
-  margin-top: 8px;
-
-  /* alinha com o padding lateral do .gc-card (10px 12px) */
   padding: 0 12px;
-
-  /* layout compacto */
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, auto); /* largura conforme o conteúdo */
   gap: 10px;
+  justify-content: center;               /* << centraliza */
 }
 
 /* === Botões menores (override do .botao-cabecalho global) === */
 #h6201Right .h6201-actions .botao-cabecalho {
-  width: 100%;
-  height: 32px !important;
-  min-height: 0 !important;
-  padding: 6px 10px !important;
-  font-size: 12px !important;
-  line-height: 1 !important;
-  border-radius: 8px;
-  box-sizing: border-box;
+  max-width: 100px;     /* todos com largura parecida */
+  height: 34px !important;
+  font-size: 14px !important;
 }
 
 .botao-h6201 {
@@ -783,7 +766,7 @@
   margin: 4px 6px;
   /* espaçamento menor */
   cursor: pointer;
-  min-width: 120px;
+  min-width: 100px;
   /* mais estreito que os 180px */
   text-align: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -804,7 +787,6 @@
 
 #h6201Modal {
   position: fixed;
-  inset: 0;
   display: none;
   /* vira flex ao abrir() */
   align-items: center;
@@ -882,7 +864,6 @@
 /* Overlay */
 .h6201-modal {
   position: fixed;
-  inset: 0;
   background: rgba(0, 0, 0, .45);
   z-index: 999;
   display: none;
@@ -958,4 +939,30 @@
 #hp-cancelar {
   background: #d9d9d9 !important;
   color: #333 !important;
+}
+
+/* botões do “card” de Diagramas — empilhados e 100% */
+.h6201-actions--viewer {
+  width: var(--painel-dir-w);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.h6201-actions--viewer .botao-cabecalho {
+  width: 100%;                 /* << ocupa toda a largura */
+  height: 42px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+
+/* corpo interno do card do viewer também flexível */
+.viewer-card__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }

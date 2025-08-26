@@ -48,7 +48,7 @@
         <hr />
         <div class="inicio-linha-dado inicio-alinhado-direita">
           <span class="inicio-rotulo">U-1620 ➜</span>
-          <input id="painelU1620para" class="inicio-dado" type="text" value="--" />
+          <input id="painelU1620para" class="inicio-dado" style="width: 200px; margin-left: -50px;" type="text" value="--" />
         </div>
         </hr>
       </div>
@@ -116,7 +116,7 @@
       <div class="coluna-grupo">E</div>
       <div class="coluna-nomes"></div>
     </div>
-    <div class="inicio-pessoal-duplo">
+
       <div class="inicio-pessoal-grupo-duplo" id="grupo-ferias">
         <div class="coluna-grupo-duplo">Férias</div>
         <div class="coluna-nomes"></div>
@@ -125,14 +125,13 @@
         <div class="coluna-grupo-duplo">Outros</div>
         <div class="coluna-nomes"></div>
       </div>
-    </div>    
+ 
   </div>
-
 </div>
+
 <!-- Modal Resumo Operacional -->
 <div class="resumo-modal-cadastro" id="resumoModalCadastro" style="display: none;">
   <div class="resumo-modal-conteudo">
-    <h3 id="resumoModalTitulo">Resumo Operacional</h3>
     <input id="resumoCampoId" type="hidden" />
     <div class="resumo-modal-corpo">
       <!-- Coluna U-1620 -->

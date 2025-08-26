@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>Portal PL-I</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/inicio.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/inicio.css?v=2">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/viewer.css">
 </head>
 
@@ -19,7 +19,7 @@
 
     <div class="main-layout">
         <aside class="menu-esquerdo">
-            <button class="botao-menu" onclick="mostrarMenu('inicio')">Início</button>
+            <button class="botao-menu" type="button" onclick="location.href='<?= BASE_URL ?>/public/'">Início</button>
             <button class="botao-menu" onclick="mostrarMenu('administrativo')">Administrativo</button>
             <button class="botao-menu" onclick="mostrarMenu('u1620')">U-1620</button>
             <button class="botao-menu" onclick="mostrarMenu('u1640')">U-1640</button>
