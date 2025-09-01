@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="css/emergerenc.css?v=2">
+
+<?php
+// valores default para evitar avisos (serão preenchidos depois)
+$proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', 'causas' => '', 'impacto' => '', 'contatos' => ''];
+?>
+
+<!-- Barra superior: Título, Grupo e Fechar -->
+<div class="emer-topbar">
+    <div class="top-field">
+        <label for="emer-titulo">Título</label>
+        <input id="emer-titulo" type="text" class="emer-titulo" value="<?= htmlspecialchars($proc['titulo']) ?>" placeholder="Título da emergência">
+    </div>
+
+    <div class="top-field top-field--grupo">
+        <label for="emer-grupo">Grupo</label>
+        <select id="emer-grupo" class="top-select">
+            <option value="geral" <?= (($proc['grupo'] ?? '') === 'geral') ? 'selected' : '';  ?>>Geral / LB</option>
+            <option value="u1620" <?= (($proc['grupo'] ?? '') === 'u1620') ? 'selected' : '';  ?>>U-1620</option>
+            <option value="u1640" <?= (($proc['grupo'] ?? '') === 'u1640') ? 'selected' : '';  ?>>U-1640</option>
+        </select>
+    </div>
+
+    <button type="button" class="btn btn-fechar" id="emer-fechar">Fechar</button>
+</div>
+
+<section class="emerGerenc" aria-label="Emergências - Novo/Editar">
+    <!-- Grid 3 colunas (24/36/36) -->
+    <div class="emer-grid">
+
+        <!-- Coluna esquerda: 4 cards iguais -->
+        <div class="col col--left">
+            <article id="card-identificadores" class="card">
+                <h3 class="card__head">Identificadores</h3>
+                <div class="card__body">
+                    <textarea id="fld-identificadores" class="field-text" placeholder="Digite os identificadores..."><?= htmlspecialchars($proc['identificadores']) ?></textarea>
+                </div>
+            </article>
+
+            <article id="card-causas" class="card">
+                <h3 class="card__head">Causas</h3>
+                <div class="card__body">
+                    <textarea id="fld-causas" class="field-text" placeholder="Digite as causas..."><?= htmlspecialchars($proc['causas']) ?></textarea>
+                </div>
+            </article>
+
+            <article id="card-impacto" class="card">
+                <h3 class="card__head">Impacto</h3>
+                <div class="card__body">
+                    <textarea id="fld-impacto" class="field-text" placeholder="Descreva o impacto..."><?= htmlspecialchars($proc['impacto']) ?></textarea>
+                </div>
+            </article>
+
+            <article id="card-contatos" class="card">
+                <h3 class="card__head">Contatos</h3>
+                <div class="card__body">
+                    <textarea id="fld-contatos" class="field-text" placeholder="Contatos úteis..."><?= htmlspecialchars($proc['contatos']) ?></textarea>
+                </div>
+            </article>
+        </div>
+
+        <!-- Coluna central: card + bloco de 6 botões -->
+        <div class="col col--center">
+            <article id="card-passos" class="card">
+                <h3 class="card__head">Sequência de Passos</h3>
+                <div id="body-passos" class="card__body">
+                    <!-- lista de passos (selecionável) virá aqui depois -->
+                </div>
+            </article>
+
+            <div class="gerenc-actions">
+                <button type="button" class="btn btn-icon" id="btnPassoUp" title="Mover passo para cima">↑</button>
+                <button type="button" class="btn btn-icon" id="btnPassoDown" title="Mover passo para baixo">↓</button>
+
+                <button type="button" class="btn" id="btnNovoProc">Novo</button>
+                <button type="button" class="btn" id="btnEditarProc">Editar</button>
+                <button type="button" class="btn" id="btnExcluirProc">Excluir</button>
+                <button type="button" class="btn" id="btnSalvarProc">Salvar</button>
+            </div>
+        </div>
+
+        <!-- Coluna direita: detalhes do passo selecionado (read-only por enquanto) -->
+        <div class="col col--right">
+            <article id="card-acoes" class="card">
+                <h3 class="card__head">Detalhes do Passo</h3>
+                <div id="body-acoes" class="card__body">
+                    <!-- detalhamento do passo selecionado aparecerá aqui -->
+                </div>
+            </article>
+        </div>
+
+    </div>
+</section>

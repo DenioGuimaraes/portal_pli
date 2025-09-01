@@ -59,12 +59,11 @@
                 botaoClicado.classList.add('ativo');
             }
 
-            // 1. Carrega o conteúdo central (painel)
+            // 1. Carrega o conteúdo central (painel)            
             fetch('index.php?url=' + menu + 'Controller')
                 .then(res => res.text())
                 .then(html => {
                     conteudoCentral.innerHTML = html;
-
                     // Executa ação específica para a tela de Início
                     if (menu === 'inicio') {
                         setTimeout(() => {
@@ -85,6 +84,24 @@
                     // === Novo trecho: carregamento do JS correspondente ===
                     const script = document.createElement('script');
 
+                    // helper global para carregar (ou recarregar) scripts de painel
+                    function loadPanelScript(key, srcAbs, onload) {
+                        // remove <script> anterior desse painel (se existir)
+                        document.querySelectorAll(`script[data-panel="${key}"]`).forEach(s => s.remove());
+
+                        // (opcional) limpa o namespace global do painel
+                        if (key.toUpperCase() === 'U1620') delete window.U1620;
+
+                        const s = document.createElement('script');
+                        // cache-buster: força buscar a versão nova em cada clique (no dev)
+                        s.src = srcAbs + (srcAbs.includes('?') ? '&' : '?') + 'v=' + Date.now();
+                        s.dataset.panel = key; // marca esse script pra remoção futura
+                        s.async = false; // preserva ordem caso encadeie mais de um
+                        s.onload = onload || null;
+                        s.onerror = e => console.error('Falha ao carregar', srcAbs, e);
+                        document.body.appendChild(s);
+                        return s;
+                    }
                     // Caminho com BASE_URL
                     const base = "<?= BASE_URL ?>";
                     switch (menu) {
@@ -116,6 +133,29 @@
                             var s6 = document.createElement('script');
                             s6.src = base + '/public/js/h6201.js';
                             document.body.appendChild(s6);
+
+                            var s7 = document.createElement('script');
+                            s7.src = base + '/public/js/u1620.js?v=5'; // ?v=1 evita cache
+                            document.body.appendChild(s7);
+                            if (menu === 'u1620') {
+                                setTimeout(() => {
+                                    if (window.U1620 && typeof window.U1620.init === 'function') {
+                                        window.U1620.init();
+                                    }
+                                }, 50);
+                            }
+                            break;
+                        case 'emergencia':
+                            document.querySelectorAll('script[src*="/public/js/emergencia.js"]').forEach(s => s.remove());
+                            var s8 = document.createElement('script');
+                            s8.src = base + '/public/js/emergencia.js?v=' + Date.now(); // cache-buster real
+                            document.body.appendChild(s8);
+                            break;
+                        case 'emeracessar':
+                            document.querySelectorAll('script[src*="/public/js/emeracessar.js"]').forEach(s => s.remove());
+                            var s9 = document.createElement('script');
+                            s9.src = base + '/public/js/emeracessar.js?v=' + Date.now();
+                            document.body.appendChild(s9);
                             break;
                         default:
                             script.src = '';
@@ -147,11 +187,11 @@
     <!-- Viewer fora do main, para não ser apagado -->
     <section id="pli-viewer" class="pli-viewer" hidden aria-hidden="true" role="dialog" aria-modal="true">
         <header class="pli-viewer-toolbar">
-        <button type="button" data-pli-action="fit">Fit</button>
-        <button type="button" data-pli-action="close">Fechar</button>
+            <button type="button" data-pli-action="fit">Fit</button>
+            <button type="button" data-pli-action="close">Fechar</button>
         </header>
         <div class="pli-viewer-stage">
-        <img id="pliViewerImg" alt="" draggable="false" />
+            <img id="pliViewerImg" alt="" draggable="false" />
         </div>
         <div class="pli-viewer-zoom" aria-live="polite"></div>
     </section>

@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../../core/Model.php';
 
-class EmerGeralModel extends Model
+class EmeracessarModel extends Model
 {
     public function __construct()
     {
