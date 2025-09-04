@@ -4,9 +4,9 @@
 
   // ------ mapeamento das 3 listas ------
   const M = {
-    '1': { ul: '#emg-lista-geral',  vazio: '#emg-g-vazio',    load: '#emg-g-loading',    erro: '#emg-g-erro'    },
-    '2': { ul: '#emg-lista-1620',   vazio: '#emg-1620-vazio', load: '#emg-1620-loading', erro: '#emg-1620-erro' },
-    '3': { ul: '#emg-lista-1640',   vazio: '#emg-1640-vazio', load: '#emg-1640-loading', erro: '#emg-1640-erro' }
+    '1': { ul: '#emg-lista-geral', vazio: '#emg-g-vazio', load: '#emg-g-loading', erro: '#emg-g-erro' },
+    '2': { ul: '#emg-lista-1620', vazio: '#emg-1620-vazio', load: '#emg-1620-loading', erro: '#emg-1620-erro' },
+    '3': { ul: '#emg-lista-1640', vazio: '#emg-1640-vazio', load: '#emg-1640-loading', erro: '#emg-1640-erro' }
   };
 
   const state = {
@@ -16,7 +16,7 @@
 
   // ------ helpers básicos ------
   const $ = (sel, root = document) => root.querySelector(sel);
-  const show  = (el, yes = true) => { if (el) el.hidden = !yes; };
+  const show = (el, yes = true) => { if (el) el.hidden = !yes; };
   const clear = (el) => { if (el) el.innerHTML = ''; };
 
   function setEstado(grupoId, { carregando = false, erro = false, vazio = false } = {}) {
@@ -89,8 +89,9 @@
       grupo: Number(btn.dataset.grupoId),
       titulo: (btn.querySelector('.emg-item-titulo')?.textContent || '').trim()
     };
-    try { localStorage.setItem('emg.sel', JSON.stringify(state.sel)); } catch {}
+    try { localStorage.setItem('emg.sel', JSON.stringify(state.sel)); } catch { }
     updateBtnAcessar(); // ← habilita o botão quando houver seleção
+    updateBtnEditar();  // ← idem para o botão Editar
   }
 
   function acessarSelecionado() {
@@ -102,6 +103,59 @@
     }
   }
 
+  // ====== >>> BOTÃO EDITAR — igual ao Acessar, mas para 'emergerenc' ======
+  function findBtnEditar() {
+    // 1) pelo onclick do botão do menu direito
+    let b = document.querySelector('.menu-direito .botao-direito[onclick*="emergerenc"]');
+    if (b) return b;
+    // 2) fallback por texto
+    const btns = document.querySelectorAll('.menu-direito .botao-direito');
+    for (const x of btns) {
+      if ((x.textContent || '').trim().toLowerCase() === 'editar') return x;
+    }
+    return null;
+  }
+
+  function setBtnEditarEnabled(on) {
+    const b = findBtnEditar();
+    if (!b) return;
+    if (on) {
+      b.disabled = false;
+      b.removeAttribute('disabled');
+      b.classList.remove('is-disabled');
+    } else {
+      b.disabled = true;
+      b.setAttribute('disabled', 'disabled');
+      b.classList.add('is-disabled');
+    }
+  }
+
+  function updateBtnEditar() {
+    // habilita quando houver uma emergência selecionada
+    setBtnEditarEnabled(!!(state.sel && state.sel.id));
+  }
+
+  // desabilita logo que o painel abre; se o botão ainda não existir, observa o menu
+  function disableEditarUntilMenuLoads() {
+    const menu = document.querySelector('.menu-direito');
+    if (!menu) return;
+    const btn = findBtnEditar();
+    if (btn) return setBtnEditarEnabled(false);
+
+    if (state.menuObserver) state.menuObserver.disconnect();
+    state.menuObserver = new MutationObserver(() => {
+      const b = findBtnEditar();
+      if (b) {
+        setBtnEditarEnabled(false);
+        state.menuObserver.disconnect();
+        state.menuObserver = null;
+      }
+    });
+    state.menuObserver.observe(menu, { childList: true, subtree: true });
+  }
+  // ====== <<< BOTÃO EDITAR ======
+
+
   // ------ render e binds das listas ------
   function bindLista(ul) {
     if (!ul || ul.dataset.bound) return;
@@ -111,6 +165,7 @@
       const btn = e.target.closest('.emg-item-btn');
       if (!btn) return;
       setSelecionado(btn);
+
     });
 
     // duplo-clique: seleciona + acessar
@@ -126,7 +181,7 @@
 
   function renderGrupo(grupoId, itens) {
     const map = M[grupoId]; if (!map) return;
-    const ul = $(map.ul);   if (!ul) return;
+    const ul = $(map.ul); if (!ul) return;
 
     clear(ul);
 
@@ -155,6 +210,7 @@
   async function carregarListas() {
     // desabilita o botão Acessar ao abrir o painel
     disableAcessarUntilMenuLoads();
+    disableEditarUntilMenuLoads();
 
     setEstado('1', { carregando: true });
     setEstado('2', { carregando: true });

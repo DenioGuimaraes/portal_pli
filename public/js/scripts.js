@@ -3,18 +3,20 @@ function carregarConteudo(painel) {
   conteudo.innerHTML = "<p>Carregando...</p>";
 
   // 🔧 Se for 'emeracessar' sem emergencia_id, pega da seleção (localStorage)
+  // 🔧 Se for 'emeracessar' OU 'emergerenc' sem emergencia_id, pega da seleção (localStorage)
   (function ensureEmergenciaId() {
     const base = (painel.split('?')[0] || '').toLowerCase();
     const hasId = /(?:^|[?&])emergencia_id=/.test(painel);
-    if (base === 'emeracessar' && !hasId) {
+    if ((base === 'emeracessar' || base === 'emergerenc') && !hasId) {
       try {
         const sel = JSON.parse(localStorage.getItem('emg.sel') || 'null');
         if (sel && sel.id) {
-          painel = 'emeracessar?emergencia_id=' + encodeURIComponent(sel.id);
+          painel = base + '?emergencia_id=' + encodeURIComponent(sel.id);
         }
-      } catch {}
+      } catch { }
     }
   })();
+
 
   // permite 'painel?param=...' sem quebrar
   const [basePane, qs] = painel.split('?');

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/emergerenc.css?v=2">
+<link rel="stylesheet" href="css/emergerenc.css?v=3">
 
 <?php
 // valores default para evitar avisos (serão preenchidos depois)
@@ -69,12 +69,13 @@ $proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', '
             </article>
 
             <div class="gerenc-actions">
-                <button type="button" class="btn btn-icon" id="btnPassoUp" title="Mover passo para cima">↑</button>
-                <button type="button" class="btn btn-icon" id="btnPassoDown" title="Mover passo para baixo">↓</button>
-
+                <button type="button" class="btn btn-icon" id="btnPassoUp"
+                    title="Mover passo para cima" onclick="moverPassoParaCima(passoSelId)" disabled>↑</button>
+                <button type="button" class="btn btn-icon" id="btnPassoDown"
+                    onclick="moverPassoParaBaixo(passoSelId)" title="Mover passo para baixo" disabled>↓</button>
                 <button type="button" class="btn" id="btnNovoProc">Novo</button>
-                <button type="button" class="btn" id="btnEditarProc">Editar</button>
-                <button type="button" class="btn" id="btnExcluirProc">Excluir</button>
+                <button type="button" class="btn" id="btnEditarProc" disabled>Editar</button>
+                <button type="button" class="btn" id="btnExcluirProc" disabled>Excluir</button>
                 <button type="button" class="btn" id="btnSalvarProc">Salvar</button>
             </div>
         </div>
@@ -83,7 +84,7 @@ $proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', '
         <div class="col col--right">
             <article id="card-acoes" class="card">
                 <h3 class="card__head">Detalhes do Passo</h3>
-                <div id="body-acoes" class="card__body">
+                <div id="body-acoes" class="card__body2">
                     <!-- detalhamento do passo selecionado aparecerá aqui -->
                 </div>
             </article>
@@ -91,3 +92,36 @@ $proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', '
 
     </div>
 </section>
+
+<!-- Modal Editar -->
+<div id="modalEditarPasso" class="modal-emergerenc" style="display:none;">
+  <div class="modal-emergerenc-content">
+    <div class="modal-emergerenc-header"><h3>Editar Passo</h3></div>
+    <div class="modal-emergerenc-body">
+      <label for="inputEditarRotulo">Nome:</label>
+      <input type="text" id="inputEditarRotulo" class="field-text">
+    </div>
+    <div class="modal-emergerenc-actions">
+      <button type="button" id="btnOkEditar">OK</button>
+      <button type="button" id="btnCancelEditar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Novo -->
+<div id="modalNovoPasso" class="modal-emergerenc" style="display:none;">
+  <div class="modal-emergerenc-content">
+    <div class="modal-emergerenc-header"><h3>Novo Passo</h3></div>
+    <div class="modal-emergerenc-body">
+      <label for="inputNovoRotulo">Nome:</label>
+      <input type="text" id="inputNovoRotulo" class="field-text">
+    </div>
+    <div class="modal-emergerenc-actions">
+      <button type="button" id="btnOkNovo">OK</button>
+      <button type="button" id="btnCancelNovo">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+
+

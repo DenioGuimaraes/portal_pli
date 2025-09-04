@@ -157,6 +157,12 @@
                             s9.src = base + '/public/js/emeracessar.js?v=' + Date.now();
                             document.body.appendChild(s9);
                             break;
+                        case 'emergerenc':
+                            document.querySelectorAll('script[src*="/public/js/emergerenc.js"]').forEach(s => s.remove());
+                            var s10 = document.createElement('script');
+                            s10.src = base + '/public/js/emergerenc.js?v=' + Date.now();
+                            document.body.appendChild(s10);
+                            break;
                         default:
                             script.src = '';
                     }
