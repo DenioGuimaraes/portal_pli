@@ -4,6 +4,7 @@
   display: flex;
   gap: 24px;
   align-items: flex-start;
+  width: 100%;
 }
 
 .u1620-col-esq,
@@ -55,22 +56,6 @@
   font-weight: 700;          /* bold */
   width: 70px;
 }
-
-/* Inputs um pouco menores */
-.u1620-in {
-  width: 100px;              /* 160 -> 140 */
-  height: 30px;              /* 32 -> 30 */
-  padding: 2px 8px;
-  border: 1px solid #333;
-  border-radius: 6px;
-  font-size: 0.92rem;        /* levemente menor */
-  background: #fff;
-  box-sizing: border-box;
-  text-align: right;
-  color: #0b2a84;               /* darkblue-ish */
-  font-weight: 700;
-}
-
 
 /* Destaque para saídas calculadas */
 .u1620-in.is-output {
@@ -182,7 +167,155 @@
 .u1620-btn:hover { background: #e4e4e4; }
 .u1620-btn:active { transform: translateY(1px); }
 
-@media (max-width: 1100px) {
-  .u1620-layout { flex-direction: column; }
-  .u1620-card { max-width: 100%; }
+/* ===== Layout geral no padrão 3 cards ===== */
+/* Estrutura geral do painel */
+.u1620-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  height: calc(100vh - 150px); /* ajuste fino conforme seu cabeçalho/rodapé */
+  box-sizing: border-box;
+}
+
+.u1620-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.u1620-card__head {
+  background: #004d40;
+  color: #fff;
+  text-align: center;
+  padding: 6px;
+  font-size: 15px;
+  margin: 0;
+}
+
+.u1620-card__body {
+  flex: 1;
+  padding: 8px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0; /* evita overflow inesperado */
+}
+
+/* Botões menores */
+.u1620-botao {
+  color: white;
+  font-weight: bold;
+  background: #004d40;
+  border: 1px solid #e0f2f1;
+  border-radius: 6px;
+  padding: 6px 6px;     /* menor altura */
+  cursor: pointer;
+  font-size: 13px;      /* letra menor */
+  line-height: 1.2;     /* compacta verticalmente */
+  transition: background 0.2s;
+}
+
+.u1620-botao:hover {
+  background: #97e488;
+}
+
+.u1620-botao:hover { background: #cbeae6; }
+
+/* ===== Escala da Calculadora (card central) =====
+   Encolhe de forma uniforme sem mexer no HTML interno.            */
+/* Ajuste da calculadora dentro do card Ferramentas */
+.u1620-calc {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4px;
+  overflow: auto;
+}
+
+.u1620-calc .u1620-form-grid {
+  grid-template-columns: auto 120px auto 120px; /* inputs mais estreitos */
+  column-gap: 12px;
+  row-gap: 8px;
+  padding: 8px;
+}
+
+.u1620-calc .u1620-in {
+  width: 100px;
+  height: 28px;
+  font-size: 0.85rem;
+  text-align: right;
+  padding: 4px 6px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-right: -15px;
+}
+
+.u1620-calc .u1620-lbl {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Cada linha: label à esquerda, input à direita */
+.u1620-row {
+  display: grid;
+  grid-template-columns: 1fr 120px; /* label flexível, input fixo */
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+  width: 100%;
+}
+
+.u1620-row label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+  color: #222;
+  width: 100%;
+  margin-left: 15px;
+}
+
+/* Inputs padrão */
+.u1620-in {
+  width: 120px;              /* todos com o mesmo tamanho */
+  padding: 6px 8px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+/* Saídas destacadas */
+.u1620-in.is-output {
+  background: #f4f8ff;
+  border-color: #0b2a84;
+  color: #0b2a84;
+  font-weight: bold;
+}
+
+/* Slider centralizado */
+.u1620-slider-wrap {
+  margin: 16px 0;
+  text-align: center;
+  width: 90%;
+}
+
+.u1620-slider-row {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 8px;
+}
+
+.u1620-slider-value {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0b2a84;
 }

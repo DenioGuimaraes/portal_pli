@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="css/emergencia.css?v=4">
+<link rel="stylesheet" href="css/emergencia.css?v=<?php echo time(); ?>">
 
 <div class="painel-cabecalho">
-    <h2>Emergências</h2>
-    <label class="emg-global-busca">
-        <span class="sr-only">Buscar em todos os grupos</span>
-        <input id="emg-busca" type="search" placeholder="Buscar em todos os grupos..." autocomplete="off">
-    </label>
+  <h2>Emergências</h2>
+  <label class="emg-global-busca">
+    <span class="sr-only">Buscar em todos os grupos</span>
+    <input id="emg-busca" type="search" placeholder="Buscar em todos os grupos..." autocomplete="off">
+  </label>
 </div>
 
 <?php
@@ -70,4 +70,29 @@
   </template>
 </section>
 
-<noscript><p>Ative o JavaScript para usar este painel.</p></noscript>
+<!-- Modal Nova Emergência -->
+<div id="modalNovaEmergencia" class="modal-emergerenc" style="display:none;">
+  <div class="modal-emergerenc-content">
+    <div class="modal-emergerenc-header">
+      <h3>Nova Emergência</h3>
+    </div>
+    <div class="modal-emergerenc-body">
+      <div class="form-row">
+        <label for="inputNovaEmergenciaTitulo">Nome:</label>
+        <input type="text" id="inputNovaEmergenciaTitulo" class="field-text field-wide">
+      </div>
+      <div class="form-row">
+        <label for="selectNovaEmergenciaGrupo">Grupo:</label>
+        <select id="selectNovaEmergenciaGrupo" class="field-select">
+          <option value="1">Geral/LB</option>
+          <option value="2">U-1620</option>
+          <option value="3">U-1640</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-emergerenc-actions">
+      <button type="button" id="btnOkNovaEmergencia">OK</button>
+      <button type="button" id="btnCancelNovaEmergencia">Cancelar</button>
+    </div>
+  </div>
+</div>

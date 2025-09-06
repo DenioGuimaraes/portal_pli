@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/emeracessar.css?v=5">
+<link rel="stylesheet" href="css/emeracessar.css?v=<?php echo time(); ?>">
 
 <?php
 // garante que $dados exista mesmo se não vier nada

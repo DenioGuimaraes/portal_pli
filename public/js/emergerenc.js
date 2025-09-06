@@ -1,4 +1,3 @@
-alert('Atualização Carregada!');
 // /public/js/emergerenc.js
 function emerGerencInit() {
     'use strict';
@@ -18,6 +17,33 @@ function emerGerencInit() {
     // Helpers
     const $ = (s, r = document) => r.querySelector(s);
     const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+    function setBotaoNovo(enabled) {
+        const btnNovo = document.querySelector('.menu-direito .botao-direito[onclick*="emergnovo"]');
+        if (!btnNovo) return;
+        btnNovo.disabled = !enabled;
+    }
+
+    function disableNovoUntilMenuLoads() {
+        const menu = document.querySelector('.menu-direito');
+        if (!menu) return;
+        const btn = document.querySelector('.menu-direito .botao-direito[onclick*="emergnovo"]');
+        if (btn) return setBotaoNovo(false);
+
+        const observer = new MutationObserver(() => {
+            const b = document.querySelector('.menu-direito .botao-direito[onclick*="emergnovo"]');
+            if (b) {
+                setBotaoNovo(false);
+                observer.disconnect();
+            }
+        });
+        observer.observe(menu, { childList: true, subtree: true });
+    }
+
+    // chama no init do emergerenc
+    disableNovoUntilMenuLoads();
+
+
 
     // Estado
     let emergenciaId = null;
@@ -55,6 +81,13 @@ function emerGerencInit() {
             setValue(SEL.impacto, data.emergencia?.impacto ?? '');
             setValue(SEL.contatos, data.emergencia?.contatos ?? '');
 
+            //botão Salvar - alteração de status..
+            $(SEL.ident)?.addEventListener('input', marcarAlterado);
+            $(SEL.causas)?.addEventListener('input', marcarAlterado);
+            $(SEL.impacto)?.addEventListener('input', marcarAlterado);
+            $(SEL.contatos)?.addEventListener('input', marcarAlterado);
+
+
             // Renderiza lista de passos (coluna central)
             passos = Array.isArray(data.passos) ? data.passos.slice().sort((a, b) => a.ordem - b.ordem) : [];
             renderListaPassos(passos);
@@ -69,6 +102,7 @@ function emerGerencInit() {
             console.error('Falha ao carregar emergência:', err);
             pintarDetalheVazio('Erro ao carregar dados.');
         }
+        setBotaoNovo(false); // 🔒 desabilita "Novo" no painel Editar
     })();
 
     // ====== Funções de movimentação ======
@@ -83,6 +117,7 @@ function emerGerencInit() {
             atualizarOrdem();
             renderListaPassos(passos);
             selecionarPasso(id); // mantém selecionado
+            marcarAlterado();
         }
     }
 
@@ -93,6 +128,7 @@ function emerGerencInit() {
             atualizarOrdem();
             renderListaPassos(passos);
             selecionarPasso(id); // mantém selecionado
+            marcarAlterado();
         }
     }
 
@@ -141,6 +177,9 @@ function emerGerencInit() {
                 const data = await resp.json();
                 if (data && data.ok) {
                     alert('Alterações salvas com sucesso!');
+                    // 🔽 aqui limpamos o destaque do botão
+                    btnSalvar.classList.remove('has-changes');
+                    btnSalvar.disabled = true;
                 } else {
                     throw new Error(data?.msg || 'Erro desconhecido ao salvar');
                 }
@@ -151,7 +190,6 @@ function emerGerencInit() {
         });
 
     })();
-
 
     // ====== Funções auxiliares ======
     function setValue(sel, value) {
@@ -200,6 +238,7 @@ function emerGerencInit() {
         // Atualiza em tempo real
         texto.addEventListener('input', (e) => {
             p.detalhe = e.target.value;
+            marcarAlterado();
         });
 
         box.appendChild(titulo);
@@ -254,6 +293,48 @@ function emerGerencInit() {
         window.passoSelId = id; // mantém o id selecionado acessível globalmente
     }
 
+    // ===== Botão Excluir Passo ========
+    (function initExcluirPasso() {
+        const btnExcluir = document.getElementById('btnExcluirProc');
+        if (!btnExcluir) return;
+
+        btnExcluir.addEventListener('click', () => {
+            if (!passoSelId) {
+                alert('Nenhum passo selecionado.');
+                return;
+            }
+
+            const passo = passos.find(p => Number(p.id) === Number(passoSelId));
+            if (!passo) return;
+
+            if (!confirm(`Tem certeza que deseja excluir o passo "${passo.rotulo}"?`)) {
+                return;
+            }
+
+            // Remove do array
+            passos = passos.filter(p => Number(p.id) !== Number(passoSelId));
+
+            // Atualiza ordem
+            atualizarOrdem();
+
+            // Re-renderiza lista e limpa detalhe
+            renderListaPassos(passos);
+            pintarDetalheVazio('Selecione um passo à esquerda para ver os detalhes.');
+
+            // Desabilita botões de edição/exclusão até nova seleção
+            document.getElementById('btnEditarProc').disabled = true;
+            document.getElementById('btnExcluirProc').disabled = true;
+            document.getElementById('btnPassoUp').disabled = true;
+            document.getElementById('btnPassoDown').disabled = true;
+
+            passoSelId = null;
+
+            // Marca alteração pendente
+            marcarAlterado();
+        });
+    })();
+
+
     // ====== Edição / Criação com DOIS modais ======
 
     // Utilitário: fechar modal por id
@@ -300,6 +381,7 @@ function emerGerencInit() {
                 passo.rotulo = texto;
                 renderListaPassos(passos);
                 selecionarPasso(passo.id);
+                marcarAlterado();
             }
             fecharModalById(modalId, inputId);
         });
@@ -346,12 +428,20 @@ function emerGerencInit() {
             passos.push(novo);
             renderListaPassos(passos);
             selecionarPasso(novo.id);
-
+            marcarAlterado();
             fecharModalById(modalId, inputId);
         });
 
         // Cancelar Novo
         btnCancel.addEventListener('click', () => fecharModalById(modalId, inputId));
     })();
+
+    function marcarAlterado() {
+        const btnSalvar = document.getElementById('btnSalvarProc');
+        if (!btnSalvar) return;
+        btnSalvar.disabled = false;              // 🔓 habilita
+        btnSalvar.classList.add('has-changes');  // 🔔 destaque
+    }
+
 
 } // <== fim de emerGerencInit

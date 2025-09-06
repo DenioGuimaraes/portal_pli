@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/h6201.css?v=8">
+<link rel="stylesheet" href="css/h6201.css?v=<?php echo time(); ?>">
 
 <div id="h6201Stage" class="h6201-stage">
   <div id="h6201Wrap" class="h6201-wrap">
@@ -357,8 +357,8 @@
         </header>
         <div class="viewer-card__body">
           <div class="h6201-actions--viewer">
-            <button class="botao-cabecalho" type="button" onclick="PLI.viewer.exibir('vototi.png')">Queimadores</button>
-            <button class="botao-cabecalho" type="button" onclick="PLI.viewer.exibir('vototi.png')">Pilotos</button>
+            <button class="botao-cabecalho" type="button" onclick="PLI.viewer.exibir('diag-gc.png')">Queimadores</button>
+            <button class="botao-cabecalho" type="button" onclick="PLI.viewer.exibir('diag-h6201-piloto')">Pilotos</button>
           </div>
         </div>
 

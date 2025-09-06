@@ -141,5 +141,57 @@ class EmergenciaModel extends Model
         return $out;
     }
 
+    public function criarEmergencia(array $dados): int
+    {
+        // 1) Inserir emergência
+        $sql = "INSERT INTO emergencias 
+                   (grupo_id, titulo, identificadores, causas, impacto, contatos) 
+                VALUES (?, ?, ?, ?, ?, ?)";
+
+        $stmt = $this->db->prepare($sql);
+        if (!$stmt) {
+            throw new \Exception("Erro ao preparar INSERT em emergencias: " . $this->db->error);
+        }
+
+        $grupo_id       = (int)($dados['grupo_id'] ?? 0);
+        $titulo         = $dados['titulo'] ?? '';
+        $identificadores= $dados['identificadores'] ?? '';
+        $causas         = $dados['causas'] ?? '';
+        $impacto        = $dados['impacto'] ?? '';
+        $contatos       = $dados['contatos'] ?? '';
+
+        $stmt->bind_param("isssss", $grupo_id, $titulo, $identificadores, $causas, $impacto, $contatos);
+
+        if (!$stmt->execute()) {
+            throw new \Exception("Erro ao executar INSERT em emergencias: " . $stmt->error);
+        }
+
+        $novoId = $stmt->insert_id;
+        $stmt->close();
+
+        // 2) Inserir passo(s) padrão
+        if (!empty($dados['passos']) && is_array($dados['passos'])) {
+            $sqlPasso = "INSERT INTO emergencia_passo (emergencia_id, rotulo, detalhe, ordem) 
+                         VALUES (?, ?, ?, ?)";
+            $stmtPasso = $this->db->prepare($sqlPasso);
+            if (!$stmtPasso) {
+                throw new \Exception("Erro ao preparar INSERT em emergencia_passo: " . $this->db->error);
+            }
+
+            foreach ($dados['passos'] as $p) {
+                $rotulo  = $p['rotulo'] ?? 'Novo Passo';
+                $detalhe = $p['detalhe'] ?? '';
+                $ordem   = (int)($p['ordem'] ?? 1);
+
+                $stmtPasso->bind_param("issi", $novoId, $rotulo, $detalhe, $ordem);
+                if (!$stmtPasso->execute()) {
+                    throw new \Exception("Erro ao executar INSERT em emergencia_passo: " . $stmtPasso->error);
+                }
+            }
+            $stmtPasso->close();
+        }
+
+        return $novoId;
+    }
 
 }

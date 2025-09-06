@@ -316,6 +316,28 @@
   text-decoration: underline;
 }
 
+.btn:disabled,
+.btn-icon:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/*BotãoSalvar*/
+/* estilo de "alterações pendentes" */
+#btnSalvarProc.has-changes {
+  background-color: #dc3545;   /* vermelho Bootstrap */
+  color: #fff;
+  animation: pulse-red 1s infinite;
+}
+
+@keyframes pulse-red {
+  0%   { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+
 /* ====== Estilo do Modal ====== */
 /* Container principal */
 .modal-emergerenc {
@@ -409,3 +431,17 @@
   background-color: #ccc;
   color: #000;
 }
+
+/*disabled de Novo*/
+/* estilo geral de botões desabilitados */
+.botao-direito:disabled {
+    opacity: 0.5;              /* deixa apagado */
+    cursor: not-allowed;       /* cursor de bloqueio */
+    background-color: #ccc;    /* cinza */
+    color: #666;               /* texto mais apagado */
+    border: 1px solid #999;    /* borda suavizada */
+}
+.botao-direito:disabled:hover {
+    filter: none;              /* remove qualquer efeito hover */
+}
+/* estilo específico para o botão "Novo" */

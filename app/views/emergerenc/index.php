@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="css/emergerenc.css?v=3">
+<link rel="stylesheet" href="css/emergerenc.css?v=<?php echo time(); ?>">
+<script src="js/emergerenc.js?v=<?php echo time(); ?>"></script>
 
 <?php
 // valores default para evitar avisos (serão preenchidos depois)
@@ -20,8 +21,6 @@ $proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', '
             <option value="u1640" <?= (($proc['grupo'] ?? '') === 'u1640') ? 'selected' : '';  ?>>U-1640</option>
         </select>
     </div>
-
-    <button type="button" class="btn btn-fechar" id="emer-fechar">Fechar</button>
 </div>
 
 <section class="emerGerenc" aria-label="Emergências - Novo/Editar">
@@ -76,7 +75,7 @@ $proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', '
                 <button type="button" class="btn" id="btnNovoProc">Novo</button>
                 <button type="button" class="btn" id="btnEditarProc" disabled>Editar</button>
                 <button type="button" class="btn" id="btnExcluirProc" disabled>Excluir</button>
-                <button type="button" class="btn" id="btnSalvarProc">Salvar</button>
+                <button type="button" class="btn" id="btnSalvarProc" disabled>Salvar</button>
             </div>
         </div>
 

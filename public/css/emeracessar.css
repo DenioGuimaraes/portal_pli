@@ -229,3 +229,15 @@
   list-style: none;
   margin-bottom: 10px;
 }
+
+/* estilo geral de botões desabilitados */
+.botao-direito:disabled {
+    opacity: 0.5;              /* deixa apagado */
+    cursor: not-allowed;       /* cursor de bloqueio */
+    background-color: #ccc;    /* cinza */
+    color: #666;               /* texto mais apagado */
+    border: 1px solid #999;    /* borda suavizada */
+}
+.botao-direito:disabled:hover {
+    filter: none;              /* remove qualquer efeito hover */
+}

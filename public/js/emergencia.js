@@ -19,6 +19,30 @@
   const show = (el, yes = true) => { if (el) el.hidden = !yes; };
   const clear = (el) => { if (el) el.innerHTML = ''; };
 
+  function setBotaoNovo(enabled) {
+    const btnNovo = document.querySelector('.menu-direito .botao-direito[onclick*="emergnovo"]');
+    if (!btnNovo) return;
+    btnNovo.disabled = !enabled;
+  }
+
+  function enableNovoUntilMenuLoads() {
+    const menu = document.querySelector('.menu-direito');
+    if (!menu) return;
+    const btn = document.querySelector('.menu-direito .botao-direito[onclick*="emergnovo"]');
+    if (btn) return setBotaoNovo(true);
+
+    const observer = new MutationObserver(() => {
+      const b = document.querySelector('.menu-direito .botao-direito[onclick*="emergnovo"]');
+      if (b) {
+        setBotaoNovo(true);
+        observer.disconnect();
+      }
+    });
+    observer.observe(menu, { childList: true, subtree: true });
+  }
+
+
+
   function setEstado(grupoId, { carregando = false, erro = false, vazio = false } = {}) {
     const map = M[grupoId]; if (!map) return;
     show($(map.load), carregando);
@@ -237,6 +261,7 @@
       const status = document.getElementById('emg-status');
       if (status) status.textContent = 'Erro ao carregar listas.';
     }
+    enableNovoUntilMenuLoads(); // 🔓 habilita "Novo" no painel principal
   }
 
   // ------ init ------
@@ -247,3 +272,87 @@
   }
 
 })();
+
+function abrirModalNovaEmergencia() {
+  const modal = document.getElementById('modalNovaEmergencia');
+  const input = document.getElementById('inputNovaEmergenciaTitulo');
+  const select = document.getElementById('selectNovaEmergenciaGrupo');
+
+  if (!modal || !input || !select) {
+    console.error("Modal de nova emergência não encontrado.");
+    return;
+  }
+
+  input.value = '';
+  select.value = 'geral'; // default
+  modal.style.display = 'flex';
+  input.focus();
+}
+
+// cancelar/fechar modal
+document.getElementById('btnCancelNovaEmergencia')?.addEventListener('click', () => {
+  document.getElementById('modalNovaEmergencia').style.display = 'none';
+});
+
+// confirmar
+document.getElementById('btnOkNovaEmergencia')?.addEventListener('click', async () => {
+  const input = document.getElementById('inputNovaEmergenciaTitulo');
+  const select = document.getElementById('selectNovaEmergenciaGrupo');
+  const titulo = (input.value || '').trim();
+  const grupo = Number(select.value);
+
+  if (!titulo) {
+    alert('Digite um nome para a emergência.');
+    input.focus();
+    return;
+  }
+
+  const payload = {
+    titulo: titulo,
+    grupo_id: grupo,
+    identificadores: 'Texto padrão de identificadores',
+    causas: 'Texto padrão de causas',
+    impacto: 'Texto padrão de impacto',
+    contatos: 'Texto padrão de contatos',
+    passos: [
+      { rotulo: 'Passo inicial', detalhe: 'Detalhe padrão', ordem: 1 }
+    ]
+  };
+
+  try {
+    const resp = await fetch('index.php?url=EmergenciaController/novaEmergencia', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await resp.json();
+
+    if (data && data.ok) {
+      alert('Nova emergência criada com sucesso!');
+
+      // 🔹 salva seleção no localStorage (para o Editar saber qual carregar)
+      try {
+        localStorage.setItem('emg.sel', JSON.stringify({ id: data.id, grupo: grupo, titulo: titulo }));
+      } catch (e) {
+        console.warn('Não foi possível salvar em localStorage:', e);
+      }
+
+      // 🔹 fecha modal
+      document.getElementById('modalNovaEmergencia').style.display = 'none';
+
+      // 🔹 redireciona para o painel Editar (emergerenc)
+      if (typeof carregarConteudo === 'function') {
+        carregarConteudo('emergerenc?emergencia_id=' + data.id);
+      } else {
+        window.location.href = 'index.php?url=emergerencController&emergencia_id=' + data.id;
+      }
+
+    } else {
+      alert('Erro ao criar emergência: ' + (data?.msg || 'desconhecido'));
+    }
+  } catch (err) {
+    console.error('Falha na criação da emergência:', err);
+    alert('Erro ao criar emergência: ' + err.message);
+  }
+});

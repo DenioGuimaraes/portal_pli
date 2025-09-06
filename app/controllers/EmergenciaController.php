@@ -71,4 +71,46 @@ class EmergenciaController
         echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         return null;
     }
+
+    public function novaEmergencia() {
+        header('Content-Type: application/json; charset=utf-8');
+
+        try {
+            $raw = file_get_contents("php://input");
+            $data = json_decode($raw, true);
+
+            if (!$data) {
+                echo json_encode(['ok' => false, 'msg' => 'Payload inválido']);
+                return;
+            }
+
+            $titulo = trim($data['titulo'] ?? '');
+            $grupoId = intval($data['grupo_id'] ?? 0);
+
+            if ($titulo === '' || $grupoId <= 0) {
+                echo json_encode(['ok' => false, 'msg' => 'Campos obrigatórios ausentes']);
+                return;
+            }
+
+            $emergenciaModel = new EmergenciaModel();
+            $novoId = $emergenciaModel->criarEmergencia([
+                'titulo'         => $titulo,
+                'grupo_id'       => $grupoId,
+                'identificadores'=> $data['identificadores'] ?? '',
+                'causas'         => $data['causas'] ?? '',
+                'impacto'        => $data['impacto'] ?? '',
+                'contatos'       => $data['contatos'] ?? '',
+                'passos'         => $data['passos'] ?? []
+            ]);
+
+            if ($novoId) {
+                echo json_encode(['ok' => true, 'id' => $novoId]);
+            } else {
+                echo json_encode(['ok' => false, 'msg' => 'Falha ao inserir emergência']);
+            }
+
+        } catch (Exception $e) {
+            echo json_encode(['ok' => false, 'msg' => $e->getMessage()]);
+        }
+    }
 }

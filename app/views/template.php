@@ -20,7 +20,7 @@
     <div class="main-layout">
         <aside class="menu-esquerdo">
             <button class="botao-menu" type="button" onclick="location.href='<?= BASE_URL ?>/public/'">Início</button>
-            <button class="botao-menu" onclick="mostrarMenu('administrativo')">Administrativo</button>
+            <button class="botao-menu" onclick="mostrarMenu('administrativo')">Geral / Admin</button>
             <button class="botao-menu" onclick="mostrarMenu('u1620')">U-1620</button>
             <button class="botao-menu" onclick="mostrarMenu('u1640')">U-1640</button>
             <button class="botao-menu emergencia" onclick="mostrarMenu('emergencia')">Emergência</button>
