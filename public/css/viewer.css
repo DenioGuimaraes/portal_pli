@@ -3,18 +3,30 @@
    =================================== */
 
 /* SAFE MODE da viewer: não participa do fluxo e só aparece quando não estiver [hidden] */
+/* ===================================
+   Viewer Global de Imagem (PL-I)
+   =================================== */
+
+/* Agora o viewer só ocupa a área do conteudo-central.
+   O full-screen fica por conta do #pli-overlay. */
 .pli-viewer {
-  position: fixed;          /* sempre por cima, fora do fluxo */
-  inset: 0;                 /* cobre a tela toda */
-  z-index: 99999;
+  position: absolute;       /* antes era fixed */
+  top: 60px;                /* moldura do conteudo-central */
+  right: 180px;
+  bottom: 25px;
+  left: 180px;
+  z-index: 99999;           /* acima do overlay */
   display: flex;
   flex-direction: column;
-  background: #111;         /* troque se quiser */
+  background: #111;         /* mantém o “quadro” do viewer opaco */
+  border-radius: 6px;       /* opcional: dá um acabamento melhor */
+  box-shadow: 0 10px 30px rgba(0,0,0,.3); /* opcional */
 }
 
 .pli-viewer[hidden] {
   display: none !important; /* ocultação absoluta */
 }
+
 
 
 /* Barra de ferramentas no topo */
@@ -29,7 +41,7 @@
 }
 
 .pli-viewer-toolbar button {
-  background: #fff;
+  background: #f0ff10;
   color: #1b4d3e;
   border: none;
   padding: 4px 10px;
@@ -71,4 +83,17 @@
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
+}
+
+/* === Overlay transparente que cobre a tela toda === */
+#pli-overlay {
+  position: fixed;
+  inset: 0;                 /* cobre toda a viewport */
+  z-index: 99998;           /* abaixo do viewer (99999), acima do app */
+  background: rgba(0,0,0,.12);
+  backdrop-filter: blur(1px); 
+}
+
+#pli-overlay[hidden] {
+  display: none !important;
 }

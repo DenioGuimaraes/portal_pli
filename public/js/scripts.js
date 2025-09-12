@@ -40,10 +40,10 @@ function carregarConteudo(painel) {
       const key = (basePane || painel).toLowerCase();
 
       // Lista Telefônica
-      if (key === 'listatelefonica') {
-        if (typeof telefoneInit === 'function') telefoneInit();
-        else loadJS(base + '/public/js/listatelefonica.js', () => window.telefoneInit && telefoneInit());
+      if (key === 'telefones') {
+        if (typeof telInit === 'function') telInit();
       }
+
 
       // Radios
       if (key === 'radio') {

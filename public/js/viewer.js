@@ -42,10 +42,16 @@
 
   function setVisible(v) {
     const { viewer } = getEls();
-    if (!viewer) return;
-    viewer.hidden = !v;
+    const overlay = document.getElementById("pli-overlay");
+    if (!viewer || !overlay) return;
+
+    overlay.hidden = !v; // mostra/esconde overlay inteiro
+    viewer.hidden = !v;  // mostra/esconde viewer dentro dele
+
+    overlay.setAttribute("aria-hidden", v ? "false" : "true");
     viewer.setAttribute("aria-hidden", v ? "false" : "true");
   }
+
 
   function applyScale(scale) {
     const { img, zoomBadge } = getEls();
@@ -195,6 +201,6 @@
     offsetX = 0;
     offsetY = 0;
     updateTransform();
-  
+
   };
 })();

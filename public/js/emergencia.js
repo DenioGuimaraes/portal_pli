@@ -252,7 +252,7 @@
       renderGrupo('3', data.grupos['3'] || []);
 
       const status = document.getElementById('emg-status');
-      if (status) status.textContent = 'Listas atualizadas.';
+      if (status) status.textContent = ' ';
     } catch (err) {
       console.error('Falha ao carregar emergências:', err);
       setEstado('1', { carregando: false, erro: true });

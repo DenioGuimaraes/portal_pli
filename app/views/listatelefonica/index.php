@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/telefone.css?v=2">
+<link rel="stylesheet" href="css/listatelefonnica.css?v=2">
 
 <div class="painel-cabecalho">
     <h2>Lista Telefônica</h2>

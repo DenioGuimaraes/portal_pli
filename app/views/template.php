@@ -108,9 +108,9 @@
                         case 'inicio':
                             script.src = base + '/public/js/inicio.js';
                             break;
-                        case 'administrativo':
+                        case 'administrativo':                            
                             var s1 = document.createElement('script');
-                            s1.src = base + '/public/js/listatelefonica.js';
+                            s1.src = base + '/public/js/telefones.js';
                             document.body.appendChild(s1);
 
                             var s2 = document.createElement('script');
@@ -190,17 +190,23 @@
         }
     </script>
 
-    <!-- Viewer fora do main, para não ser apagado -->
-    <section id="pli-viewer" class="pli-viewer" hidden aria-hidden="true" role="dialog" aria-modal="true">
-        <header class="pli-viewer-toolbar">
-            <button type="button" data-pli-action="fit">Fit</button>
-            <button type="button" data-pli-action="close">Fechar</button>
-        </header>
-        <div class="pli-viewer-stage">
-            <img id="pliViewerImg" alt="" draggable="false" />
-        </div>
-        <div class="pli-viewer-zoom" aria-live="polite"></div>
-    </section>
+    <!-- Overlay cobre a tela toda, transparente -->
+    <div id="pli-overlay" hidden aria-hidden="true">
+
+        <!-- Viewer (mesmo código de antes, preservado) -->
+        <section id="pli-viewer" class="pli-viewer" hidden aria-hidden="true" role="dialog" aria-modal="true">
+            <header class="pli-viewer-toolbar">
+                <button type="button" data-pli-action="fit">Fit</button>
+                <button type="button" data-pli-action="close">Fechar</button>
+            </header>
+            <div class="pli-viewer-stage">
+                <img id="pliViewerImg" alt="" draggable="false" />
+            </div>
+            <div class="pli-viewer-zoom" aria-live="polite"></div>
+        </section>
+
+    </div>
+
 
     <script>
         const BASE_URL = '<?= BASE_URL ?>';

@@ -1,1 +1,3 @@
 - Dividir Anotações em dois painéis: U-1620 / U-1640
+- No painel Início, permitir trocar os grupos dos operadores na tela, clicando no nome, ou arrastando.??
+- Adaptar o Viewer para vídeo também.
