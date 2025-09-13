@@ -1,4 +1,6 @@
-#u1620InstrCampoBusca {
+/* ===== u1620instr ===== */
+
+#u1620instrCampoBusca {
     width: 250px;
     height: 10px;
     padding: 10px;
@@ -7,68 +9,310 @@
     font-size: 16px;
 }
 
-.u1620instr-grupo-coluna {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* duas colunas */
-    gap: 20px;
-    padding: 20px;
+/* Container geral (duas colunas lado a lado) */
+.u1620instr-separador {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: calc(100vh - 165px); /* ajusta conforme cabeçalho/rodapé */
+  align-items: stretch;        /* força colunas a ocuparem toda a altura */
+  padding: 10px;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
-.u1620instr-grupo {
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    background: #fff;
+/* Coluna da esquerda */
+.u1620instr-col-esq {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
 }
 
-.u1620instr-grupo {
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.u1620instr-col-esq .u1620instr-card {
+  flex: 1; /* ocupa toda a altura */
 }
 
-.u1620instr-grupo strong {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #005c4b;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 4px;
+/* Coluna da direita (70%) */
+.u1620instr-col-dir {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.u1620instr-lista {
-    padding: 5px 0;
+/* Card de resultados ocupa o espaço disponível */
+.u1620instr-col-dir .u1620instr-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.u1620instr-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 4px 0;
-    border-bottom: 1px dotted #ccc;
+/* Card genérico */
+.u1620instr-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.u1620instr-item:last-child {
-    border-bottom: none;
+/* Cabeçalho do card */
+.u1620instr-card__head {
+  background: #004d40;
+  color: #fff;
+  text-align: center;
+  padding: 6px;
+  font-size: 15px;
+  margin: 0;
 }
 
-.u1620instr-item .tag,
-.u1620instr-item .descricao {
-    color: #005c4b;
+.u1620instr-card__head h3{
+    margin: 0;
+    font-size: 1.1rem;
+    max-height: 30px;
 }
 
-.u1620instr-item .tag {
-    text-align: left;
-    flex: 1;
-    font-size: 14px;
-
+/* Corpo do card */
+.u1620instr-card__body {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+  margin: 5px;
+  gap: 5px;
 }
 
-.u1620instr-item .descricao {
-    text-align: right;
-    min-width: 100px;
-    font-size: 14px;
+/* Botões dentro da coluna esquerda */
+.u1620instr-col-esq .u1620instr-botao {
+  width: 100%;
 }
 
-.u1620instr-item:hover {
-    background-color: #f2f2f2;
+/* Ações (CRUD) fixam embaixo, fora do card */
+.u1620instr-acoes {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: -10px;
 }
+
+/* Container do card de grupos */
+.u1620instr-col-esq .u1620instr-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* ocupa altura toda do card */
+  padding: 0;
+}
+
+/* Container do card de grupos */
+.u1620instr-col-esq .u1620instr-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* ocupa altura toda do card */
+  padding: 0;
+}
+
+/* Botões dos grupos (ocupam verticalmente o card) */
+.u1620instr-col-esq .u1620instr-botao {
+  flex: 1;                      /* divide igualmente a altura */
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #fff; /* divisória branca entre botões */
+  background: #007733;          /* verde padrão Petrobras */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  padding: 5px;
+}
+
+/* Último botão sem borda inferior */
+.u1620instr-col-esq .u1620instr-botao:last-child {
+  border-bottom: none;
+}
+
+/* Hover */
+.u1620instr-col-esq .u1620instr-botao:hover {
+  background: #228b22;          /* verde mais claro */
+}
+
+/* Pressionado */
+.u1620instr-col-esq .u1620instr-botao:active {
+  transform: translateY(2px);
+  background: #004d1a;          /* verde ainda mais escuro */
+}
+
+/* Linha selecionada na tabela */
+.u1620instr-tabela tr.is-selected {
+  background-color: #c8e6c9 !important; /* verde claro */
+}
+
+.u1620instr-tabela tr.is-selected:hover {
+  background-color: #a5d6a7 !important; /* verde um pouco mais escuro */
+}
+
+/* Estado normal (já existe no seu padrão .u1620instr-botao) */
+.u1620instr-botao {
+  color: #fff;
+  font-weight: bold;
+  background: #006400;
+  border: 1px solid #004d1a;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.u1620instr-botao:hover:not(:disabled) {
+  background: #228b22;
+}
+
+.u1620instr-botao:active:not(:disabled) {
+  transform: translateY(2px);
+  background: #004d1a;
+}
+
+/* Estado desabilitado */
+.u1620instr-botao:disabled {
+  background: #999 !important;
+  color: #eee !important;
+  border: 1px solid #777 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Linha selecionada */
+.u1620instr-tabela tr.is-selected {
+  background-color: #c8e6c9 !important; /* verde claro */
+  font-weight: bold;
+}
+
+/* ====== Estilo do Modal u1620instr ====== */
+.modal-u1620instr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-u1620instr-content {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  min-width: 400px;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-u1620instr-header {
+  background-color: #006400; /* verde Petrobras */
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.modal-u1620instr-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-u1620instr-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+}
+
+.modal-u1620instr-body .form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-u1620instr-body label {
+  flex: 0 0 80px;
+  font-weight: bold;
+}
+
+.modal-u1620instr-body input,
+.modal-u1620instr-body select {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Rodapé */
+.modal-u1620instr-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 15px 15px;
+}
+
+.modal-u1620instr-actions button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#btnModalu1620instrOk {
+  background-color: #006400;
+  color: #fff;
+}
+
+#btnModalu1620instrCancel {
+  background-color: #ccc;
+  color: #000;
+}
+
+
+/* ===== Tabela u1620instr ===== */
+/* Ajuste da tabela */
+.u1620instr-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.80rem;     /* 🔹 fonte menor */
+  color: #005c4b;            /* 🔹 cinza escuro em vez de preto puro */
+  line-height: 1.4;       /* 🔹 altura de linha mais compacta */
+}
+
+.u1620instr-tabela th,
+.u1620instr-tabela td {
+  padding: 6px 10px;      /* 🔹 menos espaçamento */
+  border-bottom: 1px solid #ccc;
+}
+
+.u1620instr-tabela th {
+  background: #004d40;    /* verde Petrobras escuro */
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;      /* 🔹 cabeçalho levemente maior */
+}
+
+.u1620instr-tabela tr:nth-child(even) td {
+  background: #f9f9f9;    /* zebra */
+}
+
+.u1620instr-tabela tr:hover td {
+  background: #e0f2f1;    /* hover verde claro */
+}
+
+/* Linha selecionada */
+.u1620instr-tabela tr.is-selected td {
+  background: #c8e6c9 !important;
+  font-weight: bold;
+}
+

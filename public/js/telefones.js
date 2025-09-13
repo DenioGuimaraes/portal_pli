@@ -136,13 +136,10 @@ function telExcluir() {
 
 // ----------------- Dados -----------------
 async function telCarregarDoServidor() {
-  console.log("📡 Buscando JSON de telefones...");
   try {
     const resp = await fetch("index.php?url=TelefonesController/telListarJson&ts=" + Date.now());
     const data = await resp.json();
-    console.log("✅ JSON recebido:", data);
     telDados = Array.isArray(data) ? data : [];
-    console.log("📊 telDados atualizado:", telDados);
   } catch (e) {
     console.error("❌ Erro ao carregar JSON:", e);
     telDados = [];
@@ -170,8 +167,6 @@ function telSelecionarRegistro(tr) {
 }
 
 function telRenderTabela(grupo = "Agenda", termoBusca = "") {
-  console.log(`🖥 telRenderTabela grupo="${grupo}" termo="${termoBusca}"`);
-
   const tb = document.querySelector("#telefoneTabela tbody");
   const titulo = document.getElementById("telefoneTituloGrupo");
   const selectGrupo = document.getElementById("telefoneSelectGrupo");
@@ -195,8 +190,6 @@ function telRenderTabela(grupo = "Agenda", termoBusca = "") {
     );
     titulo.textContent = `Grupo: ${grupo}`;
   }
-
-  console.log("📊 Registros após filtro:", registros);
 
   if (registros.length === 0) {
     const tr = document.createElement("tr");
@@ -242,13 +235,28 @@ function telFiltrarGrupo(grupo) {
     selectGrupo.value = grupo;
   }
 
+  // 🔹 limpar o campo de busca sempre que trocar de grupo
   const busca = document.getElementById("telefoneCampoBusca");
-  const termo = busca ? busca.value : "";
+  if (busca) busca.value = "";
 
-  telRenderTabela(grupo, termo);
+  // agora renderiza sem filtro
+  telRenderTabela(grupo);
 }
 
+
 function telInit() {
-  console.log("🚀 telInit executado");
   telCarregarDoServidor().then(() => telRenderTabela("Agenda"));
+}
+
+function telFiltrarBusca() {
+  const campo = document.getElementById("telefoneCampoBusca");
+  if (!campo) return;
+
+  const termo = campo.value.trim();
+
+  if (termo === "") {
+    telRenderTabela(telGrupoAtual);
+  } else {
+    telRenderTabela("Agenda", termo); // "Agenda" = busca em todos
+  }
 }

@@ -3,7 +3,7 @@
 <div class="painel-cabecalho">
     <h2>Lista Telefônica</h2>
     <div class="telefone-busca">
-        <input type="text" id="telefoneCampoBusca" placeholder="Buscar nome ou ramal...">
+        <input type="text" id="telefoneCampoBusca" placeholder="Buscar nome ou ramal..." onkeyup="telFiltrarBusca()">
     </div>
 </div>
 
@@ -100,7 +100,6 @@
       const tentativa = setInterval(() => {
           const el = document.getElementById("telefoneTabela");
           if (typeof telRenderTabela === 'function' && el) {
-              console.log("⏱ Executando telRenderTabela após view carregada.");
               telCarregarDoServidor().then(() => {
                   console.log("🚀 Render inicial de Agenda");
                   telRenderTabela("Agenda");

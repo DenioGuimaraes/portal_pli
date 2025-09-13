@@ -76,7 +76,7 @@
 .telefone-card__body {
   flex: 1;
   padding: 8px;
-  overflow: auto;
+  overflow: hidden;
   margin: 5px;
   gap: 5px;
 }

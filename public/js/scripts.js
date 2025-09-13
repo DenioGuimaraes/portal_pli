@@ -2,8 +2,7 @@ function carregarConteudo(painel) {
   const conteudo = document.querySelector('.conteudo-central');
   conteudo.innerHTML = "<p>Carregando...</p>";
 
-  // 🔧 Se for 'emeracessar' sem emergencia_id, pega da seleção (localStorage)
-  // 🔧 Se for 'emeracessar' OU 'emergerenc' sem emergencia_id, pega da seleção (localStorage)
+   // 🔧 Se for 'emeracessar' OU 'emergerenc' sem emergencia_id, pega da seleção (localStorage)
   (function ensureEmergenciaId() {
     const base = (painel.split('?')[0] || '').toLowerCase();
     const hasId = /(?:^|[?&])emergencia_id=/.test(painel);
@@ -44,6 +43,10 @@ function carregarConteudo(painel) {
         if (typeof telInit === 'function') telInit();
       }
 
+      // U-1620 Instrumentos
+      if (key === 'u1620instr') {
+        if (typeof u1620instrinit === 'function') u1620instrinit();
+      }
 
       // Radios
       if (key === 'radio') {
@@ -57,13 +60,7 @@ function carregarConteudo(painel) {
         else loadJS(base + '/public/js/onibus.js', () => window.onibusInit && onibusInit());
       }
 
-      // U-1620 Instrumentos
-      if (key === 'u1620instr') {
-        if (typeof u1620InstrInit === 'function') u1620InstrInit();
-        else loadJS(base + '/public/js/u1620instr.js', () => window.u1620InstrInit && u1620InstrInit());
-      }
-
-      // U-1620 Válvulas
+          // U-1620 Válvulas
       if (key === 'u1620valv') {
         if (typeof u1620ValvInit === 'function') u1620ValvInit();
         else loadJS(base + '/public/js/u1620valv.js', () => window.u1620ValvInit && u1620ValvInit());
