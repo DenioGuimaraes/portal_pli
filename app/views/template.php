@@ -145,6 +145,15 @@
                                 }, 50);
                             }
                             break;
+                        case 'u1640':
+                            var s11 = document.createElement('script');
+                            s11.src = base + '/public/js/u1640valv.js?v=2'; // ?v=1 evita cache
+                            document.body.appendChild(s11);
+
+                            var s12 = document.createElement('script');
+                            s12.src = base + '/public/js/u1640instr.js?v=2'; // ?v=1 evita cache
+                            document.body.appendChild(s12);
+                            break;
                         case 'emergencia':
                             document.querySelectorAll('script[src*="/public/js/emergencia.js"]').forEach(s => s.remove());
                             var s8 = document.createElement('script');

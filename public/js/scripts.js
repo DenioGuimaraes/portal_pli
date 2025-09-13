@@ -43,11 +43,6 @@ function carregarConteudo(painel) {
         if (typeof telInit === 'function') telInit();
       }
 
-      // U-1620 Instrumentos
-      if (key === 'u1620instr') {
-        if (typeof u1620instrinit === 'function') u1620instrinit();
-      }
-
       // Radios
       if (key === 'radio') {
         if (typeof radioInit === 'function') radioInit();
@@ -60,11 +55,7 @@ function carregarConteudo(painel) {
         else loadJS(base + '/public/js/onibus.js', () => window.onibusInit && onibusInit());
       }
 
-          // U-1620 Válvulas
-      if (key === 'u1620valv') {
-        if (typeof u1620ValvInit === 'function') u1620ValvInit();
-        else loadJS(base + '/public/js/u1620valv.js', () => window.u1620ValvInit && u1620ValvInit());
-      }
+      // ===== PAINÉIS U-1620 =====
 
       // H-6201
       if (key === 'h6201') {
@@ -72,7 +63,29 @@ function carregarConteudo(painel) {
         else loadJS(base + '/public/js/h6201.js', () => window.h6201Init && h6201Init());
       }
 
-      // ===== NOVOS PAINÉIS DO MÓDULO EMERGÊNCIA =====
+      // U-1620 Instrumentos
+      if (key === 'u1620instr') {
+        if (typeof u1620InstrInit === 'function') u1620InstrInit();
+      }
+
+      // U-1620 Válvulas
+      if (key === 'u1620valv') {
+        if (typeof u1620valvInit === 'function') u1620valvInit();
+      }
+
+      // ===== PAINÉIS U-1640 =====
+
+      // U-1640 Instrumentos
+      if (key === 'u1640instr') {
+        if (typeof u1640InstrInit === 'function') u1640InstrInit();
+      }
+
+      // U-1640 Válvulas
+      if (key === 'u1640valv') {
+        if (typeof u1640valvInit === 'function') u1640valvInit();
+      }
+
+      // ===== PAINÉIS DO MÓDULO EMERGÊNCIA =====
 
       // Painel "Acessar" (execução — em construção)
       if (key === 'emeracessar') {
