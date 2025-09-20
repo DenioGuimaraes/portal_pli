@@ -1,0 +1,111 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* remove a barra externa */
+}
+
+#conteudo-central {
+    height: calc(100vh - 100px); /* ajusta p/ descontar header/rodapé globais */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.painel-cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-top: -5px
+}
+
+.painel-conteudo {
+    flex: 1;              /* ocupa o espaço restante */
+    overflow-y: auto;     /* só aqui rola */
+    padding-right: 8px;
+}
+
+
+/* Caixa de busca */
+#u1640steamCampoBusca {
+    width: 250px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Grupos (títulos maiores) */
+.u1640steam-grupo {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: #004d40; /* azul claro Petrobras */
+    padding: 8px;
+    border-radius: 6px;
+}
+
+/* Cada card */
+.u1640steam-card {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    overflow: hidden; /* arredondar também tabela */
+}
+
+/* Cabeçalho do card (título SS-xx) */
+.u1640steam-card h3 {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    background-color: #004d40; /* azul claro Petrobras */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Tabelas dentro dos cards */
+.u1640steam-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+/* Cabeçalho da tabela */
+.u1640steam-card table tr:first-child {
+    background: #006633; /* verde Petrobras */
+    color: white;
+    font-weight: bold;
+}
+
+/* Linhas zebradas */
+.u1640steam-card table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.u1640steam-card table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Células */
+.u1640steam-card table td {
+    padding: 6px 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.u1640steam-card table tr {
+    padding: 6px 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #005c4b;
+}
+
+/* Destaque para busca (quando usarmos <mark>) */
+mark {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    padding: 0 2px;
+    border-radius: 2px;
+}

@@ -84,19 +84,19 @@
 
       img.onerror = () => {
         console.error("[PLI.viewer] Imagem não encontrada:", srcBase);
-        alert("Imagem não encontrada:\n" + srcBase);
+        alert("Imagem não disponível, aguarde atualizações.");
+        img.removeAttribute("src"); // garante que não "abra" vazio
       };
 
       img.onload = () => {
+        img.style.transform = "translate(-50%, -50%) scale(1)";
+        setVisible(true);
         PLI.viewer.fit();
+        console.log("[PLI.viewer] exibindo:", srcBase);
       };
 
+      img.src = src; // só depois dos handlers
 
-      img.style.transform = "translate(-50%, -50%) scale(1)";
-      img.src = src;
-
-      setVisible(true);
-      console.log("[PLI.viewer] exibindo:", srcBase);
     },
 
     fechar() {

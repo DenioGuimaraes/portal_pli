@@ -7,3 +7,4 @@ class U1640SteamController
         require_once __DIR__ . '/../views/u1640steam/index.php';
     }
 }
+

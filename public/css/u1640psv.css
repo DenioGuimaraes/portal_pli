@@ -1,0 +1,215 @@
+/* ----------------- Painel PSV ----------------- */
+
+/* conteúdo central fixo */
+.conteudo-central {
+  overflow: hidden;  /* impede rolagem geral */
+  display: flex;
+  flex-direction: column;
+}
+
+.u1640psv-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: calc(100% - 70px);
+}
+
+/* card principal */
+.u1640psv-card {
+  flex: 1; /* ocupa o espaço disponível */
+  overflow-y: auto; /* ativa rolagem apenas dentro do card */
+  border: 1px solid #ccc;
+  background: #fff;
+  max-height: calc(100vh - 220px); /* ajusta para caber na tela */
+}
+
+.u1640psv-card-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* ----------------- Tabela ----------------- */
+.u1640psv-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.u1640psv-tabela th {
+    background: #004d26;
+    color: #fff;
+    text-align: left;
+    padding: 6px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.u1640psv-tabela td {
+    padding: 6px;
+    border-bottom: 1px solid #ddd;
+    color: #005c4b;
+}
+
+.u1640psv-tabela tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.u1640psv-tabela tr.selected {
+    background: #cce5ff !important;
+}
+
+/* ----------------- Botões ----------------- */
+.u1640psv-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.u1640psv-botoes button {
+    background: #004d26;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.u1640psv-botoes button:hover {
+    background: #007b3a;
+}
+
+/* ----------------- Modal ----------------- */
+.u1640psv-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.u1640psv-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    min-width: 600px;   /* mantém largura mínima */
+    max-width: 800px;   /* limita máximo */
+    width: 60%;         /* ocupa 60% da tela */
+    max-height: 90%;
+    overflow-y: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.u1640psv-modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    background: #004d26;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.u1640psv-modal-content label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.u1640psv-modal-content input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.u1640psv-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.u1640psv-modal-actions button {
+    background: #004d26;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.u1640psv-modal-actions button:hover {
+    background: #007b3a;
+}
+
+/* Grid das colunas do formulário */
+.u1640psv-form-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.u1640psv-form-col {
+    flex: 1;
+    min-width: 220px; /* garante que não fique muito estreito */
+}
+
+.u1640psv-form-col label {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.u1640psv-form-col input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 3px;
+    box-sizing: border-box;
+}
+
+.u1640psv-modal-actions {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.u1640psv-botoes button:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Estado normal (ativo) */
+.u1640psv-botoes button {
+    background: #004d26;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.u1640psv-botoes button:hover:not(:disabled) {
+    background: #007b3a;
+}
+
+/* Estado desativado */
+.u1640psv-botoes button:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}

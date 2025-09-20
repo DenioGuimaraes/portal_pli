@@ -73,6 +73,11 @@ function carregarConteudo(painel) {
         if (typeof u1620valvInit === 'function') u1620valvInit();
       }
 
+      // U-1620 PSV's
+      if (key === 'u1620psv') {
+        if (typeof u1620psvInit === 'function') u1620psvInit();
+      }
+
       // ===== PAINÉIS U-1640 =====
 
       // U-1640 Instrumentos
@@ -83,6 +88,11 @@ function carregarConteudo(painel) {
       // U-1640 Válvulas
       if (key === 'u1640valv') {
         if (typeof u1640valvInit === 'function') u1640valvInit();
+      }
+
+      // U-1640 PSV's
+      if (key === 'u1640psv') {
+        if (typeof u1640psvInit === 'function') u1640psvInit();
       }
 
       // ===== PAINÉIS DO MÓDULO EMERGÊNCIA =====

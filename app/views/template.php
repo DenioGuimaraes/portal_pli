@@ -108,6 +108,7 @@
                         case 'inicio':
                             script.src = base + '/public/js/inicio.js';
                             break;
+
                         case 'administrativo':                            
                             var s1 = document.createElement('script');
                             s1.src = base + '/public/js/telefones.js';
@@ -121,6 +122,7 @@
                             s3.src = base + '/public/js/onibus.js';
                             document.body.appendChild(s3);
                             break;
+
                         case 'u1620':
                             var s4 = document.createElement('script');
                             s4.src = base + '/public/js/u1620instr.js';
@@ -144,7 +146,12 @@
                                     }
                                 }, 50);
                             }
+
+                            var s13 = document.createElement('script');
+                            s13.src = base + '/public/js/u1620psv.js';
+                            document.body.appendChild(s13);
                             break;
+
                         case 'u1640':
                             var s11 = document.createElement('script');
                             s11.src = base + '/public/js/u1640valv.js?v=2'; // ?v=1 evita cache
@@ -153,6 +160,15 @@
                             var s12 = document.createElement('script');
                             s12.src = base + '/public/js/u1640instr.js?v=2'; // ?v=1 evita cache
                             document.body.appendChild(s12);
+
+                            var s14 = document.createElement('script');
+                            s14.src = base + '/public/js/u1640psv.js?v=2'; // ?v=1 evita cache
+                            document.body.appendChild(s14);
+
+                            var s15 = document.createElement('script');
+                            s15.src = base + '/public/js/u1640steam.js?v=2'; // ?v=1 evita cache
+                            document.body.appendChild(s15);
+                            
                             break;
                         case 'emergencia':
                             document.querySelectorAll('script[src*="/public/js/emergencia.js"]').forEach(s => s.remove());
