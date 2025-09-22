@@ -1,43 +1,43 @@
 function buscarNome() {
-    let termo = document.getElementById('campoBusca').value;
+  let termo = document.getElementById('campoBusca').value;
 
-    if (termo.length < 2) {
-        document.getElementById('resultadoBusca').innerHTML = '';
-        return;
-    }
+  if (termo.length < 2) {
+    document.getElementById('resultadoBusca').innerHTML = '';
+    return;
+  }
 
-    fetch(BASE_URL + '/public/index.php?url=DadosPessoalController/buscar&termo=' + encodeURIComponent(termo))
-        .then(res => res.json())
-        .then(res => {
-            let html = '<h3>Resultados da Busca</h3>';
-            res.forEach(pessoa => {
-                html += `<div class='nome-clicavel' onclick='mostrarModal(${JSON.stringify(pessoa)})'>${pessoa.nome}</div>`;
-            });
-            document.getElementById('resultadoBusca').innerHTML = html;
-        });
+  fetch(BASE_URL + '/public/index.php?url=DadosPessoalController/buscar&termo=' + encodeURIComponent(termo))
+    .then(res => res.json())
+    .then(res => {
+      let html = '<h3>Resultados da Busca</h3>';
+      res.forEach(pessoa => {
+        html += `<div class='nome-clicavel' onclick='mostrarModal(${JSON.stringify(pessoa)})'>${pessoa.nome}</div>`;
+      });
+      document.getElementById('resultadoBusca').innerHTML = html;
+    });
 }
 
 function mostrarModal(pessoa) {
-    const conteudo = `
+  let conteudo = `
         <p><strong>Nome (Apelido):</strong> ${pessoa.nome ?? ''}</p>
         <p><strong>Nome Completo:</strong> ${pessoa.nometodo ?? ''}</p>
         <p><strong>Chave:</strong> ${pessoa.chave ?? ''}</p>
         <p><strong>Matrícula:</strong> ${pessoa.matricula ?? ''}</p>
         <p><strong>Telefone:</strong> ${pessoa.telefone ?? ''}</p>
         <p><strong>Email:</strong> ${pessoa.email ?? ''}</p>
-        <p><strong>Ramal:</strong> ${pessoa.ramal ?? ''}</p>
         <p><strong>Sangue:</strong> ${pessoa.sangue ?? ''}</p>
         <p><strong>Transporte:</strong> ${pessoa.transporte ?? ''}</p>
         <p><strong>Grupo:</strong> ${pessoa.grupo ?? ''}</p>
         <p><strong>Cargo:</strong> ${pessoa.cargo ?? ''}</p>
     `;
-    document.getElementById('conteudoModal').innerHTML = conteudo;
-    document.getElementById('modalDetalhes').style.display = 'block';
+
+  document.getElementById('conteudoModal').innerHTML = conteudo;
+  document.getElementById('modalDetalhes').style.display = 'block';
 }
 
 
 function fecharModal() {
-    document.getElementById('modalDetalhes').style.display = 'none';
+  document.getElementById('modalDetalhes').style.display = 'none';
 }
 
 function carregarConteudoMenuDireito(pagina, botao) {
@@ -91,10 +91,21 @@ function abrirModalCadastro(pessoa = null) {
   document.getElementById('campo-chave').value = pessoa?.chave || '';
   document.getElementById('campo-matricula').value = pessoa?.matricula || '';
   document.getElementById('campo-telefone').value = pessoa?.telefone || '';
+  document.getElementById('campo-email').value = pessoa?.email || '';
   document.getElementById('campo-transporte').value = pessoa?.transporte || '';
   document.getElementById('campo-sangue').value = pessoa?.sangue || '';
   document.getElementById('campo-grupo').value = pessoa?.grupo || '';
   document.getElementById('campo-cargo').value = pessoa?.cargo || '';
+
+  // avatar não dá para preencher no input type=file
+  /* mas podemos exibir preview se já existir
+  if (pessoa?.avatar) {
+    const preview = document.createElement('img');
+    preview.src = 'public/images/pessoal/' + pessoa.avatar;
+    preview.style.maxWidth = "120px";
+    preview.style.maxHeight = "120px";
+    document.getElementById('campo-avatar').insertAdjacentElement('afterend', preview);
+  }*/
 }
 
 function fecharModalCadastro() {
@@ -102,52 +113,49 @@ function fecharModalCadastro() {
 }
 
 function salvarRegistro() {
-  const dados = {
-    id: document.getElementById('campo-id').value,
-    nome: document.getElementById('campo-nome').value,
-    nometodo: document.getElementById('campo-nometodo').value,
-    chave: document.getElementById('campo-chave').value,
-    matricula: document.getElementById('campo-matricula').value,
-    telefone: document.getElementById('campo-telefone').value,
-    transporte: document.getElementById('campo-transporte').value,
-    sangue: document.getElementById('campo-sangue').value,
-    grupo: document.getElementById('campo-grupo').value,
-    cargo: document.getElementById('campo-cargo').value
-  };
+  const formData = new FormData();
+  formData.append("id", document.getElementById('campo-id').value);
+  formData.append("nome", document.getElementById('campo-nome').value);
+  formData.append("nometodo", document.getElementById('campo-nometodo').value);
+  formData.append("chave", document.getElementById('campo-chave').value);
+  formData.append("matricula", document.getElementById('campo-matricula').value);
+  formData.append("telefone", document.getElementById('campo-telefone').value);
+  formData.append("email", document.getElementById('campo-email').value);
+  formData.append("transporte", document.getElementById('campo-transporte').value);
+  formData.append("sangue", document.getElementById('campo-sangue').value);
+  formData.append("grupo", document.getElementById('campo-grupo').value);
+  formData.append("cargo", document.getElementById('campo-cargo').value);
+
+  const avatarFile = document.getElementById('campo-avatar').files[0];
+  if (avatarFile) {
+    formData.append("avatar", avatarFile);
+  }
 
   fetch('includes/salvar.php', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(dados)
+    body: formData
   })
-  fetch('includes/salvar.php', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(dados)
-  })
-  .then(async (res) => {
-    const text = await res.text();        // leia como texto primeiro
-    try {
-      const json = JSON.parse(text);      // tente fazer parse
-      return json;                        // ok, é JSON
-    } catch (e) {
-      console.error('Resposta não-JSON do salvar.php:', text);
-      throw new Error('Resposta não-JSON do backend');
-    }
-  })
-  .then(res => {
-    alert(res.mensagem);
-    if (res.sucesso) {
-      fecharModalCadastro();
-      carregarConteudo('alterarpessoal');
-    }
-  })
-  .catch(err => {
-    console.error('Erro ao salvar:', err);
-    alert('Erro ao salvar os dados.');
-  });
+    .then(async (res) => {
+      const text = await res.text();
+      try {
+        const json = JSON.parse(text);
+        return json;
+      } catch (e) {
+        console.error('Resposta não-JSON do salvar.php:', text);
+        throw new Error('Resposta não-JSON do backend');
+      }
+    })
+    .then(res => {
+      alert(res.mensagem);
+      if (res.sucesso) {
+        fecharModalCadastro();
+        carregarConteudo('alterarpessoal');
+      }
+    })
+    .catch(err => {
+      console.error('Erro ao salvar:', err);
+      alert('Erro ao salvar os dados.');
+    });
 }
 
 function abrirModalInserir() {
@@ -178,16 +186,16 @@ function excluirRegistro(id) {
     },
     body: JSON.stringify({ id: id })
   })
-  .then(res => res.json())
-  .then(res => {
-    alert(res.mensagem);
-    if (res.sucesso) {
-      carregarConteudo('alterarpessoal'); 
-    }
-  })
-  .catch(err => {
-    console.error('Erro ao excluir:', err);
-    alert('Erro ao excluir o registro.');
-  });
+    .then(res => res.json())
+    .then(res => {
+      alert(res.mensagem);
+      if (res.sucesso) {
+        carregarConteudo('alterarpessoal');
+      }
+    })
+    .catch(err => {
+      console.error('Erro ao excluir:', err);
+      alert('Erro ao excluir o registro.');
+    });
 }
 

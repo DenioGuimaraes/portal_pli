@@ -16,5 +16,4 @@ class AlterarPessoalModel extends Model
         $resultado = $stmt->get_result();
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
-
 }

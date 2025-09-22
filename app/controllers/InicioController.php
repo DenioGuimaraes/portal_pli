@@ -39,12 +39,13 @@ class InicioController extends Controller
         echo json_encode(['sucesso' => $resultado]);
     }
 
-    public function buscarOperadores() {
-        $model = new DadosPessoalModel();
-        $dados = $model->buscarPorCargo('Operador');
+    public function buscarOperadores()
+    {
+        $dados = $this->model->buscarPorCargo('Operador');
         header('Content-Type: application/json');
         echo json_encode($dados);
     }
+
 
     public function buscarAnotacao()
     {

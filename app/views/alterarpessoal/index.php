@@ -20,7 +20,6 @@
                     <th>Nome Completo</th>
                     <th>Chave</th>
                     <th>Matrícula</th>
-                    <th>Telefone</th>
                     <th>Transporte</th>
                     <th>Grupo</th>
                     <th>Cargo</th>
@@ -34,7 +33,6 @@
                         <td><?= htmlspecialchars($pessoa['nometodo']) ?></td>
                         <td><?= htmlspecialchars($pessoa['chave']) ?></td>
                         <td><?= htmlspecialchars($pessoa['matricula']) ?></td>
-                        <td><?= htmlspecialchars($pessoa['telefone']) ?></td>
                         <td><?= htmlspecialchars($pessoa['transporte']) ?></td>
                         <td><?= htmlspecialchars($pessoa['grupo']) ?></td>
                         <td><?= htmlspecialchars($pessoa['cargo']) ?></td>
@@ -42,17 +40,13 @@
                             <button class="botao-acao" onclick='abrirModalCadastro(<?= htmlspecialchars(json_encode($pessoa), ENT_QUOTES, 'UTF-8') ?>)'>✏️</button>
                             <button class="botao-acao" onclick='excluirRegistro(<?= $pessoa["id"] ?>)'>❌</button>
                         </td>
-
                     </tr>
                 <?php endforeach; ?>
-
             </tbody>
         </table>
-
-
     </div>
-
 </div> <!-- Fim de #conteudo-central -->
+
 
 <div id="modalCadastro" class="modal" style="display:none;">
     <div class="modal-conteudo">
@@ -86,6 +80,12 @@
                     <label for="campo-telefone">Telefone:</label>
                     <input type="text" id="campo-telefone">
                 </div>
+
+                <!-- 🔹 Novo campo Email -->
+                <div class="campo-form">
+                    <label for="campo-email">E-mail:</label>
+                    <input type="email" id="campo-email" placeholder="exemplo@empresa.com">
+                </div>
             </div>
 
             <div class="coluna-form">
@@ -113,7 +113,6 @@
                     </select>
                 </div>
 
-
                 <div class="campo-form">
                     <label for="campo-cargo">Cargo:</label>
                     <select id="campo-cargo">
@@ -127,6 +126,14 @@
                         <option value="Administração">Administração</option>
                     </select>
                 </div>
+
+                <!-- 🔹 Novo campo Avatar -->
+                <div class="campo-form">
+                    <label for="campo-avatar">Avatar:</label>
+                    <label class="botao-direito" for="campo-avatar">Escolher Avatar</label>
+                    <input type="file" id="campo-avatar" accept="image/*" style="display:none;">
+                </div>
+
             </div>
         </div>
 
@@ -134,7 +141,5 @@
             <button onclick="salvarRegistro()">Salvar</button>
             <button onclick="fecharModalCadastro()">Cancelar</button>
         </div>
-
-
     </div>
 </div>

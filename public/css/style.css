@@ -515,6 +515,8 @@ body, html {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  padding: 2px;
+  width: 100%;
 }
 
 .campo-form label {
@@ -574,3 +576,4 @@ body, html {
 .botoes-modal button:last-child:hover {
   background-color: #999;
 }
+

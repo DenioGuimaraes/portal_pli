@@ -545,3 +545,24 @@ hr {
   overflow: hidden;
   text-overflow: ellipsis;    /* se estourar largura, coloca ... */
 }
+
+#avatar-tooltip {
+  position: fixed; /* acompanha a tela, não o container */
+  background: transparent;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-size: 13px;
+  white-space: nowrap;
+  z-index: 9999;
+  pointer-events: none; /* não interfere no mouse */
+}
+
+#avatar-tooltip img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  background-size: contain;
+}

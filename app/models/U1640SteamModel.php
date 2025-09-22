@@ -11,3 +11,4 @@ class U1640SteamModel extends Model
 
     // Métodos futuros aqui
 }
+

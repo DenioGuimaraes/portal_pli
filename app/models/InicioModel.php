@@ -83,12 +83,15 @@ class InicioModel extends Model
         return $sucesso;
     }
 
-    public function buscarPorCargo($cargo) {
-        $stmt = $this->db->prepare("SELECT nome, grupo FROM dadospessoal WHERE cargo = ?");
+    public function buscarPorCargo($cargo)
+    {
+        $stmt = $this->db->prepare("SELECT id, nome, grupo, avatar FROM dadospessoal WHERE cargo = ?");
         $stmt->bind_param("s", $cargo);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+
+
 
     public function buscarAnotacao()
     {
@@ -112,4 +115,3 @@ class InicioModel extends Model
         return $stmt->execute();
     }
 }
-
