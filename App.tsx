@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createTables, getPessoal} from './src/database';
+import { createTables, getPessoal } from './src/database';
 
 // Import das telas
 import HomeScreen from './screens/HomeScreen';
@@ -16,6 +16,14 @@ import ValvulasSeguranca from './screens/ValvulasSeguranca';
 import Pessoal from './screens/Pessoal';
 import Telefones from './screens/Telefones';
 import Radios from './screens/Radios';
+import EditPessoal from './screens/EditarPessoal';
+import EditTelefones from './screens/EditarTelefones';
+import EditRadios from './screens/EditarRadios';
+import EditInstrumentos from './screens/EditarInstrumentos';
+import EditValvulas from './screens/EditarValvulas';
+import EditValvulasSeguranca from './screens/EditarValvulasSeguranca';
+import EditEmergencias from './screens/EditarEmergencias';
+
 
 // Tipagem do Stack
 export type RootStackParamList = {
@@ -31,6 +39,13 @@ export type RootStackParamList = {
   Pessoal: undefined;
   Telefones: undefined;
   Radios: undefined;
+  EditPessoal: undefined;
+  EditTelefones: undefined; // novo 
+  EditRadios: undefined; // novo
+  EditInstrumentos: undefined; // novo
+  EditValvulas: undefined; // novo
+  EditValvulasSeguranca: undefined; // novo
+  EditEmergencias: undefined; // novo
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -130,6 +145,41 @@ const App: React.FC = () => {
           name="ValvulasSeguranca"
           component={ValvulasSeguranca}
           options={{ title: 'Válvulas de Segurança - U-1820' }}
+        />
+        <Stack.Screen
+          name="EditPessoal"
+          component={EditPessoal}
+          options={{ title: 'Editar Pessoal' }}
+        />
+        <Stack.Screen
+          name="EditTelefones"
+          component={EditTelefones}
+          options={{ title: 'Editar Telefones' }}
+        />
+        <Stack.Screen
+          name="EditRadios"
+          component={EditRadios}
+          options={{ title: 'Editar Canais de Rádio' }}
+        />
+        <Stack.Screen
+          name="EditInstrumentos"
+          component={EditInstrumentos}
+          options={{ title: 'Editar Instrumentos' }}
+        />
+        <Stack.Screen
+          name="EditValvulas"
+          component={EditValvulas}
+          options={{ title: 'Editar Válvulas de Controle' }}
+        />
+        <Stack.Screen
+          name="EditValvulasSeguranca"
+          component={EditValvulasSeguranca}
+          options={{ title: 'Editar Válvulas de Segurança' }}
+        />
+        <Stack.Screen
+          name="EditEmergencias"
+          component={EditEmergencias}
+          options={{ title: 'Editar Emergências' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

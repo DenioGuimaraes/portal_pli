@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
 
@@ -11,13 +11,13 @@ type Props = {
 
 const MenuEdicao: React.FC<Props> = ({ navigation }) => {
   const tabelas = [
-    { label: 'Pessoal', target: '' },
-    { label: 'Telefones', target: '' },
-    { label: 'Canais de Rádio', target: '' },
-    { label: 'Instrumentos', target: '' },
-    { label: 'Válvulas de Controle', target: '' },
-    { label: 'Válvulas de Segurança', target: '' },
-    { label: 'Emergências', target: '' },
+    { label: 'Pessoal', target: 'EditPessoal' },
+    { label: 'Telefones', target: 'EditTelefones' },
+    { label: 'Canais de Rádio', target: 'EditRadios' },
+    { label: 'Instrumentos', target: 'EditInstrumentos' },
+    { label: 'Válvulas de Controle', target: 'EditValvulas' },
+    { label: 'Válvulas de Segurança', target: 'EditValvulasSeguranca' },
+    { label: 'Emergências', target: 'EditEmergencias' },
   ];
 
   return (
@@ -28,7 +28,13 @@ const MenuEdicao: React.FC<Props> = ({ navigation }) => {
         <TouchableOpacity
           key={index}
           style={[styles.button, styles.yellowButton]}
-          onPress={() => console.log(`Abrir CRUD de ${item.label}`)}
+          onPress={() => {
+            if (item.target) {
+              navigation.navigate(item.target as keyof RootStackParamList);
+            } else {
+              console.log(`CRUD de ${item.label} ainda não implementado`);
+            }
+          }}
         >
           <Text style={styles.buttonText}>{item.label}</Text>
         </TouchableOpacity>
