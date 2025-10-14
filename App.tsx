@@ -7,7 +7,7 @@ import { createTables, getPessoal } from './src/database';
 import HomeScreen from './screens/HomeScreen';
 import Administrativo from './screens/Administrativo';
 import U1820 from './screens/U1820';
-import Emergencia from './screens/Emergencia';
+import Emergencia from './screens/Emergencias';
 import LoginScreen from './screens/LoginScreen';
 import MenuEdicao from './screens/MenuEdicao';
 import Instrumentos from './screens/Instrumentos';
@@ -24,7 +24,6 @@ import EditValvulas from './screens/EditarValvulas';
 import EditValvulasSeguranca from './screens/EditarValvulasSeguranca';
 import EditEmergencias from './screens/EditarEmergencias';
 
-
 // Tipagem do Stack
 export type RootStackParamList = {
   Home: undefined;
@@ -40,12 +39,13 @@ export type RootStackParamList = {
   Telefones: undefined;
   Radios: undefined;
   EditPessoal: undefined;
-  EditTelefones: undefined; // novo 
+  EditTelefones: undefined; // novo
   EditRadios: undefined; // novo
   EditInstrumentos: undefined; // novo
   EditValvulas: undefined; // novo
   EditValvulasSeguranca: undefined; // novo
   EditEmergencias: undefined; // novo
+  Emergencias: undefined; // novo
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -103,7 +103,12 @@ const App: React.FC = () => {
         <Stack.Screen
           name="Emergencia"
           component={Emergencia}
-          options={{ title: 'Emergência' }}
+          options={{
+            title: 'Emergências',
+            headerStyle: { backgroundColor: '#b71c1c' }, // 🔴 fundo vermelho escuro
+            headerTintColor: '#fff', // 🔤 texto branco
+            headerTitleStyle: { fontWeight: 'bold' }, // negrito no título
+          }}
         />
         <Stack.Screen
           name="Login"
@@ -145,6 +150,11 @@ const App: React.FC = () => {
           name="ValvulasSeguranca"
           component={ValvulasSeguranca}
           options={{ title: 'Válvulas de Segurança - U-1820' }}
+        />
+        <Stack.Screen
+          name="Emergencias"
+          component={Emergencia}
+          options={{ title: 'Procedimentos de Emergência' }}
         />
         <Stack.Screen
           name="EditPessoal"
