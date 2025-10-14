@@ -1,0 +1,58 @@
+/* Estrutura geral do painel */
+/* Estrutura geral do painel */
+.u1640-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas iguais */
+  gap: 10px;
+  height: calc(100vh - 150px); /* ajusta altura total - cabeçalho + rodapé */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Cada card */
+.u1640-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;     /* segura conteúdo interno */
+  /* 🔹 tirei o height:100% daqui */
+}
+
+.u1640-card__head {
+  background: #004d40; /* verde escuro Petrobras */
+  color: #fff;
+  text-align: center;
+  padding: 6px;
+  font-size: 15px;
+  margin: 0;
+}
+
+.u1640-card__body {
+  flex: 1;
+  padding: 8px;
+  overflow-y: auto; /* rolagem interna só quando necessário */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+}
+
+/* Botões menores */
+.u1640-botao {
+  color: white;
+  font-weight: bold;
+  background: #00aa55;
+  border: 1px solid #e0f2f1;
+  border-radius: 6px;
+  padding: 6px 6px;     /* menor altura */
+  cursor: pointer;
+  font-size: 13px;      /* letra menor */
+  line-height: 1.2;     /* compacta verticalmente */
+  transition: background 0.2s;
+}
+
+.u1640-botao:hover {
+  background: #97e488;
+}

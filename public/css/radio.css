@@ -1,0 +1,72 @@
+#radioCampoBusca {
+    width: 250px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.radio-grupo-coluna {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.radio-grupo {
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+.radio-grupo {
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.radio-grupo strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #005c4b;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 4px;
+}
+
+.radio-lista {
+    padding: 5px 0;
+}
+
+.radio-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.radio-item:last-child {
+    border-bottom: none;
+}
+
+.radio-item .faixa,
+.radio-item .descricao {
+    color: #005c4b;
+    font-size: 14px;
+    flex: 1;
+}
+
+/* Faixa alinhada à esquerda */
+.radio-item .faixa {
+    text-align: left;
+    min-width: 80px; /* largura mínima para não colar */
+}
+
+/* Descrição alinhada à direita */
+.radio-item .descricao {
+    text-align: right;
+    min-width: 200px; /* largura mínima para não colar */
+}
+

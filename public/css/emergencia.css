@@ -1,0 +1,464 @@
+/* /public/css/emergencia.css */
+
+/* ===== Variáveis de tema (ajuste à vontade) ===== */
+:root {
+    --emg-gap: 12px;
+    --emg-radius: 12px;
+    --emg-col-bg: #ffffff;
+    --emg-col-border: #d9d9d9;
+    --emg-muted: #6b7280;
+    --emg-accent: #0a6f54;
+    /* verde Petrobras-ish */
+    --emg-accent-weak: #e6f3ef;
+    --emg-item-bg: #f8f9fb;
+    --emg-item-bg-hover: #eef2f7;
+    --emg-item-bg-active: #dfe8f2;
+    --emg-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 6px 20px rgba(0, 0, 0, .06);
+    --emg-header-h: 52px;
+    --pli-footer-h: 24px;
+    /* rodapé "Direitos reservados..." */
+    --pli-central-gap: 40px;
+    /* margens/paddings verticais do wrapper central */
+}
+
+#conteudo-central {
+    overflow: hidden;
+}
+
+/* ===== Painel raiz ===== */
+.emg-painel {
+    height: calc(100vh - var(--pli-topbar-h) - var(--pli-footer-h) - var(--pli-central-gap));
+    overflow: hidden;
+    /* impede rolagem do container */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header interno do painel ===== */
+.emg-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: strong;
+    margin-top: 10px;
+}
+
+.emg-header h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.emg-breadcrumb {
+    font-size: 12px;
+    color: var(--emg-muted);
+}
+
+/* Banner “retomar” */
+.emg-retomar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--emg-accent-weak);
+    border: 1px solid var(--emg-accent);
+    color: #063f30;
+    border-radius: 8px;
+}
+
+/* ===== Grid 3 colunas ===== */
+.emg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    /* A:B:C */
+    gap: var(--emg-gap);
+    flex: 1;
+    min-height: 0;
+    /* essencial para scroll interno */
+}
+
+/* ===== Colunas ===== */
+.emg-col {
+    display: flex;
+    flex-direction: column;
+    background: var(--emg-col-bg);
+    border: 1px solid var(--emg-col-border);
+    border-radius: var(--emg-radius);
+    box-shadow: var(--emg-shadow);
+    min-height: 0;
+}
+
+.emg-col-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--emg-col-border);
+}
+
+.emg-col-header h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.emg-busca input[type="search"] {
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid var(--emg-col-border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.emg-busca input[type="search"]:focus {
+    border-color: var(--emg-accent);
+    box-shadow: 0 0 0 2px rgba(10, 111, 84, .15);
+}
+
+.emg-col-body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 8px;
+}
+
+/* ===== Listas ===== */
+.emg-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+}
+
+/* Itens base (Emergências) */
+.emg-item .emg-item-btn,
+.emg-passo .emg-passo-btn {
+    width: 100%;
+    text-align: left;
+    background: var(--emg-item-bg);
+    border: 1px solid var(--emg-col-border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.emg-item .emg-item-btn:hover,
+.emg-passo .emg-passo-btn:hover {
+    background: var(--emg-item-bg-hover);
+}
+
+.emg-item.is-selected .emg-item-btn,
+.emg-passo.is-selected .emg-passo-btn {
+    background: var(--emg-item-bg-active);
+    border-color: var(--emg-accent);
+    box-shadow: 0 0 0 2px rgba(10, 111, 84, .15) inset;
+}
+
+/* Passos numerados (coluna B) */
+.emg-lista-numerada .emg-passo-btn .emg-passo-ordem {
+    width: 2.2ch;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+    background: var(--emg-accent);
+    border-radius: 6px;
+    padding: 2px 6px;
+}
+
+.emg-lista-numerada .emg-passo-btn .emg-passo-titulo {
+    flex: 1;
+}
+
+/* ===== Detalhe (coluna C) ===== */
+.emg-detalhe {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.emg-detalhe-card {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    background: var(--emg-item-bg);
+    border: 1px solid var(--emg-col-border);
+    border-radius: 10px;
+}
+
+.emg-detalhe-card h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.emg-detalhe-texto {
+    white-space: pre-wrap;
+    line-height: 1.35;
+}
+
+/* ===== Estados ===== */
+.emg-placeholder,
+.emg-vazio,
+.emg-loading,
+.emg-erro {
+    color: var(--emg-muted);
+    font-size: 13px;
+    padding: 10px 12px;
+}
+
+.emg-erro {
+    color: #b00020;
+}
+
+/* ===== Rodapé ===== */
+.emg-footer {
+    font-size: 12px;
+    color: var(--emg-muted);
+}
+
+/* ===== Acessibilidade ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.emg-item-btn:focus-visible,
+.emg-passo-btn:focus-visible,
+#emg-filtro:focus-visible {
+    outline: 2px solid var(--emg-accent);
+    outline-offset: 2px;
+}
+
+/* estiliza o nome do grupo como subtítulo */
+#emg-grupo-nome {
+    display: inline-block;
+    margin-top: 6px;
+    padding-bottom: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--emg-accent);
+    border-bottom: 3px solid var(--emg-accent);
+}
+
+/* 3 colunas iguais agora */
+.emg-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Barra de título com busca à direita */
+.emg-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.emg-titulo {
+    font-size: 18px;
+    margin: 0;
+}
+
+.emg-global-busca input[type="search"] {
+    height: 32px;
+    padding: 0 12px;
+    min-width: 320px;
+    border: 1px solid var(--emg-col-border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.emg-global-busca input[type="search"]:focus {
+    border-color: var(--emg-accent);
+    box-shadow: 0 0 0 2px rgba(10, 111, 84, .15);
+}
+
+/* Mantemos o ajuste para ocupar a altura total (sem scroll no container) */
+#conteudo-central {
+    overflow: hidden;
+}
+
+.emg-painel {
+    height: calc(100dvh - var(--pli-topbar-h) - var(--pli-footer-h) - var(--pli-central-gap));
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.emg-grid {
+    flex: 1;
+    min-height: 0;
+}
+
+.emg-col {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.emg-col-body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+}
+
+.menu-direito .botao-direito:disabled { opacity:.5; cursor:not-allowed; }
+
+/* Botão desabilitado no menu direito */
+.menu-direito .botao-direito:disabled,
+.menu-direito .botao-direito[disabled]{
+  background: #6b7f78 !important;   /* cinza-esverdeado */
+  border-color: #5a6a65 !important;
+  color: #e9ecef !important;
+  cursor: not-allowed !important;
+  opacity: .75;
+  box-shadow: none;
+  pointer-events: none;              /* extra segurança */
+}
+/* Evita efeito hover quando desabilitado */
+.menu-direito .botao-direito:disabled:hover,
+.menu-direito .botao-direito[disabled]:hover{
+  filter: none;
+  transform: none;
+}
+
+/* ====== Estilo do Modal ====== */
+/* Container principal */
+.modal-emergerenc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  /* centraliza vertical */
+  justify-content: center;
+  /* centraliza horizontal */
+  z-index: 1000;
+}
+
+.modal-emergerenc-content {
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  min-width: 400px;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin: 0;
+  margin-top: 25%;
+  transform: translateX(50%);
+  transform: translateY(-100%);
+}
+
+/* Cabeçalho com fundo Petrobras */
+.modal-emergerenc-header {
+  background-color: #006400;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.modal-emergerenc-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Corpo */
+.modal-emergerenc-body {
+  display: flex;
+  flex-direction: column; /* 🔹 empilha as linhas */
+  gap: 12px;
+  padding: 15px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-row label {
+  flex: 0 0 70px;  /* largura fixa para alinhar */
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;         /* ocupa o espaço restante */
+}
+
+.modal-emergerenc-body label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.modal-emergerenc-body input[type="text"] {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* Rodapé com botões */
+.modal-emergerenc-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 15px 15px;
+}
+
+.modal-emergerenc-actions button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-emergerenc-actions #btnModalOk {
+  background-color: #006400;
+  color: #fff;
+}
+
+.modal-emergerenc-actions #btnModalCancel {
+  background-color: #ccc;
+  color: #000;
+}
+
+/* input mais largo */
+.field-wide {
+  width: 95%;
+  max-width: 500px;
+  margin-bottom: 12px;
+}
+
+/* seletor alinhado */
+.field-select {
+  width: 60%;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
