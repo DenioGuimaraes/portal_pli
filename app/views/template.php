@@ -125,7 +125,7 @@
 
                         case 'u1620':
                             var s4 = document.createElement('script');
-                            s4.src = base + '/public/js/u1620instr.js';
+                            s4.src = base + '/public/js/u1620instr.js?v=2';
                             document.body.appendChild(s4);
 
                             var s5 = document.createElement('script');

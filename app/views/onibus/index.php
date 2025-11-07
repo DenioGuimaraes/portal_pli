@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/onibus.css?v=2">
+<link rel="stylesheet" href="css/onibus.css?v=5">
 
 <div class="painel-cabecalho">
     <h2>Itinerários de Ônibus</h2>

@@ -203,6 +203,13 @@ function u1620instrRenderTabela(grupo = "", termoBusca = "") {
     titulo.textContent = `Grupo: ${grupo}`;
   }
 
+  // 🔹 ORDENAR POR TAG ANTES DE EXIBIR
+  registros.sort((a, b) => {
+    const tagA = (a.u1620instr_tag || "").toLowerCase();
+    const tagB = (b.u1620instr_tag || "").toLowerCase();
+    return tagA.localeCompare(tagB, "pt-BR", { numeric: true });
+  });
+
   if (registros.length === 0) {
     const tr = document.createElement("tr");
     const td = document.createElement("td");

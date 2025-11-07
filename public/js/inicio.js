@@ -168,10 +168,6 @@ function carregarOperadores() {
           nomeDiv.classList.add('pessoal-nome');
           nomeDiv.textContent = pessoa.nome;
 
-          // 🔹 adiciona o avatar como atributo de dados
-          if (pessoa.avatar) {
-            nomeDiv.dataset.avatar = pessoa.avatar;
-          }
 
           container.appendChild(nomeDiv);
 

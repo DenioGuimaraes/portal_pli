@@ -38,21 +38,47 @@ class TelefonesController
     // === 4. Cria novo telefone (POST) ===
     public function telCreate()
     {
-        $input = json_decode(file_get_contents("php://input"), true);
+        // pega o corpo cru e decodifica
+        $raw   = file_get_contents("php://input");
+        $input = json_decode($raw, true);
 
-        if (!$input || empty($input["descricao"]) || empty($input["ramal"])) {
-            echo json_encode(["success" => false, "message" => "Campos obrigatórios não preenchidos."]);
+        // debug opcional: salva no log do Apache/XAMPP
+        error_log("TELCREATE RAW: " . $raw);
+        error_log("TELCREATE ARRAY: " . print_r($input, true));
+
+        // validação mais segura
+        if (
+            !$input ||
+            !isset($input["grupo"]) || trim($input["grupo"]) === "" ||
+            !isset($input["descricao"]) || trim($input["descricao"]) === "" ||
+            !isset($input["ramal"]) || trim($input["ramal"]) === ""
+        ) {
+            echo json_encode([
+                "success" => false,
+                "message" => "Campos obrigatórios não preenchidos.",
+                "debug"   => $input // 👈 ajuda a ver no console do navegador também
+            ]);
             exit;
         }
 
-        $grupo = $input["grupo"];
-        $descricao = $input["descricao"];
-        $ramal = $input["ramal"];
+        // compatibiliza nomes
+        $tel_grupo     = trim($input["grupo"]);
+        $tel_descricao = trim($input["descricao"]);
+        $tel_ramal     = trim($input["ramal"]);
 
-        $ok = $this->model->telCreate($grupo, $descricao, $ramal);
-        echo json_encode(["success" => $ok]);
+        $ok = $this->model->telCreate($tel_grupo, $tel_descricao, $tel_ramal);
+
+        echo json_encode([
+            "success" => $ok,
+            "dados"   => [
+                "grupo"     => $tel_grupo,
+                "descricao" => $tel_descricao,
+                "ramal"     => $tel_ramal
+            ]
+        ]);
         exit;
     }
+
 
     // === 5. Atualiza telefone existente (POST) ===
     public function telUpdate()
@@ -64,12 +90,12 @@ class TelefonesController
             exit;
         }
 
-        $id = (int) $input["id"];
-        $grupo = $input["grupo"];
-        $descricao = $input["descricao"];
-        $ramal = $input["ramal"];
+        $id            = (int) $input["id"];
+        $tel_grupo     = $input["grupo"];
+        $tel_descricao = $input["descricao"];
+        $tel_ramal     = $input["ramal"];
 
-        $ok = $this->model->telUpdate($id, $grupo, $descricao, $ramal);
+        $ok = $this->model->telUpdate($id, $tel_grupo, $tel_descricao, $tel_ramal);
         echo json_encode(["success" => $ok]);
         exit;
     }

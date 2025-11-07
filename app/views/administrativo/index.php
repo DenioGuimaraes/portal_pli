@@ -14,7 +14,7 @@
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-parafina.png')">Parafina</button>
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-vbp.png')">VBP</button>
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-vmp.png')">VMP</button>
-      <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-gc.png')">Gás Combustível</button>
+      <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-gc.jpg')">Gás Combustível</button>
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-bfw.png')">BFW</button>
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-energia.png')">Energia Elétrica</button>
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-gn.png')">Gás Natural</button>
