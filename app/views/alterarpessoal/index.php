@@ -128,7 +128,7 @@
                 </div>
 
                 <!-- 🔹 Novo campo Avatar -->
-                <div class="campo-form">
+                <div class="campo-form" hidden>
                     <label for="campo-avatar">Avatar:</label>
                     <label class="botao-direito" for="campo-avatar">Escolher Avatar</label>
                     <input type="file" id="campo-avatar" accept="image/*" style="display:none;">

@@ -241,7 +241,7 @@
   </div>
 </div>
 
-<div id="avatar-tooltip"></div>
+
 
 <script>
   (function esperarPainelCarregado() {

@@ -86,6 +86,8 @@ function emerGerencInit() {
             $(SEL.causas)?.addEventListener('input', marcarAlterado);
             $(SEL.impacto)?.addEventListener('input', marcarAlterado);
             $(SEL.contatos)?.addEventListener('input', marcarAlterado);
+            $(SEL.titulo)?.addEventListener('input', marcarAlterado);
+            $(SEL.grupo)?.addEventListener('change', marcarAlterado);
 
 
             // Renderiza lista de passos (coluna central)
@@ -150,6 +152,8 @@ function emerGerencInit() {
             try {
                 // Captura os valores atuais dos cards da esquerda
                 const emergencia = {
+                    grupo_id: document.querySelector(SEL.grupo)?.value || '',
+                    titulo: document.querySelector(SEL.titulo)?.value || '',
                     identificadores: document.querySelector(SEL.ident)?.value || '',
                     causas: document.querySelector(SEL.causas)?.value || '',
                     impacto: document.querySelector(SEL.impacto)?.value || '',

@@ -12,7 +12,7 @@ class U1640ValvModel extends Model
     public function u1640valvGetAll() {
         $sql = "SELECT id, u1640valv_grupo, u1640valv_tag, u1640valv_descricao 
                 FROM u1640valv 
-                ORDER BY u1640valv_grupo, u1640valv_descricao";
+                ORDER BY u1640valv_grupo, u1640valv_tag";
         $result = $this->db->query($sql);
 
         $u1640valv = [];

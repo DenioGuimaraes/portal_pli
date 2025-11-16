@@ -10,22 +10,33 @@ class EmergerencModel extends Model
 
     public function getEmergencia(int $id): ?array
     {
-        $sql = "SELECT e.id, e.grupo_id, e.titulo, e.identificadores, e.causas, e.impacto, e.contatos,
-                   g.nome AS grupo_nome, g.slug AS grupo_slug, g.cor_hex AS grupo_cor
-              FROM emergencias e
-         LEFT JOIN emergencia_grupo g ON g.id = e.grupo_id
-             WHERE e.id = ?
-             LIMIT 1";
+        $sql = "SELECT 
+                e.id, 
+                e.grupo_id, 
+                e.titulo, 
+                e.identificadores, 
+                e.causas, 
+                e.impacto, 
+                e.contatos,
+                g.nome AS grupo_nome, 
+                g.slug AS grupo_slug, 
+                g.cor_hex AS grupo_cor
+            FROM emergencias e
+            LEFT JOIN emergencia_grupo g 
+                   ON g.id = e.grupo_id
+            WHERE e.id = ?
+            LIMIT 1";
 
         $stmt = $this->db->prepare($sql);
         if (!$stmt) {
             throw new \Exception('Erro ao preparar getEmergencia: ' . $this->db->error);
         }
+
         $stmt->bind_param('i', $id);
         $stmt->execute();
 
-        $res = $stmt->get_result();
-        $row = $res->fetch_assoc();
+        $res  = $stmt->get_result();
+        $row  = $res->fetch_assoc();
         $stmt->close();
 
         if (!$row) return null;
@@ -33,6 +44,7 @@ class EmergerencModel extends Model
         return [
             'id'              => (int)$row['id'],
             'grupo_id'        => (int)$row['grupo_id'],
+            'grupo'           => (int)$row['grupo_id'], // usado pelo <select> no JS
             'grupo_nome'      => $row['grupo_nome'],
             'grupo_slug'      => $row['grupo_slug'],
             'grupo_cor'       => $row['grupo_cor'],
@@ -79,7 +91,7 @@ class EmergerencModel extends Model
     {
         $this->db->begin_transaction();
         try {
-            // Apagar passos antigos dessa emergência
+            // Apagar passos antigos
             $stmtDel = $this->db->prepare("DELETE FROM emergencia_passo WHERE emergencia_id = ?");
             if (!$stmtDel) {
                 throw new \Exception("Erro ao preparar DELETE: " . $this->db->error);
@@ -118,20 +130,39 @@ class EmergerencModel extends Model
     public function salvarEmergencia(int $id, array $dados): void
     {
         $sql = "UPDATE emergencias
-               SET identificadores = ?, causas = ?, impacto = ?, contatos = ?
-             WHERE id = ?";
+                   SET grupo_id        = ?, 
+                       titulo          = ?, 
+                       identificadores = ?, 
+                       causas          = ?, 
+                       impacto         = ?, 
+                       contatos        = ?
+                 WHERE id = ?";
 
         $stmt = $this->db->prepare($sql);
         if (!$stmt) {
-            throw new \Exception("Erro ao preparar UPDATE: " . $this->db->error);
+            throw new \Exception("Erro ao preparar salvarEmergencia: " . $this->db->error);
         }
 
-        $identificadores = $dados['identificadores'] ?? '';
-        $causas          = $dados['causas'] ?? '';
-        $impacto         = $dados['impacto'] ?? '';
-        $contatos        = $dados['contatos'] ?? '';
+        // Captura correta dos campos
+        $grupo_id         = $dados['grupo_id']        ?? 0;
+        $titulo           = $dados['titulo']          ?? '';
+        $identificadores  = $dados['identificadores'] ?? '';
+        $causas           = $dados['causas']          ?? '';
+        $impacto          = $dados['impacto']         ?? '';
+        $contatos         = $dados['contatos']        ?? '';
 
-        $stmt->bind_param("ssssi", $identificadores, $causas, $impacto, $contatos, $id);
+        // Bind correto
+        $stmt->bind_param(
+            "isssssi",
+            $grupo_id,
+            $titulo,
+            $identificadores,
+            $causas,
+            $impacto,
+            $contatos,
+            $id
+        );
+
         $stmt->execute();
         $stmt->close();
     }

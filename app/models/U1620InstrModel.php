@@ -12,7 +12,7 @@ class U1620InstrModel extends Model
     public function u1620instrGetAll() {
         $sql = "SELECT id, u1620instr_grupo, u1620instr_tag, u1620instr_descricao 
                 FROM u1620instr 
-                ORDER BY u1620instr_grupo, u1620instr_descricao";
+                ORDER BY u1620instr_grupo, u1620instr_tag";
         $result = $this->db->query($sql);
 
         $u1620instr = [];

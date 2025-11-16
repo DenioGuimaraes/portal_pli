@@ -16,11 +16,12 @@ $proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', '
     <div class="top-field top-field--grupo">
         <label for="emer-grupo">Grupo</label>
         <select id="emer-grupo" class="top-select">
-            <option value="geral" <?= (($proc['grupo'] ?? '') === 'geral') ? 'selected' : '';  ?>>Geral / LB</option>
-            <option value="u1620" <?= (($proc['grupo'] ?? '') === 'u1620') ? 'selected' : '';  ?>>U-1620</option>
-            <option value="u1640" <?= (($proc['grupo'] ?? '') === 'u1640') ? 'selected' : '';  ?>>U-1640</option>
+            <option value="1" <?= (($proc['grupo'] ?? '') == 1) ? 'selected' : '';  ?>>Geral / LB</option>
+            <option value="2" <?= (($proc['grupo'] ?? '') == 2) ? 'selected' : '';  ?>>U-1620</option>
+            <option value="3" <?= (($proc['grupo'] ?? '') == 3) ? 'selected' : '';  ?>>U-1640</option>
         </select>
     </div>
+
 </div>
 
 <section class="emerGerenc" aria-label="Emergências - Novo/Editar">
@@ -94,33 +95,34 @@ $proc = $proc ?? ['titulo' => '', 'grupo' => 'geral', 'identificadores' => '', '
 
 <!-- Modal Editar -->
 <div id="modalEditarPasso" class="modal-emergerenc" style="display:none;">
-  <div class="modal-emergerenc-content">
-    <div class="modal-emergerenc-header"><h3>Editar Passo</h3></div>
-    <div class="modal-emergerenc-body">
-      <label for="inputEditarRotulo">Nome:</label>
-      <input type="text" id="inputEditarRotulo" class="field-text">
+    <div class="modal-emergerenc-content">
+        <div class="modal-emergerenc-header">
+            <h3>Editar Passo</h3>
+        </div>
+        <div class="modal-emergerenc-body">
+            <label for="inputEditarRotulo">Nome:</label>
+            <input type="text" id="inputEditarRotulo" class="field-text">
+        </div>
+        <div class="modal-emergerenc-actions">
+            <button type="button" id="btnOkEditar">OK</button>
+            <button type="button" id="btnCancelEditar">Cancelar</button>
+        </div>
     </div>
-    <div class="modal-emergerenc-actions">
-      <button type="button" id="btnOkEditar">OK</button>
-      <button type="button" id="btnCancelEditar">Cancelar</button>
-    </div>
-  </div>
 </div>
 
 <!-- Modal Novo -->
 <div id="modalNovoPasso" class="modal-emergerenc" style="display:none;">
-  <div class="modal-emergerenc-content">
-    <div class="modal-emergerenc-header"><h3>Novo Passo</h3></div>
-    <div class="modal-emergerenc-body">
-      <label for="inputNovoRotulo">Nome:</label>
-      <input type="text" id="inputNovoRotulo" class="field-text">
+    <div class="modal-emergerenc-content">
+        <div class="modal-emergerenc-header">
+            <h3>Novo Passo</h3>
+        </div>
+        <div class="modal-emergerenc-body">
+            <label for="inputNovoRotulo">Nome:</label>
+            <input type="text" id="inputNovoRotulo" class="field-text">
+        </div>
+        <div class="modal-emergerenc-actions">
+            <button type="button" id="btnOkNovo">OK</button>
+            <button type="button" id="btnCancelNovo">Cancelar</button>
+        </div>
     </div>
-    <div class="modal-emergerenc-actions">
-      <button type="button" id="btnOkNovo">OK</button>
-      <button type="button" id="btnCancelNovo">Cancelar</button>
-    </div>
-  </div>
 </div>
-
-
-

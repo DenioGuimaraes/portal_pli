@@ -9,17 +9,7 @@
   <article class="u1640-card">
     <h3 class="u1640-card__head">Diagramas</h3>
     <div class="u1640-card__body">
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-agua-refri.png')">Água de Refrigeração</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-agua-pot.png')">Água Potável</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-parafina.png')">Parafina</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-vbp.png')">VBP</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-vmp.png')">VMP</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-gc.png')">Gás Combustível</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-bfw.png')">BFW</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-energia.png')">Energia Elétrica</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-gn.png')">Gás Natural</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-inerte.png')">Gás Inerte</button>
-      <button class="u1640-botao" type="button" onclick="PLI.viewer.exibir('diag-ar-inst.png')">Ar de Instrumento</button>
+      <p>Em breve...</p>
     </div>
   </article>
 

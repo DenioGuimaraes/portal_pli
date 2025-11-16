@@ -263,8 +263,9 @@
 }
 
 .emerGerenc .card__body {
-  padding: 6px 8px;
+  padding: 3px 2px;
   overflow: auto;
+  height: 100%;
 }
 
 /* 6) coluna CENTRAL: card + bloco de botões com altura fixa */
