@@ -14,6 +14,7 @@
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-gn.jpg')">GN - Gás Natural</button>
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-n2.jpg')">N2 - Nitrogênio</button>
       <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-vap.jpg')">VAP - Vap. Alta Pressão</button>
+      <button class="admin-botao" type="button" onclick="PLI.viewer.exibir('diag-vmp.jpg')">VMP - Vap. Média Pressão</button>
     </div>
   </article>
 
