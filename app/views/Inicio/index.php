@@ -7,7 +7,7 @@
         <div class="inicio-titulo">RESUMO OPERACIONAL</div>
         <div class="inicio-info-auxiliar">Status das unidades U-1620 e U-1640</div>
       </div>
-      <button class="botao-cabecalho" onclick="resumoAbrirModal()">Alterar</button>
+      <button class="botao-cabecalho" style="min-width: 150px;" onclick="resumoAbrirModal()">Alterar</button>
     </div>
     <!-- Corpo com as duas unidades -->
     <div class="inicio-corpo-operacional">
@@ -67,7 +67,10 @@
             <input id="painelDataCarga" class=inicio-tq-info type="text" value="--" />
             <input id="painelHoraCarga" class=inicio-tq-info type="text" value="--" />
           </div>
-          <div class="inicio-tq-seta">➡️</div>
+          <div class="inicio-historico">
+            <div class="inicio-tq-seta">➡️</div>
+            <button class="botao-historico" title="Histórico" onclick="abrirModalHistorico()">...</button>
+          </div>
           <div class="inicio-tq-bloco">
             <div class="inicio-tq-titulo">TQ PROD.</div>
             <div id="painelTqProduto" class="inicio-tq-valor">--</div>
@@ -117,15 +120,15 @@
       <div class="coluna-nomes"></div>
     </div>
 
-      <div class="inicio-pessoal-grupo-duplo" id="grupo-ferias">
-        <div class="coluna-grupo-duplo">Férias</div>
-        <div class="coluna-nomes"></div>
-      </div>
-      <div class="inicio-pessoal-grupo-duplo" id="grupo-outros">
-        <div class="coluna-grupo-duplo">Outros</div>
-        <div class="coluna-nomes"></div>
-      </div>
- 
+    <div class="inicio-pessoal-grupo-duplo" id="grupo-ferias">
+      <div class="coluna-grupo-duplo">Férias</div>
+      <div class="coluna-nomes"></div>
+    </div>
+    <div class="inicio-pessoal-grupo-duplo" id="grupo-outros">
+      <div class="coluna-grupo-duplo">Outros</div>
+      <div class="coluna-nomes"></div>
+    </div>
+
   </div>
 </div>
 
@@ -230,7 +233,7 @@
         </div>
         <div class="resumo-campo-form">
           <label for="resumoCampoDeltaP">Delta-P:</label>
-          <input id="resumoCampoDeltaP" step="0.01" type="number" />
+          <input id="resumoCampoDeltaP" step="0.1" type="number" />
         </div>
       </div>
     </div>
@@ -241,17 +244,126 @@
   </div>
 </div>
 
+<!-- ============================== -->
+<!--     MODAL HISTÓRICO U-1640     -->
+<!-- ============================== -->
+<div id="modalHistorico" class="modal-hist">
+  <div class="modal-hist-content">
+
+    <!-- Cabeçalho -->
+    <div class="modal-hist-header">
+      <h2>Histórico de Carga / Produto – U-1640</h2>
+      <button class="btn-fechar-hist" onclick="fecharModalHistorico()">✕</button>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="modal-hist-tabela-container">
+      <table class="modal-hist-table">
+        <thead>
+          <tr>
+            <th>Carga</th>
+            <th>TQ Carga</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>TQ Produto</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabelaHistorico">
+          <!-- linhas virão via JS -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== MODAL EDITAR HISTÓRICO 1640 (PADRÃO INSTITUCIONAL) ========== -->
+<div id="historico_editar_modal" class="historico_editar_modal" style="display:none;">
+  <div class="historico_editar_content">
+
+    <!-- Cabeçalho -->
+    <div class="historico_editar_header">
+      <h3>Editar Registro – U-1640</h3>
+      <button class="historico_editar_fechar" onclick="u1640_editar_fechar()">✕</button>
+    </div>
+
+    <!-- Corpo -->
+    <div class="historico_editar_body">
+
+      <!-- LINHA 1 – CARGA -->
+      <div class="historico_editar_campo">
+        <label for="historico_editar_carga">Carga:</label>
+        <select id="historico_editar_carga">
+          <option value="SPINDLE">SPINDLE</option>
+          <option value="NEUTRO LEVE">NEUTRO LEVE</option>
+          <option value="NEUTRO MÉDIO VELA">NEUTRO MÉDIO VELA</option>
+          <option value="BRIGHT STOCK">BRIGHT STOCK</option>
+        </select>
+      </div>
+
+      <!-- LINHA 2 – TQ CARGA / DATA / HORA -->
+      <div class="historico_editar_linha3">
+        <div class="historico_editar_campo">
+          <label for="historico_editar_tq_carga">TQ de Carga:</label>
+          <input id="historico_editar_tq_carga" type="number">
+        </div>
+
+        <div class="historico_editar_campo">
+          <label for="historico_editar_data_carga">Data:</label>
+          <input id="historico_editar_data_carga" type="date">
+        </div>
+
+        <div class="historico_editar_campo">
+          <label for="historico_editar_hora_carga">Hora:</label>
+          <input id="historico_editar_hora_carga" type="time">
+        </div>
+      </div>
+
+      <!-- LINHA 3 – TQ PRODUTO / DATA / HORA -->
+      <div class="historico_editar_linha3">
+        <div class="historico_editar_campo">
+          <label for="historico_editar_tq_produto">TQ de Produto:</label>
+          <input id="historico_editar_tq_produto" type="number">
+        </div>
+
+        <div class="historico_editar_campo">
+          <label for="historico_editar_data_produto">Data:</label>
+          <input id="historico_editar_data_produto" type="date">
+        </div>
+
+        <div class="historico_editar_campo">
+          <label for="historico_editar_hora_produto">Hora:</label>
+          <input id="historico_editar_hora_produto" type="time">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Rodapé -->
+    <div class="historico_editar_footer">
+      <button class="historico_editar_btn historico_editar_cancelar" onclick="u1640_editar_fechar()">Cancelar</button>
+      <button class="historico_editar_btn historico_editar_salvar" onclick="u1640_editar_salvar()">Salvar</button>
+    </div>
+
+  </div>
+</div>
+<!-- ================================================================ -->
+
 
 
 <script>
   (function esperarPainelCarregado() {
-      const tentativa = setInterval(() => {
-          const el = document.getElementById("painelCargaGn");
-          if (typeof resumoAtualizarPainel === 'function' && el) {
-              console.log("⏱ Executando resumoAtualizarPainel após view carregada.");
-              resumoAtualizarPainel();
-              clearInterval(tentativa);
-          }
-      }, 100);
+    const tentativa = setInterval(() => {
+      const el = document.getElementById("painelCargaGn");
+      if (typeof resumoAtualizarPainel === 'function' && el) {
+        console.log("⏱ Executando resumoAtualizarPainel após view carregada.");
+        resumoAtualizarPainel();
+        clearInterval(tentativa);
+      }
+    }, 100);
   })();
 </script>

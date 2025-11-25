@@ -114,4 +114,119 @@ class InicioModel extends Model
         $stmt->bind_param("s", $texto);
         return $stmt->execute();
     }
+
+    /* ============================================================
+       ===  HISTÓRICO DE CARGA / PRODUTO - U-1640             ===
+       ============================================================ */
+
+    // 1. Buscar o último registro do histórico
+    public function buscarUltimoHistorico()
+    {
+        $sql = "SELECT * 
+                  FROM historico_carga_1640 
+              ORDER BY id DESC 
+                 LIMIT 1";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_assoc(); // pode retornar NULL se tabela estiver vazia
+    }
+
+
+    // 2. Inserir um novo registro no histórico
+    public function inserirHistorico($dados)
+    {
+        $sql = "INSERT INTO historico_carga_1640 
+                (carga1640, tq_carga, datacarga, horacarga,
+                 tq_produto, dataproduto, horaproduto)
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        $stmt = $this->db->prepare($sql);
+
+        if (!$stmt) {
+            error_log('Erro preparar inserirHistorico: ' . $this->db->error);
+            return false;
+        }
+
+        $stmt->bind_param(
+            "sississ",
+            $dados['carga1640'],
+            $dados['tq_carga'],
+            $dados['datacarga'],
+            $dados['horacarga'],
+            $dados['tq_produto'],
+            $dados['dataproduto'],
+            $dados['horaproduto']
+        );
+
+        $ok = $stmt->execute();
+        $stmt->close();
+
+        return $ok;
+    }
+
+    public function listarHistorico()
+    {
+        $sql = "SELECT * FROM historico_carga_1640 ORDER BY id DESC";
+        $result = $this->db->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function editarHistorico($d)
+    {
+        $sql = "UPDATE historico_carga_1640 SET 
+                carga1640 = ?,
+                tq_carga = ?,
+                datacarga = ?,
+                horacarga = ?,
+                tq_produto = ?,
+                dataproduto = ?,
+                horaproduto = ?
+            WHERE id = ?
+            LIMIT 1";
+
+        $stmt = $this->db->prepare($sql);
+
+        if (!$stmt) {
+            error_log("Erro preparar editarHistorico: " . $this->db->error);
+            return false;
+        }
+
+        $stmt->bind_param(
+            "sississi",
+            $d['carga1640'],
+            $d['tq_carga'],
+            $d['datacarga'],
+            $d['horacarga'],
+            $d['tq_produto'],
+            $d['dataproduto'],
+            $d['horaproduto'],
+            $d['id']
+        );
+
+        $ok = $stmt->execute();
+        $stmt->close();
+
+        return $ok;
+    }
+
+    public function excluirHistorico($id)
+{
+    $sql = "DELETE FROM historico_carga_1640 WHERE id = ? LIMIT 1";
+
+    $stmt = $this->db->prepare($sql);
+    if (!$stmt) {
+        error_log("Erro preparar excluirHistorico: " . $this->db->error);
+        return false;
+    }
+
+    $stmt->bind_param("i", $id);
+    $ok = $stmt->execute();
+    $stmt->close();
+
+    return $ok;
+}
+
 }

@@ -43,7 +43,11 @@ function resumoPreencherCampos() {
     });
 }
 
-function resumoSalvarAlteracoes() {
+async function resumoSalvarAlteracoes() {
+
+  // ============================================================
+  // 1) CAPTURAR TODOS OS DADOS (já existia)
+  // ============================================================
   const dados = {
     carga_gn: document.getElementById("resumoCampoCargaGn").value,
     producao_h2: document.getElementById("resumoCampoProducaoH2").value,
@@ -64,6 +68,64 @@ function resumoSalvarAlteracoes() {
     horaproduto: document.getElementById("resumoCampoHoraProduto").value
   };
 
+  // ============================================================
+  // 2) BUSCAR O ÚLTIMO REGISTRO DO HISTÓRICO
+  // ============================================================
+  let ultimoHistorico = null;
+
+  try {
+    const resp = await fetch("index.php?url=InicioController/buscarUltimoHistorico");
+    ultimoHistorico = await resp.json();  // pode ser null
+  } catch (e) {
+    console.error("Erro ao buscar histórico:", e);
+  }
+
+  // ============================================================
+  // 3) MONTAR OS CAMPOS RELEVANTES PARA COMPARAÇÃO
+  // ============================================================
+  const novoHistorico = {
+    carga1640: dados.carga1640,
+    tq_carga: dados.tq_carga,
+    datacarga: dados.datacarga,
+    horacarga: dados.horacarga,
+    tq_produto: dados.tq_produto,
+    dataproduto: dados.dataproduto,
+    horaproduto: dados.horaproduto
+  };
+
+  let houveMudanca = false;
+
+  if (!ultimoHistorico) {
+    // nenhum histórico → grava automaticamente
+    houveMudanca = true;
+  } else {
+    // compara campo a campo
+    for (let campo in novoHistorico) {
+      if (novoHistorico[campo] != ultimoHistorico[campo]) {
+        houveMudanca = true;
+        break;
+      }
+    }
+  }
+
+  // ============================================================
+  // 4) SE HOUVE MUDANÇA, SALVAR NO HISTÓRICO
+  // ============================================================
+  if (houveMudanca) {
+    try {
+      await fetch('index.php?url=InicioController/inserirHistorico', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(novoHistorico)
+      });
+    } catch (e) {
+      console.error("Erro ao salvar histórico:", e);
+    }
+  }
+
+  // ============================================================
+  // 5) SALVAR O RESUMO OPERACIONAL (parte original)
+  // ============================================================
   fetch('index.php?url=InicioController/salvarResumo', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -84,7 +146,6 @@ function resumoSalvarAlteracoes() {
       alert("Erro de comunicação com o servidor.");
     });
 }
-
 
 function resumoAtualizarPainel() {
   fetch('index.php?url=InicioController/buscarResumoOperacional')
@@ -214,6 +275,153 @@ function carregarAnotacao() {
       console.error("Erro ao carregar anotação:", error);
     });
 }
+
+function abrirModalHistorico() {
+    document.getElementById("modalHistorico").style.display = "flex";
+    carregarHistorico();
+}
+
+function fecharModalHistorico() {
+    document.getElementById("modalHistorico").style.display = "none";
+}
+
+function carregarHistorico() {
+    fetch("index.php?url=InicioController/listarHistorico")
+        .then(res => res.json())
+        .then(lista => {
+            window.listaHistorico1640 = lista;
+            let tbody = document.getElementById("tabelaHistorico");
+            tbody.innerHTML = "";
+
+            lista.forEach(item => {
+
+                let tr = document.createElement("tr");
+
+                tr.innerHTML = `
+                    <td>${item.carga1640}</td>
+                    <td>${item.tq_carga}</td>
+                    <td>${item.datacarga}</td>
+                    <td>${item.horacarga}</td>
+                    <td>${item.tq_produto}</td>
+                    <td>${item.dataproduto}</td>
+                    <td>${item.horaproduto}</td>
+
+                    <td>
+                        <span class="acao-icone icone-editar" onclick="editarHistorico(${item.id})">✏️</span>
+                        <span class="acao-icone icone-excluir" onclick="excluirHistorico(${item.id})">🗑</span>
+                    </td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+        })
+        .catch(err => {
+            console.error("Erro ao carregar histórico:", err);
+        });
+}
+
+function editarHistorico(id) {
+
+    console.log("Editar ID recebido:", id);
+
+    // 1. Encontrar o registro correspondente
+    const registro = window.listaHistorico1640.find(item => Number(item.id) === Number(id));
+
+    console.log("Registro encontrado:", registro);
+
+    if (!registro) {
+        alert("Erro: registro não encontrado na lista.");
+        return;
+    }
+
+    // 2. Guardar para eventual uso posterior
+    window.registroEditando = registro;
+
+    // 3. Preencher os campos do modal
+    document.getElementById("historico_editar_carga").value = registro.carga1640;
+
+    document.getElementById("historico_editar_tq_carga").value = registro.tq_carga;
+    document.getElementById("historico_editar_data_carga").value = registro.datacarga;
+    document.getElementById("historico_editar_hora_carga").value = registro.horacarga;
+
+    document.getElementById("historico_editar_tq_produto").value = registro.tq_produto;
+    document.getElementById("historico_editar_data_produto").value = registro.dataproduto;
+    document.getElementById("historico_editar_hora_produto").value = registro.horaproduto;
+
+    // 4. Abrir o modal novo (ID correto)
+    document.getElementById("historico_editar_modal").style.display = "flex";
+}
+
+function u1640_editar_fechar() {
+    document.getElementById("historico_editar_modal").style.display = "none";
+}
+
+function u1640_editar_salvar() {
+    if (!window.registroEditando) {
+        alert("Erro: nenhum registro selecionado.");
+        return;
+    }
+
+    const payload = {
+        id: window.registroEditando.id,
+        carga1640: document.getElementById("historico_editar_carga").value,
+        tq_carga: document.getElementById("historico_editar_tq_carga").value,
+        datacarga: document.getElementById("historico_editar_data_carga").value,
+        horacarga: document.getElementById("historico_editar_hora_carga").value,
+        tq_produto: document.getElementById("historico_editar_tq_produto").value,
+        dataproduto: document.getElementById("historico_editar_data_produto").value,
+        horaproduto: document.getElementById("historico_editar_hora_produto").value
+    };
+
+    fetch("index.php?url=InicioController/editarHistorico", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(resp => {
+
+        if (resp.sucesso) {
+            alert("Registro atualizado com sucesso!");
+            u1640_editar_fechar();
+
+            // Recarrega a tabela do modal de histórico
+            carregarHistorico();
+
+        } else {
+            alert("Erro ao atualizar: " + (resp.erro || "desconhecido"));
+        }
+    })
+    .catch(err => {
+        alert("Falha na conexão com o servidor.");
+        console.error("ERRO AO SALVAR:", err);
+    });
+}
+
+function excluirHistorico(id) {
+    if (!confirm("Confirma excluir este registro do histórico?")) {
+        return;
+    }
+
+    fetch("index.php?url=InicioController/excluirHistorico", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+    })
+    .then(res => res.json())
+    .then(resp => {
+        if (resp.sucesso) {
+            carregarHistorico(); // atualiza tabela
+        } else {
+            alert("Erro ao excluir: " + (resp.erro || "desconhecido"));
+        }
+    })
+    .catch(err => {
+        alert("Falha na conexão com o servidor.");
+        console.error("ERRO EXCLUIR:", err);
+    });
+}
+
 
 (function esperarNomesCarregados() {
   const tentativa = setInterval(() => {
