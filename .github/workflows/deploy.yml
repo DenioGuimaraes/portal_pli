@@ -1,0 +1,23 @@
+name: Deploy Portal PLI to Locaweb
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: Deploy via SFTP
+        uses: kahramaa/ssh-sftp-deploy@v1.1.0
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          source: "./"
+          target: ${{ secrets.SFTP_PATH }}
+          delete: false
