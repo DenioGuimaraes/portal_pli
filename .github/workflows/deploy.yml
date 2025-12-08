@@ -19,6 +19,6 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           server: ${{ secrets.SFTP_HOST }}
           port: 21
-          target: ${{ secrets.SFTP_PATH }}
-          source: "./"
-          replace: false
+          local_path: "./"
+          remote_path: ${{ secrets.SFTP_PATH }}
+          delete_remote_files: false
