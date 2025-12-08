@@ -1,0 +1,75 @@
+/* Coluna principal */
+.eletrica-container-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Card padrão */
+.eletrica-card {
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Título do card */
+.eletrica-card h4 {
+    margin-bottom: 10px;
+    color: #005c4b;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Container das duas barras lado a lado */
+.eletrica-barras {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Cada barra individual */
+.eletrica-barra {
+    flex: 1;
+}
+
+/* Subtítulo */
+.eletrica-subtitulo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    background: #ddd;
+    padding: 4px;
+    border-radius: 4px;
+    text-align: center;
+    color: #005c4b;
+}
+
+/* Tabelas */
+.eletrica-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.eletrica-card th, 
+.eletrica-card td {
+    border: 1px solid #bbb;
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+    color: #005c4b;
+}
+
+.eletrica-card th {
+    background: #e6e6e6;
+    font-weight: bold;
+}
+
+.eletrica-card td {
+    color: #005c4b;
+    font-size: 14px;
+}

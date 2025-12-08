@@ -1,0 +1,578 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top-bar {
+    background-color: #005a2c;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* ← importante: evita que outros elementos sobreponham */
+    z-index: 10;         /* ← garante que fique na frente */
+}
+
+.header-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-layout {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+}
+
+.menu-esquerdo,
+.menu-direito {
+  width: 180px;
+  min-width: 180px;
+  max-width: 180px;
+  background-color: #004d26;
+  padding: 10px;
+  color: white;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.conteudo-central {
+  flex-grow: 1;
+  padding: 5px;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+  min-width: 400px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.rodape {
+  background-color: #003c1c;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  z-index: 1000;
+}
+
+.botao-menu,
+.botao-direito {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #007733;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.botao-menu:hover,
+.botao-direito:hover {
+  background-color: #00aa55;
+}
+
+.botao-menu.emergencia {
+  background-color: #cc0000; /* Vermelho forte */
+  color: white;
+  font-weight: bold;
+}
+
+.botao-menu.emergencia.ativo {
+  background-color: #a00000; /* Vermelho mais escuro quando clicado */
+  border-left: 5px solid #ffffff;
+}
+
+
+.botao-menu.ativo,
+.botao-direito.ativo {
+  background-color: #00aa55;
+  border-left: 5px solid #ffffff;
+  color: #ffffff;
+}
+
+.grupo-coluna {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grupo-coluna > div {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    background-color: #eef;
+    border-radius: 6px;
+}
+
+.grupo-linha {
+    margin: 10px 0;
+}
+
+.nome-clicavel {
+    cursor: pointer;
+    color: #006699;
+}
+
+.nome-clicavel:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    background: #ffffff;
+    border: 3px solid #004d26;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.modal h3 {
+    background-color: #005a2c;
+    color: white;
+    margin: 0;
+    padding: 12px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-size: 18px;
+}
+
+.modal dl {
+    margin: 0;
+    padding: 20px;
+    font-size: 13px;
+}
+
+.modal dt {
+    font-weight: bold;
+    color: #004d26;
+    margin-top: 10px;
+}
+
+.modal dd {
+    margin: 0 0 10px 0;
+    padding-left: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.modal button {
+    margin: 10px 20px 20px 20px;
+    background-color: #007733;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #00aa55;
+}
+
+.cabecalho-dados {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cabecalho-dados h2 {
+  margin: 0;
+}
+
+.cabecalho-dados input {
+  padding: 5px;
+  font-size: 14px;
+  width: 200px;
+}
+
+/*cabeçalhos geral dos painéis*/
+.cabecalho-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00aa55; /* tom suave esverdeado, contraste sutil com menus */
+    border-bottom: 3px solid #004d26; /* verde Petrobras */
+    padding: 12px 20px;
+    position: sticky; /* fixa no topo da área central */
+    top: 0;
+    z-index: 10;
+    height: 60px;
+}
+
+.cabecalho-painel h2 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.botao-cabecalho {
+    background-color: #16ac66; /* Verde forte Petrobras */
+    color: white;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 25px;
+    cursor: pointer;
+    min-width: 180px; /* espaço visual proporcional a ~20 caracteres */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.botao-cabecalho:hover {
+    background-color: #00994d; /* Tom mais claro ao passar o mouse */
+}
+
+/* Container de todos os grupos */
+.grupo-coluna {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+
+/* Bloco de cada grupo (A, B, C...) */
+.grupo {
+    background-color: #eef7f2; /* tom claro esverdeado */
+    border: 1px solid #cde3d9;
+    border-radius: 8px;
+    padding: 12px;
+    width: 180px;
+    min-height: 60px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
+}
+
+/* Nome do grupo */
+.grupo strong {
+    color: #005c4b;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Nome clicável */
+.nome {
+    cursor: pointer;
+    font-size: 14px;
+    margin: 3px 0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    color: #003366;
+    text-decoration: none;
+}
+
+.nome:hover {
+    background-color: #cce0f0;
+    color: #002244;
+}
+
+.nome:hover {
+  color: #551A8B;
+}
+
+
+/* Cabeçalho fixo */
+.painel-cabecalho {
+    background-color: #007a3d;
+    border-bottom: 3px solid #004d26;
+    padding: 8px 16px;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    color: white;
+}
+
+.painel-cabecalho button {
+  margin-left: 10px;
+}
+
+/* Área rolável */
+.painel-conteudo {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.tabela-pessoal {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.95em;
+}
+
+.tabela-pessoal th,
+.tabela-pessoal td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.tabela-pessoal th {
+  background-color: #005c4b;
+  color: white;
+}
+
+.botao-acao {
+  background-color: transparent;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.painel-cabecalho2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00a859;
+  padding: 10px 20px;
+  color: white;
+}
+
+.cabecalho-esquerda h2 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.cabecalho-direita {
+  display: flex;
+  gap: 10px;
+}
+
+/*
+.botao-cabecalho {
+  background-color: #006400;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+*/
+
+.botao-cabecalho:hover {
+  background-color: #004d00;
+}
+
+.botao {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.botao-editar {
+  background-color: #006400; /* verde escuro Petrobras */
+  color: white;
+}
+
+.botao-excluir {
+  background-color: #8B0000; /* vermelho escuro */
+  color: white;
+}
+
+.botao-editar:hover {
+  background-color: #228B22; /* verde folha */
+}
+
+.botao-excluir:hover {
+  background-color: #B22222;
+}
+
+.modal-cadastro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-cadastro .modal-conteudo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 400px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.3);
+}
+
+.modal-cadastro .modal-conteudo h3 {
+  margin-top: 0;
+  background-color: #006400;
+  color: white;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  text-align: center;
+}
+
+.modal-cadastro .modal-conteudo label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-cadastro .modal-conteudo input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-cadastro .modal-botoes {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modal-cadastro .modal-botoes button {
+  margin: 0 5px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-cadastro .modal-botoes button:first-child {
+  background-color: #006400;
+  color: white;
+}
+
+.modal-cadastro .modal-botoes button:last-child {
+  background-color: #999999;
+  color: white;
+}
+
+.modal-conteudo {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 600px;
+  box-shadow: 0 0 10px #000;
+  font-family: Arial, sans-serif;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-corpo {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.coluna-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.campo-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 2px;
+  width: 100%;
+}
+
+.campo-form label {
+  display: inline;
+  width: 90px;
+  font-weight: bold;
+}
+
+.campo-form input {
+  flex: 1;
+  width: 80px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.campo-form select {
+  flex: 1;
+  width: 80px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 32px; /* mesma altura do input */
+  box-sizing: border-box;
+}
+
+.botoes-modal {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.botoes-modal button {
+  width: 120px;            /* <- mesmo tamanho para ambos */
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.botoes-modal button:first-child {
+  background-color: #007f00;
+  color: white;
+}
+
+.botoes-modal button:last-child {
+  background-color: #bbb;
+  color: black;
+  border: 1px solid #888;
+  transition: background-color 0.2s ease;
+}
+
+.botoes-modal button:last-child:hover {
+  background-color: #999;
+}

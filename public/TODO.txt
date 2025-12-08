@@ -1,0 +1,19 @@
+Para iniciar o sistema, use:
+Estando Xampp (Apache + Mysql) ativado, só abrir browser em http://localhost/Portal_PLI/public/
+
+---------------------------------------
+Implementações Futuras
+----------------------------------------
+- Dividir Anotações em dois painéis: U-1620 / U-1640
+- No painel Início, permitir trocar os grupos dos operadores na tela, clicando no nome, ou arrastando.??
+- Adaptar o Viewer para vídeo também.
+
+
+---------------------------------------
+Ferarmentas
+----------------------------------------
+trecho para forçar carregamento de js...
+var s = document.createElement("script");
+s.src = "js/telefones.js?v=" + Date.now(); // cache-buster
+document.body.appendChild(s);
+

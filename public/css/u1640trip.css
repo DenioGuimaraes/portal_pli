@@ -1,0 +1,125 @@
+/* Cabeçalho */
+.u1640trip-cabecalho {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #004d26; /* verde Petrobras */
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+}
+
+/* Wrap do painel: ocupa a área central toda */
+.u1640trip-wrap {
+    display: flex;
+    gap: 20px;
+    height: calc(100vh - 150px); /* ajuste fino conforme cabeçalho/rodapé */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Colunas */
+.u1640trip-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Card padrão */
+.u1640trip-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho do card */
+.u1640trip-card-header {
+    background-color: #007a3d; /* azul claro */
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 8px 8px 0 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Corpo do card */
+.u1640trip-card-body {
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 0.75rem;
+    color: #005c4b;
+    font-weight: bold;
+}
+
+.u1640trip-card-body ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.u1640trip-card-body li {
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+/* Caixa de imagem */
+.u1640trip-imgbox {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.u1640trip-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Coluna esquerda = primeiro filho do wrap */
+.u1640trip-wrap > .u1640trip-col:first-child .u1640trip-card {
+    flex: 1; /* ocupa toda altura da coluna */
+}
+
+/* Coluna direita = segundo filho do wrap */
+.u1640trip-wrap > .u1640trip-col:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card superior da direita = 40% */
+.u1640trip-wrap > .u1640trip-col:last-child .u1640trip-card:first-child {
+    flex: 4;
+}
+
+/* Card inferior da direita = 60% */
+.u1640trip-wrap > .u1640trip-col:last-child .u1640trip-card:last-child {
+    flex: 6;
+}
+
+/* Garante que a área da imagem ocupa tudo dentro do card */
+.u1640trip-wrap > .u1640trip-col:first-child .u1640trip-card-body {
+    flex: 1;
+    display: flex;
+}
+
+/* Força o card da esquerda a ocupar toda a coluna */
+.u1640trip-wrap > .u1640trip-col:first-child .u1640trip-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Faz o corpo (imagem) ocupar todo o espaço disponível */
+.u1640trip-wrap > .u1640trip-col:first-child .u1640trip-card-body {
+    flex: 1;
+    display: flex;
+}

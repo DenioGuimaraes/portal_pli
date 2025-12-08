@@ -1,0 +1,2193 @@
+{
+  "turno": [
+    {
+      "linha": "T-01 : NITERÓI",
+      "grupos": {
+        "A": [
+          "Av. Marquês do Paraná, 312 - Niterói",
+          "Rua Doutor Pereira Nunes, 132 – Ingá - Niterói",
+          "Rua Gavião Peixoto – Icaraí - Niterói (1º ponto)",
+          "Rua Doutor Mario Vianna, 625 - Santa Rosa – Niterói",
+          "Império da Banha (Largo do Marrom)",
+          "Rua Noronha Torrezão, 332 - Santa Rosa - Niterói"
+        ],
+        "B": [
+          "Praia de Icaraí",
+          "Marise Barros (2º ponto)",
+          "Rua Tocantins 2, São Francisco",
+          "Vital Brasil (1º ponto)",
+          "Rua Domingos de Sá 1",
+          "Avenida Roberto Silveira (altura do Campo São Bento)",
+          "Rua Paulo César 100",
+          "Avenida Marquês do Paraná (Hortifruti)"
+        ],
+        "C": [
+          "Plaza Shopping",
+          "Praia de Icaraí (último ano)",
+          "Rua Santa Rosa 121",
+          "Marquês do Paraná 51",
+          "Paulo César 155"
+        ],
+        "D": [
+          "Rua Visconde de Itaboraí 355",
+          "Rua Francisco Dutra (Altura do Otávio Keller)",
+          "Avenida Ary Parreiras (Academia Elite)",
+          "Colégio Salesiano",
+          "Marquês do Paraná (Hortifruti)"
+        ],
+        "E": [
+          "Plazza Shopping.",
+          "Gavião Peixoto (altura da rua Men Sá)",
+          "Roberto Silveira (altura da 5 de Julho)"
+        ]
+      }
+    },
+    {
+      "linha": "T-02 : ANIL",
+      "grupos": {
+        "A": [
+          "Rua Lagoa Santa, 113 Anil",
+          "Estrada do Quititi, 1361 Freguesia"
+        ],
+        "B": [
+          "Rua Francisco Dantas, 10 Freguesia",
+          "Estrada de Jacarepaguá, 7120 Freguesia",
+          "Rua Uruçanga, 680 Freguesia",
+          "Rua Almirante Mario França, 60 Freguesia",
+          "Rua potiguara, 459 Freguesia",
+          "Est. Pau Ferro, 1100 Freguesia"
+        ],
+        "C": [
+          "Rua Francisco Dantas, 45 Freguesia",
+          "Av. Tenente coronel Muniz de Aragão, 855 Freguesia",
+          "Rua. Coronel Alberto Martins, 20 Freguesia"
+        ],
+        "D": [
+          "Estrada dos Três Rios, 240 Freguesia",
+          "Rua Eng. Iberê de Abreu, 157 Freguesia",
+          "Estrada do Engenho D'água, 1451 Anil"
+        ],
+        "E": [
+          "Bosque dos Esquilos, entrada C Anil",
+          "Estrada da Uruçanga, 400 Freguesia",
+          "Rua Columéia, 60 Freguesia",
+          "Rua Ituverava, 716 Freguesia"
+        ]
+      }
+    },
+    {
+      "linha": "T-03A : LEBLON",
+      "grupos": {
+        "A": ["Rua Humaitá", "Rua das Laranjeiras com Gen. Glicério"],
+        "B": [
+          "Barata Ribeiro com Figueiredo de Magalhães.",
+          "Rua Alberto Campos, 80"
+        ],
+        "C": [
+          "Barata Ribeiro com Paula Freitas.",
+          "Barata com Figueiredo.",
+          "Barata com Figueiredo."
+        ],
+        "D": [
+          "Rua Bambina",
+          "Barata Ribeiro, 204",
+          "Barata Ribeiro, 222",
+          "Barata Ribeiro, 348",
+          "Barata Ribeiro, 370",
+          "Rua Humaitá - Ponto dos correios."
+        ],
+        "E": ["Barata Ribeiro, 602", "Fonte da Saudade."]
+      }
+    },
+    {
+      "linha": "T-03B : LEBLON",
+      "grupos": {
+        "A": [
+          "Rua Dezenove de Fevereiro, 26 - Botafogo",
+          "Botafogo Praia Shopping",
+          "Av. Rui Barbosa, 422 Praia do flamengo",
+          "Rua do Catete em frente ao Museu da República",
+          "Praça Cruz Vermelha"
+        ],
+        "B": [
+          "Rua Senador Vergueiro na Farmácia Pacheco",
+          "Rua Laranjeiras, 42",
+          "Rua Laranjeiras, 76",
+          "Rua São Clemente, 90",
+          "Rua Real Grandeza, 110"
+        ],
+        "C": [
+          "Praia do flamengo, 164",
+          "Rua Osvaldo Cruz, 95",
+          "Rua Senador Vergueiro, 135 Farmácia Pacheco",
+          "Rua Laranjeiras, 122",
+          "Rua Laranjeiras, 122"
+        ],
+        "D": [
+          "Av. Pasteur",
+          "Rua Senador Vergueiro, 103",
+          "Rua Senador Vergueiro, 135 farmácia Pacheco",
+          "Rua do Catete com Dois de Dezembro",
+          "Rua do Catete em frente ao Museu da República",
+          "Rua da Glória"
+        ],
+        "E": [
+          "Rua Laranjeiras, 122",
+          "Rua Conde de Baependi",
+          "Rua Barão do flamengo",
+          "Rua Barão do flamengo",
+          "Rua Osvaldo Cruz, 95 Flamengo",
+          "Rua Senador Vergueiro, 135 - Farmácia Pacheco",
+          "Rua Marquês de Abrantes - HORTIFRUTI",
+          "..."
+        ]
+      }
+    },
+    {
+      "linha": "T-04: Santa Cruz",
+      "grupos": {
+        "A": ["Rua dos Banguenses, 669 Bangu", "Av. Marechal Fontenelle, 4311"],
+        "B": [
+          "Rua Santa Natalina,43 Paciência",
+          "Rua Padre Belizário, S/N",
+          "Estrada do Moinho, 1111"
+        ],
+        "C": ["Rua Olinda Ellis, 369."],
+        "D": [
+          "Av. Cesário de Mello, 4077",
+          "Estrada Iraquã, 90 Campo Grande",
+          "Avenida Belmiro Valverde, S/N"
+        ],
+        "E": [
+          "Santo Antônio da Silveira, S/N",
+          "Estrada do Pré, S/N",
+          "Av. Sá nota Cruz, S/N"
+        ]
+      }
+    },
+    {
+      "linha": "T-05: Nova Iguaçu",
+      "grupos": {
+        "A": [
+          "Rua fausto 101, Mesquita",
+          "Rua Dr Mário Guimarães 887, Nova Iguaçu",
+          "Rua luís Tomás 171, Nova Iguaçu",
+          "Rua Prof. Joaquim Cardoso de Matos 01, Nova Iguaçu",
+          "Av Abílio Augusto Távora 1608, Nova Iguaçu",
+          "Rua Tertuliano pimenta 238, Nova Iguaçu"
+        ],
+        "B": [
+          "Rua Cel. Bernardino de Melo 4882, Comendador Soares Nova Iguaçu",
+          "Av Abílio Augusto Távora, 568 nova Iguaçu",
+          "Rua Dom Adriano Hipólito 190, Moquetá Nova Iguaçu",
+          "Rua Viga, 295 Viga Nova Iguaçu"
+        ],
+        "C": [
+          "Rua Pedro Muffato, 83 Queimados",
+          "Rua Aderbal da Fonseca, 54 Nova Iguaçu",
+          "Estrada da Gama 264 Vila Treze",
+          "Av: Baltimore, 176 Jardim Esplanada - Nova Iguaçu"
+        ],
+        "D": [
+          "Praça de Mesquita - Mesquita",
+          "Rua Antônio Rabelo Guimarães, 376 Nova Iguaçu",
+          "Av Abílio Augusto Távora, 562, Nova Iguaçu",
+          "Rua Padre Gusmão, 483 - Nova Iguaçu",
+          "Estrada do Iguaçu, 73 - Nova Iguaçu"
+        ],
+        "E": [
+          "Via Light, 327 - Nova Iguaçu",
+          "Rua Prof. Joaquim Cardoso de Matos, 752 - Nova Iguaçu",
+          "Av Dr. Mário Guimarães .1145 - nova Iguaçu",
+          "Av Abílio Augusto Távora 572, Nova Iguaçu",
+          "Av Dr Mário Guimarães 362 - Nova Iguaçu",
+          "Av Gov Roberto Silveira 641 - Nova Iguaçu"
+        ]
+      }
+    },
+    {
+      "linha": "T-06: Anchieta",
+      "grupos": {
+        "A": [
+          "Estrada Expedicionários próximo ao 197 - Nilópolis",
+          "Rua ver. Francisco Nunes,1357- Olinda",
+          "Ru General Oscílio Maia 442-Jardim América"
+        ],
+        "B": [
+          "Estrada dos Expedicionários próximo ao 197 - Nilópolis",
+          "R. Charles Gounod, 242 Jardim América",
+          "Avenida Brigadeiro, Centro Duque de Caxias próximo ao hospital Redor."
+        ],
+        "C": [
+          "Estrada do Expedicionários próximo ao 197 - Nilópolis.",
+          "Praça Parque Anchieta sem número.",
+          "Rua Marechal Floriano 832b Parque Duque - Duque de Caxias.",
+          "R. Gen.Dionisio190-Jardim Vinte e Cinco de Agosto –Duque de Caxias"
+        ],
+        "D": [
+          "Avenida Dr Arruda Negreiro 991- Eng. Belford, São João.",
+          "Rua25 de agosto atrás do Hospital Redor Centro de Caxias."
+        ],
+        "E": [
+          "Estrada Rio do Pau próximo ao 1° posto de gasolina sentindo Pavuna.",
+          "Rua Pracinha Wallace Paes Leme 1633 - Nilópolis"
+        ]
+      }
+    },
+    {
+      "linha": "T-07: Vilar dos Teles",
+      "grupos": {
+        "A": [
+          "Rua Araci 845- Éden, São João de Meriti",
+          "Rua Cardoso Bessa, 249 - 25 de agosto – Caxias",
+          "Rua Floriano prox. ao 61- Jardim Bonifácio - São João de Meriti"
+        ],
+        "B": [
+          "Rua Chaminé 272 - Rocha Sobrinho - Mesquita",
+          "Rua Engenho de Dentro 25- Jardim Bonifácio - São João de Meriti",
+          "Rua Barão de Tefé 55 - 25 de agosto - Caxias",
+          "Av. Chopin 122- Gramacho - Caxias"
+        ],
+        "C": [
+          "Rua Cacilda 1769 - Coelho da Rocha - São João de Meriti",
+          "Av Covanca 83 - Parque Lafaiete - Caxias",
+          "Av Dr Manoel Teles 1500 - Prainha - Caxias",
+          "Rua Mariz e Barros - 25 de agosto - Caxias",
+          "Rua Major Correia de Melo 16 - 25 de agosto - Caxias"
+        ],
+        "D": [
+          "Av Dr Manoel Teles 1500 - Prainha - Caxias",
+          "Av Dr Manoel Teles 1500 - Prainha - Caxias",
+          "Rua Ana Neri 102 - 25 de agosto - Caxias"
+        ],
+        "E": [
+          "Rua Plácido 147 - Vila Emil - Mesquita",
+          "Av Coronel Raimundo Sampaio 390 - Jardim Santa Rosa - São João de Meriti",
+          "Rua Professor José de Souza Herdy 115 - 25 de agosto - Caxias",
+          "Rua Minas gerais 38 - 25 de agosto - Caxias",
+          "Rua Ana Neri 150 - 25 de agosto – Caxias"
+        ]
+      }
+    },
+    {
+      "linha": "T-08: Petrópolis",
+      "grupos": {
+        "A": [
+          "Rua Dr Nelson de Sá Earp, 111, Centro",
+          "Avenida Getúlio Vargas, 2121, Quitandinha",
+          "Rua Monte Castelo, 197, Coronel Veiga",
+          "Rua Emílio Zaluar, 130, Independência",
+          "Rua General Rondon, 1006, Quitandinha"
+        ],
+        "B": [
+          "Rua General Osório, 57, Centro",
+          "Rua Doutor Eugênio Barcellos, 700, Valparaíso",
+          "Avenida Getúlio Vargas, 425, Quitandinha"
+        ],
+        "C": ["Rua Major José Cândido do Vale, 68, Castrioto"],
+        "D": [
+          "Avenida Ipiranga, 998, Centro",
+          "Rua Doutor Nelson de Sá Earp, Centro",
+          "Avenida Getúlio Vargas, 425, Quitandinha",
+          "Rua Honduras, 54, Quitandinha",
+          "Rua Desembargador Maurity Filho, Quitandinha"
+        ],
+        "E": [
+          "Rua Teresa, Cond. BNH (Príncipe Grão Pará), BNH, Alto da Serra",
+          "Rua Aureliano Coutinho, 88, Centro",
+          "Avenida Roberto Silveira, 215, Centro",
+          "Avenida Portugal, 499, Valparaíso",
+          "Rua Desembargador Maurity Filho, 101, Quitandinha"
+        ]
+      }
+    },
+    {
+      "linha": "T-09: Santa Rita",
+      "grupos": {
+        "A": ["Rua Jorge Guimaraes, 112, Vila Marília"],
+        "B": [
+          "Rua Damas Batista, 1049, Jardim Tropical",
+          "Estrada Manuel de Sá - Vale do Ipê, 118 B. ROXO RJ"
+        ],
+        "C": [
+          "Rua Tabatinga, 16",
+          "Estrada Doutor Plínio Casado, 2531 - Parque Rosário",
+          "Rua Jacarandá Branco 674",
+          "Av José Mariano Passos 1581 centro B. ROXO"
+        ],
+        "D": [
+          "Rua Tambaú, 30, São Francisco de Assis",
+          "Rua Doutor Américo,209 Parque São José",
+          "Rua Guaraná, 26 Parque Esperança",
+          "Rua Andaraí, 89 DR Laureano Caxias"
+        ],
+        "E": [
+          "Av Jorge Julio da costa dos Santos BELFORD ROXO",
+          "Rua Nádia Afrânio Peixoto Jardim Tropical",
+          "Rua itaúba 90",
+          "Padaria do Vasco da Gama s/n B. ROXO"
+        ]
+      }
+    },
+    {
+      "linha": "T-10: Taquara",
+      "grupos": {
+        "A": [
+          "Rua Estrada do Rio Grande, 2123, Taquara",
+          "Rua Estrada Boiuna",
+          "Rua Alberico Diniz",
+          "Rua Aladim, 125, Vila Valqueire",
+          "Rua Itamotinga, 117, Oswaldo Cruz"
+        ],
+        "B": [
+          "Estrada Meringuava, 1130, Taquara",
+          "Estrada do Cafunda",
+          "Estrada do Engenheiro Velho",
+          "Rua Boqueira"
+        ],
+        "C": ["Rua das Dalias", "Rua Conde de Resende"],
+        "D": ["Rua dos Crisântemos", "Est. dos Mananciais 1501", "Pça Saiqui"],
+        "E": [
+          "Rua dos Sábios",
+          "Rua Jambeiro",
+          "Rua Mogurari, 148, Oswaldo Cruz",
+          "Rua Imboacú",
+          "Est dos Mananciais 1501"
+        ]
+      }
+    },
+    {
+      "linha": "T-11: Ilha do Governador",
+      "grupos": {
+        "A": [
+          "Orestes Rosália, 241",
+          "Av. Maestro Paulo e Silva, 437",
+          "Rua Adolfo Porto, 195"
+        ],
+        "B": [
+          "Rua Alcides de Freitas",
+          "Av. Paranapuã, 890",
+          "Av. Maestro Paulo e Silva, 295",
+          "Rua Saturnino de Brito Filho, 131"
+        ],
+        "C": [
+          "Rua Pracinha Dionísio Chagas, 40",
+          "Rua Severiano da Fonseca, 172",
+          "Rua Sena, 217, Tauá",
+          "Estrada do Dendê, 1148",
+          "Rua Gustavo Augusto de Resende, 428"
+        ],
+        "D": [
+          "Rua Lessa, 650",
+          "Rua Cambaúba, 1280",
+          "Rua Augusto de Resende, 197",
+          "Rua Grão de Areia, 338",
+          "Rua Cariá, 203",
+          "Rua Comendador Bastos, 866",
+          "Rua Correa e Castro, 65",
+          "Av. Maestro Paulo e Silva, 505",
+          "Rua Almeida Brandão, 125 - Jardim Guanabara",
+          "Rua Coronel Carlos Eiras, 103 - Jardim Guanabara"
+        ],
+        "E": [
+          "Rua Fernandes da Fonseca, 210",
+          "Rua Fernando de Azevedo, 104",
+          "Rua Eneida de Moraes, 291",
+          "Rua Visconde de São Lourenço, 399",
+          "Rua Pinto Alpoim, 631",
+          "Rua Ailton Vasconcelos, 226"
+        ]
+      }
+    },
+    {
+      "linha": "T-12: Vila da Penha",
+      "grupos": {
+        "A": ["Rua do Couto, 29, bloco 1 Ap, Penha"],
+        "B": [
+          "Rua Aureliano Lessa 121 Ramos",
+          "Rua da Justiça 270 Vila da Penha",
+          "Av Oliveira Belo 01 Vila da Penha"
+        ],
+        "C": [
+          "Rua Doutor Alfredo Barcelos 66 Olaria",
+          "Rua Filomena Nunes 1170 Olaria",
+          "Rua Panamá 49 Penha"
+        ],
+        "D": [
+          "Estrada Adhemar Bibiano 4800 Engenho da Rainha",
+          "Rua Engenheiro Francelino Mota 519 Vila da Penha",
+          "Av Brás de Pina 1640 Penha Circular"
+        ],
+        "E": [
+          "Travessa da Benevolência 184 Vila da Penha",
+          "Av Brás de pina 756 Penha Circular",
+          "Rua Tomaz Lopes 815 Vila da Penha",
+          "Rua Quito 160 Penha"
+        ]
+      }
+    },
+    {
+      "linha": "T-13: Piedade",
+      "grupos": {
+        "A": [
+          "Rua Piuaí, 77",
+          "Rua São Brás, 370, Todos os Santos",
+          "Rua José Bonifácio",
+          "Rua Ferreira de Andrade, 537, Cachambi",
+          "Rua Ferreira de Andrade, 537, Cachambi",
+          "Rua Dom Helder 4880",
+          "Estrada Adhemar Bebiano, 257, Del Castilho"
+        ],
+        "B": [
+          "Rua Leopoldina, 275, Piedade",
+          "Avenida Dom Hélder Câmara, 6001, Engenho de Dentro",
+          "Avenida Dom Hélder Câmara, 4880, Cachambi",
+          "Rua Alvarães 301, Del Castilho",
+          "Rua Ferreira Cardoso, 23, Maria da Graça",
+          "Rua volta Grande - Del Castilho",
+          "Rua Fernão Cardim 161"
+        ],
+        "C": [
+          "Rua Piauí, 400, Todos os Santos",
+          "Rua Cachambi, 137, Cachambi",
+          "Rua Estevão Silva, 186, Cachambi",
+          "Estrada Adhemar Bebiano257, Del Castilho"
+        ],
+        "D": [
+          "Rua Dom Helder, 9098",
+          "Rua São Brás, 506, Todos os Santos",
+          "Rua Conselheiro Agostinho, 73, Todos os Santos",
+          "Rua Padre Ildefonso Penalba, 90, Meier",
+          "Rua Cachambi, 780"
+        ],
+        "E": [
+          "Rua Bernadinho de campos 124- piedade",
+          "Rua Coronel Almeida 141- piedade",
+          "Rua Miguel Cervantes, 143, Cachambi",
+          "Rua São Brás, 93, Todos os Santos",
+          "Rua São Brás, 370",
+          "Rua Adhemar Bebiano, 257"
+        ]
+      }
+    },
+    {
+      "linha": "T-14: Teresópolis",
+      "grupos": {
+        "A": [
+          "Rua Antônio Carvalho ventura 1800 Albuquerque",
+          "Rua prefeito Sebastião Teixeira 300 centro",
+          "Rua marechal taumaturgo 50 alto",
+          "Rua aguapei 76 araras",
+          "Rua Cecília Meirelles 301 Santa Cecília",
+          "Rua Alfredo Rebello filho 357 alto",
+          "Rua engenheiro obed. Cardoso ingá"
+        ],
+        "B": [
+          "Rua Maranhão 374 alto",
+          "Rua professor João Camargo 120 barroso",
+          "Rua Roraima 123 caxangá",
+          "Rua periandro José de moura 140 Magé"
+        ],
+        "C": [
+          "Rua cândido Portinari Golf",
+          "Rua Luiz Batista Lopes iucas",
+          "Rua Gil Sobral pinto iucas"
+        ],
+        "D": [
+          "Rua Catulo da paixão cearense 199 quinta da Barra",
+          "Rua Carmela Dutra 815 agriões",
+          "Rua professora Carmem Gomes 534 panorama",
+          "Av Alberto Torres alto",
+          "Rua yeda 735 Tijuca"
+        ],
+        "E": [
+          "Rua José Maria de Araújo regadas 250 ermitage",
+          "Rua carmela Dutra 99 agriões",
+          "Rua Ceará 60 araras",
+          "Rua Cecília Meirelles 125 santa Cecília",
+          "Est Araken 680 granjas guarani"
+        ]
+      }
+    },
+    {
+      "linha": "T-15: Quintino",
+      "grupos": {
+        "A": [
+          "Rua Maria Antônia, 17",
+          "Rua General Belegarde, 185",
+          "Rua Dias da Cruz, 246",
+          "Rua Dias da Cruz, 246",
+          "Rua Paraná, 713"
+        ],
+        "B": [
+          "Rua Lino Teixeira, 256",
+          "Rua intendente Cunha Menezes, 206",
+          "Rua Borja Reis, 781",
+          "Rua Clarimundo de Melo, 1039"
+        ],
+        "C": [
+          "Rua General Rodrigues, 31",
+          "Rua Castro Alves, 124",
+          "Rua Castro Alves, 263",
+          "Rua Paulo Silva Araújo, 129",
+          "Rua Paulo Silva Araújo, 129",
+          "Rua Pedro de Carvalho, 439"
+        ],
+        "D": [
+          "Rua Dois de Maio,544",
+          "Rua Silva Rabelo ,105",
+          "Rua Aquidabã, 1076",
+          "Rua Fábio da Luz,325",
+          "Rua Pedro de Carvalho,439"
+        ],
+        "E": ["Rua Silva Rabelo, 138", "Rua Aquidabã ,366"]
+      }
+    },
+    {
+      "linha": "T-16: Vila Isabel",
+      "grupos": {
+        "A": [
+          "Av 28 setembro (drogaria Pacheco)",
+          "Shopping Tijuca.",
+          "av Maracanã(supermercado marketing)",
+          "av Maracanã esquina com São Francisco Xavier"
+        ],
+        "B": [
+          "Av figueira de Melo (banco Itaú. São Cristóvão",
+          "Av Maracanã praça vantagem tijuca",
+          "Rua Gonzaga basto 209.andarai",
+          "Rua Castro Barbosa 65 Grajaú",
+          "Rua professor Valadares 102 Grajaú",
+          "Rua Vitor Meireles, 523/508. Riachuelo."
+        ],
+        "C": [
+          "Av 28 de setembro 277",
+          "Av Teodoro da Silva 712",
+          "Rua Maxwel 608 Andaraí",
+          "Rua Uberaba 107 Grajaú",
+          "Rua Gastão Penalva 43 Grajaú",
+          "Rua Paula Brito 251 Andaraí."
+        ],
+        "D": [
+          "Av 28 de setembro 437",
+          "Castro barbosa 65 grajau",
+          "Av Maracanã shopping tijuca",
+          "Av Maracanã 639"
+        ],
+        "E": [
+          "Av 28 de setembro 437",
+          "Rua Pereira nunes 211",
+          "Rua Gonzaga basto 209"
+        ]
+      }
+    },
+    {
+      "linha": "T-17: Tijuca",
+      "grupos": {
+        "A": [
+          "Rua Maria Amália, 264",
+          "Rua Amoroso Costa, 149",
+          "Cde de Bonfim 1176",
+          "R. Homem de Melo, 145",
+          "Bom pastor, 33",
+          "Rua bom pastor 203",
+          "Rua São Francisco Xavier, 109",
+          "R. Haddock Lobo, 427",
+          "Rua campos Sales, 83",
+          "R. Felisberto de Menezes, 33"
+        ],
+        "B": [
+          "R. Andrade Neves, 481 - Tijuca",
+          "Rua Dona Delfina 62",
+          "Rua Antônio Basílio 162",
+          "Rua conde de Bonfim 467",
+          "Rua Conde de Bonfim 211",
+          "R. Haddock Lobo, 425",
+          "R. Campos Sales, 87 - Tijuca",
+          "Rua Gonçalves Crespo 296",
+          "Av Paulo de Frontin 219"
+        ],
+        "C": ["Rua Uruguai, 226", "Rua Bom Pastor, 203"],
+        "D": [
+          "Rua Andrade Neves, 83",
+          "Rua Conde de Bonfim, 25",
+          "Rua Haddock lobo, 427",
+          "Rua Haddock lobo, 359",
+          "Rua Campos Sales, 87",
+          "Rua Campos Sales, 143"
+        ],
+        "E": [
+          "Rua Uruguai, 226",
+          "Avenida Edson Passos, 15",
+          "Rua Conde de Bonfim, 527",
+          "Rua Haddock Lobo, 359",
+          "Rua Haddock lobo, 151"
+        ]
+      }
+    },
+    {
+      "linha": "T-18: Santa Cruz",
+      "grupos": {
+        "A": [
+          "Rua Itapiuna,150 - Campo Grande",
+          "Estrada do Mendanha 2795 Q7 L17 Condomínio Girassol",
+          "Campo Grande - Rio de Janeiro"
+        ],
+        "B": [
+          "Rua Morrinhos - Campo Grande.",
+          "Rua Vicente Francisco dos Santos 47 - Jardim Letícia Campo Grande"
+        ],
+        "C": [
+          "Caminho foz do Jordão 1431",
+          "Estrada do Lameirão 320",
+          "Estrada da Água Branca"
+        ],
+        "D": [
+          "Estrada da Pena, 21- Inhoaíba",
+          "Rua Campo Grande, 2104 - Campo Grande"
+        ],
+        "E": [
+          "Estrada do Campinho, 138",
+          "Rua Santa Flora, 55 - Campo Grande - Rio de Janeiro",
+          "Praça Waldomiro Silveira, 81 - Bangu"
+        ]
+      }
+    },
+    {
+      "linha": "T-19: Barra",
+      "grupos": {
+        "A": [
+          "Rua das Bromélias da Península, 400, Barra da Tijuca",
+          "Avenida Jaime Poggi, 99, Barra Olímpica"
+        ],
+        "B": [
+          "Avenida Ayrton Senna, 233, Barra da Tijuca",
+          "Avenida Lúcio Costa, 6700, Barra da Tijuca"
+        ],
+        "C": [
+          "Rua Bromélias da Península, 400, Barra da Tijuca",
+          "Josue de Castro, 221, Barra da Tijuca",
+          "Avenida Embaixador Abelardo Bueno, 3350, Barra da Tijuca"
+        ],
+        "D": [
+          "Avenida Embaixador Abelardo Bueno, 2510, Barra da Tijuca",
+          "Avenida Embaixador Abelardo Bueno, 3600, Barra da Tijuca"
+        ],
+        "E": [
+          "Cidade Jardim",
+          "Pedro Correia BRT",
+          "Pedro Correia Posto BR",
+          "Abelardo Bueno Drogaria Pacheco"
+        ]
+      }
+    },
+    {
+      "linha": "T-20: Recreio",
+      "grupos": {
+        "A": [
+          "Rua Beth Lago, 295, Recreio dos Bandeirantes",
+          "Rua Luiz Carlos Sarolli, 1850",
+          "Av, Henfil, 25",
+          "Estrada Pontal, 6707, Recreio dos Bandeirantes"
+        ],
+        "B": [
+          "Rua Silvia Pozzano, 240, Recreio dos Bandeirantes",
+          "Rua Francisco Mario, 90 Recreio dos Bandeirantes"
+        ],
+        "C": [
+          "Rua Nicette Bruno, 75, Recreio dos Bandeirantes",
+          "Rua Doutor Crespo, 170, Recreio dos Bandeirantes",
+          "Estrada Vereador Alceu de Carvalho, 665, Recreio dos Bandeirantes"
+        ],
+        "D": [
+          "Estrada Benvindo de Novaes, 2800, Recreio dos Bandeirantes",
+          "Av. Das Américas, 17552"
+        ],
+        "E": [
+          "Rua Arnaldo Sussekind, 45, Recreio dos Bandeirantes",
+          "Avenida Gilka Machado, 800, Recreio dos Bandeirantes",
+          "Rua Bem-vindo de Moraes",
+          "Rua Demóstenes Madureira 670"
+        ]
+      }
+    },
+    {
+      "linha": "T-21: Várzea das Moças",
+      "grupos": {
+        "A": [
+          "Avenida Ewerton Xavier, 115.",
+          "Rua Fernando Peixoto, 106",
+          "Estrada Avenida Cruz Nunes, 8758",
+          "Estrada do Sapê, 520"
+        ],
+        "B": [
+          "Rua Marcolino Candau, 37",
+          "Rua Jaime Bittencourt, 638",
+          "Rua Adegair Nery de Sá, 66",
+          "Rua Romanda Gonçalves, 206",
+          "Rua Romanda Gonçalves, 413",
+          "Avenida Irene Lopes Sodré, 3769."
+        ],
+        "C": [
+          "Rua Pietro Farson, 159",
+          "Rua André Henrique Serpa Pinto, 130",
+          "Estrada Velha de Maricá, 23000",
+          "Rua São Pedro de Itaipu, 130.",
+          "Estrada Francisco da Cruz, 8305.",
+          "Estrada Francisco da Cruz, 6106.",
+          "Estrada Francisco da Cruz Nunes, 5260.",
+          "Estrada Caetano monteiro 4550."
+        ],
+        "D": [
+          "Estrada Francisco da Cruz Nunes, 7885",
+          "Desembargador Lima Castro, 101."
+        ],
+        "E": [
+          "Rua Carla Back, 219",
+          "Francisco da Cruz Nunes, 7885",
+          "Rua Raul Oliveira Rodrigues, 382.",
+          "Estrada Francisco da Cruz Nunes, 6105",
+          "Estrada Caetano Monteiro, 391.",
+          "Desembargador Lima Castro, 113."
+        ]
+      }
+    },
+    {
+      "linha": "T-22: São Gonçalo",
+      "grupos": {
+        "A": [
+          "Condomínio José de Anchieta, 2 - RJ-104 - Manilha, Itaboraí - RJ",
+          "Rua Custódio de Oliveira 284",
+          "Condomínio Jardim central - Av presidente kennedy 939"
+        ],
+        "B": ["Rua Vassouras Trindade SG", "(Imediações)"],
+        "C": ["R. Antônio José de Marins, 316 - Centro, Itaboraí - RJ"],
+        "D": [
+          "Rua doutor Nilo Peçanha 952",
+          "Rua Francisco Portela, próximo a UERJ SG"
+        ],
+        "E": [
+          "R. Demétrio Ribeiro, 121 - Porto da Madama, São Gonçalo - (Imediações)",
+          "Av Professor João Brasil altura número 2471"
+        ]
+      }
+    },
+    {
+      "linha": "T-23: Praça Seca",
+      "grupos": {
+        "A": ["Avenida Ministro Edgard Romero, 24, Madureira"],
+        "B": [
+          "Rua Maria Lópes, 546, Madureira",
+          "Rua Júlio Fragoso, 15, Madureira",
+          "Rua Bezerril Fontenele, 6, Irajá",
+          "Estrada da Água Grande, 489, Irajá",
+          "Estrada da Água Grande, 221, Irajá"
+        ],
+        "C": [
+          "Rua Conceição dos Ouros, 170, Praça Seca",
+          "Rua Conselheiro Galvão, 304, Madureira",
+          "Rua Calmon Cabral, 112, Irajá"
+        ],
+        "D": [
+          "Rua Laura Teles, 123, Bloco 07, Tanque",
+          "Rua Baronessa, 308, Praça Seca",
+          "Rua Pinto Teles, 354, Praça Seca",
+          "Rua dos Maias, 95, Madureira",
+          "Rua Padre Leandro Altos, 176, Irajá"
+        ],
+        "E": [
+          "Rua Baronessa, 162, Praça Seca",
+          "Rua Espírito Santo, 243, Praça Seca",
+          "Rua Coronel Adauto Barbosa, 30, Campinho / Rua Jerônimo Pinto, 258 - Campinho"
+        ]
+      }
+    },
+    {
+      "linha": "T-24: Recreio",
+      "grupos": {
+        "A": [
+          "Rua Engenheiro Tito Lívio de Sant'Anna, 40, Recreio dos Bandeirantes",
+          "Rua Clóvis Salgado, 321, 302, Recreio dos Bandeirantes",
+          "Rua José Américo de Almeida, 20, 204, Recreio dos Bandeirantes",
+          "Rua Professora Luiza Nogueira Gonçalves, 510, Recreio dos Bandeirantes"
+        ],
+        "B": [
+          "Rua Cartunista Millôr Fernandes, 1001, Recreio dos Bandeirantes",
+          "Rua Raul da Cunha Ribeiro, 450, Recreio dos Bandeirantes"
+        ],
+        "C": [
+          "Rua Sérgio Branco Soares, 50 Recreio dos Bandeirantes",
+          "Rua João Barros Moreira, 90, Recreio dos Bandeirantes",
+          "Rua Gustavo Corção, 60, Recreio dos Bandeirantes"
+        ],
+        "D": [
+          "Rua Jorge Yunes, 315, Recreio dos Bandeirantes",
+          "Rua Engenheiro Haroldo Cavalcanti, 119, Recreio dos Bandeirantes",
+          "R. Luiz Iglezias - Recreio dos Bandeirantes"
+        ],
+        "E": [
+          "Rua Engenheiro Tito Lívio de Sant'Anna, 121, Recreio dos Bandeirantes",
+          "Rua Mário Faustino, 400, Recreio dos Bandeirantes",
+          "Avenida Genaro de Carvalho, 874, Recreio",
+          "Avenida Alfredo Balthazar da Silveira, 1830, Recreio dos Bandeirantes"
+        ]
+      }
+    },
+    {
+      "linha": "T-25: Curicica",
+      "grupos": {
+        "A": [
+          "Rua Comandante Rubens Silva, 969, Freguesia de Jacarepaguá",
+          "Comandante Rubens Silva, 27, Freguesia Jacarepaguá",
+          "Rua Retiro dos Artistas, 1676, Pechincha",
+          "Estrada Capenha, 275, Pechincha"
+        ],
+        "B": [
+          "Rua Escritor Rodrigo Melo Franco, 400, Camorim",
+          "Avenida Salvador Allende, 1001, Jacarepaguá",
+          "Estrada dos Bandeirantes, 6265, Curicica",
+          "Rua Retiro dos Artistas, 1646, Pechincha",
+          "Rua Assis Moura, 67, Pechincha",
+          "Rua Edgard Werneck, 588, Pechincha",
+          "Rua Comandante Rubens Silva, 791, Freguesia"
+        ],
+        "C": [
+          "Avenida Vice-Presidente José de Alencar, 1500, Curicica",
+          "Rua Coronel Tedim, 290, Pechincha"
+        ],
+        "D": [
+          "Estrada Engenho D’água, 1010, Gardênia Azul",
+          "Rua Samuel das Neves, 415, Pechincha"
+        ],
+        "E": [
+          "Avenida Olof Palme, 505, Camorim",
+          "Rua Manicaria, 153, Curicica",
+          "Rua Comandante Rubens Silva, 57, Freguesia Jacarepaguá"
+        ]
+      }
+    },
+
+    {
+      "linha": "T-26: Maricá",
+      "grupos": {
+        "A": [
+          "Av.Maiza equina com rua 102 (Cordeirinho)",
+          "Rj 104 2⁰ Ponto de ônibus após o sest senat (Tribobó)"
+        ],
+        "B": [
+          "Início da linha 05:00 Av.Maiza esquina com rua 08 (Barra de Maricá)",
+          "R:Assis Coelho Silva 26 (Zacarias)",
+          "R:Dilca Rangel esquina com Av.Roberto Silveira (Flamengo)",
+          "Estrada da paciência 2845SG"
+        ],
+        "C": [
+          "Rj 106 km 28 esquina com rua do canal (Mumbuca)",
+          "Rj 106 km22/5 (Ponto de onibus)",
+          "Condomínio Bosque de Itapeba) São José do imbassai)"
+        ],
+        "D": ["Rj 106 Km 15 Condomínio Alphaville", "Fernando Neto."],
+        "E": [
+          "Rj 106 km 29/5 Condomínio Helena varela (Flamengo)",
+          "Rj 100 Estrada velha de Maricá Ponto de onibus da Rua Dalva Raposo.",
+          "Alameda São Boaventura Baia da estação João Brasi"
+        ]
+      }
+    },
+    {
+      "linha": "T-27: Santa Cruz – Zona Oeste",
+      "grupos": {
+        "A": ["Rua do Governo 1000"],
+        "B": [
+          "Estrada Cabuçu de Baixo, 601, Campo Grande",
+          "Rua Corá Coralina, 180, Campo Grande"
+        ],
+        "C": ["Rua Gen Sezefredo 484"],
+        "D": [
+          "Rua Gabriel Militão Machado, 932, Guaratiba",
+          "Rua Quixere, 495, Guaratiba"
+        ],
+        "E": ["Rua Piraquara"]
+      }
+    },
+    {
+      "linha": "T-30: Freguesia",
+      "grupos": {
+        "A": [
+          "Rua Araguaia, 167, Freguesia",
+          "Rua Geminiano Gois, 151, Freguesia",
+          "Rua Fortunato de Brito, 251, Freguesia",
+          "Estrada dos Três Rios, 1721, Freguesia",
+          "Estrada dos Três Rios, 1721, Freguesia",
+          "Estrada dos Três Rios, 1395, Freguesia",
+          "Estrada do Bananal, 74, Freguesia",
+          "Rua Geminiano Gois, 659, Freguesia",
+          "Estrada do Pau Ferro, 990, Freguesia"
+        ],
+        "B": [
+          "Travessa José Bulhões, 141, Freguesia",
+          "Estrada de Jacarepaguá, 7140, Freguesia passou p/ T-02",
+          "Estrada do Bananal, 395, Freguesia",
+          "Rua Araguaia, 1605, Freguesia",
+          "Rua Araguaia, 994, Freguesia",
+          "Rua Luis Stobl, 131, Freguesia"
+        ],
+        "C": [
+          "Rua Cabo Geraldo Calderaro, 75, Freguesia",
+          "Rua Coronel Alberto Martins, 20, Freguesia",
+          "Rua Francisco Dantas, 85, Freguesia",
+          "Rua Francisco Dantas, 145, Freguesia",
+          "Rua Araguaia, 614, Freguesia",
+          "Rua Araguaia, 1111, Freguesia",
+          "Rua Araguaia, 1266, Freguesia",
+          "Rua Araguaia, 1459, Freguesia",
+          "Rua Araguaia, 1459, Freguesia",
+          "Rua Lícia de Alvarenga, 44, Freguesia",
+          "R. Araguaia, 1266"
+        ],
+        "D": [
+          "Rua Francisca Sales, 191, Freguesia",
+          "Rua Engenheiro Iberê Abreu, 157, Freguesia",
+          "Rua Tirol, 498, Freguesia",
+          "Estrada do Bananal, 699, Freguesia foi p/ T-10",
+          "Rua Araguaia, 1266, Freguesia",
+          "Rua Joaquim Pinheiro, 290 Freguesia",
+          "Rua Luís Stobl, 181, Freguesia"
+        ],
+        "E": [
+          "Estrada dos Três Rios, 1395, Freguesia",
+          "Estrada dos Três Rios, 1305, Freguesia",
+          "Rua Araguaia, 759, Freguesia",
+          "Estrada do Pau Ferro, 234, Jacarepaguá"
+        ]
+      }
+    },
+    {
+      "linha": "T-31: Piabetá",
+      "grupos": {
+        "A": [
+          "Rua Guarani - Piabetá",
+          "Rua Antonio Guimarães Correia, 92",
+          "Alameda Aristides Lobo, 180, Jardim Primavera",
+          "Alameda Manoel Candinho Rodrigues, 59, Jardim Primavera"
+        ],
+        "B": [
+          "Av. Mayapam, 400, Jardim Primavera",
+          "Rua Leibrtiz, 377, Jardim Primavera"
+        ],
+        "C": [
+          "Rua 13 – Fragoso – Próximo ao colégio Cozolino",
+          "Avenida Automóvel Clube, 3070, Vila Serrana",
+          "Rua Estrada Venâncio Pereira Veloso, 767, Jardim Primavera",
+          "São Matheus, 406, Jardim Primavera",
+          "Alameda Oscar Lorenzo Fernandes, 425, Jardim Primavera"
+        ],
+        "D": [
+          "Avenida Santa Luzia, 120, Parque A Equitativa",
+          "Estrada São Mateus, 645, Jardim Primavera",
+          "Avenida das Palmeiras, SN, Jardim Primavera"
+        ],
+        "E": [
+          "Rua Ataulfo de Paiva, SN, Jardim Lider",
+          "Rua Leibrtiz, 437, Jardim Santa Rita"
+        ]
+      }
+    },
+    {
+      "linha": "T-32: Vargem Grande",
+      "grupos": {
+        "A": ["Estrada dos Bandeirantes, 8505"],
+        "B": [
+          "Rua maenca 386",
+          "Avenida Geremário Dantas, 885",
+          "Rua Pedro Calmon 98, Camorim"
+        ],
+        "C": ["Rua Elisio de Araujo 180", "Bloco 5 Casa 101", "Vargem Pequena"],
+        "D": ["Estrada dos bandeirantes 7277 Camorim JPA"],
+        "E": [
+          "avenida Olof Palme 505 - bloco 2000 - apto.1203 Barra Olímpica RJ.",
+          "Estrada do Pacuí 696 - Vargem Grande"
+        ]
+      }
+    },
+    {
+      "linha": "T-33 : Petrópolis",
+      "grupos": {
+        "A": [
+          "Estrada União e indústria 3170 Corrêas",
+          "Estrada União e indústria 3170 Corrêas",
+          "Estrada José carneiro Dias 170 samambaia",
+          "Rua Ingelhein 529 Quarteirão Ingelhein."
+        ],
+        "B": [
+          "Estrada Philuvio Cerqueira Rodrigues 2200 Itaipava",
+          "Rua Armênio Dias Carneiro, 23, Itaipava",
+          "Estrada união e indústria, 14850. Itaipava."
+        ],
+        "C": [
+          "Avenida Norma Maria Reiner 55 Nogueira.",
+          "Estrada União e indústria 3170 Corrêas.",
+          "Estrada Samambaia 335 Samambaia."
+        ],
+        "D": [
+          "Estrada União e indústria 8430 Bonsucesso",
+          "Rua Carlos Gomes 06 centro",
+          "Rua Paulo Hervê 10 Bingen",
+          "Rua Paulo Hervê 644 Bingen",
+          "Rua Paulo Hervê 1100 Bingen."
+        ],
+        "E": [
+          "Estrada União e indústria 14165 Itaipava",
+          "Estrada União e indústria 13950 Itaipava",
+          "Rua Bingen 2085 Bingen"
+        ]
+      }
+    }
+  ],
+  "administrativo": [
+    {
+      "linha": "A-50 - Cosmos (Via Estr. Rio-São Paulo)",
+      "grupos": {
+        "ida": [
+          "R. Guarujá, 225 - Cosmos, Rio de Janeiro - RJ, 23060-680, Brazil",
+          "Praça dos Escolares, 01 - Cosmos, Rio de Janeiro - RJ, 23080-780, Brazil",
+          "R. Benedito Lacerda, 785 - Campo Grande, Rio de Janeiro - RJ, 23071-340, Brazil",
+          "Estr. Carvalho Ramos, 1 - Campo Grande, Rio de Janeiro - RJ, 23073-540, Brazil",
+          "José Siqueira Junior - Campo Grande, Rio de Janeiro - RJ, 23078-110, Brazil",
+          "R. Galeno Chaves, 10 - Campo Grande, Rio de Janeiro - RJ, 23080-685, Brazil",
+          "R. Galeno Chaves, 10 - Campo Grande, Rio de Janeiro - RJ, 23080-685, Brazil",
+          "Estr. do Mendanha, 1700 - Campo Grande, Rio de Janeiro - RJ, 23087-285, Brazil",
+          "Estr. do Mendanha, 1700 - Campo Grande, Rio de Janeiro - RJ, 23087-285, Brazil",
+          "Estr. do Mendanha, 3008 - Campo Grande, Rio de Janeiro - RJ, 23092-002, Brazil",
+          "Estr. do Mendanha, 3008 - Campo Grande, Rio de Janeiro - RJ, 23092-002, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Estrada da Petrobras Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Campo Grande - Campo Grande, Rio de Janeiro - RJ, 23087-286, Brazil",
+          "R. Vicente Francisco dos Santos, 13 - Campo Grande, Rio de Janeiro - RJ, 23073-470, Brazil",
+          "Estr. do Tingui, 1664 - Campo Grande, Rio de Janeiro - RJ, 23057-004, Brazil",
+          "Estr. Santa Maria, 725 - Campo Grande, Rio de Janeiro - RJ, 23078-110, Brazil",
+          "Estr. do Campinho, 2384 - Campo Grande, Rio de Janeiro - RJ, 23085-285, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-51 - Campo Grande (Via Cesário de Melo)",
+      "grupos": {
+        "ida": [
+          "Estr. das Capoeiras, 246 - Areinhas - Campo Grande, Rio de Janeiro - RJ, 23085-680, Brazil",
+          "Estrada do Mendanha, 2676 - Campo Grande, Rio de Janeiro - RJ, 23092-001, Brazil",
+          "Rua Marechal Marciano próximo ao 2419 - Bangu, Rio de Janeiro - RJ, 21870-311, Brazil",
+          "Rua Marechal Marciano próximo ao 2419-2427 - Bangu, Rio de Janeiro - RJ, 21870-311, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Rua General Jacques Ouriques, 166 - Padre Miguel, Rio de Janeiro - RJ, 21720-540, Brazil",
+          "Estrada do Mendanha, 2785 - Campo Grande, Rio de Janeiro - RJ, 23092-001, Brazil",
+          "Estr. Rio do A, 1716 - Campo Grande, Rio de Janeiro - RJ, 23080-300, Brazil",
+          "Estr. Rio do A, 1716 - Campo Grande, Rio de Janeiro - RJ, 23080-300, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-52 - Campo Grande (Via Estrada da Posse)",
+      "grupos": {
+        "ida": [
+          "Estr. Cabuçu de Baixo, 600 - Guaratiba, Rio de Janeiro - RJ, 23036-060, Brazil",
+          "R. Campo Formoso, 15 - Campo Grande, Rio de Janeiro - RJ, 23036-140, Brazil",
+          "R. Campo Formoso, 6 - Guaratiba, Rio de Janeiro - RJ, 23036-140, Brazil",
+          "Olavo Gama - Guaratiba, Rio de Janeiro - RJ, 23040-150, Brazil",
+          "Gilberto José Peixoto - Campo Grande, Rio de Janeiro - RJ, 23040-150, Brazil",
+          "Olinda Ellis - Campo Grande, Rio de Janeiro - RJ, 23040-150, Brazil",
+          "R. Dr. Ibraim Hannas, 460 - Campo Grande, Rio de Janeiro - RJ, 23045-040, Brazil",
+          "R. Dr. Ibraim Hannas, 98 - Campo Grande, Rio de Janeiro - RJ, 23045-040, Brazil",
+          "Estr. das Capoeiras, 262a - Campo Grande, Rio de Janeiro - RJ, 23085-660, Brazil",
+          "R. Palmácia, 8 - Campo Grande, Rio de Janeiro - RJ, 23087-420, Brazil"
+        ],
+        "volta": [
+          "7PM8+X3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Brasil, 33467 - Catiri, Bangu, Rio de Janeiro - RJ, 21862, Brazil",
+          "Estrada Da Posse - Campo Grande, Rio de Janeiro - RJ, 23092-122, Brazil",
+          "Ipatinga - Campo Grande, Rio de Janeiro - RJ, 23092-122, Brazil",
+          "Estrada da Posse, 3950 - Campo Grande, Rio de Janeiro - RJ, 23088-000, Brazil",
+          "R. Rouxinol, 15 - Campo Grande, Rio de Janeiro - RJ, 23087-055, Brazil",
+          "Estr. Rio do A, 2275 - Campo Grande, Rio de Janeiro - RJ, 23080-300, Brazil",
+          "R. Prof. Gonçalves, 147 - Campo Grande, Rio de Janeiro - RJ, 23045-055, Brazil",
+          "R. da Flora, 96 - Campo Grande, Rio de Janeiro - RJ, 23045-100, Brazil",
+          "Estr. da Cachamorra, 56-98 - Campo Grande, Rio de Janeiro - RJ, 23040-150, Brazil",
+          "Estrada Da Cachamorra, 1163 - Campo Grande, Rio de Janeiro - RJ, 23040-150, Brazil",
+          "Magarça - Campo Grande, Rio de Janeiro - RJ, 23036-315, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Estrada da Posse, 3002 - Campo Grande, Rio de Janeiro - RJ, 23088-000, Brazil",
+          "Carlos Delgado de Carvalho - Campo Grande, Rio de Janeiro - RJ, 23088, Brazil",
+          "Estr. do Mendanha, 485 - Campo Grande, Rio de Janeiro - RJ, 23087-283, Brazil",
+          "Av. Cesário de Melo, 3461 - Campo Grande, Rio de Janeiro - RJ, 23050-101, Brazil",
+          "Cambota - Campo Grande, Rio de Janeiro - RJ, 23045-100, Brazil",
+          "Rua Olinda Ellis, 441 - Campo Grande, Rio de Janeiro - RJ, 23045-160, Brazil",
+          "Estr. da Cachamorra, 1133 - Campo Grande, Rio de Janeiro - RJ, 23040-150, Brazil",
+          "Estr. da Cachamorra, 135 - Campo Grande, Rio de Janeiro - RJ, 23040-151, Brazil",
+          "Estr. do Mato Alto, 1371 - Campo Grande, Rio de Janeiro - RJ, 23036-150, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-54 - Campo Grande (Via Av. Santa Cruz)",
+      "grupos": {
+        "ida": [
+          "Avenida de Santa Cruz próximo ao 8886 - Senador Camará, Rio de Janeiro - RJ, 23010-010, Brazil",
+          "Avenida de Santa Cruz Próximo Ao 7474 - Senador Camará, Rio de Janeiro - RJ, 21810-007, Brazil",
+          "UPA Senador Camará - Senador Camará, Rio de Janeiro - RJ, 21710-231, Brazil",
+          "Rua da Feira Próximo Ao 1080-1188 - Bangu, Rio de Janeiro - RJ, 21825-080, Brazil",
+          "R. da Feira, 25 - Bangu, Rio de Janeiro - RJ, 21820-005, Brazil",
+          "Av. de Santa Cruz, 1126 - Realengo, Rio de Janeiro - RJ, 21710-231, Brazil",
+          "R. Murundu, 1384 - Padre Miguel, Rio de Janeiro - RJ, 21775-210, Brazil",
+          "Praça Padre Miguel - Realengo, Rio de Janeiro - RJ, 21710-231, Brazil",
+          "Pedro da Cunha - Realengo, Rio de Janeiro - RJ, 21755-271, Brazil",
+          "Parque Shopping Sulacap - Jardim Sulacap, Rio de Janeiro - RJ, 21746, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Marechal Fontenele, 2986 - Vila Militar, Rio de Janeiro - RJ, 21750-001, Brazil",
+          "Av. Marechal Fontenele, 5359 - Realengo, Rio de Janeiro - RJ, 21750-121, Brazil",
+          "Praça do Canhão - Realengo, Rio de Janeiro - RJ, 21735, Brazil",
+          "Av. de Santa Cruz, 4297 - Bangu, Rio de Janeiro - RJ, 21810-015, Brazil",
+          "Avenida de Santa Cruz Próximo Ao 6444-6582 - Senador Camará, Rio de Janeiro - RJ, 21710-231, Brazil",
+          "Avenida de Santa Cruz Próximo Ao 7474 - Senador Camará, Rio de Janeiro - RJ, 21810-007, Brazil",
+          "Saúna - Senador Camará, Rio de Janeiro - RJ, 21710-231, Brazil",
+          "Pré - Campo Grande, Rio de Janeiro - RJ, 23052-230, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-55 - Piraí (Via Arco Metropolitano)",
+      "grupos": {
+        "ida": [
+          "R. Bulhões de Carvalho, 244-334 - Centro, Piraí - RJ, 27175-000, Brazil",
+          "RJ-125, 40-42 - São Miguel, Seropédica - RJ, 23890-000, Brazil",
+          "Estr. Santa Perciliana, 590 - Jardim Sagrado Coracao de Jesus, Nova Iguaçu - RJ, 26053-160, Brazil",
+          "Rod. Rio - Figueira, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "RJ-125 - São Miguel, Seropédica - RJ, 23890-000, Brazil",
+          "Tv. Domingos Izaquiel, 68 - Centro, Piraí - RJ, 27175-000, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-56 - Queimados (Via Pres. Dutra)",
+      "grupos": {
+        "ida": [
+          "R. Odilon Braga, 24 - Vila das Porteiras, Queimados - RJ, 26310-190, Brazil",
+          "Estrada Carlos Sampaio Próximo Ao 257 - Santo Espírito, Queimados - RJ, 26089-000, Brazil",
+          "Rod. Pres. Dutra, 19401 - Rancho Novo, Nova Iguaçu - RJ, 26015-385, Brazil",
+          "R. Cel. Floriano Peixoto Barros, 181 - Jardim Iguaçu, Nova Iguaçu - RJ, 26280-001, Brazil",
+          "Av. Gov. Roberto Silveira, 1070 - Moquetá, Nova Iguaçu - RJ, 26285-060, Brazil",
+          "Rod. Pres. Dutra, 319 - Comendador Soares, Nova Iguaçu - RJ, 26013, Brazil",
+          "Rodovia Presidente Dutra - BNH, Mesquita - RJ, 26574-620, Brazil",
+          "R. Coelho da Rocha, 976 - Agostinho Porto, São João de Meriti - RJ, 25550-690, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Rod. Pres. Dutra, 3843 - Coelho da Rocha, São João de Meriti - RJ, 25510-120, Brazil",
+          "BR-116, 162 - Belford Roxo - RJ, Brazil",
+          "Rodovia Presidente Dutra, Rancho Novo, Nova Iguaçu - RJ, 26013, Brazil",
+          "Rod. Pres. Dutra, 677 - Comendador Soares, Nova Iguaçu - RJ, 26280-485, Brazil",
+          "Rodovia Presidente Dutra próximo ao 172 - Morro Agudo, Nova Iguaçu - RJ, 26280, Brazil",
+          "Av. dos Inconfidentes, 1495 - Vila do Tinguá, Queimados - RJ, 26311-110, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-57 - Santa Rita (Via Lote XV)",
+      "grupos": {
+        "ida": [
+          "Estrada de Adrianópolis Próximo Ao 2749 - Eng. Rocha Freire, Nova Iguaçu - RJ, 26090-005, Brazil",
+          "Estr. Luiz de Lemos, 1895 - Vila Borgerth, Nova Iguaçu - RJ, 26020-810, Brazil",
+          "Estr. do Iguaçu, 1720 - Vila Pedro, Nova Iguaçu - RJ, 26021-370, Brazil",
+          "Estr. da Fazenda, 432 - Rancho Novo, Nova Iguaçu - RJ, 26013-470, Brazil",
+          "Av. da Prata, 789 - Prata, Nova Iguaçu - RJ, 26010-157, Brazil",
+          "Av. José Mariano Passos, 1405 - Santo Antonio da Prata, Belford Roxo - RJ, 26130-570, Brazil",
+          "RJ - Piam, Belford Roxo - RJ, 26112, Brazil",
+          "Av. Joaquim da Costa Lima, 3102 - Santa Amélia, Belford Roxo - RJ, 26112-055, Brazil",
+          "Avenida Joaquim da Costa Lima - Parque Sao Bernardo, Belford Roxo - RJ, 26165-300, Brazil",
+          "R. José Ferreira, 3 - Parque Santa Rita, Belford Roxo - RJ, 26130-150, Brazil",
+          "Av. Governador Leonel de Moura Brizola, 1266 - Lote XV, Belford Roxo - RJ, 26183-250, Brazil",
+          "Av. Governador Leonel de Moura Brizola, 851 - Santa Isabel, Duque de Caxias - RJ, 25235-220, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "RJ-101, 851 - Santa Isabel, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Estr. Mury, 148 - Boa Ventura, Belford Roxo - RJ, 26193-560, Brazil",
+          "R. José Ferreira, 3 - Parque Santa Rita, Belford Roxo - RJ, 26130-150, Brazil",
+          "Avenida Joaquim da Costa Lima Próximo Ao 3373 - Parque Sao Bernardo, Belford Roxo - RJ, 26165-300, Brazil",
+          "Avenida Joaquim da Costa Lima Próximo Ao 2533-2575 - Parque Santa Amelia, Belford Roxo - RJ, 26115-110, Brazil",
+          "RJ - Piam, Belford Roxo - RJ, 26112, Brazil",
+          "Av. José Mariano Passos, N° 632 - Loja B - Santo Antonio da Prata, Belford Roxo - RJ, 26130-570, Brazil",
+          "Av. Nunes Sampaio, 327 - Areia Branca, Belford Roxo - RJ, 26135-300, Brazil",
+          "Estr. do Iguaçu, 372 - Brasil, Nova Iguaçu - RJ, 26012-250, Brazil",
+          "Estrada Luís Lemos, 36, Carmary, Nova Iguaçu - Vila Anita, Nova Iguaçu - RJ, 26040-065, Brazil",
+          "Estrada de Adrianópolis Próximo Ao 2749 - Eng. Rocha Freire, Nova Iguaçu - RJ, 26090-005, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-58 - Mesquita (Via Estr. Mal. Alencastro)",
+      "grupos": {
+        "ida": [
+          "Estr. Antônio José Bitencourt, 89 - Centro, Nilópolis - RJ, 26570-090, Brazil",
+          "R. Ambrósio, 2 - Vila Emil, Mesquita - RJ, 26580-250, Brazil",
+          "Av. Getúlio de Moura, 1080 - Centro, Mesquita - RJ, 26550-070, Brazil",
+          "Av. Pres. Costa e Silva, 739 - Edson Passos, Mesquita - RJ, 26221-040, Brazil",
+          "Rua Presidente Costa e Silva 571, Mesquita - Edson Passos, Mesquita - RJ, 26582-070, Brazil",
+          "Av. Getúlio Vargas, 2111 - Santos Dumont, Nilópolis - RJ, 26525-810, Brazil",
+          "Av. Getúlio Vargas, 1309 - Centro, Nilópolis - RJ, 26525-023, Brazil",
+          "Av. Getúlio Vargas, 403 - Olinda, Nilópolis - RJ, 26510-013, Brazil",
+          "R. Cristóvão Jaques, 140 - Anchieta, Rio de Janeiro - RJ, 21630-110, Brazil",
+          "Clínica da Família Maria de Azevedo Rodrigues Pereira - Anchieta, Rio de Janeiro - RJ, 21620-241, Brazil",
+          "Av. Cipriano Barata, 59 - Anchieta, Rio de Janeiro - RJ, 21620-190, Brazil",
+          "Avenida Brasil Próximo Ao 22217-22253 - Guadalupe, Rio de Janeiro - RJ, 21670-000, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "BR-101, 3 - Guadalupe, Rio de Janeiro - RJ, 21670-000, Brazil",
+          "R. Umbuzeiro, 249 - Ricardo de Albuquerque, Rio de Janeiro - RJ, 21620-610, Brazil",
+          "R. Roque Barreto, 285 - Anchieta, Rio de Janeiro - RJ, 21625-390, Brazil",
+          "Estr. Mal. Alencastro, 4467 - Anchieta, Rio de Janeiro - RJ, 21625-001, Brazil",
+          "Av. Getúlio de Moura, 509 - Olinda, Nilópolis - RJ, 26510-000, Brazil",
+          "Av. Getúlio de Moura, 1353 - Centro, Nilópolis - RJ, 26510-001, Brazil",
+          "Av. Carmela Dutra, 2294 - Santos Dumont, Nilópolis - RJ, 26530-020, Brazil",
+          "Rua Presidente Costa e Silva 571, Mesquita - Edson Passos, Mesquita - RJ, 26582-070, Brazil",
+          "Av. Baronesa de Mesquita, 1118 - Vila Emil, Mesquita - RJ, 26562-040, Brazil",
+          "Estr. Antônio José Bitencourt, 218 - Centro, Nilópolis - RJ, 26530-010, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-59 - Nova Iguaçu (Via Light)",
+      "grupos": {
+        "ida": [
+          "Av. Abílio Augusto Távora, 3500 - Danon, Nova Iguaçu - RJ, 26265-090, Brazil",
+          "Av. Abílio Augusto Távora, 3221 - Jardim Alvorada, Nova Iguaçu - RJ, 26265-090, Brazil",
+          "Av. Abílio Augusto Távora, 3773 - Jardim Alvorada, Nova Iguaçu - RJ, 26265-090, Brazil",
+          "Rua Ministro Lafaiete de Andrade 1202 - Ouro Verde, Nova Iguaçu - RJ, 26261-220, Brazil",
+          "R. Barão de São Felix, 711 - Luz, Nova Iguaçu - RJ, 26260-090, Brazil",
+          "R. Cel. Bernardino de Melo, 3002 - Centro, Nova Iguaçu - RJ, 26255-140, Brazil",
+          "Av. Gov. Roberto Silveira, 873 - Centro, Nova Iguaçu - RJ, 26285-060, Brazil",
+          "Rod. Pres. Dutra, km 12 - Metrópole, Nova Iguaçu - RJ, 26130-250, Brazil",
+          "Rod. Pres. Dutra, 1305 - Comendador Soares, Nova Iguaçu - RJ, 26015-005, Brazil",
+          "R. Cacilda, 691 - Coelho da Rocha, São João de Meriti - RJ, 25545-220, Brazil",
+          "Estr. da Petrobrás, 27 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Goiás, 316 - Jardim Jose Bonifacio, São João de Meriti - RJ, 25565-168, Brazil",
+          "R. Oscar Soares, 2808 - Prata, Nova Iguaçu - RJ, 26550-160, Brazil",
+          "R. Antônio Rabelo Guimarães, 43 - Califórnia, Nova Iguaçu - RJ, 26216-140, Brazil",
+          "Via Light, 88 - Chacrinha, Nova Iguaçu - RJ, Brazil",
+          "Via Light, 680 - Luz, Nova Iguaçu - RJ, 26260, Brazil",
+          "Estrada Cambucas, 66 - Ouro Preto, Nova Iguaçu - RJ, 26275-330, Brazil",
+          "Estr. de Madureira, 839 - Jardim Alvorada, Nova Iguaçu - RJ, 26265-090, Brazil",
+          "Av. Abílio Augusto Távora, 3500 - Danon, Nova Iguaçu - RJ, 26265-090, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-60 - Recreio (Via Av. das Américas)",
+      "grupos": {
+        "ida": [
+          "Av. das Américas, 14600 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-702, Brazil",
+          "Avenida das Américas próximo ao 16704-16750 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22640-100, Brazil",
+          "Av. das Américas, 20600 - Vargem Grande, Rio de Janeiro - RJ, 22790-851, Brazil",
+          "R. Wilfred Penha Borges, 422 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-871, Brazil",
+          "Condomínio Maramar - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-879, Brazil",
+          "Av. das Américas, 89 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22631-000, Brazil",
+          "Av. Guiomar Novaes, 439 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-590, Brazil",
+          "Estrada Do Pontal próximo ao 415 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-877, Brazil",
+          "R. José Américo de Almeida, 774 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22795-045, Brazil",
+          "Professor Motta Maia - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22795-172, Brazil",
+          "R. Fernando Leite Mendes, 28 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22795-335, Brazil",
+          "Barra World - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22793-081, Brazil",
+          "Av. das Américas, 11599 - Barra da Tijuca, Rio de Janeiro - RJ, 22793-082, Brazil",
+          "Av. Ayrton Senna, 340 - Jacarepaguá, Rio de Janeiro - RJ, 22793-000, Brazil",
+          "Av. I - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 33 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Vila Pan-Americana - Jacarepaguá, Rio de Janeiro - RJ, 22765, Brazil",
+          "Estação Pontões / Barrasul - Barra da Tijuca, Rio de Janeiro - RJ, 22793-082, Brazil",
+          "Estação Salvador Allende - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22793-081, Brazil",
+          "Av. das Américas, 16160 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-704, Brazil",
+          "Treze de Maio - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22785, Brazil",
+          "R. Wilfred Penha Borges, 422 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-871, Brazil",
+          "R. Wilfred Penha Borges, 761 - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-871, Brazil",
+          "Av. das Américas, 19118 - Vargem Grande, Rio de Janeiro - RJ, 22790-704, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-61 - Barra da Tijuca (Via Autódromo)",
+      "grupos": {
+        "ida": [
+          "Av. Monsenhor Ascâneo, 609 - Barra da Tijuca, Rio de Janeiro - RJ, 22621-060, Brazil",
+          "Av. Pref. Dulcídio Cardoso, 5000 - Barra da Tijuca, Rio de Janeiro - RJ, 22793-012, Brazil",
+          "Av. das Américas, 1992 - Barra da Tijuca, Rio de Janeiro - RJ, 22640-100, Brazil",
+          "Av. Embaixador Abelardo Bueno, 1930 - Barra da Tijuca, Rio de Janeiro - RJ, Brazil",
+          "Rio 2 - Barra da Tijuca, Rio de Janeiro - RJ, 22711, Brazil",
+          "Av. Embaixador Abelardo Bueno, 116 - Barra da Tijuca, Rio de Janeiro - RJ, 22775-023, Brazil",
+          "Av. Embaixador Abelardo Bueno, 1214 - Barra da Tijuca, Rio de Janeiro - RJ, 22775-023, Brazil",
+          "Av. Ayrton Senna, 5600 - Jacarepaguá, Rio de Janeiro - RJ, 22775-005, Brazil",
+          "Estr. da Petrobrás, 27 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Parque Olímpico - Av. Embaixador Abelardo Bueno - Jacarepaguá, Rio de Janeiro - RJ, 22775-023, Brazil",
+          "Av. Embaixador Abelardo Bueno, 12 - Barra da Tijuca, Rio de Janeiro - RJ, 22775-023, Brazil",
+          "Vila Residencial da Aeronáutica - Barra da Tijuca, Rio de Janeiro - RJ, Brazil",
+          "Av. Embaixador Abelardo Bueno, 787 - Barra da Tijuca, Rio de Janeiro - RJ, Brazil",
+          "Av. das Américas, 1519 - Barra da Tijuca, Rio de Janeiro - RJ, 22631-000, Brazil",
+          "Av. das Américas, 489 - Barra da Tijuca, Rio de Janeiro - RJ, 22631-000, Brazil",
+          "Av. Afonso de Taunay, 64 - Barra da Tijuca, Rio de Janeiro - RJ, 22621-310, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-62 - Lagoa (Via Túnel Marcello Alencar)",
+      "grupos": {
+        "ida": [
+          "R. Gilberto Cardoso, 914 - Lagoa, Rio de Janeiro - RJ, 22430-070, Brazil",
+          "Rua Jardim Botânico Próximo Ao 666-674 - Jardim Botânico, Rio de Janeiro - RJ, 22470-050, Brazil",
+          "Av. Nossa Sra. de Copacabana, 1221 - Copacabana, Rio de Janeiro - RJ, 22070-011, Brazil",
+          "Av. Epitácio Pessoa, 3000 - Lagoa, Rio de Janeiro - RJ, 22471-003, Brazil",
+          "BRS 2 - Av. Nossa Senhora de Copacabana próximo ao 637-643 - Copacabana, Rio de Janeiro - RJ, 22050-002, Brazil",
+          "BRS 2 - Av. Nossa Senhora de Copacabana próximo ao 252-B - Copacabana, Rio de Janeiro - RJ, 22020-002, Brazil",
+          "Av. Lauro Sodré, 445 - Botafogo, Rio de Janeiro - RJ, 22290-070, Brazil",
+          "Praia de Botafogo próximo ao 2957-3201 - Botafogo, Rio de Janeiro - RJ, 22250-040, Brazil",
+          "R. Sen. Vergueiro, 136 - Flamengo, Rio de Janeiro - RJ, 22230-001, Brazil",
+          "Praia do Flamengo próximo ao 132 - Flamengo, Rio de Janeiro - RJ, 22210-030, Brazil",
+          "Av. Beira Mar, 4700 - Centro, Rio de Janeiro - RJ, 20021-060, Brazil",
+          "Av. Beira Mar, 2139 - Centro, Rio de Janeiro - RJ, 20021-060, Brazil",
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Presidente Wilson Próximo Ao 113 - Centro, Rio de Janeiro - RJ, 20040-008, Brazil",
+          "Praia do Flamengo próximo ao 132 - Flamengo, Rio de Janeiro - RJ, 22210-030, Brazil",
+          "R. Sen. Vergueiro, 136 - Flamengo, Rio de Janeiro - RJ, 22230-001, Brazil",
+          "Praia de Botafogo, 356 - Botafogo, Rio de Janeiro - RJ, 22250-040, Brazil",
+          "Av. Carlos Peixoto, 48 - Botafogo, Rio de Janeiro - RJ, 22290-090, Brazil",
+          "R. Barata Ribeiro, 180B - Copacabana, Rio de Janeiro - RJ, 22011-002, Brazil",
+          "R. Barata Ribeiro, 512 - Copacabana, Rio de Janeiro - RJ, 22040-002, Brazil",
+          "R. Raul Pompéia, 195 - Copacabana, Rio de Janeiro - RJ, 22080-001, Brazil",
+          "R. Vinícius de Moraes, 105 - Ipanema, Rio de Janeiro - RJ, 22411-010, Brazil",
+          "Av. Epitácio Pessoa, 1880 - Lagoa, Rio de Janeiro - RJ, 22411-072, Brazil",
+          "Av. Epitácio Pessoa, 4794 - Lagoa, Rio de Janeiro - RJ, 22471-006, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-63 - Humaitá (Via Santa Bárbara)",
+      "grupos": {
+        "ida": [
+          "Rua Muniz Barreto Próximo Ao 741-777 - Botafogo, Rio de Janeiro - RJ, 22260-002, Brazil",
+          "R. Fonte da Saudade, 318 - Humaitá, Rio de Janeiro - RJ, 28613-410, Brazil",
+          "R. das Laranjeiras, 270 - Laranjeiras, Rio de Janeiro - RJ, 22240-003, Brazil",
+          "R. das Laranjeiras, 154 - Loja E - Laranjeiras, Rio de Janeiro - RJ, 22240-003, Brazil",
+          "R. Eleone de Almeida, 22 - Catumbi, Rio de Janeiro - RJ, 20251-470, Brazil",
+          "Av. Henrique Valadares, 107 - Centro, Rio de Janeiro - RJ, 20231-030, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Carmo Neto, 212 - Cidade Nova, Rio de Janeiro - RJ, 20210-052, Brazil",
+          "R. do Catumbi, 120 - Catumbi, Rio de Janeiro - RJ, 20251-450, Brazil",
+          "Viaduto Eng. Noronha, 236 - Laranjeiras, Rio de Janeiro - RJ, 22240-003, Brazil",
+          "R. das Laranjeiras, 331 - Laranjeiras, Rio de Janeiro - RJ, 22240-004, Brazil",
+          "R. Prof. Abelardo Lóbo, 1104 - Humaitá, Rio de Janeiro - RJ, 22470-240, Brazil",
+          "Ac. Praia de Botafogo, 484 - Botafogo, Rio de Janeiro - RJ, 22290-030, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-64 - Usina (Via Av. Paulo de Frontin)",
+      "grupos": {
+        "ida": [
+          "Rua Conde de Bonfim Próximo Ao 1062 - Tijuca, Rio de Janeiro - RJ, 20530-003, Brazil",
+          "R. Mário de Alencar, 23 - Tijuca, Rio de Janeiro - RJ, 20530-250, Brazil",
+          "Praça Cmte. Xavier de Brito, 63 - Tijuca, Rio de Janeiro - RJ, 20511-400, Brazil",
+          "Av. Maracanã, 1223 - Tijuca, Rio de Janeiro - RJ, 20511-001, Brazil",
+          "R. Barão de Mesquita, 265 - Tijuca, Rio de Janeiro - RJ, 20540-001, Brazil",
+          "R. Des. Izidro, 29b - Box 30 - Tijuca, Rio de Janeiro - RJ, 20511-070, Brazil",
+          "R. Alexandre de Gusmão, 223 - Tijuca, Rio de Janeiro - RJ, 20520-120, Brazil",
+          "Rua Conde de Bonfim próximo ao 28 - Tijuca, Rio de Janeiro - RJ, 20520-050, Brazil",
+          "R. Haddock Lobo, 323 - Tijuca, Rio de Janeiro - RJ, 20260-141, Brazil",
+          "Av. Paulo de Frontin, 217 - Praça da Bandeira, Rio de Janeiro - RJ, 20260-010, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Paulo de Frontin, 190 - Praça da Bandeira, Rio de Janeiro - RJ, 20260-011, Brazil",
+          "R. Dr. Satamini, 160 - Tijuca, Rio de Janeiro - RJ, 20270-231, Brazil",
+          "Avenida Heitor Beltrão Próximo Ao 46-54 - Tijuca, Rio de Janeiro - RJ, 20550-011, Brazil",
+          "Rua Conde de Bonfim, 280 - Tijuca, Rio de Janeiro - RJ, 20540-003, Brazil",
+          "Rua Conde de Bonfim Próximo Ao 412 - Tijuca, Rio de Janeiro - RJ, 20520-130, Brazil",
+          "R. Maria Amália, 216 - Tijuca, Rio de Janeiro - RJ, 20510-130, Brazil",
+          "Rua Uruguai Próximo Ao 397 - Tijuca, Rio de Janeiro - RJ, 24322-060, Brazil",
+          "Rua Conde de Bonfim Próximo Ao 1062 - Tijuca, Rio de Janeiro - RJ, 20530-003, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-65 - Vila Isabel (Via Radial Oeste)",
+      "grupos": {
+        "ida": [
+          "Boulevard 28 de Setembro, 168 - Vila Isabel, Rio de Janeiro - RJ, 20551-055, Brazil",
+          "Boulevard 28 de Setembro, 262 - Vila Isabel, Rio de Janeiro - RJ, 20551-055, Brazil",
+          "Boulevard 28 de Setembro, 398 - Vila Isabel, Rio de Janeiro - RJ, 20551-195, Brazil",
+          "R. José do Patrocínio, 232 - Grajaú, Rio de Janeiro - RJ, 20560-160, Brazil",
+          "Rua Gurupi próximo ao 20-28 - Grajaú, Rio de Janeiro - RJ, 20561-200, Brazil",
+          "R. Uberaba, 71 - Grajaú, Rio de Janeiro - RJ, 20561-240, Brazil",
+          "R. Paula Brito, 240 - Andaraí, Rio de Janeiro - RJ, 20541-190, Brazil",
+          "Rua Maxwell próximo ao 355 - Andaraí, Rio de Janeiro - RJ, 20510-080, Brazil",
+          "R. São Francisco Xavier, 376 - Maracanã, Rio de Janeiro - RJ, 20550-013, Brazil",
+          "Praça Gen. Portinho, 26 - Maracanã, Rio de Janeiro - RJ, 20271-010, Brazil",
+          "R. José Eugênio, 37 - São Cristóvão, Rio de Janeiro - RJ, 20941-140, Brazil",
+          "Av. Rotary Internacional, 55 - São Cristóvão, Rio de Janeiro - RJ, 20941-060, Brazil",
+          "Rua São Luiz Gonzaga, 716 - São Cristóvão, Rio de Janeiro - RJ, Brazil",
+          "R. Pref. Olímpio de Melo, 1495 - Benfica, Rio de Janeiro - RJ, 20930-004, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Centro de Tradições Nordestinas - Acesso Padre Cícero - São Cristóvão, Rio de Janeiro - RJ, 20921-440, Brazil",
+          "R. São Luiz Gonzaga, 116 - São Cristóvão, Rio de Janeiro - RJ, 20940-000, Brazil",
+          "Av. Maracanã, 618 - Maracanã, Rio de Janeiro - RJ, 20550-142, Brazil",
+          "Boulevard 28 de Setembro, 168 - Vila Isabel, Rio de Janeiro - RJ, 20551-055, Brazil",
+          "Boulevard 28 de Setembro, 262 - Vila Isabel, Rio de Janeiro - RJ, 20551-055, Brazil",
+          "Boulevard 28 de Setembro, 398 - Vila Isabel, Rio de Janeiro - RJ, 20551-195, Brazil",
+          "R. José do Patrocínio, 232 - Grajaú, Rio de Janeiro - RJ, 20560-160, Brazil",
+          "Rua Gurupi próximo ao 20-28 - Grajaú, Rio de Janeiro - RJ, 20561-200, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-69 - Ilha do Governador (Via Estrada do Galeão)",
+      "grupos": {
+        "ida": [
+          "Praça Calcutá, 2 - Freguesia (Ilha), Rio de Janeiro - RJ, 21910-010, Brazil",
+          "Rua Erico Coelho, 225 - Praia da Bandeira, Rio de Janeiro - RJ, 21910-250, Brazil",
+          "R. Cap. Barbosa, 198 - Praia da Bandeira, Rio de Janeiro - RJ, 21921-525, Brazil",
+          "Praia das Pitangueiras próximo ao 280-368 - Pitangueiras, Rio de Janeiro - RJ, 21930-376, Brazil",
+          "Estr. do Rio Jequiá, 626 - Zumbi, Rio de Janeiro - RJ, 21930-345, Brazil",
+          "Rua Abélia, 583 - Ilha do Governador, Rio de Janeiro - RJ, 21940-010, Brazil",
+          "Praia da Bica, 86 - Jardim Guanabara, Rio de Janeiro - RJ, 21931-085, Brazil",
+          "Rua Cambaúba, 1050 - Jardim Guanabara, Rio de Janeiro - RJ, 21940-005, Brazil",
+          "Rua Cambaúba, 385 - Jardim Guanabara, Rio de Janeiro - RJ, 21940-005, Brazil",
+          "Rua Haroldo Lôbo, 77 - Portuguesa, Rio de Janeiro - RJ, 21931-580, Brazil",
+          "Estrada da Petrobrás, Próximo ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Estrada do Galeão próximo ao 3105-3139 - Portuguesa, Rio de Janeiro - RJ, 21931-582, Brazil",
+          "Rua Cambaúba, 1050 - Jardim Guanabara, Rio de Janeiro - RJ, 21940-005, Brazil",
+          "Praia da Bica, 86 - Jardim Guanabara, Rio de Janeiro - RJ, 21931-085, Brazil",
+          "Formosa do Zumbi - Zumbi, Rio de Janeiro - RJ, 21930-155, Brazil",
+          "Praia das Pitangueiras, 411 - Pitangueiras, Rio de Janeiro - RJ, 21930-360, Brazil",
+          "Rua Paranapuã, 890 - Cocotá, Rio de Janeiro - RJ, 21921-525, Brazil",
+          "Praça Calcutá, 339 - Freguesia (Ilha do Governador), Rio de Janeiro - RJ, 21910-010, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-70 - Taquara (Via Av. Albérico Diniz)",
+      "grupos": {
+        "ida": [
+          "Estr. do Outeiro Santo, 1161 - Taquara, Rio de Janeiro - RJ, 22713-169, Brazil",
+          "Estr. do Rio Grande, 3513 - Largo da Capela, Taquara, Rio de Janeiro - RJ, 22723-005, Brazil",
+          "Estr. do Rio Grande, 2413 - Condomínio Rio Grande, Jacarepaguá, Rio de Janeiro - RJ, 22723-002, Brazil",
+          "Estr. do Rio Grande, 2470 - Taquara, Rio de Janeiro - RJ, 22720-011, Brazil",
+          "Mananciais próximo ao 720 - Taquara, Rio de Janeiro - RJ, 22723-424, Brazil",
+          "R. Ariperana, 361 - Taquara, Rio de Janeiro - RJ, 22725-530, Brazil",
+          "Avenida Albérico Diniz, Jardim Sulacap, Rio de Janeiro - RJ, 21741-110, Brazil",
+          "Rua Jambeiro, 860 - Vila Valqueire, Rio de Janeiro - RJ, 21330-290, Brazil",
+          "Avenida Jambeiro próximo ao 474 - Vila Valqueire, Rio de Janeiro - RJ, 21330-300, Brazil",
+          "R. Xavier Curado, 264 - Mal. Hermes, Rio de Janeiro - RJ, 21610-330, Brazil",
+          "Rua João Vicente, 1755 - Deodoro, Rio de Janeiro - RJ, 21557, Brazil",
+          "Estr. da Petrobrás, 27 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Rod. Washington Luiz, 1145 - Chácaras Rio-Petrópolis, Duque de Caxias - RJ, 25085-008, Brazil",
+          "R. Jaime Cervino, 2 - Vila Valqueire, Rio de Janeiro - RJ, 21330-370, Brazil",
+          "Estr. Japoré, 1147 - Jardim Sulacap, Rio de Janeiro - RJ, 21741-110, Brazil",
+          "Estr. do Cafundá, 2027 - Taquara, Rio de Janeiro - RJ, 22725-030, Brazil",
+          "Simplício de Lara - Taquara, Rio de Janeiro - RJ, 22720-400, Brazil",
+          "Estr. Rodrigues Caldas, 2 - Engenho Velho, Taquara, Rio de Janeiro - RJ, 22720-400, Brazil",
+          "Av. Monte Cruzeiro, 260 - Taquara, Rio de Janeiro - RJ, 22723-180, Brazil",
+          "R. Ipadu, 21 - Jacarepaguá, Rio de Janeiro - RJ, 22713-460, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-71 - Freguesia (Via Linha Amarela)",
+      "grupos": {
+        "ida": [
+          "R. Otávio Malta, 1297 - Anil, Rio de Janeiro - RJ, 22765-240, Brazil",
+          "Estrada de Jacarepaguá - Jardim Clarice, Anil, Rio de Janeiro - RJ, 22753-033, Brazil",
+          "Estr. de Jacarepaguá, 4710 - Anil, Rio de Janeiro - RJ, 22753-030, Brazil",
+          "R. Ituverava, 10 - Anil, Rio de Janeiro - RJ, 22750-006, Brazil",
+          "R. Ituverava, 667 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22750-006, Brazil",
+          "Estr. do Bananal, 699 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22750-012, Brazil",
+          "Estr. do Bananal, 121 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22745-011, Brazil",
+          "Rua Geminiano Góis, 233 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22743-670, Brazil",
+          "Estr. dos Três Rios, 638 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22755-002, Brazil",
+          "Estr. dos Três Rios, 200d - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22755-002, Brazil",
+          "Av. Geremário Dantas, 1245 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22740-010, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Geremário Dantas, 1258 - Pechincha, Rio de Janeiro - RJ, 22760-401, Brazil",
+          "Praça Professôra Camisão, 49 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22755-210, Brazil",
+          "Estr. dos Três Rios, 638 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22755-002, Brazil",
+          "R. Tirol, 980 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22750-009, Brazil",
+          "Estr. do Bananal, 828 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22750-013, Brazil",
+          "Estr. do Bananal, 863 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22750-012, Brazil",
+          "R. Ituverava, 667 - Freguesia (Jacarepaguá), Rio de Janeiro - RJ, 22750-006, Brazil",
+          "R. Ituverava, 10 - Anil, Rio de Janeiro - RJ, 22750-006, Brazil",
+          "Estrada de Jacarepaguá - Jardim Clarice, Anil, Rio de Janeiro - RJ, 22753-030, Brazil",
+          "R. Otávio Malta, 1297 - Gardênia Azul, Rio de Janeiro - RJ, 22765-008, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-72 - Praça Seca (Via Rua Carolina Machado)",
+      "grupos": {
+        "ida": [
+          "R. Cândido Benício, 2191 - Praça Seca, Rio de Janeiro - RJ, 21321-801, Brazil",
+          "R. Cândido Benício, 2425 - Praça Seca, Rio de Janeiro - RJ, 22733-001, Brazil",
+          "R. Cândido Benício, 1683 - Praça Seca, Rio de Janeiro - RJ, 21321-802, Brazil",
+          "R. Cândido Benício, 643 - Campinho, Rio de Janeiro - RJ, 21320-060, Brazil",
+          "Rua Capitão Couto Menezes próximo ao 288-342 - Madureira, Rio de Janeiro - RJ, 21310-190, Brazil",
+          "Estrada Intendente Magalhães, 394 - Madureira, Rio de Janeiro - RJ, 21331-720, Brazil",
+          "Estrada Intendente Magalhães, 650 - Bento Ribeiro, Rio de Janeiro - RJ, 21331-720, Brazil",
+          "Estrada Intendente Magalhães, 888 - Bento Ribeiro, Rio de Janeiro - RJ, 21331-720, Brazil",
+          "R. Alcídes Maia, 36 - Bento Ribeiro, Rio de Janeiro - RJ, 21550-560, Brazil",
+          "Rua Luís Coutinho Cavalcanti, 352 - Guadalupe, Rio de Janeiro - RJ, 21675-310, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Carolina Machado, 1912 - Mal. Hermes, Rio de Janeiro - RJ, 21557-150, Brazil",
+          "Estrada Intendente Magalhães, Quiririm - Bento Ribeiro, Rio de Janeiro - RJ, 21330-790, Brazil",
+          "Estrada Intendente Magalhães, 387 - Osvaldo Cruz, Rio de Janeiro - RJ, 21330-790, Brazil",
+          "Estrada Intendente Magalhães, 95 - Campinho, Rio de Janeiro - RJ, 21341-331, Brazil",
+          "Rua Cândido Benício, 660 - Campinho, Rio de Janeiro - RJ, 21341-270, Brazil",
+          "Praça Seca, 557 - Praça Seca, Rio de Janeiro - RJ, 21321-000, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-73 - Cascadura (Via R. Dias da Cruz)",
+      "grupos": {
+        "ida": [
+          "Av. Ernani Cardoso, 157 - Cascadura, Rio de Janeiro - RJ, 21310-310, Brazil",
+          "R. Dois de Fevereiro, 875 - Encantado, Rio de Janeiro - RJ, 20730-451, Brazil",
+          "Rua Dias da Cruz próximo ao 572 - Méier, Rio de Janeiro - RJ, 20720-011, Brazil",
+          "R. Dias da Cruz, 414 - Méier, Rio de Janeiro - RJ, 20720-012, Brazil",
+          "Rua Dias da Cruz próximo ao 160 - Méier, Rio de Janeiro - RJ, 20720-010, Brazil",
+          "R. Silva Rabêlo, 53 - Méier, Rio de Janeiro - RJ, 20735-080, Brazil",
+          "R. Castro Alves, 138 / 201 - Méier, Rio de Janeiro - RJ, 20775-040, Brazil",
+          "R. Getúlio, 173 - Todos os Santos, Rio de Janeiro - RJ, 20775-001, Brazil",
+          "R. Getúlio, 244 - Todos os Santos, Rio de Janeiro - RJ, 20775-001, Brazil",
+          "R. Cirne Maia, 124 - Cachambi, Rio de Janeiro - RJ, 20771-410, Brazil",
+          "R. Piauí, 128 - Todos os Santos, Rio de Janeiro - RJ, 20770-130, Brazil",
+          "Rua Piauí próximo ao 222 - Todos os Santos, Rio de Janeiro - RJ, 21540-750, Brazil",
+          "Av. Dom Hélder Câmara, 5806 - Engenho de Dentro, Rio de Janeiro - RJ, 20771-034, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Dom Hélder Câmara, 5993 - Todos os Santos, Rio de Janeiro - RJ, 20771-035, Brazil",
+          "Av. Dom Hélder Câmara, 5891 - Engenho de Dentro, Rio de Janeiro - RJ, 20771-002",
+          "R. Cachambi, 385 - Cachambi, Rio de Janeiro - RJ, 20771-632, Brazil",
+          "R. Coração de Maria, 455-441 - Méier, Rio de Janeiro - RJ, 20775-050, Brazil",
+          "R. Coração de Maria, 201 - Méier, Rio de Janeiro - RJ, 20775-050, Brazil",
+          "R. Coração de Maria, 121 - Méier, Rio de Janeiro - RJ, 20775-050, Brazil",
+          "R. Silva Rabêlo, 67 - Méier, Rio de Janeiro - RJ, 20735-080, Brazil",
+          "R. Magalhães Couto, 334 - Méier, Rio de Janeiro - RJ, 20735-180, Brazil",
+          "R. Magalhães Couto, 523 - Méier, Rio de Janeiro - RJ, 20735-180, Brazil",
+          "R. Intendente Cunha Menezes, 77 - Méier, Rio de Janeiro - RJ, 20720-060, Brazil",
+          "R. Dias da Cruz, 799 - Engenho de Dentro, Rio de Janeiro - RJ, 20720-011, Brazil",
+          "R. Padre Telêmaco, 24 - Cascadura, Rio de Janeiro - RJ, 21311-050, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-74 - Cascadura (Via Av. Dom Hélder Câmara)",
+      "grupos": {
+        "ida": [
+          "R. Silva Vale, 230 - Cavalcanti, Rio de Janeiro - RJ, 21370-360, Brazil",
+          "R. Itamarati, 398 - Cascadura, Rio de Janeiro - RJ, 21350-050, Brazil",
+          "Av. Dom Hélder Câmara, 9319 - Quintino Bocaiúva, Rio de Janeiro - RJ, 21380-245, Brazil",
+          "Av. Dom Hélder Câmara, 9035 - Quintino Bocaiúva, Rio de Janeiro - RJ, 21380-245, Brazil",
+          "Av. Dom Hélder Câmara, 8569 - Piedade, Rio de Janeiro - RJ, 20751-001, Brazil",
+          "Av. Dom Hélder Câmara, 7241 - Pilares, Rio de Janeiro - RJ, 20751-003, Brazil",
+          "Av. Dom Hélder Câmara, 6107 - Engenho de Dentro, Rio de Janeiro - RJ, 20760, Brazil",
+          "Av. Dom Hélder Câmara, 5771 - Pilares, Rio de Janeiro - RJ, 20770-145, Brazil",
+          "Av. Dom Hélder Câmara, 5539 - Todos os Santos, Rio de Janeiro - RJ, 20770-145, Brazil",
+          "Av. Dom Hélder Câmara, 5283 - Cachambi, Rio de Janeiro - RJ, 20771-001, Brazil",
+          "Av. Dom Hélder Câmara, 5067 - Cachambi, Rio de Janeiro - RJ, 20771-001, Brazil",
+          "R. Degas, 113 - Del Castilho, Rio de Janeiro - RJ, 20771-580, Brazil",
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Cachambi, 780 - Cachambi, Rio de Janeiro - RJ, 20771-632, Brazil",
+          "Av. Dom Hélder Câmara, 5082 - Cachambi, Rio de Janeiro - RJ, 20771-004, Brazil",
+          "Avenida Dom Hélder Câmara Próximo Ao 5474-5542 - Cachambi, Rio de Janeiro - RJ, 20771, Brazil",
+          "Avenida Dom Hélder Câmara próximo ao 5698-5746 - Engenho de Dentro, Rio de Janeiro - RJ, 20770-130, Brazil",
+          "Avenida Dom Hélder Câmara 6136 - Engenho de Dentro, Rio de Janeiro - RJ, 20760, Brazil",
+          "Avenida Dom Hélder Câmara, 7237 - Abolição, Rio de Janeiro - RJ, 20755, Brazil",
+          "Av. Dom Hélder Câmara, 9090 - Quintino Bocaiúva, Rio de Janeiro - RJ, 21380-246, Brazil",
+          "Av. Dom Hélder Câmara, 9276 - Quintino Bocaiúva, Rio de Janeiro - RJ, 21380-246, Brazil",
+          "R. Itamarati, 450 - Cascadura, Rio de Janeiro - RJ, 21350-050, Brazil",
+          "R. Silva Vale, 230 - Cavalcanti, Rio de Janeiro - RJ, 21370-360, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-75 - São Francisco Xavier (Via Estr. Ademar Bebiano)",
+      "grupos": {
+        "ida": [
+          "R. Cabuçu, 14 - Lins de Vasconcelos, Rio de Janeiro - RJ, 20710-300, Brazil",
+          "R. Gen. Belegarde, 94 - Engenho Novo, Rio de Janeiro - RJ, 20710-003, Brazil",
+          "Av. Mal. Rondon, 2944 - Engenho Novo, Rio de Janeiro - RJ, 20950-312, Brazil",
+          "R. Mal. Bittencourt, 78 - Riachuelo, Rio de Janeiro - RJ, 20950-200, Brazil",
+          "Tv. Cel. Soares, 723 - Sampaio, Rio de Janeiro - RJ, 20950-290, Brazil",
+          "R. Ferreira de Andrade, 909 - Cachambi, Rio de Janeiro - RJ, 20780-200, Brazil",
+          "Av. Dom Hélder Câmara, 3335 - Del Castilho, Rio de Janeiro - RJ, 21050-454, Brazil",
+          "Estrada Adhemar Bebiano, 59 - Del Castilho, Rio de Janeiro - RJ, 21051-071, Brazil",
+          "Estrada Velha Da Pavuna próximo ao 550 - Rio de Janeiro - RJ, 21051-070, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Francisco Medeiros - Del Castilho, Rio de Janeiro - RJ, 21051, Brazil",
+          "Av. Dom Hélder Câmara, 3256 - Del Castilho, Rio de Janeiro - RJ, 21050-623, Brazil",
+          "Feliciano de Aguiar - Maria da Graça, Rio de Janeiro - RJ, 20785-342, Brazil",
+          "R. Ferreira de Andrade, 554 - Cachambi, Rio de Janeiro - RJ, 20780-200, Brazil",
+          "R. Cabuçu, 28 - Lins de Vasconcelos, Rio de Janeiro - RJ, 20710-300, Brazil",
+          "Av. Mal. Rondon, 2944 - Engenho Novo, Rio de Janeiro - RJ, 20950-312, Brazil",
+          "R. Antunes García, 37 - Sampaio, Rio de Janeiro - RJ, 20950-072, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-77 - Rocha Miranda (Via Av. Pastor Martin Luther King Jr)",
+      "grupos": {
+        "ida": [
+          "Estr. do Sapê, 21 - Rocha Miranda, Rio de Janeiro - RJ, 21550-380, Brazil",
+          "Estr. do Sapê, 955 - Bento Ribeiro, Rio de Janeiro - RJ, 21550-010, Brazil",
+          "Estr. do Sapê, 774 - Turiaçú, Rio de Janeiro - RJ, 21550-010, Brazil",
+          "Av. dos Italianos, 733 - Rocha Miranda, Rio de Janeiro - RJ, 21510-102, Brazil",
+          "R. Ururaí, 94 - Coelho Neto, Rio de Janeiro - RJ, 21511-000, Brazil",
+          "R. Ururaí, 638 - Honório Gurgel, Rio de Janeiro - RJ, 21511-185, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Italianos - Coelho Neto, Rio de Janeiro - RJ, 21511-000, Brazil",
+          "R. Ururaí, 1272 - Honório Gurgel, Rio de Janeiro - RJ, 21511-185, Brazil",
+          "R. N. São de Salete, 12 - Rocha Miranda, Rio de Janeiro - RJ, 21510-090, Brazil",
+          "R. das Safiras, 114 - Honório Gurgel, Rio de Janeiro - RJ, 21511-380, Brazil",
+          "Largo do Sapê - Rocha Miranda, Rio de Janeiro - RJ, 21550-010, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-78 - Manguinhos (Via Av. Lobo Júnior)",
+      "grupos": {
+        "ida": [
+          "Rua Lino Teixeira, 158 - Jacaré, Rio de Janeiro - RJ, 20970-007, Brazil",
+          "Av. dos Democráticos, 1157 - Manguinhos, Rio de Janeiro - RJ, 21050-435, Brazil",
+          "Rua Dona Isabel, 158 CP 8037 - Bonsucesso, Rio de Janeiro - RJ, 21032-060, Brazil",
+          "Avenida Teixeira de Castro Próximo Ao 32 - Bonsucesso, Rio de Janeiro - RJ, 21040-115, Brazil",
+          "João Torquato - Bonsucesso, Rio de Janeiro - RJ, 21040-115, Brazil",
+          "R. Carlina, 87 - Olaria, Rio de Janeiro - RJ, 21021-360, Brazil",
+          "R. Quito, 133 - Penha, Rio de Janeiro - RJ, 21020-330, Brazil",
+          "Rua Quito próximo ao 250-286 - Penha, Rio de Janeiro - RJ, 21020-330, Brazil",
+          "R. Apiaí, 66 - Penha, Rio de Janeiro - RJ, 25220-330, Brazil",
+          "Rua Enes Filho, 796 - Penha Circular, Rio de Janeiro - RJ, 21011-290, Brazil",
+          "Avenida Brasil próximo ao 127 - Penha Circular, Rio de Janeiro - RJ, 21012-350, Brazil",
+          "Rod. Washington Luiz, 4012 - Chácaras Rio-Petrópolis, Duque de Caxias - RJ, 25055-009, Brazil"
+        ],
+        "volta": [
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Avenida Brasil Próximo Ao 402 - Brás de Pina, Rio de Janeiro - RJ, 21012-350, Brazil",
+          "R. Bento Cardoso, 239 - Penha Circular, Rio de Janeiro - RJ, 21215-000, Brazil",
+          "Rua Enes Filho, 361 - Penha Circular, Rio de Janeiro - RJ, 21011-290, Brazil",
+          "Aurora - Penha, Rio de Janeiro - RJ, 21020-040, Brazil",
+          "R. Nicarágua, 188 - Penha, Rio de Janeiro - RJ, 21020-050, Brazil",
+          "R. Leopoldina Rego, 841 - Penha, Rio de Janeiro - RJ, 21021-523, Brazil",
+          "R. Leopoldina Rego, 588 - Olaria, Rio de Janeiro - RJ, 21021-521, Brazil",
+          "Rua Cardoso de Morais, 509 - Bonsucesso, Rio de Janeiro - RJ, 21032-025, Brazil",
+          "Rua Cardoso de Morais, 218 - Loja F - Bonsucesso, Rio de Janeiro - RJ, 21032-000, Brazil",
+          "Ponto Final: Bonsucesso :: Dona Isabel (Linhas para Ilha do Governador) - Bonsucesso, Rio de Janeiro - RJ, 21032-060, Brazil",
+          "Av. dos Democráticos, 1083 - Manguinhos, Rio de Janeiro - RJ, 21050-145, Brazil",
+          "Rua Lino Teixeira, 155 - Jacaré, Rio de Janeiro - RJ, 20970-001, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-79 - Vila da Penha (Via Av. Meriti)",
+      "grupos": {
+        "ida": [
+          "Tomás Lopes - Penha Circular, Rio de Janeiro - RJ, 21210-000, Brazil",
+          "R. Antônio Braune, 19 - Vila da Penha, Rio de Janeiro - RJ, 21210-030, Brazil",
+          "Avenida Meriti próximo ao 1176 - Vila da Penha, Rio de Janeiro - RJ, 21210-000, Brazil",
+          "Avenida Meriti próximo ao 1650 - Vila da Penha, Rio de Janeiro - RJ, 21211-007, Brazil",
+          "Avenida Meriti próximo ao 1852 - Vila da Penha, Rio de Janeiro - RJ, 21211-007, Brazil",
+          "Av. Braz de Pina, 1705 - Brás de Pina, Rio de Janeiro - RJ, 21235-602, Brazil",
+          "Av. Brás de Pina, 1868 - Brás de Pina, Rio de Janeiro - RJ, 21235-603, Brazil",
+          "Av. Meriti, 3162 - Cordovil, Rio de Janeiro - RJ, 21250-142, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. São Félix, 901 - Vista Alegre, Rio de Janeiro - RJ, 21235-615, Brazil",
+          "R. Gustavo de Andrade, 6 - Irajá, Rio de Janeiro - RJ, 21235-500, Brazil",
+          "Av. Brás de Pina, 1714 - Brás de Pina, Rio de Janeiro - RJ, 21070-031, Brazil",
+          "Av. Meriti, 1785 - Vila da Penha, Rio de Janeiro - RJ, 21211-450, Brazil",
+          "Inspiração - Vila da Penha, Rio de Janeiro - RJ, 21211-007, Brazil",
+          "Av. Meriti, 1116 - Vila da Penha, Rio de Janeiro - RJ, 21211-006, Brazil",
+          "Av. Vicente de Carvalho, 6 - Vila Kosmos, Rio de Janeiro - RJ, 21371-122, Brazil",
+          "R. Tomás Lopes, 309 - Penha Circular, Rio de Janeiro - RJ, 21221-210, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-80 - Teresópolis (Via Rod. Rio-Teresópolis)",
+      "grupos": {
+        "ida": [
+          "Estrada terê fri - Km 6 - Albuquerque, Teresópolis - RJ, 25973-830, Brazil",
+          "R. Mariana, 45 - Bom Retiro, Teresópolis - RJ, 25955-600, Brazil",
+          "R. Ieda Tijuca, 728 - Tijuca, Teresópolis - RJ, 25975-560, Brazil",
+          "R. Júlio Rosa, 334 - Tijuca, Teresópolis - RJ, 25975-560, Brazil",
+          "R. Pref. Sebastião Teixeira, 380 - Várzea, Teresópolis - RJ, 25953-201, Brazil",
+          "Av. Feliciano Sodré, 702 - Agriões, Teresópolis - RJ, 25963-027, Brazil",
+          "Av. Alberto Tôrres, 1233 - Alto, Teresópolis - RJ, 25964-002, Brazil",
+          "Av. Oliveira Botelho, 88 - Alto, Teresópolis - RJ, 25961-144, Brazil",
+          "Av. Oliveira Botelho, 825 - Alto, Teresópolis - RJ, 25960-003, Brazil",
+          "Estr. da Cascata, 22 - Jd Canta Galo, Guapimirim - RJ, 25945-300, Brazil",
+          "Rod. Rio-Teresópolis - Pista Lateral, 5490 - Parque Santo Antonio, Guapimirim - RJ, 25940-000, Brazil",
+          "Rod. Br 116 Rio Teresopolis, 1158 - Leque Azul, Magé - RJ, 25900-970, Brazil",
+          "R. Biguaçu, 10 - Rio Imbariê, Duque de Caxias - RJ, 25264-000, Brazil",
+          "R. Solimões, 1 - Santo Antonio da Serra, Duque de Caxias - RJ, 25231-340, Brazil",
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 33 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Biguaçu, 10 - Rio Imbariê, Duque de Caxias - RJ, 25264-000, Brazil",
+          "Rod. Br 116 Rio Teresopolis, 480 - Leque Azul, Magé - RJ, 25900-970, Brazil",
+          "Rodovia Br-116 - Suruí, Magé - RJ, 25922-492, Brazil",
+          "Rod. Rio-Teresopolis, 1930 - Parque Santo Antonio, Guapimirim - RJ, 25940-000, Brazil",
+          "Rod. Br 116 Rio Teresopolis, 705 - Jd Canta Galo, Guapimirim - RJ, 25943-584, Brazil",
+          "Av. Rotariana, 400 - Soberbo, Teresópolis - RJ, 25960-602, Brazil",
+          "Av. Oliveira Botelho, 100 - Alto, Teresópolis - RJ, 25961-144, Brazil",
+          "Av. Alberto Tôrres, 1325 - Iucas, Teresópolis - RJ, 25964-002, Brazil",
+          "Av. Feliciano Sodré, 720 - Várzea, Teresópolis - RJ, 25963-027, Brazil",
+          "R. Pref. Sebastião Teixeira, 142 - Várzea, Teresópolis - RJ, 25953-203, Brazil",
+          "R. Pref. Sebastião Teixeira, 380 - Várzea, Teresópolis - RJ, 25953-201, Brazil",
+          "R. Júlio Rosa, N° 342 - Tijuca, Teresópolis - RJ, 25975-450, Brazil",
+          "Rodovia Dr. Rogério Moura Estevão, 5570 - Albuquerque, Teresópolis - RJ, 25976-444, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-81 - Petrópolis (Via Bingen)",
+      "grupos": {
+        "ida": [
+          "Estr. União e Indústria, 9429 - Itaipava, Petrópolis - RJ, 25730-736, Brazil",
+          "Estr. União e Indústria, 1189 - Corrêas, Petrópolis - RJ, 25715-131, Brazil",
+          "Estr. União e Indústria, 1132 - Corrêas, Petrópolis - RJ, 25710, Brazil",
+          "Av. 7 de Abril, 368 - Centro, Petrópolis - RJ, 25685-031, Brazil",
+          "Rua Montecaseros, 497 - Centro, Petrópolis - RJ, 25680-005, Brazil",
+          "R. Mosela, 1801 - Mosela, Petrópolis - RJ, 25670-033, Brazil",
+          "R. Mosela, 1075e - Mosela, Petrópolis - RJ, 25675-016, Brazil",
+          "R. Mosela, 266 - Mosela, Petrópolis - RJ, 25675-482, Brazil",
+          "R. Carlos Gomes, 13 - Centro, Petrópolis - RJ, 25680-020, Brazil",
+          "R. Bingen, 870 - Bingen, Petrópolis - RJ, 25660-004, Brazil",
+          "R. Bingen, 1950 - Bingen, Petrópolis - RJ, 25660-008, Brazil",
+          "Rua Doutor Paulo Hervé, 82 - Bingen, Petrópolis - RJ, 25665-132, Brazil",
+          "Rua Doutor Paulo Hervé, 878 - Capela, Petrópolis - RJ, 25665-133, Brazil",
+          "R. Min. Lúcio Meira, 1424 - Bingen, Petrópolis - RJ, 25660, Brazil",
+          "Rod. Washington Luiz, 8 - Bingen, Petrópolis - RJ, 25085-009, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Min. Lúcio Meira, 1424 - Bingen, Petrópolis - RJ, 25660, Brazil",
+          "Rua Doutor Paulo Hervé, 878 - Capela, Petrópolis - RJ, 25665-133, Brazil",
+          "Rua Doutor Paulo Hervé, 33 - Bingen, Petrópolis - RJ, 25665-131, Brazil",
+          "R. Bingen, 1979 - Bingen, Petrópolis - RJ, 25660-007, Brazil",
+          "R. Bingen, 733 - Bingen, Petrópolis - RJ, 25660-003, Brazil",
+          "Rua Major Sergio, 171 - Mosela, Petrópolis - RJ, 25675-040, Brazil",
+          "R. Mosela, 1075c - Mosela, Petrópolis - RJ, 25675-016, Brazil",
+          "R. Mosela, 312 - Mosela, Petrópolis - RJ, 25675-482, Brazil",
+          "Estr. de Bonsucesso, 455 - Cascata do Imbuí, Petrópolis - RJ, 25725-030, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-82 - Petrópolis (Via Quitandinha)",
+      "grupos": {
+        "ida": [
+          "R. Quissamã, 946 - Quissamã, Petrópolis - RJ, 25615-412, Brazil",
+          "Av. Dom Pedro I, 402 - Centro, Petrópolis - RJ, 25610-020, Brazil",
+          "Rua do Imperador, 982 - Centro, Petrópolis - RJ, 25620-001, Brazil",
+          "Rua Teresa, 551 - Loja 6 - Centro, Petrópolis - RJ, 25625-027, Brazil",
+          "R. Cristovão Colombo, 31 - Castelânea, Petrópolis - RJ, 25640-322, Brazil",
+          "R. Gonçalves Dias, 613 - Loja 8 - Valparaíso, Petrópolis - RJ, 25655-122, Brazil",
+          "R. Washington Luiz, 821 - Valparaíso, Petrópolis - RJ, 25655-007, Brazil",
+          "R. Cel. Veiga, 298 - Valparaíso, Petrópolis - RJ, 25655-151, Brazil",
+          "R. Cel. Veiga, 2014 - Castelânea, Petrópolis - RJ, 25655-158, Brazil",
+          "R. Gen. Rondon, 1004 - Quitandinha, Petrópolis - RJ, 25650-028, Brazil",
+          "R. Colômbia, 865 - Quitandinha, Petrópolis - RJ, 25650-040, Brazil",
+          "Av. Getúlio Vargas, 989 - Quitandinha, Petrópolis - RJ, 25651-075, Brazil",
+          "R. São Salvador, 300 - Quitandinha, Petrópolis - RJ, 25730-290, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 33 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Getulio Vargas, 941 A - Quitandinha, Petrópolis - RJ, 25651-075, Brazil",
+          "Av. República do Líbano, 1 - Quitandinha, Petrópolis - RJ, 25650-027, Brazil",
+          "R. Gen. Rondon, 1005 - Quitandinha, Petrópolis - RJ, 25650-027, Brazil",
+          "R. Olavo Bilac, 2007 - Castelânea, Petrópolis - RJ, 25640-511, Brazil",
+          "R. Cristovão Colombo, 980 - Saldanha Marinho, Petrópolis - RJ, 25640-322, Brazil",
+          "R. Saldanha Marinho, 81 - Saldanha Marinho, Petrópolis - RJ, 25640-233, Brazil",
+          "R. Vinte e Nove de Junho, 11 - Valparaíso, Petrópolis - RJ, 25655-091, Brazil",
+          "R. Mal. Deodoro, 153 - Loja 119 - Centro, Petrópolis - RJ, 25620-150, Brazil",
+          "R. Paulo Barbosa, 221 - Centro, Petrópolis - RJ, 25620-100, Brazil",
+          "Av. Koeler, 1116 - Centro, Petrópolis - RJ, 25685-060, Brazil",
+          "R. Padre Siqueira, 325 - Centro, Petrópolis - RJ, 25685-220, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-83 - Niterói (Via Av. Roberto Silveira)",
+      "grupos": {
+        "ida": [
+          "Av. Central Ewerton Xavier, 22 - Engenho do Mato, Niterói - RJ, 24330-285, Brazil",
+          "Estrada Francisco da Cruz Nunes, 1935 - Itaipu, Niterói - RJ, 24350-310, Brazil",
+          "Av. Dr. Acúrcio Tôrres, s/n - Piratininga, Niterói - RJ, 24358-080, Brazil",
+          "Av. Dr. Raul de Oliveira Rodrigues, 10 - Cafubá, Niterói - RJ, 24350-070, Brazil",
+          "Avenida Quintino Bocaiúva, 951 - Charitas, Niterói - RJ, 24360-022, Brazil",
+          "Rua Francisco Dutra, 51 - Icaraí, Niterói - RJ, 24220-160, Brazil",
+          "Av. Roberto Silveira, 355 - Icaraí, Niterói - RJ, 24230-152, Brazil",
+          "Av. Roberto Silveira, 174 - Icaraí, Niterói - RJ, 24230-161, Brazil",
+          "Rua Miguel de Frias, 59 - Icaraí, Niterói - RJ, 24220-008, Brazil",
+          "R. Dr. Paulo Alves, 144 - Ingá, Niterói - RJ, 24210-445, Brazil",
+          "R. Marquês de Paraná, 189 - Centro, Niterói - RJ, 24070-073, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Ernani do Amaral Peixoto, 897 - Centro, Niterói - RJ, 24020-073, Brazil",
+          "Av. Alm. Benjamim Sodré, 142 - Ingá, Niterói - RJ, 24210-390, Brazil",
+          "R. Gen. Pereira da Silva, 11 - Icaraí, Niterói - RJ, 24220-030, Brazil",
+          "Av. Jorn. Alberto Francisco Torres, 362 - Icaraí, Niterói - RJ, 24230-003, Brazil",
+          "R. Joaquim Távora, 218 - Icaraí, Niterói - RJ, 24220-000, Brazil",
+          "R. Lemos Cunha, 584 - Icaraí, Niterói - RJ, 24230-136, Brazil",
+          "Av. Pref. Silvio Picanço, 7 - Charitas, Niterói - RJ, 24360-025, Brazil",
+          "Av. Dr. Raul de Oliveira Rodrigues, 407 - Piratininga, Niterói - RJ, 24350-047, Brazil",
+          "Rua Professsor Ernãni Faria Alves, 152 - Piratininga, Niterói - RJ, 24350-680, Brazil",
+          "Av. Dr. Acúrcio Tôrres, 215 - Piratininga, Niterói - RJ, 24358-080, Brazil",
+          "R. Carlos Taváres Nunes, 244 - Maravista, Niterói - RJ, 24342-180, Brazil",
+          "Av. Central Ewerton Xavier, 22 - Engenho do Mato, Niterói - RJ, 24330-285, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-84 - São Gonçalo (Via R. Benjamin Constant)",
+      "grupos": {
+        "ida": [
+          "Av. Dr. Humberto Soeiro de Carvalho, 401 - Trindade, São Gonçalo - RJ, 24456-250, Brazil",
+          "Av. Domingos Damasceno Duarte, 426 - Trindade, São Gonçalo - RJ, 24456-422, Brazil",
+          "Rua Laureno Rosa, 172 - Alcântara, São Gonçalo - RJ, 24452-005, Brazil",
+          "Estr. dos Menezes, 415 - Santa Rosa, Niterói - RJ, 24452-005, Brazil",
+          "R. Dr. Alfredo Backer, 18 - Trindade, São Gonçalo - RJ, 24452-005, Brazil",
+          "R. Dr. Nilo Peçanha, 156 - Centro, São Gonçalo - RJ, 24450-000, Brazil",
+          "Av. Pres. Kennedy, s/n - Porto da Pedra, São Gonçalo - RJ, 24445-705, Brazil",
+          "R. Hugolino Pereira dos Santos, 5 - Santa Catarina, São Gonçalo - RJ, 24440-025, Brazil",
+          "Praça Vila Lage - Rua Oliveira Botelho, Neves I, São Gonçalo - RJ, 24426-271, Brazil",
+          "R. Dr. Porciúncula, 2211 - Sete Pontes, São Gonçalo - RJ, 24411-005, Brazil",
+          "Rua Doutor Luiz Palmier, 1001 - Barreto, Niterói - RJ, 24110-310, Brazil",
+          "Av. I - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Dr. March, 266 - Barreto, Niterói - RJ, 24110-650, Brazil",
+          "R. Dr. Porciúncula, 2196 - Venda da Cruz, São Gonçalo - RJ, 24411-006, Brazil",
+          "Rua Doutor Pio Borges, 1145 - Pita, São Gonçalo - RJ, 24412-000, Brazil",
+          "R. Hugolino Pereira dos Santos, 5 - Santa Catarina, São Gonçalo - RJ, 24440-025, Brazil",
+          "Rua Coronel Moreira César, 36 - Centro, São Gonçalo - RJ, 24440-410, Brazil",
+          "Rua Doutor Nilo Peçanha, 602 - São Miguel, São Gonçalo - RJ, 24455-045, Brazil",
+          "Rua Doutor Alfredo Backer, 1171 - Mutondo, São Gonçalo - RJ, 24452-005, Brazil",
+          "Av. Domingos Damasceno Duarte, 426a - Trindade, São Gonçalo - RJ, 24456-422, Brazil",
+          "Rua Ventura Pinto, 31 - Nova Cidade, São Gonçalo - RJ, 24455-605, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-85 - Arsenal (Via R. Noronha Torrezão)",
+      "grupos": {
+        "ida": [
+          "Avenida Eugenio Borges, 1725 - Arsenal, São Gonçalo - RJ, 24751-330, Brazil",
+          "Rod. Pref. João Sampaio, 963 - Rio do Ouro, São Gonçalo - RJ, 24325, Brazil",
+          "Rodovia Prefeito João Sampaio, próximo ao 1776-1780 - Maria Paula, Niterói - RJ, 24320-570, Brazil",
+          "Estrada Caetano Monteiro, próximo ao 2662 - Maria Paula, Niterói - RJ, 24320-570, Brazil",
+          "Estrada Caetano Monteiro, próximo ao 1030-1302 - Maria Paula, Niterói - RJ, 24320-570, Brazil",
+          "Estrada Caetano Monteiro, próximo ao 4979-5055 - Pendotiba, Niterói - RJ, 24320-570, Brazil",
+          "R. Dr. Mario Vianna, 506 - Santa Rosa, Niterói - RJ, 24241-002, Brazil",
+          "R. Dr. Mario Vianna, 303 - Santa Rosa, Niterói - RJ, 24241-000, Brazil",
+          "R. Santa Rosa, 192 - Santa Rosa, Niterói - RJ, 24220-420, Brazil",
+          "R. Santa Rosa, 109 - Santa Rosa, Niterói - RJ, 24240-225, Brazil",
+          "R. Noronha Torrezão, 102f - Santa Rosa, Niterói - RJ, 24240-185, Brazil",
+          "Alameda São Boaventura, 449 - Fonseca, Niterói - RJ, 24130-001, Brazil",
+          "BRS 1,2,3,4,5,I - Alameda São Boaventura, próximo ao 263 - Fonseca, Niterói - RJ, 24130-005, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 33 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Alameda São Boaventura, próximo ao 263 - São Lourenço, Niterói - RJ, 24130-005, Brazil",
+          "Alameda São Boaventura, 369 - Fonseca, Niterói - RJ, 24120-191, Brazil",
+          "Av. Vinte e Dois de Novembro, 5 - Fonseca, Niterói - RJ, 24120-049, Brazil",
+          "Rua Noronha Torrezão, 107 - Santa Rosa, Niterói - RJ, 24240-182, Brazil",
+          "Rua Geraldo Martins, 163 - Icaraí, Niterói - RJ, 24220-381, Brazil",
+          "R. Dr. Mario Vianna, 305 - Santa Rosa, Niterói - RJ, 24241-000, Brazil",
+          "R. Dr. Mario Vianna, 500 - Santa Rosa, Niterói - RJ, 24241-002, Brazil",
+          "Estrada Caetano Monteiro, próximo ao 4979-5055 - Pendotiba, Niterói - RJ, 24320-570, Brazil",
+          "Estr. Caetano Monteiro, 926 - Badu, Niterói - RJ, 24320-570, Brazil",
+          "Estrada Caetano Monteiro, 2662 - Maria Paula, Niterói - RJ, 24320-570, Brazil",
+          "Estrada Velha de Maricá - Maria Paula, São Gonçalo - RJ, 24320-570, Brazil",
+          "Tv. João Viêira dos Santos, 66 - Maria Paula, São Gonçalo - RJ, 24754-270, Brazil",
+          "Avenida Doutor Eugenio Borges, 1168 - Arsenal, São Gonçalo - RJ, 24751, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-87 - Piabetá (Via Av. Automóvel Clube)",
+      "grupos": {
+        "ida": [
+          "R. Dona Elvira, 329 - Centro, Magé - RJ, 25900-970, Brazil",
+          "R. Guarani, 882 - Parque São Jorge, Magé - RJ, 25903-587, Brazil",
+          "Av. Antônio Ribeiro Seabra, 87 - Pau Grande, Magé - RJ, 25933-500, Brazil",
+          "Av. Marta Vidal, 15 - Fragoso, Magé - RJ, 25903-587, Brazil",
+          "Av. Automóvel Clube, 1353 - Fragoso, Magé - RJ, 25903-587, Brazil",
+          "Av. Automóvel Clube, 6428 - Taquara, Duque de Caxias - RJ, 25260-000, Brazil",
+          "Av. Automóvel Clube, 7736 - Jardim Imbariê, Duque de Caxias - RJ, 25270-450, Brazil",
+          "Avenida Automóvel Clube, próximo ao 7330-7382 - Jardim Imbariê, Duque de Caxias - RJ, Brazil",
+          "Av. Automóvel Clube, 267 - Jardim Barro Branco, Duque de Caxias - RJ, 25267-130, Brazil",
+          "R. Angustura, 8A - Santa Cruz da Serra, Duque de Caxias - RJ, 25251-745, Brazil",
+          "Rod. Washington Luíz, 16641 - Santo Antônio, Duque de Caxias - RJ, 25243-570, Brazil",
+          "Rod. Washington Luiz, 1145 - Chácaras Rio-Petrópolis, Duque de Caxias - RJ, 25085-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 33 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Rod. Washington Luíz, 166 - Vila Maria Helena, Duque de Caxias - RJ, 25251-500, Brazil",
+          "Rod. Washington Luiz, 13 - Jardim Gramacho, Duque de Caxias - RJ, 25085-008, Brazil",
+          "Avenida Automóvel Clube, próximo ao 6130-6236 - Taquara, Duque de Caxias - RJ, 25272-405, Brazil",
+          "Avenida Automóvel Clube, próximo ao 7330-7382 - Jardim Imbariê, Duque de Caxias - RJ, Brazil",
+          "Av. Automóvel Clube, 1137 - Jardim Nazareno, Magé - RJ, 25935-442, Brazil",
+          "R. Rafael José da Costa, 118 - Fragoso, Magé - RJ, 25935-470, Brazil",
+          "Av. Mauá, 184 - Parque Veneza, Magé - RJ, 25903-587, Brazil",
+          "R. Guarani, 262 - Parque São Jorge, Magé - RJ, 25900-000, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-88 - Caxias (Via Gramacho)",
+      "grupos": {
+        "ida": [
+          "Av. Pernambucana, 2106 - Jardim Meriti, São João de Meriti - RJ, 25510-430, Brazil",
+          "Av. Comendador Teles, 229 - Vilar dos Teles, São João de Meriti - RJ, 25561-161, Brazil",
+          "Av. Fagundes Varela, 26 - Vilar dos Teles, São João de Meriti - RJ, 25570-300, Brazil",
+          "R. São Miguel, 303 - Jardim Metropole, São João de Meriti - RJ, 25571-040, Brazil",
+          "R. Pedro Lessa, 1619 - Jardim Olavo Bilac, Duque de Caxias - RJ, 25035-755, Brazil",
+          "R. Pedro Lessa, 70 - Vila Leopoldina, Duque de Caxias - RJ, 25035-800, Brazil",
+          "RJ-101, 4401 - Centro, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Joaquim Nabuco, 253 - Parque Sr. do Bonfim, Duque de Caxias - RJ, 25030-130, Brazil",
+          "R. Itamaracá, 228a - Itatiaia, Duque de Caxias - RJ, 25070-200, Brazil",
+          "R. Mal. Hermes, 1178 - Vila São Luis, Duque de Caxias - RJ, 25065-115, Brazil",
+          "Estr. da Petrobrás, 27 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. Expedicionário José Amaro, 654 - Vila São Luis, Duque de Caxias - RJ, 25000-000, Brazil",
+          "R. Alberto Torres, 41 - Circular, Duque de Caxias - RJ, 25025-010, Brazil",
+          "Av. Gov. Leonel de Moura Brizola, 3559 - Vila Centenário, Duque de Caxias - RJ, 25030-001, Brazil",
+          "Av. Gov. Leonel de Moura Brizola, 4407 - Centro, Duque de Caxias - RJ, 25035-007, Brazil",
+          "Rua Pedro Lessa, próximo ao 1-103 - Gramacho, Duque de Caxias - RJ, 25035-250, Brazil",
+          "R. Pedro Lessa, 1619 - Jardim Olavo Bilac, Duque de Caxias - RJ, 25035-755, Brazil",
+          "Av. do Comércio, 107 - Jardim Metropole, São João de Meriti - RJ, 25575-110, Brazil",
+          "Av. Cel. Raimundo Sampaio, 116 - Jardim Santa Rosa, São João de Meriti - RJ, 25570-393, Brazil",
+          "Av. Fagundes Varela, 14 - Vilar dos Teles, São João de Meriti - RJ, 25570-300, Brazil",
+          "R. Cosme Velho, 82 - Vilar dos Teles, São João de Meriti - RJ, 25576-160, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-89 - Caxias (Via Centro)",
+      "grupos": {
+        "ida": [
+          "Av. Nilo Peçanha, 2579 - Bar Cavalheiros, Duque de Caxias - RJ, 25015-001, Brazil",
+          "Av. Nilo Peçanha, 1435 - Parque Lafaiete, Duque de Caxias - RJ, 25015-005, Brazil",
+          "R. Albino Imparato, 110a - Parque Pauliceia, Duque de Caxias - RJ, 25080-010, Brazil",
+          "R. Evaristo da Veiga, 80 - Vila Oito de Maio, Duque de Caxias - RJ, 25075-135, Brazil",
+          "Av. Brg. Lima e Silva, 1066 - Jardim Vinte e Cinco de Agosto, Duque de Caxias - RJ, 25071-182, Brazil",
+          "R. Marechal Bento Manoel, 05 - Jardim Vinte e Cinco de Agosto, Duque de Caxias - RJ, 25075-270, Brazil",
+          "Rodovia Washington Luiz, 1264 - Parque Sarapuí, Duque de Caxias - RJ",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Rua Albino Imparato, próximo ao 121-139 - Jardim Vinte e Cinco de Agosto, Duque de Caxias - RJ, 25075-042, Brazil",
+          "Av. Marechal Bento Manoel, próximo ao 97 - Parque Duque, Duque de Caxias - RJ, 25075-270, Brazil",
+          "Av. Brg. Lima e Silva, 1576 - Jardim Vinte e Cinco de Agosto, Duque de Caxias - RJ, 25075-130, Brazil",
+          "Rua Maria Luiza Reis, 202 - Engenho do Porto, Duque de Caxias - RJ, 25015-045, Brazil",
+          "Av. Nilo Peçanha, 1128 - Vila Campanaro, Duque de Caxias - RJ, 25025-000, Brazil",
+          "Av. Nilo Peçanha, 2524 - Bar Cavalheiros, Duque de Caxias - RJ, 25015-500, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-92 - Sepetiba (Via Av. Brasil)",
+      "grupos": {
+        "ida": [
+          "Av. Antares, 338a - Santa Cruz, Rio de Janeiro - RJ, 23590-012, Brazil",
+          "Estr. de Sepetiba, 2121 - Santa Cruz, Rio de Janeiro - RJ, 23525-173, Brazil",
+          "Raposa - Sepetiba, Rio de Janeiro - RJ, 23530-611, Brazil",
+          "Av. Areia Branca, 41 - Santa Cruz, Rio de Janeiro - RJ, 23550-740, Brazil",
+          "R. Hermes da Silva, 127 - Santa Cruz, Rio de Janeiro - RJ, 23550-155, Brazil",
+          "Av. Brasil, 50851 - Campo Grande, Rio de Janeiro - RJ, 23065-480, Brazil",
+          "Rod. Governador Mário Covas, 13 - Campo Grande, Rio de Janeiro - RJ, 23067, Brazil",
+          "Estr. da Petrobrás, 27 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Rod. Governador Mário Covas, 13 - Campo Grande, Rio de Janeiro - RJ, 23067, Brazil",
+          "Av. Brasil, 50800 - Paciência, Rio de Janeiro - RJ, 23065-490, Brazil",
+          "Av. Padre Guilherme Decaminada, 93 - Santa Cruz, Rio de Janeiro - RJ, 23575-000, Brazil",
+          "Av. Areia Branca, 41 - Santa Cruz, Rio de Janeiro - RJ, 23550-740, Brazil",
+          "Cincinato de Freitas - Santa Cruz, Rio de Janeiro - RJ, 23525-002, Brazil",
+          "Av. Cesário de Melo, 12815 - Santa Cruz, Rio de Janeiro - RJ, 23595-040, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-95 - Vargem Pequena (Via Estr. dos Bandeirantes)",
+      "grupos": {
+        "ida": [
+          "Av. Olof Palme, 605 - Camorim, Rio de Janeiro - RJ, 22783-119, Brazil",
+          "Av. Olof Palme, 305 - Camorim, Rio de Janeiro - RJ, 22783-119, Brazil",
+          "Pedro Calmon - Jacarepaguá, Rio de Janeiro - RJ, 22783-117, Brazil",
+          "Estr. dos Bandeirantes, 8282 - Jacarepaguá, Rio de Janeiro - RJ, 22783-110, Brazil",
+          "Estr. dos Bandeirantes, 7300 - Jacarepaguá, Rio de Janeiro - RJ, 22780-084, Brazil",
+          "Estr. dos Bandeirantes, 5471 - Curicica, Rio de Janeiro - RJ, 22780-080, Brazil",
+          "Estr. dos Bandeirantes, 4223 - Jacarepaguá, Rio de Janeiro - RJ, 22775-113, Brazil",
+          "Brt Transcarioca - Merck - Taquara, Rio de Janeiro - RJ, 22710-571, Brazil",
+          "Estr. dos Bandeirantes, 543 - Taquara, Rio de Janeiro - RJ, 22730-522, Brazil",
+          "Estr. do Tindiba, 2082 - Taquara, Rio de Janeiro - RJ, 22740-362, Brazil",
+          "Estr. do Tindiba, 1282 - Taquara, Rio de Janeiro - RJ, 22740-362, Brazil",
+          "Estr. do Tindiba, 472 - Taquara, Rio de Janeiro - RJ, 22740-362, Brazil",
+          "R. Retiro dos Artistas, 935 - Pechincha, Rio de Janeiro - RJ, 22770-104, Brazil",
+          "Estr. do Pau-Ferro, 17 - Pechincha, Rio de Janeiro - RJ, 22743-050, Brazil",
+          "Estr. do Pau-Ferro, 252 - Pechincha, Rio de Janeiro - RJ, 22743-051, Brazil",
+          "Estrada da Petrobrás Próximo Ao 3 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 33 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Estr. do Pau-Ferro, 252 - Pechincha, Rio de Janeiro - RJ, 22743-051, Brazil",
+          "Estr. do Pau-Ferro, 120 - Pechincha, Rio de Janeiro - RJ, 22743-051, Brazil",
+          "Av. Geremário Dantas, 483 - Pechincha, Rio de Janeiro - RJ, 22740-011, Brazil",
+          "Estr. do Tindiba, 1599 - Taquara, Rio de Janeiro - RJ, 22740-361, Brazil",
+          "Estr. do Tindiba, 1695 - Taquara, Rio de Janeiro - RJ, 22740-361, Brazil",
+          "Av. Nelson Cardoso, 1130 - Taquara, Rio de Janeiro - RJ, 22730-001, Brazil",
+          "Estr. dos Bandeirantes, 416 - Taquara, Rio de Janeiro - RJ, 22715, Brazil",
+          "Ponto Final: Merck :: Linhas: 801 e 636 - Taquara, Rio de Janeiro - RJ, 22770-331, Brazil",
+          "Estr. dos Bandeirantes, 4588 - Curicica, Rio de Janeiro - RJ, 22775-114, Brazil",
+          "Estr. dos Bandeirantes, 5450 - Jacarepaguá, Rio de Janeiro - RJ, 22780-083, Brazil",
+          "Estr. dos Bandeirantes, 7300 - Jacarepaguá, Rio de Janeiro - RJ, 22780-084, Brazil",
+          "Estr. dos Bandeirantes, 8282 - Jacarepaguá, Rio de Janeiro - RJ, 22783-110, Brazil",
+          "Estr. dos Bandeirantes, 8591 - Jacarepaguá, Rio de Janeiro - RJ, 22783-115, Brazil",
+          "Av. Olof Palme, 605 - Camorim, Rio de Janeiro - RJ, 22783-119, Brazil",
+          "Av. Olof Palme, 305 - Camorim, Rio de Janeiro - RJ, 22783-119, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-97 - Anchieta / Pavuna (Via Estr. de Vigário)",
+      "grupos": {
+        "ida": [
+          "Avenida Chrisóstomo Pimentel - R. José Lourenço, 6 - Anchieta, Rio de Janeiro - RJ, 21645-340, Brazil",
+          "Av. Chrisóstomo Pimentel de Oliveira, 1694a - Pavuna, Rio de Janeiro - RJ, 21655-614, Brazil",
+          "Professor Bernardino Rocha - Pavuna, Rio de Janeiro - RJ, 21650-002, Brazil",
+          "R. Min. Artur Costa, 911 - Jardim América, Rio de Janeiro - RJ, 21240-120, Brazil",
+          "R. Min. Artur Costa, 475 - Jardim América, Rio de Janeiro - RJ, 21240-120, Brazil",
+          "Rua Conselheiro Meireles 8 - Rua Marechal Antônio Sousa, 655 - Jardim América, Rio de Janeiro - RJ, 21240-480, Brazil",
+          "Av. Governador Leonel de Moura Brizola, 5849 - sala 102 - Gramacho, Duque de Caxias - RJ, 25035-008, Brazil",
+          "Estr. da Petrobrás, 27 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Rod. Washington Luiz, 107 - Vila Actura, Duque de Caxias - RJ, 25085-008, Brazil",
+          "R. Jorn. Geraldo Rocha, 873 - Jardim América, Rio de Janeiro - RJ, 21240-080, Brazil",
+          "R. Min. Artur Costa, 374 - Jardim América, Rio de Janeiro - RJ, 21240-100, Brazil",
+          "Rua Marechal José Pessoa, 74 - Jardim América, Rio de Janeiro - RJ, 21240-365, Brazil",
+          "Av. Chrisóstomo Pimentel de Oliveira, 2800 - Pavuna, Rio de Janeiro - RJ, 21650-002, Brazil",
+          "Av. Chrisóstomo Pimentel de Oliveira, 1715 - Pavuna, Rio de Janeiro - RJ, 21655-613, Brazil",
+          "R. José Lourenço, 6 - Anchieta, Rio de Janeiro - RJ, 21645-010, Brazil"
+        ]
+      }
+    },
+    {
+      "linha": "A-98 - Xerém (Via Rod. Washington Luís)",
+      "grupos": {
+        "ida": [
+          "Av. Venância, 604 - Xerém, Duque de Caxias - RJ, 25250-000, Brazil",
+          "R. Dr. Sabino Árias, 23 - Mantiquira, Duque de Caxias - RJ, 25250-000, Brazil",
+          "R. Dr. Sabino Árias, 992-1030 - Vila Santa Alice, Duque de Caxias - RJ, 25250-000, Brazil",
+          "Rodovia Washington Luís s/n - Santo Antônio, Duque de Caxias - RJ, 25255, Brazil",
+          "Rod. Washington Luiz, 18208 - Santa Cruz da Serra, Duque de Caxias - RJ, 25260, Brazil",
+          "Rodovia Washington Luíz Próximo Ao 18276 - Santa Cruz da Serra, Duque de Caxias - RJ, 25260, Brazil",
+          "Estr. Velha do Rosário, 639 - Jardim Primavera, Duque de Caxias - RJ, 25215-365, Brazil",
+          "Av. Primavera, 36 - Jardim Primavera, Duque de Caxias - RJ, 25265-008, Brazil",
+          "R. Agostinho de Oliveira, 1059 - Jardim Primavera, Duque de Caxias - RJ, 25222-000, Brazil",
+          "Av. São Paulo, 341-345 - Parque Marilandia, Duque de Caxias - RJ, 25225-660, Brazil",
+          "R. Marquês de Paranaguá, 212 - Parque Império, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. I, 31 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil"
+        ],
+        "volta": [
+          "Av. I, 32 - Vila Actura, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Av. São Paulo, 19 - Parque Império, Duque de Caxias - RJ, 25225-660, Brazil",
+          "Av. São Paulo, 341-345 - Parque Marilandia, Duque de Caxias - RJ, 25225-660, Brazil",
+          "Avenida Visconde de Itaúna Próximo Ao 226 - Jardim Primavera, Duque de Caxias - RJ, 25265-008, Brazil",
+          "Rua Nascimento e Silva Próximo Ao 245 - Parque Guararapes, Duque de Caxias - RJ, 25212-450, Brazil",
+          "Rodovia Washington Luíz Próximo Ao 18276 - Santa Cruz da Serra, Duque de Caxias - RJ, 25260, Brazil",
+          "Rodovia Washington Luíz Próximo Ao 1094 - Santa Cruz da Serra, Duque de Caxias - RJ, 25260, Brazil",
+          "Rod. Washington Luiz, 77 - Santa Cruz da Serra, Duque de Caxias - RJ, 25085-008, Brazil",
+          "Rua Pastor Manoel Avelino de Souza Próximo Ao 992-1030 - Mantiquira, Duque de Caxias - RJ, 25250-000, Brazil",
+          "R. Dr. Sabino Árias, 1 - Mantiquira, Duque de Caxias - RJ, 25250, Brazil",
+          "R. Dr. Sabino Árias, 23 - Mantiquira, Duque de Caxias - RJ, 25250-000, Brazil"
+        ]
+      }
+    }
+  ]
+}

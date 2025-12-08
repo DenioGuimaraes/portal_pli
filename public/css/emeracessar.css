@@ -1,0 +1,243 @@
+/* ===========================
+   Emergências - Acessar (layout base, sem listas)
+   =========================== */
+
+.emerAcessar,
+.emerAcessar * {
+  box-sizing: border-box;
+}
+
+.emerAcessar {
+  --col-gap: 0px;
+  /* gap do grid; manter 0 para controlar só pelos paddings das colunas */
+  --col-pad: 6px;
+  /* padding pedido em TODAS as colunas */
+  --border: #d6dde6;
+  --bg-card: #ffffff;
+  --head-bg: #f4f6f8;
+  --text: #1e293b;
+  --title: #17324d;
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .06);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--text);
+}
+
+/* sem rolagem no contêiner central quando esta view está ativa */
+.conteudo-central:has(.emerAcessar) {
+  overflow: hidden;
+  /* se precisar do horizontal durante debug, troque por overflow-x:auto */
+}
+
+/* --- GRID 3 colunas (24% / 36% / 36%) ocupando 100% da altura --- */
+.emer-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  /* permite overflow dentro dos filhos */
+  display: grid;
+  grid-template-columns: 24% 36% 36%;
+  gap: var(--col-gap);
+}
+
+/* Cada coluna tem padding de 6px e usa flex em coluna */
+.col {
+  padding: var(--col-pad);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* importante p/ filhos rolarem */
+  max-height: 85%;
+}
+
+/* Coluna esquerda: 4 cards igualmente distribuídos na altura */
+.col--left {
+  gap: var(--col-pad);
+}
+
+.col--left .card {
+  flex: 1 1 0;
+  /* divide igualmente */
+  min-height: 0;
+}
+
+/* Centro e direita: 1 card ocupando toda a coluna */
+.col--center .card,
+.col--right .card {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* --- Card base --- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* cabeçalho fixo + corpo rolável */
+}
+
+.card__head {
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--title);
+  background: var(--head-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.card__body {
+  flex: 1 1 auto;
+  /* ocupa todo o restante da altura do card */
+  min-height: 0;
+  /* permite overflow */
+  padding: 8px 10px;
+  overflow: auto;
+  /* se o conteúdo passar, rola dentro do card */
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+/* barras de rolagem discretas (WebKit) */
+.card__body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.card__body::-webkit-scrollbar-thumb {
+  background: #d4dae3;
+  border-radius: 10px;
+  border: 2px solid #f5f7fa;
+}
+
+.card__body::-webkit-scrollbar-track {
+  background: #f5f7fa;
+  border-radius: 10px;
+}
+
+/* ==== Ajustes finos depois da barra de título ==== */
+
+/* 1) Proporções 24/36/36 ocupando 100% (sem sobrar 4%) */
+.emer-grid {
+  /* 2.4fr : 3.6fr : 3.6fr == ~24% : 36% : 36% e SEM sobra */
+  grid-template-columns: 2.4fr 3.6fr 3.6fr !important;
+}
+
+/* 2) Respiro no rodapé e sem scroll no contêiner */
+.emerAcessar {
+  padding-bottom: 6px;
+  /* bate com o seu pedido de 6px */
+}
+
+/* 3) Alturas mais enxutas para caber após a barra de título */
+.card__head {
+  padding: 6px 10px;
+  /* era 8px 12px */
+  font-size: 13px;
+  /* era 14px */
+  line-height: 1.2;
+}
+
+.card__body {
+  padding: 6px 8px;
+  /* era 8px 10px */
+}
+
+/* 4) Garantir que as colunas distribuam a altura e os conteúdos rolem internamente */
+.col {
+  min-height: 0;
+}
+
+.col--left {
+  gap: 6px;
+}
+
+/* 4 cards dividindo igualmente a coluna */
+.col--left .card {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.col--center .card,
+.col--right .card {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.card {
+  overflow: hidden;
+}
+
+/* cabeçalho fixo */
+.card__body {
+  overflow: auto;
+}
+
+/* rolagem só dentro do card */
+
+/* 5) (Opcional) se ainda faltar um “tiquinho” de altura, use este knob */
+.emerAcessar {
+  --card-head-shrink: 0px;
+}
+
+/* ajuste fino: 0–6px */
+.card__head {
+  padding-top: calc(6px - var(--card-head-shrink));
+  padding-bottom: calc(6px - var(--card-head-shrink));
+}
+
+.lista-passos {
+  list-style: none;
+  /* remove os "pontinhos" */
+  padding: 0;
+  margin: 0;
+}
+
+.passo-item {
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  /* mãozinha */
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.passo-item:hover {
+  background: #e6f2ff;
+  /* cor leve no hover */
+}
+
+.passo-item.is-selected {
+  background: #cce0ff;
+  /* cor mais forte no selecionado */
+  font-weight: bold;
+}
+
+.etapas-passo {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.etapas-passo li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+/* estilo geral de botões desabilitados */
+.botao-direito:disabled {
+    opacity: 0.5;              /* deixa apagado */
+    cursor: not-allowed;       /* cursor de bloqueio */
+    background-color: #ccc;    /* cinza */
+    color: #666;               /* texto mais apagado */
+    border: 1px solid #999;    /* borda suavizada */
+}
+.botao-direito:disabled:hover {
+    filter: none;              /* remove qualquer efeito hover */
+}

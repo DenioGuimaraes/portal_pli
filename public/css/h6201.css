@@ -1,0 +1,968 @@
+/* ===============================
+   H-6201 – CSS limpo (somente tela)
+   =============================== */
+
+:root {
+  --vh-offset: 260px;
+  /* ajuste fino p/ header/rodapé */
+  --q-size: clamp(22px, calc((100vh - var(--vh-offset)) / 12), 36px);
+  --p-size: calc(var(--q-size) * .32);
+  --gap-s: 8px;
+  --gap-m: 12px;
+  --c-azul: #2f6fde;
+  --c-card: #ffffff;
+  --c-shadow: rgba(0, 0, 0, .08);
+  --label-w: 47px;
+  /* ajuste aqui até ficar simétrico */
+  --forno-w: 550px;
+  /* largura fixa do #h6201Painel */
+  --painel-dir-w: 400px;
+  /* largura fixa do lado direito */
+}
+
+
+
+/* Miolo com dois lados */
+.h6201-miolo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Oeste | Leste */
+  gap: var(--gap-m);
+  align-items: start;
+}
+
+/* Título de cada lado */
+.h6201-lado-titulo {
+  margin: 0 0 6px;
+  text-align: center;
+  font-weight: 700;
+  font-size: .95rem;
+  background: #eef2f7;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+/* Coluna de um lado (4 plataformas com alturas iguais) */
+.h6201-lado {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: var(--gap-m);
+  min-height: 0;
+}
+
+/* Card/plataforma */
+.h6201-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-card);
+  border: 0.5px solid black;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--c-shadow);
+  padding: 10px 12px;
+  min-height: 0;
+  width: 180px;
+}
+
+/* Conjunto de linhas; defina 2 ou 3 no HTML */
+.h6201-linhas {
+  display: grid;
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+}
+
+.h6201-linhas--2 {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.h6201-linhas--3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* Linha e dupla */
+.h6201-linha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h6201-dupla {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--q-size) * .35);
+}
+
+.shift-l {
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+
+.shift-r {
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+/* Bico (círculo) e “piloto” decorativo */
+.h6201-bico {
+  position: relative;
+  overflow: visible;
+  width: var(--q-size);
+  height: var(--q-size);
+  border-radius: 50%;
+  border: 2px solid var(--c-azul);
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 12px/1 Arial, sans-serif;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Queimador: cor do círculo maior */
+.h6201-bico.is-burner-aceso {
+  background: rgba(255, 0, 0, 0.658);
+}
+
+/* verde */
+.h6201-bico.is-burner-apagado {
+  background: white;
+}
+
+/* vermelho */
+.h6201-bico.is-burner-manutencao {
+  background: #f1c40f;
+}
+
+/* amarelo */
+
+.h6201-bico::after {
+  content: "";
+  position: absolute;
+  width: var(--p-size);
+  height: var(--p-size);
+  border-radius: 50%;
+  border: 2px solid var(--c-azul);
+  background: #eaf2ff;
+  left: -4px;
+  bottom: -4px;
+}
+
+.h6201-bico.is-pilot-aceso::after {
+  background: rgba(255, 0, 0, 0.658);
+}
+
+/* verde */
+.h6201-bico.is-pilot-apagado::after {
+  background: white;
+}
+
+/* vermelho */
+.h6201-bico.is-pilot-manutencao::after {
+  background: #f1c40f;
+}
+
+/* amarelo */
+
+
+/* Legado útil */
+.h6201-rotulo {
+  font-weight: 800;
+  font-family: Arial, sans-serif;
+}
+
+.h6201-svg text {
+  font: 14px Arial;
+  fill: #00f;
+}
+
+/*Wrap geral
+/* Forno NÃO encolhe, nem cresce; fica na largura definida */
+#h6201Painel {
+  flex: 0 0 var(--forno-w);
+  width: var(--forno-w) !important;
+  max-width: var(--forno-w) !important;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Lateral direita fixa */
+.h6201-right {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-height: 0;            /* importante p/ evitar overflow */
+  gap: 10px;
+}
+
+/* Evita que inputs/imagens do painel direito estourem */
+.h6201-right * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* ==== FIX: duas colunas lado a lado ==== */
+/* O miolo NÃO deve ter largura percentual */
+#h6201Painel>.h6201-miolo {
+  flex: 1 1 auto;
+  /* deixa o conteúdo fluir naturalmente */
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+/* garante que cada lado ocupe apenas 1 coluna e não “estoure” */
+#h6201Painel #ladoOesteWrap,
+#h6201Painel #ladoLesteWrap {
+  grid-column: auto !important;
+  min-width: 0;
+  /* evita quebra por largura interna */
+}
+
+/* cada lado continua com 4 cards em altura igual */
+#h6201Painel .h6201-lado {
+  display: grid !important;
+  grid-template-rows: auto repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* o título fica no tamanho do conteúdo, centralizado */
+#h6201Painel .h6201-lado-titulo {
+  align-self: start;
+  /* não estica para a altura da linha */
+  justify-self: center;
+  padding: 4px 10px;
+  /* compacto */
+  max-width: max-content;
+  /* pill só ao redor do texto */
+}
+
+/* ===== FIX DEFINITIVO: 4 colunas (label | oeste | leste | label) ===== */
+#h6201Painel>.h6201-miolo {
+  display: grid !important;
+  grid-template-columns: var(--label-w) 1fr 1fr var(--label-w) !important;
+  grid-template-areas: "labelL oeste leste labelR";
+  column-gap: 12px;
+  align-items: stretch;
+  width: 50% !important;
+  /* cancela qualquer width:40% antigo */
+}
+
+/* posiciona explicitamente cada bloco na área certa */
+.h6201-label-vertical--left {
+  grid-area: labelL;
+}
+
+#ladoOesteWrap {
+  grid-area: oeste;
+}
+
+#ladoLesteWrap {
+  grid-area: leste;
+}
+
+.h6201-label-vertical--right {
+  grid-area: labelR;
+}
+
+/* deixa as labels verticais de verdade */
+.h6201-label-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #334155;
+  background: #ccc;
+  border-radius: 10px;
+  padding: 6px 0;
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+}
+
+.h6201-label-vertical--left {
+  transform: rotate(180deg);
+}
+
+.h6201-label-vertical--right {
+  transform: rotate(180deg);
+}
+
+/* esconde os títulos horizontais internos (se ainda existirem) */
+#ladoOesteWrap>h4,
+#ladoLesteWrap>h4 {
+  display: none !important;
+}
+
+/* garante que cada lado não quebre a coluna */
+#h6201Painel #ladoOesteWrap,
+#h6201Painel #ladoLesteWrap {
+  min-width: 0;
+}
+
+/* Mantém a altura da label igual à coluna de cards */
+.h6201-label-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* remove qualquer min-height herdado */
+  background: #ccc;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 60px 2px;
+}
+
+/* faz cada coluna lado (oeste/leste) ter altura fixa das 4 linhas */
+#h6201Painel .h6201-lado {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+/* garante que a grid alinhe no topo */
+#h6201Painel>.h6201-miolo {
+  align-items: start;
+}
+
+.h6201-label-vertical--left,
+.h6201-label-vertical--right {
+  align-self: stretch;
+}
+
+/* === COMPACTAÇÃO FINAL: sem esticar, sem rolagem === */
+
+/* 1) Itens do miolo não esticam a altura do contêiner */
+#h6201Painel>.h6201-miolo {
+  align-items: start !important;
+  /* antes estava 'stretch' */
+}
+
+/* 2) Cada lado (coluna de cards) usa altura do conteúdo */
+#h6201Painel .h6201-lado {
+  grid-template-rows: repeat(4, auto) !important;
+  /* em vez de 1fr */
+}
+
+/* 3) As labels não mandam na altura do grid */
+.h6201-label-vertical {
+  align-self: start !important;
+  /* não esticar */
+  height: auto !important;
+  /* nada de 100% */
+  /* opcional: deixar mais “slim” */
+  padding: 4px 0;
+}
+
+/* (opcional) se quiser as labels coladinhas no topo */
+.h6201-label-vertical--left,
+.h6201-label-vertical--right {
+  margin-top: 0 !important;
+}
+
+/* centraliza o bloco inteiro verticalmente dentro da área */
+#h6201Painel.h6201-grid {
+  display: flex !important;
+  align-items: center !important;
+}
+
+
+#h6201Painel>.h6201-miolo {
+  width: 100%;
+}
+
+/* preserva o grid interno */
+
+.h6201-label-vertical {
+  align-self: stretch !important;
+  height: auto !important;
+}
+
+.h6201-bico.is-on {
+  outline: 2px solid #4caf50;
+  /* ou o estilo que você quiser */
+}
+
+/* ==== Ajuste fino do modal H-6201 ==== */
+#h6201Modal .modal-conteudo {
+  max-width: 510px;
+  /* opcional: largura confortável */
+  overflow-x: hidden;
+  /* some com a barra horizontal */
+}
+
+#h6201Modal .modal-corpo {
+  display: block;
+  /* evita “aperto” de flex em 1 coluna */
+}
+
+#h6201Modal .coluna-form {
+  min-width: 0;
+  /* IMPORTANTÍSSIMO p/ evitar overflow em flex/grid */
+}
+
+#h6201Modal .campo-form {
+  display: grid;
+  /* layout certinho: label + campo */
+  grid-template-columns: 120px 1fr;
+  column-gap: 10px;
+}
+
+#h6201Modal .campo-form select,
+#h6201Modal .campo-form input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* 100% já inclui padding/borda */
+}
+
+/* Modal H-6201: ajuste do input date */
+#h6201Modal .campo input[type="date"] {
+  width: 100%;
+  max-width: 200px;
+  /* ajuste fino se quiser (180–220px) */
+}
+
+/* A “caixinha” da data (só leitura) */
+.h6201-manut-input {
+  width: 72px;
+  /* cabe dd/mm/yy folgado */
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #f7f7f7;
+  color: #333;
+  flex: 0 0 auto;
+  /* não encolhe */
+}
+
+/* o bico é a âncora do posicionamento absoluto */
+.h6201-bico {
+  position: relative;
+  /* cria o contexto */
+  overflow: visible;
+  /* deixa a etiqueta sair do círculo se preciso */
+}
+
+/* etiqueta com a data: AGORA abaixo do bico, centralizada */
+.h6201-manut-badge {
+  display: none;
+  position: absolute;
+  top: calc(100% + 2px);
+  /* 4px abaixo da borda inferior do bico */
+  left: 50%;
+  transform: translateX(-50%);
+  /* centraliza horizontalmente */
+  white-space: nowrap;
+  background: #f7f7f7;
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: darkblue;
+  z-index: 2;
+  pointer-events: none;
+  /* não bloqueia clique no bico */
+}
+
+/* quando o botão estiver ON (classe aplicada pelo JS), mostre os badges */
+#h6201Painel.manut-on .h6201-manut-badge {
+  display: inline-block important !;
+}
+
+/* opcional: se estiver vazio, mantém oculto mesmo no modo manutenção */
+#h6201Painel.manut-on .h6201-manut-badge:empty {
+  display: none important !;
+}
+
+/* Layout geral: forno à esquerda, painel à direita */
+
+/*.h6201-wrap { display: grid; grid-template-columns: 1fr 370px; gap: 16px; align-items: start; }*/
+.h6201-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Card GC */
+.gc-card {
+  padding: 8px;
+}
+
+.gc-card__header h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  text-align: center;
+  background: #138a52;
+  padding: 6px 10px;
+  color: white;
+}
+
+.gc-head,
+.gc-row {
+  display: grid;
+  grid-template-columns: 1fr 90px 36px 90px;
+  margin-top: 5px;
+  align-items: center;
+  gap: 8px;
+}
+
+.gc-head {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.gc-label {
+  font-size: 13px;
+}
+
+.gc-input {
+  width: 100%;
+  padding: 4px 6px;
+  text-align: right;
+  color: blue;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.gc-copy {
+  width: 100%;
+  padding: 4px 0;
+}
+
+/* Ações */
+.h6201-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Imagem (placeholder) */
+.gc-esquema {
+  margin: 12px 0 0;
+}
+
+.gc-esquema img {
+  max-width: 100%;
+  display: block;
+}
+
+/*CORREÇÃO BAGUNÇADA*/
+/* ==== FIX GERAL DO LAYOUT LADO A LADO ==== */
+
+/* 0) Conserta os !important dos badges de manutenção */
+#h6201Painel.manut-on .h6201-manut-badge {
+  display: inline-block !important;
+}
+
+#h6201Painel.manut-on .h6201-manut-badge:empty {
+  display: none !important;
+}
+
+/* 1) O wrap é quem organiza as 2 colunas */
+.h6201-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#h6201Painel {
+  flex: 0 0 var(--forno-w);
+  width: var(--forno-w) !important;
+  margin: 0;
+}
+
+/* 3) Painel direito: largura fixa */
+.h6201-right {
+  flex: 0 0 var(--painel-dir-w);
+  width: var(--painel-dir-w) !important;
+  max-width: var(--painel-dir-w);
+}
+
+/* 4) Cancela o FLEX do próprio #h6201Painel (deixa ele como bloco normal) */
+#h6201Painel.h6201-grid {
+  display: block !important;
+  align-items: initial !important;
+}
+
+/* 5) Remove larguras percentuais que estavam encolhendo o miolo do forno */
+#h6201Painel>.h6201-miolo {
+  width: auto !important;
+}
+
+/* Card da direita ocupa 100% da coluna */
+.h6201-right {
+  padding: 0;
+}
+
+.h6201-right .gc-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Corpo do card: grade alinhada e inputs cheios */
+.gc-card__body {
+  width: 100%;
+}
+
+.gc-head,
+.gc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 60px 1fr;
+  /* label | oeste | "=" | leste */
+  gap: 8px;
+  align-items: center;
+}
+
+.gc-label {
+  padding-right: 6px;
+}
+
+.gc-input {
+  width: 100%;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.gc-copy {
+  width: 100%;
+  padding: 6px 0;
+}
+
+.gc-card {
+  background: #fff;
+  border: 2px solid #1d3b1d;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+}
+
+.gc-card__header h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+/* ====== Auto-scale ====== */
+:root {
+  --ui-scale: 1;
+}
+
+/* Stage ocupa o espaço disponível no centro e centraliza o wrap */
+.h6201-stage {
+  position: relative;
+  width: 100%;
+  /* altura flexível: se o pai não tiver height, o JS calcula com a viewport */
+  min-height: 500px;
+  overflow: auto;
+  /* se estourar, dá scroll */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Tudo dentro do wrap escala proporcionalmente */
+.h6201-wrap {
+  transform: scale(var(--ui-scale));
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.h6201-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* === GC: card de Pressões em largura total === */
+#gcCard {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-self: stretch;
+  justify-self: stretch;
+}
+
+/* garante que o conteúdo interno não limite a largura */
+#gcCard .gc-card__body,
+#gcCard .gc-head,
+#gcCard .gc-row {
+  width: 100%;
+}
+
+/* exemplo: ajuste o seletor para o seu container real */
+.h6201-coluna-direita,
+.painel-direito,
+.gc-wrap {
+  display: flex;
+  /* ou mantenha o que já usa */
+  flex-direction: column;
+}
+
+.h6201-coluna-direita>#gcCard {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+/* === Barra de botões (abaixo do card) alinhada com 500px === */
+.h6201-right .h6201-actions {
+  width: var(--painel-dir-w);
+  /* 500px */
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+
+  /* layout mais “compacto” e alinhado */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 botões lado a lado */
+  gap: 10px;
+  padding: 0;
+  /* se quiser, pode usar 0 12px para alinhar com o padding do card */
+}
+
+/* Botões menores e uniformes */
+.h6201-right .h6201-actions button {
+  height: 28px;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 8px;
+  width: 100%;
+}
+
+#h6201Right .h6201-actions {
+  width: var(--painel-dir-w);
+  padding: 0 12px;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* largura conforme o conteúdo */
+  gap: 10px;
+  justify-content: center;               /* << centraliza */
+}
+
+/* === Botões menores (override do .botao-cabecalho global) === */
+#h6201Right .h6201-actions .botao-cabecalho {
+  max-width: 100px;     /* todos com largura parecida */
+  height: 34px !important;
+  font-size: 14px !important;
+}
+
+.botao-h6201 {
+  background-color: #16ac66;
+  /* Verde Petrobras */
+  color: white;
+  padding: 4px 12px;
+  /* reduz altura/largura */
+  font-weight: bold;
+  font-size: 16px;
+  /* um pouco menor que o padrão */
+  border: none;
+  border-radius: 4px;
+  margin: 4px 6px;
+  /* espaçamento menor */
+  cursor: pointer;
+  min-width: 100px;
+  /* mais estreito que os 180px */
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao-h6201:hover {
+  background-color: #138a52;
+  /* verde mais escuro */
+  transform: scale(1.05);
+  /* pequeno efeito de destaque */
+}
+
+/* Overlay */
+#h6201Modal[aria-hidden="true"],
+#h6201Modal {
+  display: none;
+}
+
+#h6201Modal {
+  position: fixed;
+  display: none;
+  /* vira flex ao abrir() */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .45);
+  z-index: 999;
+}
+
+/* Caixa do modal */
+#h6201Modal .modal-caixa {
+  width: min(720px, 92vw);
+  max-height: min(82vh, 700px);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  overflow: hidden;
+  /* evita barra horizontal */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+#h6201Modal .modal-titulo {
+  background: #0b5;
+  /* verde Petrobras-ish */
+  color: #fff;
+  padding: 14px 18px;
+  font-weight: 700;
+}
+
+/* Conteúdo rolável se crescer */
+#h6201Modal .modal-conteudo {
+  padding: 16px 18px 8px;
+  overflow: auto;
+}
+
+/* Faixa de ações em grid bonito */
+#h6201Modal .modal-acoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  padding: 12px 16px 18px;
+}
+
+/* Botões */
+#h6201Modal .btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#h6201Modal .btn--ok {
+  background: #0a7e2a;
+  color: #fff;
+}
+
+#h6201Modal .btn--warn {
+  background: #e9a400;
+  color: #fff;
+}
+
+#h6201Modal .btn--muted {
+  background: #d9d9d9;
+  color: #333;
+}
+
+#h6201Modal .btn:active {
+  transform: translateY(1px);
+}
+
+/* ====== H-6201: modais isolados (não interferem no .modal global) ====== */
+
+/* Overlay */
+.h6201-modal {
+  position: fixed;
+  background: rgba(0, 0, 0, .45);
+  z-index: 999;
+  display: none;
+  /* o JS troca para 'block' ao abrir */
+  overflow: auto;
+  /* se a tela for pequena, rola o overlay */
+}
+
+/* Caixa do modal (centralizada sem usar display:flex) */
+.h6201-modal .h6201-modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(360px, 90vw, 680px);
+  max-height: 85vh;
+
+  background: #fff;
+  /* garante branco, sem herdar estilos do .modal global */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+
+  overflow-x: hidden;
+  /* remove barra horizontal */
+  overflow-y: auto;
+  /* só vertical quando necessário */
+  box-sizing: border-box;
+}
+
+/* Só um respiro interno opcional (mantém seu visual atual) */
+.h6201-modal .h6201-modal-box>h3 {
+  margin: 0;
+  padding: 12px 16px;
+}
+
+.h6201-modal .h6201-modal-box>p {
+  margin: 12px 16px;
+}
+
+.h6201-modal .botoes-modal {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 16px 16px;
+}
+
+/* ===== H-6201: isolar botões dos modais de Ação em Massa ===== */
+/* Base apenas para os botões desses modais */
+.h6201-modal .botoes-modal .h6201-btn {
+  width: auto !important;
+  /* derruba o width:120px do global */
+  min-width: 140px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Cores finais por ID (vencem qualquer first/last-child do style.css) */
+#hq-acender,
+#hp-acender {
+  background: #0a7e2a !important;
+  color: #fff !important;
+}
+
+#hq-apagar,
+#hp-apagar {
+  background: #e59c00 !important;
+  color: #fff !important;
+}
+
+#hq-cancelar,
+#hp-cancelar {
+  background: #d9d9d9 !important;
+  color: #333 !important;
+}
+
+/* botões do “card” de Diagramas — empilhados e 100% */
+.h6201-actions--viewer {
+  width: var(--painel-dir-w);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.h6201-actions--viewer .botao-cabecalho {
+  width: 100%;                 /* << ocupa toda a largura */
+  height: 42px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+
+/* corpo interno do card do viewer também flexível */
+.viewer-card__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
