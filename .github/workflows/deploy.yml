@@ -18,5 +18,5 @@ jobs:
         server: ftp.cadnorma.com.br
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        server-dir: /Portalpli/
+        server-dir: /web/portalpli/
         local-dir: ./
