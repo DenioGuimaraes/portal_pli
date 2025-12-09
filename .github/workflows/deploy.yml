@@ -1,24 +1,22 @@
-name: Deploy Portal PLI to Locaweb
+name: Deploy via FTP to Locaweb
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do repositório
-        uses: actions/checkout@v3
+    - name: Checkout do repositório
+      uses: actions/checkout@v3
 
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          server: ${{ secrets.SFTP_HOST }}
-          port: 21
-          local_path: "./"
-          remote_path: ${{ secrets.SFTP_PATH }}
-          delete_remote_files: false
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ftp.cadnorma.com.br
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASS }}
+        server-dir: /
+        local-dir: .
